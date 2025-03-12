@@ -1,0 +1,126 @@
+:root {
+	--padding-standard: 15px;
+	--radius-standard: 10px;
+	--font-size-standard: 0.9rem;
+	--bevel-size: 7px;
+	--text-shadow-standard: 2px 2px 5px rgba(0, 0, 0, 0.9);
+
+	@media (min-width: 768px) {
+		--font-size-standard: 1rem;
+	}
+
+	/* Colour Palette */
+	--colour-cream: 240, 233, 217;
+	--colour-dark: #333;
+	--colour-orange: 177, 110, 11;
+	--colour-purple: 71, 30, 185;
+	--colour-purple-light: 145, 148, 180;
+	--colour-cobalt: 0, 71, 171;
+	--colour-cyan: 11, 177, 140;
+	--colour-scarlet: 177, 11, 91;
+	--colour-aqua: 0, 243, 150;
+	--colour-mustard: 130, 177, 11;
+	--colour-yellow: 214, 179, 0;
+	--colour-green: 114, 124, 93;
+	--colour-black: 0, 0, 0;
+	--colour-silver: 210, 210, 210;
+	--colour-bronze: 210, 151, 105;
+	--colour-bronze-gradient: linear-gradient(142deg, rgba(241,200,169,1) 0%, rgba(212,154,109,1) 20%, rgba(210,151,105,1) 60%, rgba(240,213,192,1) 75%, rgba(210,151,105,1) 86%);
+	--colour-silver-gradient: linear-gradient(-72deg,
+			#dedede,
+			#ffffff 16%,
+			#dedede 21%,
+			#ffffff 24%,
+			#dedede 36%,
+			#ffffff 45%,
+			#ffffff 60%,
+			#dedede 72%,
+			#ffffff 80%,
+			#dedede 84%,
+			#cccccc);
+	--colour-silver-gradient-subtle: linear-gradient(-72deg,
+			#898989,
+			#aaaaaa 16%,
+			#ffffff 21%,
+			#898989 24%,
+			#898989 36%,
+			#aaaaaa 45%,
+			#aaaaaa 60%,
+			#aaaaaa 80%,
+			#898989 84%,
+			#ffffff);
+	--colour-gold-gradient: linear-gradient(-72deg,
+			#FFD062,
+			#FFE9B4 16%,
+			#ffffff 21%,
+			#FFD062 24%,
+			#FFD062 36%,
+			#FFD062 60%,
+			#FFE9B4 80%,
+			#FFD062 84%,
+			#ffffff);
+
+	--shape-bevelled: polygon(0 var(--bevel-size),
+			calc(var(--bevel-size) / 2) var(--bevel-size),
+			var(--bevel-size) calc(var(--bevel-size) / 2),
+			var(--bevel-size) 0px,
+			calc(100% - var(--bevel-size)) 0,
+			calc(100% - var(--bevel-size)) calc(var(--bevel-size) / 2),
+			calc(100% - var(--bevel-size) / 2) var(--bevel-size),
+			100% var(--bevel-size),
+			100% calc(100% - var(--bevel-size)),
+			calc(100% - var(--bevel-size) / 2) calc(100% - var(--bevel-size)),
+			calc(100% - var(--bevel-size)) calc(100% - var(--bevel-size) / 2),
+			calc(100% - var(--bevel-size)) 100%,
+			var(--bevel-size) 100%,
+			var(--bevel-size) calc(100% - var(--bevel-size) / 2),
+			calc(var(--bevel-size) / 2) calc(100% - var(--bevel-size)),
+			0 calc(100% - var(--bevel-size)),
+			0 100%);
+}
+
+@font-face {
+	font-family: "trattatello";
+	src: url("public/fonts/trattatello/trattatello.woff2") format("woff2"), url("public/fonts/trattatello/trattatello.woff") format("woff");
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-variation-settings: "wdth" 100;
+	font-size: var(--font-size-standard);
+	color: var(--colour-dark);
+	background-image: url('public/images/bg.paper.texture.webp');
+}
+
+.trattatello, h1, h2, h3, h4 {
+	font-family: trattatello, sans-serif;
+	text-transform: uppercase;
+	line-height: 100%;
+}
+
+.outer-container {
+	padding: var(--padding-standard);
+}
+
+section {
+	&:after {
+		content: "";
+		display: block;
+		left: 0;
+		bottom: calc(var(--padding-standard)* -1);
+		width: 100%;
+    	height: 20px;
+		background-image: url('/public/images/gr.charactersheet.border.svg');
+    	opacity: .075;
+	}
+}
+
+p:first-child {
+	margin-top: 0;
+}

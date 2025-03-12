@@ -1,0 +1,19 @@
+:root {
+	--control-height: 30px;
+	--control-padding-vert: 5px;
+	--control-padding-horz: 5px;
+}
+
+:global(:root) {
+	color: red;
+  }
+
+.controlBar {
+	padding: var(--padding-standard);
+	background-image: url(../../../public/images/bg.paper.jpg);
+	clip-path: var(--shape-bevelled);
+
+	&:empty {
+		display: none;
+	}
+}

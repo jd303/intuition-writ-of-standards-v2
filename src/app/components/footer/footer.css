@@ -1,0 +1,15 @@
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 250px;
+	padding: calc(4 * var(--padding-standard)) 0;
+	box-sizing: border-box;
+	border-top-left-radius: calc(3 * var(--radius-standard));
+	border-top-right-radius: calc(3 * var(--radius-standard));
+	background-image: url('../../public/images/bg.nav.webp');
+	background-size: cover;
+	background-position: 0 80%;
+}

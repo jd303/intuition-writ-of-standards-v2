@@ -1,0 +1,26 @@
+.dmToolsLayout {
+	.dcTable {
+		display: inline-flex;
+		flex-direction: column;
+		gap: calc(0.5 * var(--padding-standard));
+		align-items: center;
+		width: auto;
+		font-size: 1.2em;
+		padding: var(--padding-standard);
+		background-color: rgb(var(--colour-cream));
+		border-radius: var(--radius-standard);
+
+		.dc {
+			display: flex;
+			gap: var(--padding-standard);
+
+			.name {
+				font-family: 'trattatello';
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 1.25em;
+				line-height: 25px;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+.logo {
+	height: 100%;
+	aspect-ratio: 2/2;
+
+	& img {
+		max-height: 100%;
+	}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <circle cx="15" cy="15" r="14" style="fill:rgb(251,103,46);"/>
+    <circle cx="15" cy="15" r="11" style="fill:white;"/>
+    <circle cx="15" cy="15" r="11" style="fill:rgb(246,57,27);"/>
+    <g>
+        <g>
+            <g>
+                <path d="M14.97,5.36C9.69,5.36 5.4,9.65 5.4,14.93C5.4,20.21 9.69,24.5 14.97,24.5C20.25,24.5 24.54,20.21 24.54,14.93C24.54,9.65 20.25,5.36 14.97,5.36Z" style="fill:rgb(255,156,61);"/>
+            </g>
+        </g>
+        <g transform="matrix(1.62818,0,0,1.62818,12.1254,20.3527)">
+            <text x="0px" y="0px" style="font-family:'Trattatello', sans-serif;font-size:12px;fill:rgb(249,225,146);">I</text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,116 @@
+:root {
+	--card-min-width: 100%;
+	--card-max-width: 100%;
+	--card-aspect-ratio: 7/6;
+
+	@media (min-width: 500px) {
+		--card-min-width: 200px;
+		--card-max-width: 320px;
+		--card-aspect-ratio: 2/3;
+	}
+}
+
+.menu-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--padding-standard);
+}
+
+.menu-card {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 15%;
+	min-width: var(--card-min-width);
+	max-width: var(--card-max-width);
+	aspect-ratio: var(--card-aspect-ratio);
+	color: #fff;
+	font-size: calc(2 * var(--font-size-standard));
+	text-decoration: none;
+	text-shadow: var(--text-shadow-standard);
+	border-radius: var(--radius-standard);
+	overflow: hidden;
+
+	.logo {
+		width: 50%;
+		height: 50%;
+	}
+
+	.image {
+		position: absolute;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	.label {
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		mix-blend-mode: color;
+		opacity: 0.5;
+		background-color: black;
+		transition: all 0.4s;
+	}
+
+	&:hover:before {
+		opacity: 0;
+	}
+
+	&.link_0:before {
+		background-color: rgb(var(--colour-silver));
+	}
+
+	&.link_1:before {
+		background-color: rgb(var(--colour-silver));
+	}
+
+	&.link_2:before {
+		background-color: rgb(var(--colour-silver));
+	}
+
+	&.link_3:before {
+		background-color: rgb(var(--colour-orange));
+	}
+
+	&.link_4:before {
+		background-color: rgb(var(--colour-purple));
+	}
+
+	&.link_5:before {
+		background-color: rgb(var(--colour-scarlet));
+	}
+
+	&.link_6:before {
+		background-color: rgb(var(--colour-aqua));
+	}
+
+	&.link_7:before {
+		background-color: rgb(var(--colour-cobalt));
+	}
+
+	&.link_8:before {
+		background-color: rgb(var(--colour-green));
+	}
+
+	&.link_9:before {
+		background-color: rgb(var(--colour-mustard));
+	}
+
+	&.link_10:before {
+		background-color: rgb(var(--colour-silver));
+	}
+}
