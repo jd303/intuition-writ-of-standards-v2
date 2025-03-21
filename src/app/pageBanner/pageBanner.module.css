@@ -32,7 +32,7 @@
 	background: var(--active-colour);
 	border-bottom: 2px solid #ddd;
 	cursor: pointer;
-	transition: all 1s;
+	transition: background-color 0.8s linear 0.3s, color 0.8s linear 0.3s;
 
 	&:hover {
 		background: color-mix(in srgb, var(--active-colour) 85%, #fff 15%);
@@ -46,7 +46,7 @@
 		& .logo {
 			height: 70%;
 			filter: invert(100%);
-			transition: all 1s linear 0.25s;
+			transition: all 0.8s linear 0.3s;
 		}
 	}
 }
@@ -115,7 +115,6 @@ nav.main {
 	box-shadow: inset -8px -8px 8px rgba(0,0, 0, 0.2);
 	pointer-events: none;
 	opacity: 0;
-	transition: all 0.35s;
 
 	&.open {
 		transform: translateY(61px);
@@ -143,6 +142,7 @@ nav.secondary {
 	padding-top: var(--menu-height);
 	padding-left: 53px;
 	background-color: var(--active-colour);
+	transition: background-color 0.5s linear 0.2s;
 
 	&:empty {
 		height: 0;

@@ -1,12 +1,15 @@
 import { Link } from "react-router";
+import { useAuthState } from "../../features/firebase/firebase";
 import './home.css';
 
 export default function Menu() {
+	const auth = useAuthState();
+
 	return (
 		<main className="outer-container menu-container">
 			<LogoCard></LogoCard>
-			{cards.map(({ image, label, colour, route }, index) => (
-				<NavCard key={index} image={image} label={label} colour={colour} route={route} index={index}></NavCard>
+			{cards.map(({ image, label, colour, route, authLevel }, index) => (
+				authLevel <= auth.authLevel && <NavCard key={index} image={image} label={label} colour={colour} route={route} index={index}></NavCard>
 			))}
 		</main>
 	);
@@ -31,15 +34,15 @@ function NavCard({ image, label, colour, route, index }: { image?: string, label
 }
 
 const cards = [
-	{ image: "/public/images/gr.home.accounts.webp", label: "ACCOUNT", colour:"bg-orange-300", route: "/account" },
-	{ image: "/public/images/gr.home.characters.webp", label: "CHARACTERS", colour:"bg-blue-300", route: "/characters" },
-	{ image: "/public/images/gr.home.rules.png", label: "RULES", colour:"bg-slate-300", route: "/rules" },
-	{ image: "/public/images/gr.home.moves.png", label: "MOVES", colour:"bg-green-300", route: "/moves" },
-	{ image: "/public/images/gr.home.magic.png", label: "MAGIC", colour:"bg-yellow-300", route: "/magic" },
-	{ image: "/public/images/gr.home.psionics.png", label: "PSIONICS", colour:"bg-purple-300", route: "/psionics" },
-	{ image: "/public/images/gr.home.alchemy.png", label: "ALCHEMY", colour:"bg-teal-300", route: "/achemy" },
-	{ image: "/public/images/gr.home.gadgetry.png", label: "GADGETRY", colour:"bg-stone-300", route: "/gadgetry" },
-	{ image: "/public/images/gr.home.companions.png", label: "COMPANIONS", colour:"bg-red-300", route: "/companions" },
-	{ image: "/public/images/gr.home.costs.png", label: "EQUIPMENT", colour:"bg-zinc-300", route: "/equipment" },
-	{ image: "/public/images/gr.home.menagerie.png", label: "DM TOOLS", colour:"bg-rose-300", route: "/dm-tools" },
+	{ image: "/public/images/gr.home.accounts.webp", label: "ACCOUNT", colour:"bg-orange-300", route: "/account", authLevel: 0 },
+	{ image: "/public/images/gr.home.characters.webp", label: "CHARACTERS", colour:"bg-blue-300", route: "/characters", authLevel: 1 },
+	{ image: "/public/images/gr.home.rules.png", label: "RULES", colour:"bg-slate-300", route: "/rules", authLevel: 0 },
+	{ image: "/public/images/gr.home.moves.png", label: "MOVES", colour:"bg-green-300", route: "/moves", authLevel: 0 },
+	{ image: "/public/images/gr.home.magic.png", label: "MAGIC", colour:"bg-yellow-300", route: "/magic", authLevel: 0 },
+	{ image: "/public/images/gr.home.psionics.png", label: "PSIONICS", colour:"bg-purple-300", route: "/psionics", authLevel: 0 },
+	{ image: "/public/images/gr.home.alchemy.png", label: "ALCHEMY", colour:"bg-teal-300", route: "/achemy", authLevel: 0 },
+	{ image: "/public/images/gr.home.gadgetry.png", label: "GADGETRY", colour:"bg-stone-300", route: "/gadgetry", authLevel: 0 },
+	{ image: "/public/images/gr.home.companions.png", label: "COMPANIONS", colour:"bg-red-300", route: "/companions", authLevel: 0 },
+	{ image: "/public/images/gr.home.costs.png", label: "EQUIPMENT", colour:"bg-zinc-300", route: "/equipment", authLevel: 0 },
+	{ image: "/public/images/gr.home.menagerie.png", label: "DM TOOLS", colour:"bg-rose-300", route: "/dm-tools", authLevel: 2 },
 ]

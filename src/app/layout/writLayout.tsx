@@ -1,15 +1,20 @@
 import { Outlet } from "react-router";
+import { ReactNode } from "react";
 import PageBanner from "../pageBanner/pageBanner";
 import Footer from "../components/footer/footer";
 
-import './writLayout.css';
+import st from './writLayout.module.css';
 
-function WritLayout() {
+interface WritLayoutProps {
+	children?: ReactNode;
+}
+
+function WritLayout({ children }: WritLayoutProps) {
 	return (
 		<>
 			<PageBanner />
-			<div className="page-container">
-				<div className="page-content"><Outlet /></div>
+			<div className={st.pageContainer}>
+				<div className={st.pageContent}>{ children || <Outlet /> }</div>
 				<Footer />
 			</div>
 		</>

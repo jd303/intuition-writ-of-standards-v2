@@ -1,43 +1,26 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useContext, createContext } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
+import { AuthContextType } from './firebaseAuthContextType.ts';
 import firebaseConfig from './firebaseconfig.json';
 
+const superAdminUID = "LrOb5kepZdSNuzkH6qGlmIrphas1";
 export const firebaseApp = initializeApp(firebaseConfig);
 /*const analytics = */ getAnalytics(firebaseApp);
 
-// Create an auth context
-export const AuthContext = createContext(null);
-export const AuthContextProvider = (props: unknown) => {
-	const [user, setUser] = useState<User | null>(null);
-	const [error, setError] = useState<Error | null>(null);
-
-	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(getAuth(firebaseApp),
-			(user) => {
-				setUser(user);
-			},
-			(error) => {
-				setError(error);
-			});
-
-		return () => unsubscribe();
-	}, []);
-
-	return <AuthContext.Provider value={ { user, error } } {...props } />
-
-}
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuthState = () => {
 	const auth = useContext(AuthContext);
 
-	if (!auth) return false;
+	if (!auth) return { isAuthenticated: false, authLevel: 0 };
 	else {
 		let isAuthenticated;
 		if (auth.user === undefined) isAuthenticated = undefined;
 		else if (auth.user === null) isAuthenticated = false;
 		else isAuthenticated = true;
-		return { ...auth, isAuthenticated: isAuthenticated }
+
+		const authLevel = (auth.user && auth.user.uid == superAdminUID && 2) || auth.user && 1 || 0;
+		return { ...auth, isAuthenticated: isAuthenticated, authLevel: authLevel }
 	}
 }

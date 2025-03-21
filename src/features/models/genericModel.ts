@@ -1,0 +1,1 @@
+export type GenericModel = Record<string, string | boolean | number>;

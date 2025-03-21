@@ -1,0 +1,20 @@
+.signingForm {
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-standard);
+
+	& .form {
+		display: flex;
+		flex-direction: column;
+		gap: calc(0.5 * var(--padding-standard));
+		max-width: 300px;
+	}
+
+	& .heading {
+		font-size: 1.5rem;
+	}
+}
+
+.error {
+	color: red;
+}

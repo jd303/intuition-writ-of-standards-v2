@@ -1,0 +1,23 @@
+:root {
+	--grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contentList {
+	display: grid;
+	grid-template-columns: var(--grid-template-columns);
+	gap: var(--padding-standard);
+
+	&.grey .contentCard {
+		background-color: rgba(var(--colour-silver), 0.5);
+	}
+}
+
+.contentCard {
+	padding: var(--padding-standard);
+	border-radius: var(--radius-standard);
+
+	display: none;
+	&:has(.removeWhenFilteredEmpty:not(:empty)) {
+		display: block;
+	}
+}

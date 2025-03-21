@@ -1,0 +1,33 @@
+.characterBlock {
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-standard);
+
+	& h1 {
+		margin-bottom: 0;
+	}
+
+	& .characterLink {
+		text-transform: capitalize;
+		font-size: 1.4rem;
+		color: var(--colour-dark);
+		text-decoration: none;
+		padding: var(--padding-standard);
+		background-color: rgb(var(--colour-cream));
+		border-radius: var(--radius-standard);
+	}
+}
+
+.newCharacterForm {
+	display: flex;
+	gap: var(--padding-standard);
+}
+
+hr {
+	height: 30px;
+	margin: var(--padding-standard) 0;
+	opacity: 0.075;
+	background-image: url('/public/images/gr.charactersheet.border.svg');
+	outline: none;
+	border: none;
+}

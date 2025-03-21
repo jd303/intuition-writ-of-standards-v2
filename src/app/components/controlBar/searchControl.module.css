@@ -1,7 +1,14 @@
 .searchControlContainer {
 	display: flex;
+	align-items: center;
+	gap: calc(0.5 * var(--padding-standard));
 	
 	height: var(--control-height);
+
+	& label {
+		font-family: 'trattatello';
+		text-transform: uppercase;
+	}
 
 	& .searchControl {
 		height: var(--control-height);

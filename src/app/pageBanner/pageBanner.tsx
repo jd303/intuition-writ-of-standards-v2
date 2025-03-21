@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useMemo } from "react";
+import { useAuthState } from "../../features/firebase/firebase";
 import { useAppSelector, useAppDispatch } from "../../features/hooks";
 import { RootState } from "../../features/store";
 import { setMenu } from "../../features/ui/uiSlice";
@@ -8,7 +9,9 @@ import IntuitionLogo from "../components/intuition-logo/intuition-logo";
 
 import st from './PageBanner.module.css';
 
+
 function PageBanner() {
+	const auth = useAuthState();
 	const dispatch = useAppDispatch();
 
 	const colour = useAppSelector((state: RootState) => state.ui.colour);
@@ -23,11 +26,11 @@ function PageBanner() {
 
 	const menu = useMemo(() => {
 		return routes.map((route: RouteDefinition, index: number) => {
-			if (route.parentRoute) {
+			if (route.parentRoute && route.authLevel <= auth.authLevel) {
 				return <Link key={route.label + index} to={route.path} className="trattatello">{route.label}</Link>
 			}
 		});
-	}, []);
+	}, [auth]);
 
 	return (
 		<>

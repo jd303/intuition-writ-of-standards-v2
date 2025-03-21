@@ -4,6 +4,10 @@
 	outline: none;
 	background-color: transparent;
 
+	&:hover {
+		box-shadow: none;
+	}
+
 	& img {
 		max-height: 100%;
 	}

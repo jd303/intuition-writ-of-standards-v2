@@ -1,12 +1,13 @@
 :root {
 	--padding-standard: 15px;
 	--radius-standard: 10px;
-	--font-size-standard: 0.9rem;
+	--font-size-standard: 0.85rem;
 	--bevel-size: 7px;
 	--text-shadow-standard: 2px 2px 5px rgba(0, 0, 0, 0.9);
+	--inputs-height: 40px;
 
 	@media (min-width: 768px) {
-		--font-size-standard: 1rem;
+		--font-size-standard: 0.95rem;
 	}
 
 	/* Colour Palette */
@@ -102,6 +103,10 @@ html, body {
 	font-family: trattatello, sans-serif;
 	text-transform: uppercase;
 	line-height: 100%;
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 .outer-container {
@@ -123,4 +128,31 @@ section {
 
 p:first-child {
 	margin-top: 0;
+}
+
+input {
+	height: var(--inputs-height);
+	line-height: var(--inputs-height);
+	padding: 0 calc(0.5 * var(--padding-standard));
+	border: 2px solid rgb(var(--colour-cream));
+	border-radius: calc(0.75 * var(--radius-standard));
+	box-sizing: border-box;
+
+}
+
+button {
+	height: var(--inputs-height);
+	line-height: var(--inputs-height);
+	padding: 0 calc(0.5 * var(--padding-standard));
+	outline: none;
+	border: none;
+	border-radius: calc(0.75 * var(--radius-standard));
+	background-color: rgb(var(--colour-cream));
+	cursor: pointer;
+	transition: all 0.25s;
+	
+	&:hover {
+		background-color: color-mix(in srgb, rgb(var(--colour-cream)) 100%, #fff 50%);
+		box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
+	}
 }

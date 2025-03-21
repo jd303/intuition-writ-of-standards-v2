@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import Account from "./app/account/account";
-import Characters from "./app/characters/characters";
+import CharactersPage from "./app/characters/charactersPage";
+import CharacterSheetPage from "./app/characters/characterSheetPage";
 import RulesPage from "./app/rules/rulesPage";
 import GlossaryPage from "./app/rules/glossary";
 import MovesPage from "./app/rules/moves";
@@ -9,10 +10,12 @@ import MagicGuidePage from "./app/magic/magicGuidePage";
 import MagicSpellsPage from "./app/magic/magicSpellsPage";
 import MagicPotionsPage from "./app/magic/magicPotionsPage";
 import MagicEnchantingPage from "./app/magic/magicEnchantingPage";
+import EquipmentPage from "./app/equipment/equipmentPage";
 
 export const routes: RouteDefinition[] = [
 	{
 		indexPage: true,
+		authLevel: 0,
 		path: "/",
 		label: "Home",
 		sectionColour: 'silver',
@@ -21,6 +24,7 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/account",
+		authLevel: 0,
 		label: "Account",
 		sectionColour: 'silver',
 		element: <Account key="account" />,
@@ -29,14 +33,24 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/characters",
+		authLevel: 1,
 		label: "Characters",
 		sectionColour: 'cobalt',
-		element: <Characters />,
+		element: <CharactersPage />,
 		parentRoute: true,
+	},
+	{
+		path: "/characters/:id",
+		authLevel: 1,
+		label: "Character Sheet",
+		sectionColour: 'cobalt',
+		element: <CharacterSheetPage />,
+		parentRoute: false,
 	},
 
 	{
 		path: "/rules",
+		authLevel: 0,
 		label: "Rules",
 		sectionColour: 'orange',
 		element: <RulesPage />,
@@ -45,6 +59,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/rules/rules",
+		authLevel: 0,
 		label: "Rules",
 		sectionColour: 'orange',
 		element: <RulesPage />,
@@ -52,6 +67,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/rules/glossary",
+		authLevel: 0,
 		label: "Glossary",
 		sectionColour: 'orange',
 		element: <GlossaryPage />,
@@ -59,6 +75,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/rules/moves",
+		authLevel: 0,
 		label: "Moves",
 		sectionColour: 'orange',
 		element: <MovesPage />,
@@ -67,6 +84,7 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/magic",
+		authLevel: 0,
 		label: "Magic",
 		sectionColour: 'purple',
 		parentRoute: true,
@@ -75,6 +93,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/magic/guide",
+		authLevel: 0,
 		label: "Guide",
 		sectionColour: 'purple',
 		parentRoute: false,
@@ -83,6 +102,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/magic/spells",
+		authLevel: 0,
 		label: "Spells",
 		sectionColour: 'purple',
 		parentRoute: false,
@@ -91,6 +111,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/magic/potions",
+		authLevel: 0,
 		label: "Potions",
 		sectionColour: 'purple',
 		parentRoute: false,
@@ -99,6 +120,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/magic/enchanting",
+		authLevel: 0,
 		label: "Enchanting",
 		sectionColour: 'purple',
 		parentRoute: false,
@@ -108,6 +130,7 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/psionics",
+		authLevel: 0,
 		label: "Psionics",
 		sectionColour: 'scarlet',
 		parentRoute: true,
@@ -115,6 +138,7 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/Alchemy",
+		authLevel: 0,
 		label: "Alchemy",
 		sectionColour: 'cyan',
 		parentRoute: true,
@@ -122,6 +146,7 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/gadgetry",
+		authLevel: 0,
 		label: "Gadgetry",
 		sectionColour: 'cobalt',
 		parentRoute: true,
@@ -129,13 +154,16 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/equipment",
+		authLevel: 0,
 		label: "Equipment",
 		sectionColour: 'mustard',
+		element: <EquipmentPage />,
 		parentRoute: true,
 	},
 
 	{
 		path: "/companions",
+		authLevel: 0,
 		label: "Companions",
 		sectionColour: 'green',
 		parentRoute: true,
@@ -143,6 +171,7 @@ export const routes: RouteDefinition[] = [
 
 	{
 		path: "/dm-tools",
+		authLevel: 2,
 		label: "DM Tools",
 		sectionColour: 'silver',
 		sectionName: 'dm-tools',
@@ -151,6 +180,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/dm-tools/tools",
+		authLevel: 2,
 		label: "DM Tools",
 		sectionColour: 'silver',
 		sectionName: 'dm-tools',
@@ -159,6 +189,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/menagerie",
+		authLevel: 2,
 		label: "Menagerie",
 		sectionColour: 'silver',
 		sectionName: 'dm-tools',
@@ -167,6 +198,7 @@ export const routes: RouteDefinition[] = [
 	},
 	{
 		path: "/combat",
+		authLevel: 2,
 		label: "Combat",
 		sectionColour: 'silver',
 		sectionName: 'dm-tools',
@@ -177,6 +209,7 @@ export const routes: RouteDefinition[] = [
 
 export interface RouteDefinition {
 	indexPage?: boolean,
+	authLevel: 0 | 1 | 2,
 	path: string,
 	label: string,
 	element?: ReactElement,
