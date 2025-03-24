@@ -4,13 +4,16 @@ import CharactersPage from "./app/characters/charactersPage";
 import CharacterSheetPage from "./app/characters/characterSheetPage";
 import RulesPage from "./app/rules/rulesPage";
 import GlossaryPage from "./app/rules/glossary";
-import MovesPage from "./app/rules/moves";
+import MovesPage from "./app/rules/movesPage";
 import DMToolsPage from "./app/dmtools/dmtools";
 import MagicGuidePage from "./app/magic/magicGuidePage";
 import MagicSpellsPage from "./app/magic/magicSpellsPage";
 import MagicPotionsPage from "./app/magic/magicPotionsPage";
 import MagicEnchantingPage from "./app/magic/magicEnchantingPage";
 import EquipmentPage from "./app/equipment/equipmentPage";
+import CompanionsPage from "./app/companions/companionsPage";
+import CompanionMovesPage from "./app/companions/companionMovesPage";
+import CompanionsGuidePage from "./app/companions/companionsGuidePage";
 
 export const routes: RouteDefinition[] = [
 	{
@@ -51,10 +54,18 @@ export const routes: RouteDefinition[] = [
 	{
 		path: "/rules",
 		authLevel: 0,
-		label: "Rules",
+		label: "Moves & Rules",
 		sectionColour: 'orange',
-		element: <RulesPage />,
+		element: <MovesPage />,
 		parentRoute: true,
+		sectionName: 'rules',
+	},
+	{
+		path: "/rules/moves",
+		authLevel: 0,
+		label: "Moves",
+		sectionColour: 'orange',
+		element: <MovesPage />,
 		sectionName: 'rules',
 	},
 	{
@@ -71,14 +82,6 @@ export const routes: RouteDefinition[] = [
 		label: "Glossary",
 		sectionColour: 'orange',
 		element: <GlossaryPage />,
-		sectionName: 'rules',
-	},
-	{
-		path: "/rules/moves",
-		authLevel: 0,
-		label: "Moves",
-		sectionColour: 'orange',
-		element: <MovesPage />,
 		sectionName: 'rules',
 	},
 
@@ -166,7 +169,36 @@ export const routes: RouteDefinition[] = [
 		authLevel: 0,
 		label: "Companions",
 		sectionColour: 'green',
+		element: <CompanionsGuidePage />,
 		parentRoute: true,
+		sectionName: 'companions',
+	},
+	{
+		path: "/companions/guide",
+		authLevel: 0,
+		label: "Guide",
+		sectionColour: 'green',
+		element: <CompanionsGuidePage />,
+		parentRoute: false,
+		sectionName: 'companions',
+	},
+	{
+		path: "/companions/list",
+		authLevel: 0,
+		label: "Companions",
+		sectionColour: 'green',
+		element: <CompanionsPage />,
+		parentRoute: false,
+		sectionName: 'companions',
+	},
+	{
+		path: "/companions/moves",
+		authLevel: 0,
+		label: "Moves",
+		sectionColour: 'green',
+		element: <CompanionMovesPage />,
+		parentRoute: false,
+		sectionName: 'companions',
 	},
 
 	{

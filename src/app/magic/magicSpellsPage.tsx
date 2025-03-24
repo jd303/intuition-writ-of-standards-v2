@@ -5,6 +5,7 @@ import ControlBar from '../components/controlBar/controlBar';
 import SearchControl from "../components/controlBar/searchControl";
 
 import st from './magicSpellsPage.module.css';
+import { UIColours } from "../../features/UIColours";
 
 
 function MagicSpellsPage() {
@@ -14,10 +15,9 @@ function MagicSpellsPage() {
 
 	return (
 		<>
-			<ControlBar>
-				<SearchControl value={spellsSearch} onChange={(event) => dispatch(setSpellsSearch(event?.target.value))} onClear={() => dispatch(setSpellsSearch(''))} />
+			<ControlBar colour={UIColours.purple}>
+				<SearchControl name="Search" initialValue={spellsSearch} onChange={(value: string) => dispatch(setSpellsSearch(value))} />
 			</ControlBar>
-
 			<div className={st.spellsContainer}>
 				Spells go here
 			</div>

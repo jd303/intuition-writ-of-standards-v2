@@ -32,7 +32,7 @@
 	background: var(--active-colour);
 	border-bottom: 2px solid #ddd;
 	cursor: pointer;
-	transition: background-color 0.8s linear 0.3s, color 0.8s linear 0.3s;
+	transition: background-color 0.5s linear 0.3s, color 0.5s linear 0.3s;
 
 	&:hover {
 		background: color-mix(in srgb, var(--active-colour) 85%, #fff 15%);
@@ -108,13 +108,13 @@ nav.main {
 	width: 100%;
 	margin: auto;
 	padding: var(--padding-standard) calc(2 * var(--padding-standard)) calc(2 * var(--padding-standard));
-	transform: translateY(45px);
 	background-image: url('../public/images/bg.paper.texture.webp');
 	border-bottom-right-radius: var(--radius-standard);
 	border-bottom-left-radius: var(--radius-standard);
 	box-shadow: inset -8px -8px 8px rgba(0,0, 0, 0.2);
 	pointer-events: none;
 	opacity: 0;
+	transform: translateY(45px);
 
 	&.open {
 		transform: translateY(61px);
@@ -142,7 +142,7 @@ nav.secondary {
 	padding-top: var(--menu-height);
 	padding-left: 53px;
 	background-color: var(--active-colour);
-	transition: background-color 0.5s linear 0.2s;
+	transition: background-color 0.4s linear 0.2s;
 
 	&:empty {
 		height: 0;

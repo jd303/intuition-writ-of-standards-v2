@@ -1,0 +1,58 @@
+.move {
+	--width: 100%;
+	--flex-basis: 100%;
+	--flex-wrap: wrap;
+
+	@media (min-width: 768px) {
+		--width: min(200px, 14vw);
+		--flex-basis: auto;
+		--flex-wrap: none;
+	}
+
+	display: flex;
+	flex-direction: column;
+
+	&.mode-default {
+	}
+
+	&.mode-display {
+		& .pointTrack { display: none; }
+	}
+
+	& .titleBlock {
+		display: flex;
+		flex-wrap: wrap;
+		gap: calc(0.5 * var(--padding-standard));
+
+		& .title {
+			& .titleDetails {
+				font-size: 0.9em;
+				opacity: 0.8;
+			}
+		}
+	}
+
+	& .titleBlock {
+		justify-content: space-between;
+		font-family: trattatello, sans-serif;
+		text-transform: uppercase;
+		font-size: 1.25rem;
+
+		& .diceRoll {
+			width: 34px;
+			height: 30px;
+		}
+	}
+
+	& .description {
+		padding-bottom: var(--padding-standard);
+		border-bottom: 1px dashed #aaa;
+	}
+}
+
+.mode-default {
+}
+
+.mode-display {
+	& .pointTrack { display: none; }
+}

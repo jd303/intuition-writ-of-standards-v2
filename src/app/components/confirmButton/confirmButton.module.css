@@ -1,0 +1,3 @@
+.confirmMode, .confirmMode:hover {
+	filter: invert(100%);
+}

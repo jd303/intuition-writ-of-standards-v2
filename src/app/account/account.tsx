@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import st from './account.module.css';
+import ConfirmButton from "../components/confirmButton/confirmButton";
 
 function Account() {
 	const navigate = useNavigate();
@@ -41,10 +42,9 @@ function Account() {
 		const auth = getAuth();
 
 		signInWithEmailAndPassword(auth, loginEmailInput, loginPasswordInput)
-			.then((userCredential) => {
+			/*.then((userCredential) => {
 				const user = userCredential.user;
-				console.log("LOGGED IN", user);
-			})
+			})*/
 			.catch((error) => {
 				const errorMessage = error.message;
 				setLoginError(errorMessage);
@@ -80,7 +80,7 @@ function Account() {
 				<div className={st.form}>
 					<div>You are logged in as {loggedInUserEmail}.</div>
 					<button onClick={goToCharacters}>Characters</button>
-					<button onClick={logout}>Logout</button>
+					<ConfirmButton onClick={logout} label="Logout"></ConfirmButton>
 				</div>
 			)}
 			{!loggedIn && (

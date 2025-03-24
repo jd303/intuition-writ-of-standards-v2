@@ -8,12 +8,39 @@
 	color: red;
   }
 
-.controlBar {
-	padding: var(--padding-standard);
-	background-image: url(../../../public/images/bg.paper.jpg);
-	clip-path: var(--shape-bevelled);
+.controlBarContainer {
+	position: sticky;
+	z-index: 10;
+	top: var(--menu-height);
+	padding: var(--padding-standard) 0;
+	margin-top: calc(-2 * var(--padding-standard));
+	background-color: #fff;
 
-	&:empty {
-		display: none;
+	.controlBar {
+		flex-basis: 100%;
+		display: flex;
+		gap: calc(2 * var(--padding-standard));
+		padding: var(--padding-standard);
+		clip-path: var(--shape-bevelled);
+
+		&:empty {
+			display: none;
+		}
+
+		&.purple {
+			background-color: rgba(var(--colour-purple), 0.2);
+		}
+
+		&.mustard {
+			background-color: rgba(var(--colour-mustard), 0.3);
+		}
+
+		&.green {
+			background-color: rgba(var(--colour-green), 0.3);
+		}
+
+		&.orange {
+			background-color: rgba(var(--colour-orange), 0.3);
+		}
 	}
 }

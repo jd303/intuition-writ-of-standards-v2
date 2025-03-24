@@ -9,12 +9,15 @@ import { useDispatch } from 'react-redux';
 import { updateMovesData } from '../features/firebase/data/movesDataSlice';
 import { updateCharactersData } from '../features/firebase/data/charactersDataSlice';
 import { updateMenagerieData } from '../features/firebase/data/menagerieDataSlice.ts';
+import { updateCompanionMovesData } from '../features/firebase/data/companionMovesDataSlice.ts';
 import { updateCombatData } from '../features/firebase/data/combatsDataSlice.ts';
 import { updateDcsData } from '../features/firebase/data/dcsDataSlice.ts';
 import { updateEquipmentData } from '../features/firebase/data/equipmentDataSlice.ts';
 
 import WritLayout from './layout/writLayout.tsx';
 import Home from './home/home.tsx';
+import { updateSpellsData } from '../features/firebase/data/spellsDataSlice.ts';
+import { updateStatusesData } from '../features/firebase/data/statusesDataSlice.ts';
 
 export function App() {
 	const authState = useAuthState();
@@ -26,7 +29,7 @@ export function App() {
 		async function collectData() {
 
 			// Collect moves data
-			const movesDataRef = await ref(database, '/moves');
+			const movesDataRef = await ref(database, '/moves_v2');
 			onValue(movesDataRef, (snapshot) => {
 				dispatch(updateMovesData(snapshot.val()));
 			});
@@ -34,22 +37,29 @@ export function App() {
 			// Collect spells data
 			const spellsDataRef = await ref(database, '/spells');
 			onValue(spellsDataRef, (snapshot) => {
-				dispatch(updateMovesData(snapshot.val()));
+				dispatch(updateSpellsData(snapshot.val()));
 			});
 
 			// Collect statuses data
 			const statusesDataRef = await ref(database, '/statuses');
 			onValue(statusesDataRef, (snapshot) => {
-				dispatch(updateMovesData(snapshot.val()));
+				dispatch(updateStatusesData(snapshot.val()));
 			});
-		}
 
-		if (authState.authLevel >= 2) {
 			// Collect menagerie data
 			const menagerieRef = ref(database, `/menagerie`);
 			onValue(menagerieRef, (snapshot) => {
 				dispatch(updateMenagerieData(snapshot.val()));
 			});
+
+			// Collect companion moves data
+			const companionMovesRef = ref(database, `/companionmoves`);
+			onValue(companionMovesRef, (snapshot) => {
+				dispatch(updateCompanionMovesData(snapshot.val()));
+			});
+		}
+
+		if (authState.authLevel >= 2) {
 
 			// Collect combats data
 			const combatsRef = ref(database, `/combats`);
@@ -80,7 +90,6 @@ export function App() {
 				if (user && user.uid) {
 					const charactersRef = ref(database, `/characters/${user.uid}`);
 					onValue(charactersRef, (snapshot) => {
-						console.log('Got chars:', snapshot.val());
 						dispatch(updateCharactersData(snapshot.val()));
 					});
 				}

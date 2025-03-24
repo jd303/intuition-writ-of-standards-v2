@@ -1,0 +1,18 @@
+.sectionNavContainer {
+	display: flex;
+	align-items: center;
+	gap: calc(0.5 * var(--padding-standard));
+	
+	height: var(--control-height);
+
+	& label {
+		font-family: 'trattatello';
+		text-transform: uppercase;
+	}
+
+	& .select {
+		height: var(--control-height);
+		padding: var(--control-padding-vert) var(--control-padding-horz);
+		box-sizing: border-box;
+	}
+}

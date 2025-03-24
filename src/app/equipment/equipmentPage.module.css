@@ -7,8 +7,10 @@
 .header {
 	font-family: 'Trattatello';
 	text-transform: uppercase;
-	font-size: 1.75rem;
+	font-size: var(--font-size-h1);
+	line-height: 100%;
 	border-bottom: 1px solid #aaa;
+	padding-bottom: calc(0.75 * var(--padding-standard));
 	margin-bottom: var(--padding-standard);
 }
 

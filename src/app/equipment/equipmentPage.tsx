@@ -2,6 +2,7 @@ import { useCallback, useMemo } from "react";
 import { useAppDispatch, useAppSelector } from "../../features/hooks";
 import ContentList from "../components/contentList/contentList";
 import { GenericModel } from "../../features/models/genericModel";
+import { UIColours } from "../../features/UIColours";
 import ControlBar from "../components/controlBar/controlBar";
 import SearchControl from "../components/controlBar/searchControl";
 import { setEquipmentSearch } from "../../features/search/searchSlice";
@@ -27,7 +28,7 @@ function EquipmentPage() {
 	}, [equipment]);
 
 	const filteredItems = useCallback((equipmentKey: string) => {
-		return categorisedItems[equipmentKey].filter((item) => ((item.name as string).toLowerCase() + (item.description as string).toLowerCase()).includes(equipmentSearch));
+		return categorisedItems[equipmentKey].filter((item) => ((item.name as string).toLowerCase() + (item.description as string).toLowerCase()).includes(equipmentSearch.toLowerCase()));
 	}, [categorisedItems, equipmentSearch]);
 
 	return (
@@ -42,14 +43,14 @@ function EquipmentPage() {
 				</p>
 				<p>The below are indicative of typical prices across the Civil Holds. Market forces may apply pressure to prices.</p>
 			</section>
-			<ControlBar>
+			<ControlBar colour={UIColours.mustard}>
 				<SearchControl name="Search" initialValue={equipmentSearch} onChange={(value: string) => dispatch(setEquipmentSearch(value))} />
 			</ControlBar>
-			<ContentList color="grey">
+			<ContentList color={UIColours.mustard} style="grid">
 				{Object.keys(categorisedItems).map((equipmentKey: string) => (
-					<div className={stcl.contentCard} key={`category-${equipmentKey}`}>
+					<div className={[stcl.contentCard, stcl.contentListParent].join(' ')} key={`category-${equipmentKey}`}>
 						<div className={st.header}>{equipmentKey}</div>
-						<div className={[st.equipmentList, stcl.removeWhenFilteredEmpty].join(' ')}>
+						<div className={[st.equipmentList, stcl.removeParentWhenEmpty].join(' ')}>
 							{filteredItems(equipmentKey).map((item, index) => (
 								<div className={st.item} key={`${equipmentKey} ${index}`}>
 									<div className={st.itemHead}>

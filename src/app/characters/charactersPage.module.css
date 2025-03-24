@@ -7,7 +7,14 @@
 		margin-bottom: 0;
 	}
 
+	& .characterItem {
+		display: flex;
+		gap: calc(0.5 * var(--padding-standard));
+		align-items: center;
+	}
+
 	& .characterLink {
+		min-width: 270px;
 		text-transform: capitalize;
 		font-size: 1.4rem;
 		color: var(--colour-dark);
@@ -15,11 +22,24 @@
 		padding: var(--padding-standard);
 		background-color: rgb(var(--colour-cream));
 		border-radius: var(--radius-standard);
+		transition: all 0.2s;
+
+		&:hover {
+			background-color: color-mix(in srgb, rgb(var(--colour-cream)) 100%, #fff 50%);
+			box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	& .confirmButton {
+		height: 50px;
+		padding-left: var(--padding-standard);
+		padding-right: var(--padding-standard);
 	}
 }
 
 .newCharacterForm {
 	display: flex;
+	flex-wrap: wrap;
 	gap: var(--padding-standard);
 }
 
@@ -30,4 +50,9 @@ hr {
 	background-image: url('/public/images/gr.charactersheet.border.svg');
 	outline: none;
 	border: none;
+}
+
+.createCharacterError {
+	flex-basis: 100%;
+	color: red;
 }

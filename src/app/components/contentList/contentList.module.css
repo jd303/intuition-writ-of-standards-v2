@@ -3,21 +3,45 @@
 }
 
 .contentList {
-	display: grid;
-	grid-template-columns: var(--grid-template-columns);
-	gap: var(--padding-standard);
+	&.grid {
+		display: grid;
+		grid-template-columns: var(--grid-template-columns);
+		gap: var(--padding-standard);
+	}
+
+	&.list {
+		display: flex;
+		flex-direction: column;
+		gap: calc(0.5 * var(--padding-standard));
+	}	
 
 	&.grey .contentCard {
 		background-color: rgba(var(--colour-silver), 0.5);
+	}
+
+	&.mustard .contentCard {
+		background-color: rgba(var(--colour-mustard), 0.15);
+	}
+
+	&.green .contentCard {
+		background-color: rgba(var(--colour-green), 0.15);
+	}
+
+	&.orange .contentCard {
+		background-color: rgba(var(--colour-orange), 0.15);
 	}
 }
 
 .contentCard {
 	padding: var(--padding-standard);
 	border-radius: var(--radius-standard);
+	clip-path: var(--shape-bevelled);
+}
 
-	display: none;
-	&:has(.removeWhenFilteredEmpty:not(:empty)) {
-		display: block;
+/* Allows filters to remove list parents when empty */
+.contentListParent {
+	display: none !important;
+	&:has(.removeParentWhenEmpty:not(:empty)) {
+		display: inherit !important;
 	}
 }

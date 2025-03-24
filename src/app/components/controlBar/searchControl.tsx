@@ -27,7 +27,7 @@ function SearchControl( { name, initialValue, onChange }: { name: string, initia
 	return (
 		<div className={st.searchControlContainer}>
 			<label htmlFor={`search-${name}`}>{name}</label>
-			<input className={st.searchControl} type="text" value={inputValue} onChange={(changeEvent) => inputUpdated(changeEvent)} />
+			<input className={st.searchControl} type="text" id={`search-${name}`} value={inputValue} onChange={(changeEvent) => inputUpdated(changeEvent)} />
 			<ButtonControl onClick={inputCleared}><img src={icoClear} alt="Clear" /></ButtonControl>
 		</div>
 	)

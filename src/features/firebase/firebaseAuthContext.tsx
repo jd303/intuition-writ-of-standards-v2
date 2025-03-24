@@ -14,7 +14,6 @@ export const AuthContextProvider = (props: AuthContextProviderProps) => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(getAuth(firebaseApp),
 			(user) => {
-				console.log("USER SET", user);
 				setUser(user);
 			},
 			(error) => {

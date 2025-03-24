@@ -1,0 +1,35 @@
+.move {
+	--width: 100%;
+	--flex-basis: 100%;
+	--flex-wrap: wrap;
+
+	@media (min-width: 768px) {
+		--width: min(200px, 14vw);
+		--flex-basis: auto;
+		--flex-wrap: none;
+	}
+
+	display: flex;
+	flex-wrap: var(--flex-wrap);
+
+	.name {
+		flex-basis: var(--flex-basis);
+		min-width: var(--width);
+		max-width: var(--width);
+		font-family: 'trattatello';
+		text-transform: uppercase;
+		line-height: 100%;
+		font-size: 1.25rem;
+		word-wrap: break-word;
+		margin-right: var(--padding-standard);
+	}
+
+	.details {
+		.type {
+			display: block;
+			font-family: 'trattatello';
+			text-transform: uppercase;
+			margin-right: calc(0.5 * var(--padding-standard));
+		}
+	}
+}

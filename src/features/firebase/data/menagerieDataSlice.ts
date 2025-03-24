@@ -1,19 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { GenericModel } from "../../models/genericModel";
+
+interface MenagerieData {
+	menagerie: GenericModel[]
+}
+
+const initialState: MenagerieData = {
+	menagerie: []
+}
 
 export const menagerieDataSlice = createSlice({
 	name: "menagerieData",
-	initialState: {
-		value: [],
-	},
+	initialState: initialState,
 	reducers: {
 		updateMenagerieData: (state, data) => {
-			state.value = data.payload;
+			state.menagerie = data.payload;
 		}
 	}
 });
 
 export const { updateMenagerieData } = menagerieDataSlice.actions;
-
-export const selectMenagerieData = (state) => state.menagerieData.value;
 
 export default menagerieDataSlice.reducer;

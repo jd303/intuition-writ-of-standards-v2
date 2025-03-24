@@ -1,12 +1,15 @@
 :root {
-	--padding-standard: 15px;
+	--padding-standard: 10px;
 	--radius-standard: 10px;
-	--font-size-standard: 0.85rem;
+	--font-size-standard: 0.9rem;
+	--font-size-h1: 1.75rem;
+	--font-size-h2: 1.25rem;
 	--bevel-size: 7px;
 	--text-shadow-standard: 2px 2px 5px rgba(0, 0, 0, 0.9);
 	--inputs-height: 40px;
 
 	@media (min-width: 768px) {
+		--padding-standard: 15px;
 		--font-size-standard: 0.95rem;
 	}
 
@@ -85,6 +88,46 @@
 	src: url("public/fonts/trattatello/trattatello.woff2") format("woff2"), url("public/fonts/trattatello/trattatello.woff") format("woff");
 }
 
+@media screen {
+	.forPrint {
+		display: none;
+	}
+	.notForPrint {
+		display: block;
+	}
+}
+
+@media print {
+	@page { margin: 0.5cm; } /* Drops header / footer */
+
+	.forPrint {
+		display: block;
+	}
+
+	.notForPrint {
+		display: none;
+	}
+
+	body {
+		padding: 0;
+		margin: 0;
+		background: transparent;
+	}
+
+	h2 {
+		position: absolute;
+		top: 0;
+		right: 0;
+		line-height: 100%;
+	}
+
+	.printHeader,
+	.printTitle,
+	.printFooter {
+		display: none;
+	}
+}
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -130,14 +173,18 @@ p:first-child {
 	margin-top: 0;
 }
 
-input {
+input, select {
 	height: var(--inputs-height);
 	line-height: var(--inputs-height);
 	padding: 0 calc(0.5 * var(--padding-standard));
 	border: 2px solid rgb(var(--colour-cream));
 	border-radius: calc(0.75 * var(--radius-standard));
 	box-sizing: border-box;
+}
 
+select {
+	height: calc(0.75 * var(--inputs-height));
+	text-transform: capitalize;
 }
 
 button {
