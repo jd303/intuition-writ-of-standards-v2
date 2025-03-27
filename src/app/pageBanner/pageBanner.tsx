@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useMemo } from "react";
 import { useAuthState } from "../../features/firebase/firebase";
-import { useAppSelector, useAppDispatch } from "../../features/hooks";
+import { useAppSelector, useAppDispatch } from "../../features/firebaseHooks";
 import { RootState } from "../../features/store";
 import { setMenu } from "../../features/ui/uiSlice";
 import { RouteDefinition, routes } from "../../routes";
@@ -35,11 +35,10 @@ function PageBanner() {
 	return (
 		<>
 			<div className={[st.pageBanner, "trattatello", st[`banner-${colour}`]].join(' ')} onClick={() => dispatch(setMenu(!menuOpen))}>
+				<div className={st.logo}><IntuitionLogo /></div>
 				<div className={st.pageTitle}>
-					<div className={st.logo}><IntuitionLogo /></div>
 					{displayTitle}
 				</div>
-
 				<div>
 					<button className={st.hamburger}>
 						<div className={[st.notch, st.one].join(' ')}></div>

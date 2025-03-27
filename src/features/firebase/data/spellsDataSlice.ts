@@ -1,19 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Spell } from "../../models/spellModel";
+
+interface SpellsData {
+	spells: Spell[]
+}
+
+const initialState: SpellsData = {
+	spells: []
+}
 
 export const spellsDataSlice = createSlice({
 	name: "spellsData",
-	initialState: {
-		value: [],
-	},
+	initialState: initialState,
 	reducers: {
 		updateSpellsData: (state, data) => {
-			state.value = data.payload;
+			state.spells = data.payload;
 		}
 	}
 });
 
 export const { updateSpellsData } = spellsDataSlice.actions;
-
-export const selectSpellsData = (state) => state.spellsData.value;
 
 export default spellsDataSlice.reducer;

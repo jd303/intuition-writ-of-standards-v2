@@ -1,0 +1,28 @@
+.contentCard {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	padding: var(--padding-standard);
+	border-radius: var(--radius-standard);
+	clip-path: var(--shape-bevelled);
+
+	&.grey {
+		background-color: rgba(var(--colour-silver), 0.5);
+	}
+
+	&.mustard {
+		background-color: rgba(var(--colour-mustard), 0.15);
+	}
+
+	&.green {
+		background-color: rgba(var(--colour-green), 0.15);
+	}
+
+	&.orange {
+		background-color: rgba(var(--colour-orange), 0.15);
+	}
+
+	&.purple {
+		background-color: rgba(var(--colour-purple), 0.15);
+	}
+}

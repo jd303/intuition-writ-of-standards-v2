@@ -1,9 +1,10 @@
 export interface Spell {
 	id: string,
 	name: string,
-	easy_name: string,
+	easyname: string,
 	level: number,
-	source: string,
+	school: string,
+	sources: string,
 	shape: string,
 	cantrip: string,
 	cantripcost: number,

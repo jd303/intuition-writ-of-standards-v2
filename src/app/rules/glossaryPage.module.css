@@ -1,0 +1,10 @@
+.glossaryLayout {
+	.termName {
+		font-weight: bold;
+	}
+
+	& section {
+		margin-bottom: calc(2 * var(--padding-standard));
+		scroll-margin-top: 160px;
+	}
+}

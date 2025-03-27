@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router';
-import { useAppDispatch } from './hooks';
+import { useAppDispatch } from './firebaseHooks';
 import { setTitle, setSubtitle, setSection, setColour } from './ui/uiSlice';
 import { RouteDefinition, routes } from '../routes';
 import { useAuthState } from './firebase/firebase';

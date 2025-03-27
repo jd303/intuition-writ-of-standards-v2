@@ -9,7 +9,6 @@
 	& .pageContent {
 		display: flex;
 		flex-direction: column;
-		gap: var(--padding-standard);
 		padding: calc(2 * var(--padding-standard));
 	}
 }

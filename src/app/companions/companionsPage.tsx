@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
-import { useAppDispatch, useAppSelector } from '../../features/hooks';
+import { useAppDispatch, useAppSelector } from '../../features/firebaseHooks';
 import { setCompanionsSearch } from '../../features/search/searchSlice';
-import { UIColours } from '../../features/UIColours';
+import { UIColours } from '../../features/constants/UIColours';
 import ControlBar from '../components/controlBar/controlBar';
 import SearchControl from '../components/controlBar/searchControl';
 import { GenericModel } from '../../features/models/genericModel';
@@ -9,6 +9,7 @@ import ContentList from '../components/contentList/contentList';
 
 import st from './companionsPage.module.css';
 import stcl from '../components/contentList/contentList.module.css';
+import ContentCard from '../components/contentList/contentCard';
 
 export default function CompanionsPage() {
 	const dispatch = useAppDispatch();
@@ -30,7 +31,7 @@ export default function CompanionsPage() {
 			if (!categorisedMenagerie[key]) categorisedMenagerie[key] = [];
 			categorisedMenagerie[key].push(item);
 		});
-		
+
 		return categorisedMenagerie;
 	}, [companionableCreatures]);
 
@@ -43,24 +44,23 @@ export default function CompanionsPage() {
 	}, [companionsSearch, categorisedMenagerie]);
 
 	return (
-		<>
+
+		<ContentList colour={UIColours.green} style="grid">
 			<ControlBar colour={UIColours.green}>
 				<SearchControl name="Search" initialValue={companionsSearch} onChange={(value: string) => dispatch(setCompanionsSearch(value))} />
 			</ControlBar>
-			<ContentList color={UIColours.green} style="grid">
-				{Object.keys(categorisedMenagerie).map((companionCategory: string) => (
-					<div className={[st.menagerieContainer, stcl.contentListParent].join(' ')}>
-						<div className={st.header}>{companionCategory}</div>
-						<div className={[st.menagerieList, stcl.removeParentWhenEmpty].join(' ')}>
-							{filteredMenagerie(companionCategory).map((companion) => (
-								<div className={stcl.contentCard} key={`companion-${companion.name}`}>
-									{companion.name}
-								</div>
-							))}
-						</div>
+			{Object.keys(categorisedMenagerie).map((companionCategory: string) => (
+				<div className={[st.menagerieContainer, stcl.contentListParent].join(' ')}>
+					<div className={st.header}>{companionCategory}</div>
+					<div className={[st.menagerieList, stcl.removeParentWhenEmpty].join(' ')}>
+						{filteredMenagerie(companionCategory).map((companion) => (
+							<ContentCard colour={UIColours.green} key={`companion-${companion.name}`}>
+								{companion.name}
+							</ContentCard>
+						))}
 					</div>
-				))}
-			</ContentList>
-		</>
+				</div>
+			))}
+		</ContentList>
 	);
 }

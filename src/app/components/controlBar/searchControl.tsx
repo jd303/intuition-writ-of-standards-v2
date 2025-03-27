@@ -1,7 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import ButtonControl from './buttonControl';
-import icoClear from '../../../../public/images/icons/ico.clear.svg';
 
+import icoClose from '../../../../public/images/icons/ico.close.thick.svg';
 import st from './searchControl.module.css';
 
 function SearchControl( { name, initialValue, onChange }: { name: string, initialValue: string, onChange: (value: string) => void }) {
@@ -27,8 +26,10 @@ function SearchControl( { name, initialValue, onChange }: { name: string, initia
 	return (
 		<div className={st.searchControlContainer}>
 			<label htmlFor={`search-${name}`}>{name}</label>
-			<input className={st.searchControl} type="text" id={`search-${name}`} value={inputValue} onChange={(changeEvent) => inputUpdated(changeEvent)} />
-			<ButtonControl onClick={inputCleared}><img src={icoClear} alt="Clear" /></ButtonControl>
+			<div className={[st.inputContainer, (inputValue.length && st.notEmpty || '')].join(' ')}>
+				<button className={st.clear} onClick={inputCleared}><img src={icoClose} alt="Close" /></button>
+				<input className={st.searchControl} type="text" id={`search-${name}`} value={inputValue} onChange={(changeEvent) => inputUpdated(changeEvent)} />
+			</div>
 		</div>
 	)
 }

@@ -1,0 +1,7 @@
+.contentPageContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-standard);
+	max-width: var(--max-width-content-page);
+	margin: auto;
+}

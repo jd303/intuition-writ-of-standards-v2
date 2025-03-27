@@ -4,9 +4,11 @@
 	--font-size-standard: 0.9rem;
 	--font-size-h1: 1.75rem;
 	--font-size-h2: 1.25rem;
+	--font-size-h3: 1.1rem;
 	--bevel-size: 7px;
 	--text-shadow-standard: 2px 2px 5px rgba(0, 0, 0, 0.9);
 	--inputs-height: 40px;
+	--max-width-content-page: 1000px;
 
 	@media (min-width: 768px) {
 		--padding-standard: 15px;
@@ -152,6 +154,16 @@ html, body {
 	}
 }
 
+h1 {
+	font-size: var(--font-size-h1);
+}
+h2 {
+	font-size: var(--font-size-h2);
+}
+h3 {
+	font-size: var(--font-size-h3);
+}
+
 .outer-container {
 	padding: var(--padding-standard);
 }
@@ -160,8 +172,7 @@ section {
 	&:after {
 		content: "";
 		display: block;
-		left: 0;
-		bottom: calc(var(--padding-standard)* -1);
+		margin: calc(2 * var(--padding-standard)) 0;
 		width: 100%;
     	height: 20px;
 		background-image: url('/public/images/gr.charactersheet.border.svg');

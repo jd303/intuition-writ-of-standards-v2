@@ -1,16 +1,17 @@
 :root {
-	--menu-height: 45px;
-	--title-size: 1.3rem;
+	--banner-height: 45px;
 	--banner-width: 150%;
 	--banner-max-width: 800px;
+	--font-size-title: 1.3rem;
 	--hamburger-left: 100%;
 	--hamburger-right: 21%;
+	--banner-shift-visual: calc(-1 * 2vw);
 
 	@media (min-width: 768px) {
-		--menu-height: 60px;
-		--title-size: 1.5em;
+		--banner-height: 55px;
 		--banner-width: 100%;
 		--banner-max-width: 400px;
+		--font-size-title: 1.5rem;
 		--hamburger-right: 40px;
 	}
 }
@@ -19,13 +20,14 @@
 	--active-colour: var(--colour-silver);
 
 	position: fixed;
-	z-index: 3;
+	z-index: 12;
 	display: flex;
 	justify-content: space-between;
-	height: var(--menu-height);
+	align-items: center;
+	height: var(--banner-height);
 	width: 100%;
 	text-align: center;
-	font-size: var(--title-size);
+	font-size: var(--font-size-title);
 	color: #fff;
 	padding: 0 calc(1/2 * var(--padding-standard));
 	box-sizing: border-box;
@@ -38,16 +40,18 @@
 		background: color-mix(in srgb, var(--active-colour) 85%, #fff 15%);
 	}
 
+	& .logo {
+		height: 70%;
+		filter: invert(100%);
+		transition: all 0.8s linear 0.3s;
+	}
+
 	& .pageTitle {
 		display: flex;
 		align-items: center;
 		gap: var(--padding-standard);
-
-		& .logo {
-			height: 70%;
-			filter: invert(100%);
-			transition: all 0.8s linear 0.3s;
-		}
+		padding-top: 4px;
+		margin-left: var(--banner-shift-visual);
 	}
 }
 
@@ -100,8 +104,8 @@
 nav.main {
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	z-index: 2;
+	position: fixed;
+	z-index: 11;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -114,10 +118,12 @@ nav.main {
 	box-shadow: inset -8px -8px 8px rgba(0,0, 0, 0.2);
 	pointer-events: none;
 	opacity: 0;
-	transform: translateY(45px);
+	box-sizing: border-box;
+	transform: translateY(calc(var(--banner-height) - 12px));
+	transition: all 0.5s;
 
 	&.open {
-		transform: translateY(61px);
+		transform: translateY(var(--banner-height));
 		opacity: 1;
 		pointer-events: all;
 	}
@@ -137,10 +143,12 @@ nav.main {
 nav.secondary {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: calc(0.5 * var(--padding-standard));
-	height: calc(0.75 * var(--menu-height));
-	padding-top: var(--menu-height);
-	padding-left: 53px;
+	height: calc(0.75 * var(--banner-height));
+	padding-top: var(--banner-height);
+	margin-left: var(--banner-shift-visual);
+	/*padding-left: 53px;*/
 	background-color: var(--active-colour);
 	transition: background-color 0.4s linear 0.2s;
 

@@ -3,8 +3,9 @@ import Account from "./app/account/account";
 import CharactersPage from "./app/characters/charactersPage";
 import CharacterSheetPage from "./app/characters/characterSheetPage";
 import RulesPage from "./app/rules/rulesPage";
-import GlossaryPage from "./app/rules/glossary";
+import GlossaryPage from "./app/rules/glossaryPage";
 import MovesPage from "./app/rules/movesPage";
+import StatusesPage from "./app/rules/statusesPage";
 import DMToolsPage from "./app/dmtools/dmtools";
 import MagicGuidePage from "./app/magic/magicGuidePage";
 import MagicSpellsPage from "./app/magic/magicSpellsPage";
@@ -66,6 +67,14 @@ export const routes: RouteDefinition[] = [
 		label: "Moves",
 		sectionColour: 'orange',
 		element: <MovesPage />,
+		sectionName: 'rules',
+	},
+	{
+		path: "/rules/statuses",
+		authLevel: 0,
+		label: "Statuses",
+		sectionColour: 'orange',
+		element: <StatusesPage />,
 		sectionName: 'rules',
 	},
 	{

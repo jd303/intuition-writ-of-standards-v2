@@ -13,22 +13,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: calc(0.5 * var(--padding-standard));
-	}	
-
-	&.grey .contentCard {
-		background-color: rgba(var(--colour-silver), 0.5);
-	}
-
-	&.mustard .contentCard {
-		background-color: rgba(var(--colour-mustard), 0.15);
-	}
-
-	&.green .contentCard {
-		background-color: rgba(var(--colour-green), 0.15);
-	}
-
-	&.orange .contentCard {
-		background-color: rgba(var(--colour-orange), 0.15);
 	}
 }
 

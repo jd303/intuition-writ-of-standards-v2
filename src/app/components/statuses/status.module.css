@@ -1,0 +1,35 @@
+.status {
+	display: flex;
+	flex-direction: column;
+	gap: calc(0.5 * var(--padding-standard));
+
+	& .titleBlock {
+		display: flex;
+		gap: var(--padding-standard);
+		align-items: center;
+
+		.name {
+			font-family: 'trattatello', sans-serif;
+			text-transform: uppercase;
+			font-size: 1.25rem;
+			line-height: 100%;
+
+			&.negative {
+				color: rgb(var(--colour-scarlet));
+			}
+			&.positive {
+				color: rgb(var(--colour-mustard));
+			}
+		}
+
+		.duration {
+			display: flex;
+			gap: calc(0.5 * var(--padding-standard));
+			align-items: center;
+			
+			& img {
+				height: 20px;
+			}
+		}
+	}
+}

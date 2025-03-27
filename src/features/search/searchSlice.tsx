@@ -1,8 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { SELECTOR_DEFAULT } from '../../app/components/controlBar/selectorDropdown';
 
 interface SearchState {
 	spellsSearch: string;
+	spellLevelSelection: string;
+	spellSchoolSelection: string;
+	magicSourceSelection: string;
+	magicPotionsSearch: string;
 	movesSearch: string;
+	statusesSearch: string;
+	statusesCategorySelection: string;
 	alchemyRecipesSearch: string;
 	alchemyReagentsSearch: string;
 	gadgetsSearch: string;
@@ -15,7 +22,13 @@ interface SearchState {
 
 const initialState: SearchState = {
 	spellsSearch: localStorage.getItem('spellsSearch') || '',
+	spellLevelSelection: localStorage.getItem('spellLevelSelection') || '',
+	spellSchoolSelection: localStorage.getItem('spellSchoolSelection') || '',
+	magicSourceSelection: localStorage.getItem('magicSourceSelection') || '',
+	magicPotionsSearch: localStorage.getItem('magicPotionsSearch') || '',
 	movesSearch: localStorage.getItem('movesSearch') || '',
+	statusesSearch: localStorage.getItem('statusesSearch') || '',
+	statusesCategorySelection: localStorage.getItem('statusesCategorySelection') || SELECTOR_DEFAULT,
 	alchemyRecipesSearch: localStorage.getItem('alchemyRecipesSearch') || '',
 	alchemyReagentsSearch: localStorage.getItem('alchemyReagentsSearch') || '',
 	gadgetsSearch: localStorage.getItem('gadgetsSearch') || '',
@@ -43,9 +56,33 @@ const searchSlice = createSlice({
 			state.spellsSearch = action.payload;
 			writeLocalStorageValue('spellsSearch', action.payload);
 		},
+		setSpellLevelSelection: (state, action) => {
+			state.spellLevelSelection = action.payload;
+			writeLocalStorageValue('spellLevelSelection', action.payload);
+		},
+		setSpellSchoolSelection: (state, action) => {
+			state.spellSchoolSelection = action.payload;
+			writeLocalStorageValue('spellSchoolSelection', action.payload);
+		},
+		setMagicSourceSelection: (state, action) => {
+			state.magicSourceSelection = action.payload;
+			writeLocalStorageValue('magicSourceSelection', action.payload);
+		},
+		setMagicPotionsSearch: (state, action) => {
+			state.magicPotionsSearch = action.payload;
+			writeLocalStorageValue('magicPotionsSearch', action.payload);
+		},
 		setMovesSearch: (state, action) => {
 			state.movesSearch = action.payload;
 			writeLocalStorageValue('movesSearch', action.payload);
+		},
+		setStatusesSearch: (state, action) => {
+			state.statusesSearch = action.payload;
+			writeLocalStorageValue('statusesSearch', action.payload);
+		},
+		setStatusesCategorySelection: (state, action) => {
+			state.statusesCategorySelection = action.payload;
+			writeLocalStorageValue('statusesCategorySelection', action.payload);
 		},
 		setAlchemyRecipesSearch: (state, action) => {
 			state.alchemyRecipesSearch = action.payload;
@@ -82,6 +119,6 @@ const searchSlice = createSlice({
 	}
 });
 
-export const { setSpellsSearch, setMovesSearch, setAlchemyRecipesSearch, setAlchemyReagentsSearch, setGadgetsSearch, setCompanionsSearch, setCompanionMovesSearch, setEquipmentSearch, setMenagerieSearch, setCombatSearch } = searchSlice.actions;
+export const { setSpellsSearch, setSpellLevelSelection, setMagicSourceSelection, setSpellSchoolSelection, setMagicPotionsSearch, setMovesSearch, setStatusesSearch, setStatusesCategorySelection, setAlchemyRecipesSearch, setAlchemyReagentsSearch, setGadgetsSearch, setCompanionsSearch, setCompanionMovesSearch, setEquipmentSearch, setMenagerieSearch, setCombatSearch } = searchSlice.actions;
 
 export default searchSlice.reducer;

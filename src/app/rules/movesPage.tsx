@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../features/hooks';
+import { useAppDispatch, useAppSelector } from '../../features/firebaseHooks';
 import { setMovesSearch } from '../../features/search/searchSlice';
-import { UIColours } from '../../features/UIColours';
+import { UIColours } from '../../features/constants/UIColours';
 import { Move } from '../../features/models/moveModel';
+import ContentPageContainer from '../components/contentPage/contentPageContainer';
 import ContentList from '../components/contentList/contentList';
 import ControlBar from '../components/controlBar/controlBar';
 import SearchControl from '../components/controlBar/searchControl';
@@ -10,6 +11,7 @@ import SectionNav, { SectionNavDefinition } from '../components/controlBar/secti
 import MoveBlock from '../components/moves/MoveBlock';
 import st from './movesPage.module.css';
 import stcl from '../components/contentList/contentList.module.css';
+import ContentCard from '../components/contentList/contentCard';
 
 export default function MovesPage() {
 	const dispatch = useAppDispatch();
@@ -36,18 +38,18 @@ export default function MovesPage() {
 	}, [movesByCategory]);
 
 	return (
-		<div className={st.movePageContainer}>
-			<ControlBar colour={UIColours.orange} className={st.controlBar}>
-				<SectionNav label="Section" sections={sectionNavDefinitions} />
-				<SearchControl name="Search" initialValue={movesSearch} onChange={(value: string) => dispatch(setMovesSearch(value))}></SearchControl>
-			</ControlBar>
+		<ContentPageContainer>
 			<ContentList colour={UIColours.orange} style="list" className={st.contentList}>
+				<ControlBar colour={UIColours.orange} className={st.controlBar}>
+					<SectionNav label="Section" sections={sectionNavDefinitions} />
+					<SearchControl name="Search" initialValue={movesSearch} onChange={(value: string) => dispatch(setMovesSearch(value))}></SearchControl>
+				</ControlBar>
 				{Object.keys(movesByCategory).map((category, index) => (
 					<section className={[st.categoryParent, stcl.contentListParent].join(' ')} key={`category-${category}`} id={category} ref={(el) => (sectionRefs.current[index] = el)}>
-						<div className={st.category}>{category.replace("_", " ")}</div>
-						<div className={[st.categoryContainer, stcl.contentCard].join(' ')}>
-							<div className={st.skill}>{movesByCategory[category].skill?.description}</div>
-							<section className={[st.movesList, stcl.removeParentWhenEmpty].join(' ')}>
+						<div className={st.category}>{category.replace("_", " ")} ({movesByCategory[category].moves[0].stat})</div>
+						<ContentCard colour={UIColours.orange} className={st.categoryContainer}>
+							<div className={st.skill}> {movesByCategory[category].skill?.description}</div>
+							<div className={[st.movesList, stcl.removeParentWhenEmpty].join(' ')}>
 								{filteredMoves(category).map((move, index) => (
 									<div className={st.moveContainer} key={`${move.name.replace(/ /g, '_')}-${index}`}>
 										<MoveBlock move={move} mode="display" />
@@ -58,19 +60,18 @@ export default function MovesPage() {
 										</div>
 									</div>
 								))}
-							</section>
+							</div>
 							<div className={[st.passivesContainer, stcl.contentListParent].join(' ')}>
-								<div className={st.subtitle}>Passives</div>
 								<div className={[st.passivesList, stcl.removeParentWhenEmpty].join(' ')}>
 									{filteredPassives(category).map((move, index) => (
 										<MoveBlock key={`${move.name.replace(/ /g, '_')}-${index}`} move={move} mode="display" />
 									))}
 								</div>
 							</div>
-						</div>
+						</ContentCard>
 					</section>
 				))}
 			</ContentList>
-		</div>
+		</ContentPageContainer>
 	);
 }

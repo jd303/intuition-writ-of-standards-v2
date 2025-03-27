@@ -1,53 +1,45 @@
-.movePageContainer {
+:root {
+	--moves-border-style: 1px dashed #999;
+}
+
+.contentList {
+	grid-column: 2;
+}
+
+.categoryParent {
 	display: flex;
 	flex-direction: column;
 	gap: var(--padding-standard);
+	scroll-margin-top: 160px;
 
-	& .contentList {
-		grid-column: 2;
-	}
-
-	& .categoryParent {
+	& .categoryContainer {
 		display: flex;
 		flex-direction: column;
 		gap: var(--padding-standard);
-		margin-bottom: var(--padding-standard);
-		scroll-margin-top: 160px;
+	}
 
-		& .categoryContainer {
-			display: flex;
-			flex-direction: column;
-			gap: var(--padding-standard);
-		}
+	& .category {
+		font-size: var(--font-size-h1);
+		font-family: 'trattatello';
+		text-transform: uppercase;
+		line-height: 100%;
+	}
 
-		& .category {
-			font-size: var(--font-size-h1);
-			font-family: 'trattatello';
-			text-transform: uppercase;
-			line-height: 100%;
-		}
+	.skill {
+		padding-bottom: var(--padding-standard);
+		border-bottom: var(--moves-border-style);
+	}
 
-		.skill {
-			padding-bottom: var(--padding-standard);
-			border-bottom: 1px solid #999;
-		}
+	& .movesList, & .passivesList {
+		display: flex;
+		flex-direction: column;
+		gap: var(--padding-standard);
 
-		& .movesList, & .passivesList {
-			display: flex;
-			flex-direction: column;
-			gap: var(--padding-standard);
+		&:empty { display: none; }
+	}
 
-			&:empty { display: none; }
-
-			& .subtitle {
-				font-size: var(--font-size-h2);
-				font-family: 'trattatello';
-				text-transform: uppercase;
-				line-height: 100%;
-			}
-		}
-
-		& .movesList .expertises {
+	& .movesList {
+		.expertises {
 			display: flex;
 			flex-direction: column;
 			gap: calc(0.5 * var(--padding-standard));
@@ -55,15 +47,13 @@
 			background-color: rgba(0, 0, 0, 0.08);
 
 			&:empty { display: none; }
-			&:last-child {
-				& .description {
-					border: none;
-				}
-			}
 		}
+	}
 
-		& .passivesContainer {
-			flex-direction: column;
-		}
+	& .passivesContainer {
+		flex-direction: column;
+		padding-top: var(--padding-standard);
+		margin-top: var(--padding-standard);
+		border-top: var(--moves-border-style);
 	}
 }

@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { Link } from "react-router";
 import { v4 as uuidv4 } from 'uuid';
-import { useAppSelector } from "../../features/hooks";
+import { useAppSelector } from "../../features/firebaseHooks";
 import { RootState } from "../../features/store";
 import { GenericModel } from "../../features/models/genericModel";
 import { CharacterObject } from "../../features/models/characterModel";

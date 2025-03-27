@@ -1,9 +1,10 @@
 import { useCallback, useMemo } from "react";
-import { useAppDispatch, useAppSelector } from "../../features/hooks";
+import { useAppDispatch, useAppSelector } from "../../features/firebaseHooks";
 import ContentList from "../components/contentList/contentList";
 import { GenericModel } from "../../features/models/genericModel";
-import { UIColours } from "../../features/UIColours";
+import { UIColours } from "../../features/constants/UIColours";
 import ControlBar from "../components/controlBar/controlBar";
+import ContentCard from "../components/contentList/contentCard";
 import SearchControl from "../components/controlBar/searchControl";
 import { setEquipmentSearch } from "../../features/search/searchSlice";
 
@@ -32,7 +33,7 @@ function EquipmentPage() {
 	}, [categorisedItems, equipmentSearch]);
 
 	return (
-		<>
+		<div>
 			<section>
 				<p>
 					Costs are in
@@ -43,12 +44,12 @@ function EquipmentPage() {
 				</p>
 				<p>The below are indicative of typical prices across the Civil Holds. Market forces may apply pressure to prices.</p>
 			</section>
-			<ControlBar colour={UIColours.mustard}>
-				<SearchControl name="Search" initialValue={equipmentSearch} onChange={(value: string) => dispatch(setEquipmentSearch(value))} />
-			</ControlBar>
-			<ContentList color={UIColours.mustard} style="grid">
+			<ContentList colour={UIColours.mustard} style="grid">
+				<ControlBar colour={UIColours.mustard}>
+					<SearchControl name="Search" initialValue={equipmentSearch} onChange={(value: string) => dispatch(setEquipmentSearch(value))} />
+				</ControlBar>
 				{Object.keys(categorisedItems).map((equipmentKey: string) => (
-					<div className={[stcl.contentCard, stcl.contentListParent].join(' ')} key={`category-${equipmentKey}`}>
+					<ContentCard colour={UIColours.mustard} className={stcl.contentListParent} key={`category-${equipmentKey}`}>
 						<div className={st.header}>{equipmentKey}</div>
 						<div className={[st.equipmentList, stcl.removeParentWhenEmpty].join(' ')}>
 							{filteredItems(equipmentKey).map((item, index) => (
@@ -61,10 +62,10 @@ function EquipmentPage() {
 								</div>
 							))}
 						</div>
-					</div>
+					</ContentCard>
 				))}
 			</ContentList>
-		</>
+		</div>
 	)
 }
 
