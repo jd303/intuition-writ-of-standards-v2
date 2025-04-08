@@ -1,5 +1,5 @@
 .glossaryLayout {
-	.termName {
+	& .termName {
 		font-weight: bold;
 	}
 

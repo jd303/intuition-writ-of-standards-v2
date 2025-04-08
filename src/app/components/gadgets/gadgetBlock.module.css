@@ -1,0 +1,31 @@
+.gadgetLayout {
+	--gap: calc(0.5 * var(--padding-standard));
+
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: minmax(30px, max-content) auto;
+
+	gap: var(--padding-standard);
+
+	.name {
+		grid-row: 1;
+		grid-column: 1;
+
+		font-size: 1.75rem;
+		align-self: center;
+	}
+
+	.costs {
+		grid-row: 1;
+		grid-column: 2;
+
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.description {
+		grid-row: 2;
+		grid-column: 1 / 3;
+	}
+}

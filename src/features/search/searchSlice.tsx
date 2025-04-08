@@ -7,15 +7,20 @@ interface SearchState {
 	spellSchoolSelection: string;
 	magicSourceSelection: string;
 	magicPotionsSearch: string;
+	enchantingSelection: string;
 	movesSearch: string;
 	statusesSearch: string;
 	statusesCategorySelection: string;
 	alchemyRecipesSearch: string;
+	alchemyRecipesTypeSelector: string;
 	alchemyReagentsSearch: string;
+	alchemyReagentsTypeSelector: string;
+	alchemyReagentsComponentSelector: string;
 	gadgetsSearch: string;
 	companionsSearch: string;
 	companionMovesSearch: string;
 	equipmentSearch: string;
+	characterSheetSearch: string;
 	menagerieSearch: string;
 	combatSearch: string;
 }
@@ -26,15 +31,20 @@ const initialState: SearchState = {
 	spellSchoolSelection: localStorage.getItem('spellSchoolSelection') || '',
 	magicSourceSelection: localStorage.getItem('magicSourceSelection') || '',
 	magicPotionsSearch: localStorage.getItem('magicPotionsSearch') || '',
+	enchantingSelection: localStorage.getItem('enchantingSelection') || '',
 	movesSearch: localStorage.getItem('movesSearch') || '',
 	statusesSearch: localStorage.getItem('statusesSearch') || '',
 	statusesCategorySelection: localStorage.getItem('statusesCategorySelection') || SELECTOR_DEFAULT,
 	alchemyRecipesSearch: localStorage.getItem('alchemyRecipesSearch') || '',
+	alchemyRecipesTypeSelector: localStorage.getItem('alchemyRecipesTypeSelector') || '',
 	alchemyReagentsSearch: localStorage.getItem('alchemyReagentsSearch') || '',
+	alchemyReagentsTypeSelector: localStorage.getItem('alchemyReagentsTypeSelector') || '',
+	alchemyReagentsComponentSelector: localStorage.getItem('alchemyReagentsComponentSelector') || '',
 	gadgetsSearch: localStorage.getItem('gadgetsSearch') || '',
 	companionsSearch: localStorage.getItem('companionsSearch') || '',
 	companionMovesSearch: localStorage.getItem('companionMovesSearch') || '',
 	equipmentSearch: localStorage.getItem('equipmentSearch') || '',
+	characterSheetSearch: localStorage.getItem('characterSheetSearch') || '',
 	menagerieSearch: localStorage.getItem('menagerieSearch') || '',
 	combatSearch: localStorage.getItem('combatSearch') || ''
 }
@@ -72,6 +82,10 @@ const searchSlice = createSlice({
 			state.magicPotionsSearch = action.payload;
 			writeLocalStorageValue('magicPotionsSearch', action.payload);
 		},
+		setEnchantingSelection: (state, action) => {
+			state.enchantingSelection = action.payload;
+			writeLocalStorageValue('enchantingSelection', action.payload);
+		},
 		setMovesSearch: (state, action) => {
 			state.movesSearch = action.payload;
 			writeLocalStorageValue('movesSearch', action.payload);
@@ -88,9 +102,21 @@ const searchSlice = createSlice({
 			state.alchemyRecipesSearch = action.payload;
 			writeLocalStorageValue('alchemyRecipesSearch', action.payload);
 		},
+		setAlchemyRecipesTypeSelection: (state, action) => {
+			state.alchemyRecipesTypeSelector = action.payload;
+			writeLocalStorageValue('alchemyRecipesTypeSelector', action.payload);
+		},
 		setAlchemyReagentsSearch: (state, action) => {
 			state.alchemyReagentsSearch = action.payload;
 			writeLocalStorageValue('alchemyReagentsSearch', action.payload);
+		},
+		setAlchemyReagentsTypeSelector: (state, action) => {
+			state.alchemyReagentsTypeSelector = action.payload;
+			writeLocalStorageValue('alchemyReagentsTypeSelector', action.payload);
+		},
+		setAlchemyReagentsComponentSelector: (state, action) => {
+			state.alchemyReagentsComponentSelector = action.payload;
+			writeLocalStorageValue('alchemyReagentsComponentSelector', action.payload);
 		},
 		setGadgetsSearch: (state, action) => {
 			state.gadgetsSearch = action.payload;
@@ -108,6 +134,10 @@ const searchSlice = createSlice({
 			state.equipmentSearch = action.payload;
 			writeLocalStorageValue('equipmentSearch', action.payload);
 		},
+		setCharacterSheetSearch: (state, action) => {
+			state.characterSheetSearch = action.payload;
+			writeLocalStorageValue('characterSheetSearch', action.payload);
+		},
 		setMenagerieSearch: (state, action) => {
 			state.menagerieSearch = action.payload;
 			writeLocalStorageValue('menagerieSearch', action.payload);
@@ -119,6 +149,27 @@ const searchSlice = createSlice({
 	}
 });
 
-export const { setSpellsSearch, setSpellLevelSelection, setMagicSourceSelection, setSpellSchoolSelection, setMagicPotionsSearch, setMovesSearch, setStatusesSearch, setStatusesCategorySelection, setAlchemyRecipesSearch, setAlchemyReagentsSearch, setGadgetsSearch, setCompanionsSearch, setCompanionMovesSearch, setEquipmentSearch, setMenagerieSearch, setCombatSearch } = searchSlice.actions;
+export const {
+	setSpellsSearch,
+	setSpellLevelSelection,
+	setMagicSourceSelection,
+	setSpellSchoolSelection,
+	setMagicPotionsSearch,
+	setEnchantingSelection,
+	setMovesSearch,
+	setStatusesSearch,
+	setStatusesCategorySelection,
+	setAlchemyRecipesSearch,
+	setAlchemyRecipesTypeSelection,
+	setAlchemyReagentsSearch,
+	setAlchemyReagentsTypeSelector,
+	setAlchemyReagentsComponentSelector,
+	setGadgetsSearch,
+	setCompanionsSearch,
+	setCompanionMovesSearch,
+	setEquipmentSearch,
+	setCharacterSheetSearch,
+	setMenagerieSearch,
+	setCombatSearch } = searchSlice.actions;
 
 export default searchSlice.reducer;

@@ -16,7 +16,7 @@ function MagicGuidePage() {
 	return (
 		<ContentPageContainer>
 			<ControlBar colour={UIColours.purple}>
-				<SectionNav sections={sectionDefinitions} label={"Section Navigator"} />
+				<SectionNav sections={sectionDefinitions} label={"Jump to"} />
 			</ControlBar>
 			<section ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)} id="overview">
 				<h1>Overview</h1>

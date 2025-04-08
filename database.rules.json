@@ -1,0 +1,92 @@
+{
+	"rules": {
+		"alchemicals": {
+			".read": true,
+			".write": false
+		},
+		"animal_companions": {
+			".read": true,
+			".write": false
+		},
+		"combats": {
+			".read": true,
+			".write": true
+		},
+		"companionmoves": {
+			".read": true,
+			".write": false
+		},
+		"data_standards": {
+			".read": true,
+			".write": false
+		},
+		"dcs": {
+			".read": true,
+			".write": false
+		},
+		"equipment": {
+			".read": true,
+			".write": false
+		},
+		"gadgets": {
+			".read": true,
+			".write": false
+		},
+		"menagerie": {
+			".read": true,
+			".write": false
+		},
+		"menagerie_v2": {
+			".read": true,
+			".write": false
+		},
+		"moves": {
+			".read": true,
+			".write": false
+		},
+		"moves_v2": {
+			".read": true,
+			".write": false
+		},
+		"potions": {
+			".read": true,
+			".write": false
+		},
+		"sources": {
+			".read": true,
+			".write": false
+		},
+		"spells": {
+			".read": true,
+			".write": false
+		},
+		"statuses": {
+			".read": true,
+			".write": false
+		},
+		"racial_bonuses": {
+			".read": true,
+			".write": false
+		},
+		"languages": {
+			".read": true,
+			".write": false
+		},
+		"weapon_specialisations": {
+			".read": true,
+			".write": false
+		},
+		"characters": {
+			"$uid": {
+				".read": "$uid === auth.uid",
+				".write": "$uid === auth.uid"
+			}
+		},
+		"characters_v2": {
+			"$uid": {
+				".read": "$uid === auth.uid",
+				".write": "$uid === auth.uid"
+			}
+		}
+	}
+}

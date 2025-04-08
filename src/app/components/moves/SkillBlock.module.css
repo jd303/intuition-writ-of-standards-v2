@@ -1,0 +1,41 @@
+.skillBlock {
+	display: flex;
+	flex-direction: column;
+
+	.heading {
+		padding-bottom: var(--padding-standard);
+		border-bottom: var(--border-dashed-strong);
+
+		.title {
+			display: flex;
+			gap: var(--padding-standard);
+			align-items: center;
+			margin-bottom: calc(0.5 * var(--padding-standard));
+
+			font-size: 1.6rem;
+		}
+	}
+
+	.moveContainer {
+		margin-top: calc(0.5 * var(--padding-standard));
+
+		& .movesList, & .passivesList {
+			display: flex;
+			flex-direction: column;
+			gap: var(--padding-standard);
+	
+			&:empty { display: none; }
+		}
+	
+		.expertises {
+			display: flex;
+			flex-direction: column;
+			gap: calc(0.5 * var(--padding-standard));
+			padding: 0 var(--padding-standard);
+			background-color: rgba(0, 0, 0, 0.075);
+			border-bottom: var(--border-dashed-strong);
+
+			&:empty { display: none; }
+		}
+	}
+}

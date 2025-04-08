@@ -20,9 +20,7 @@
 		padding-top: 5px;
 
 		.value {
-			font-family: 'trattatello', sans-serif;
 			font-size: 2rem;
-			line-height: 100%;
 		}
 
 		.spellLevel {
@@ -134,7 +132,9 @@
 		}
 
 		.potable {
-			width: 20px;
+			display: flex;
+			gap: calc(0.5 * var(--padding-standard));
+			height: 25px;
 			opacity: 0.5;
 		}
 	}

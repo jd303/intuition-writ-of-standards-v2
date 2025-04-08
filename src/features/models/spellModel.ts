@@ -17,4 +17,5 @@ export interface Spell {
 	empoweredduration: string,
 	save: string,
 	potable: boolean,
+	infusable: boolean,
 }

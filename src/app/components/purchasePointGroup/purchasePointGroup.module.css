@@ -1,0 +1,20 @@
+.purchasePointGroup {
+	display: grid;
+	gap: calc(0.25 * var(--padding-standard));
+
+	&[data-columns="3"] {
+		grid-template-columns: repeat(3, 15px);
+	}
+
+	&[data-columns="5"] {
+		grid-template-columns: repeat(5, 15px);
+	}
+
+	&[data-columns="10"] {
+		grid-template-columns: repeat(10, 15px);
+	}
+
+	&[data-columns="12"] {
+		grid-template-columns: repeat(12, 15px);
+	}
+}

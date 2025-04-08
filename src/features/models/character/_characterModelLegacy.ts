@@ -55,7 +55,7 @@ export class CharacterObject {
 		"bonus_mana": 0,
 		"enchant_mana_cost": 0,
 		"current_psi": this.basePsi,
-		"purchases": { "spentPoints":0,"attributes":{"str":0,"con":0,"dex":0,"int":0,"wis":0,"cha":0},"verve":0,"stamina":0,"known_languages":0,"magical_synergy":{"slot2":0,"slot3":0},"weapon_specialisations":0,"mana":0,"spells":{},"moves":{} },
+		"purchases": { "spentPoints": 0, "attributes": { "str": 0, "con": 0, "dex": 0, "int": 0, "wis": 0, "cha": 0 }, "verve": 0, "stamina": 0, "known_languages": 0, "magical_synergy": { "slot2": 0, "slot3": 0 }, "weapon_specialisations": 0, "mana": 0, "spells": {}, "moves": {} },
 		"source": "30c0e851", // Default only, Spring
 		"magical_synergy": {
 			"slot1": '',
@@ -63,7 +63,7 @@ export class CharacterObject {
 			"slot3": '',
 		},
 		"weapon_specialisations": [],
-		"armours": [ { "name": "Clothes", "block": 0, "dodge": 6 } ],
+		"armours": [{ "name": "Clothes", "block": 0, "dodge": 6 }],
 		"armour_totals": { "block": '', "dodge": '' },
 		"weapons": [],
 		"spells": [],
@@ -122,7 +122,7 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
+				break;
 
 			case "verve":
 				if (adding) {
@@ -136,7 +136,7 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
+				break;
 
 			case "stamina":
 				if (adding) {
@@ -150,8 +150,8 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
-			
+				break;
+
 			// CONSIDER DROPPING THIS
 			case "armour":
 				if (adding) {
@@ -165,8 +165,8 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
-				
+				break;
+
 			case "mana":
 				if (adding) {
 					if (this.characterData.purchases.mana < 30) {
@@ -179,17 +179,17 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
-				
+				break;
+
 			case "spell":
 				console.log("Not implemented spells purcahse yet");
-			break;
+				break;
 
 			case "move":
 				if (!this.characterData.purchases.moves[moveKey]) {
 					this.characterData.purchases.moves[moveKey] = { points: 0, mods: [] };
 				}
-				
+
 				if (adding) {
 					if (this.characterData.purchases.moves[moveKey].points < 12) {
 						this.characterData.purchases.moves[moveKey].points += 1;
@@ -201,7 +201,7 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
+				break;
 
 			case "mod":
 				if (!this.characterData.purchases.moves[moveKey]) {
@@ -209,7 +209,7 @@ export class CharacterObject {
 				}
 
 				if (!this.characterData.purchases.moves[moveKey].mods || !this.characterData.purchases.moves[moveKey].mods.length) this.characterData.purchases.moves[moveKey].mods = [];
-				
+
 				if (adding) {
 					if (!this.characterData.purchases.moves[moveKey].mods.find((i: string) => i == modKey)) { // Can't buy mod again
 						// Consider limiting purchasing mods if you don't have the Move points, but with the Racial bonus it's hard to know.
@@ -223,8 +223,8 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
-				
+				break;
+
 			case "magical_synergy":
 				if (adding) {
 					if (this.characterData.purchases.magical_synergy[moveOrKeyName] < 1) {
@@ -237,8 +237,8 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
-				
+				break;
+
 			case "weapon_specialisations":
 				if (adding) {
 					if (this.characterData.purchases.weapon_specialisations < 3) {
@@ -251,8 +251,8 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
-				
+				break;
+
 			case "known_languages":
 				if (adding) {
 					if (this.characterData.purchases.known_languages < 3) {
@@ -265,7 +265,7 @@ export class CharacterObject {
 						validAdjustment = true;
 					}
 				}
-			break;
+				break;
 		}
 
 		if (validAdjustment) {

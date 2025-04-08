@@ -13,11 +13,13 @@ import { updateCompanionMovesData } from '../features/firebase/data/companionMov
 import { updateCombatData } from '../features/firebase/data/combatsDataSlice.ts';
 import { updateDcsData } from '../features/firebase/data/dcsDataSlice.ts';
 import { updateEquipmentData } from '../features/firebase/data/equipmentDataSlice.ts';
+import { updateSpellsData } from '../features/firebase/data/spellsDataSlice.ts';
+import { updateStatusesData } from '../features/firebase/data/statusesDataSlice.ts';
+import { updateAlchemicalsData } from '../features/firebase/data/alchemicalsDataSlice.ts';
+import { updateGadgetsData } from '../features/firebase/data/gadgetsDataSlice.ts';
 
 import WritLayout from './layout/writLayout.tsx';
 import Home from './home/home.tsx';
-import { updateSpellsData } from '../features/firebase/data/spellsDataSlice.ts';
-import { updateStatusesData } from '../features/firebase/data/statusesDataSlice.ts';
 
 export function App() {
 	const authState = useAuthState();
@@ -40,6 +42,12 @@ export function App() {
 				dispatch(updateSpellsData(snapshot.val()));
 			});
 
+			// Collect spells data
+			const alchemicalsDataRef = await ref(database, '/alchemicals');
+			onValue(alchemicalsDataRef, (snapshot) => {
+				dispatch(updateAlchemicalsData(snapshot.val()));
+			});
+
 			// Collect statuses data
 			const statusesDataRef = await ref(database, '/statuses');
 			onValue(statusesDataRef, (snapshot) => {
@@ -47,7 +55,7 @@ export function App() {
 			});
 
 			// Collect menagerie data
-			const menagerieRef = ref(database, `/menagerie`);
+			const menagerieRef = ref(database, `/menagerie_v2`);
 			onValue(menagerieRef, (snapshot) => {
 				dispatch(updateMenagerieData(snapshot.val()));
 			});
@@ -56,6 +64,12 @@ export function App() {
 			const companionMovesRef = ref(database, `/companionmoves`);
 			onValue(companionMovesRef, (snapshot) => {
 				dispatch(updateCompanionMovesData(snapshot.val()));
+			});
+
+			// Collect companion moves data
+			const gadetsRef = ref(database, `/gadgets`);
+			onValue(gadetsRef, (snapshot) => {
+				dispatch(updateGadgetsData(snapshot.val()));
 			});
 		}
 
@@ -88,7 +102,7 @@ export function App() {
 		onAuthStateChanged(getAuth(firebaseApp),
 			(user) => {
 				if (user && user.uid) {
-					const charactersRef = ref(database, `/characters/${user.uid}`);
+					const charactersRef = ref(database, `/characters_v2/${user.uid}`);
 					onValue(charactersRef, (snapshot) => {
 						dispatch(updateCharactersData(snapshot.val()));
 					});

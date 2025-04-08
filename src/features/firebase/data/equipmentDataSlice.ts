@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GenericModel } from "../../models/genericModel";
+import { EquipmentItemModel } from "../../models/equipmentItemModel";
 
 interface EquipmentData {
-	equipment: GenericModel[]
+	equipment: EquipmentItemModel[]
 }
 
 const initialState: EquipmentData = {

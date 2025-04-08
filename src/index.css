@@ -9,6 +9,9 @@
 	--text-shadow-standard: 2px 2px 5px rgba(0, 0, 0, 0.9);
 	--inputs-height: 40px;
 	--max-width-content-page: 1000px;
+	--max-width-character-sheet-page: 1500px;
+	--border-dashed-style: 1px dashed #e8e8e8;
+	--border-dashed-strong: 1px dashed #aaa;
 
 	@media (min-width: 768px) {
 		--padding-standard: 15px;
@@ -17,6 +20,7 @@
 
 	/* Colour Palette */
 	--colour-cream: 240, 233, 217;
+	--colour-cream-light: 251, 250, 247;
 	--colour-dark: #333;
 	--colour-orange: 177, 110, 11;
 	--colour-purple: 71, 30, 185;
@@ -100,7 +104,7 @@
 }
 
 @media print {
-	@page { margin: 0.5cm; } /* Drops header / footer */
+	@page { margin: 0.5cm; }
 
 	.forPrint {
 		display: block;
@@ -130,6 +134,59 @@
 	}
 }
 
+/* Alchemy Colours */
+.hyd {
+	background-color: #3c78d8;
+}
+
+.for {
+	background-color: #888;
+}
+
+.the {
+	background-color: #e69138;
+}
+
+.vig {
+	background-color: #6aa84f;
+}
+
+.soo {
+	background-color: #a64d79;
+}
+
+.exc {
+	background-color: #f1c232;
+}
+
+.con {
+	background-color: #674ea7;
+}
+
+.cor {
+	background-color: #b6d7a8;
+}
+
+.poi {
+	background-color: #cc0000;
+}
+
+.oil {
+	background-color: #111;
+}
+
+.sce {
+	background-color: #e2a2de;
+}
+
+.wil {
+	background-color: #000;
+}
+
+.mag {
+	background-color: rgb(var(--colour-purple));
+}
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -144,7 +201,7 @@ html, body {
 	background-image: url('public/images/bg.paper.texture.webp');
 }
 
-.trattatello, h1, h2, h3, h4 {
+h1, h2, h3, h4 {
 	font-family: trattatello, sans-serif;
 	text-transform: uppercase;
 	line-height: 100%;
@@ -152,6 +209,17 @@ html, body {
 	&:first-child {
 		margin-top: 0;
 	}
+}
+
+.trattatello {
+	font-family: trattatello, sans-serif;
+	text-transform: uppercase;
+	line-height: 100%;
+}
+
+.trattatellodown {
+	font-family: trattatello, sans-serif;
+	line-height: 100%;
 }
 
 h1 {
@@ -191,10 +259,10 @@ input, select {
 	border: 2px solid rgb(var(--colour-cream));
 	border-radius: calc(0.75 * var(--radius-standard));
 	box-sizing: border-box;
+	background-color: rgba(var(--colour-cream), 0.3);
 }
 
 select {
-	height: calc(0.75 * var(--inputs-height));
 	text-transform: capitalize;
 }
 

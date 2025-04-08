@@ -1,0 +1,46 @@
+.sectionBlock {
+	&.open {}
+
+	&.closed {
+		h1 {
+			opacity: 0.6;
+		}
+
+		& .sectionContent {
+			display: none;
+		}
+
+		.title .icoOpenState {
+			transform: scaleY(-1);
+		}
+	}
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+		cursor: pointer;
+		padding: calc(0.5 * var(--padding-standard)) 0;
+		text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+		transition: all 0.15s;
+
+		&:hover {
+			transform: translate(-2px, -2px);
+			text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.125);
+		}
+
+		img {
+			height: 25px;
+			vertical-align: middle;
+		}
+
+		.icoOpenState {
+			width: 20px;
+		}
+	}
+
+	.sectionContent {
+		padding: calc(0.5 * var(--padding-standard));
+		border: var(--border-dashed-style);
+		border-radius: var(--radius-standard);
+	}
+}

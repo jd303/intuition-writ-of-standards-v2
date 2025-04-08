@@ -9,12 +9,15 @@ import StatusesPage from "./app/rules/statusesPage";
 import DMToolsPage from "./app/dmtools/dmtools";
 import MagicGuidePage from "./app/magic/magicGuidePage";
 import MagicSpellsPage from "./app/magic/magicSpellsPage";
-import MagicPotionsPage from "./app/magic/magicPotionsPage";
-import MagicEnchantingPage from "./app/magic/magicEnchantingPage";
 import EquipmentPage from "./app/equipment/equipmentPage";
 import CompanionsPage from "./app/companions/companionsPage";
 import CompanionMovesPage from "./app/companions/companionMovesPage";
 import CompanionsGuidePage from "./app/companions/companionsGuidePage";
+import AlchemyGuidePage from "./app/alchemy/alchemyGuidePage";
+import AlchemyRecipesPage from "./app/alchemy/alchemyRecipesPage";
+import AlchemyReagentsPage from "./app/alchemy/alchemyReagentsPage";
+import GadgetsGuidePage from "./app/gadgets/gadgetsGuidePage";
+import GadgetsPage from "./app/gadgets/gadgetsPage";
 
 export const routes: RouteDefinition[] = [
 	{
@@ -38,10 +41,11 @@ export const routes: RouteDefinition[] = [
 	{
 		path: "/characters",
 		authLevel: 1,
-		label: "Characters",
+		label: "Character List",
 		sectionColour: 'cobalt',
 		element: <CharactersPage />,
 		parentRoute: true,
+		sectionName: 'characterInfo',
 	},
 	{
 		path: "/characters/:id",
@@ -50,6 +54,8 @@ export const routes: RouteDefinition[] = [
 		sectionColour: 'cobalt',
 		element: <CharacterSheetPage />,
 		parentRoute: false,
+		omitFromSubNav: true,
+		sectionName: 'characterInfo',
 	},
 
 	{
@@ -121,24 +127,6 @@ export const routes: RouteDefinition[] = [
 		element: <MagicSpellsPage />,
 		sectionName: 'magic',
 	},
-	{
-		path: "/magic/potions",
-		authLevel: 0,
-		label: "Potions",
-		sectionColour: 'purple',
-		parentRoute: false,
-		element: <MagicPotionsPage />,
-		sectionName: 'magic',
-	},
-	{
-		path: "/magic/enchanting",
-		authLevel: 0,
-		label: "Enchanting",
-		sectionColour: 'purple',
-		parentRoute: false,
-		element: <MagicEnchantingPage />,
-		sectionName: 'magic',
-	},
 
 	{
 		path: "/psionics",
@@ -149,11 +137,40 @@ export const routes: RouteDefinition[] = [
 	},
 
 	{
-		path: "/Alchemy",
+		path: "/alchemy",
 		authLevel: 0,
 		label: "Alchemy",
 		sectionColour: 'cyan',
+		element: <AlchemyGuidePage />,
 		parentRoute: true,
+		sectionName: 'alchemy',
+	},
+	{
+		path: "/alchemy/guide",
+		authLevel: 0,
+		label: "Guide",
+		sectionColour: 'cyan',
+		element: <AlchemyGuidePage />,
+		parentRoute: false,
+		sectionName: 'alchemy',
+	},
+	{
+		path: "/alchemy/recipes",
+		authLevel: 0,
+		label: "Recipes",
+		sectionColour: 'cyan',
+		element: <AlchemyRecipesPage />,
+		parentRoute: false,
+		sectionName: 'alchemy',
+	},
+	{
+		path: "/alchemy/reagents",
+		authLevel: 0,
+		label: "Reagents",
+		sectionColour: 'cyan',
+		element: <AlchemyReagentsPage />,
+		parentRoute: false,
+		sectionName: 'alchemy',
 	},
 
 	{
@@ -161,7 +178,27 @@ export const routes: RouteDefinition[] = [
 		authLevel: 0,
 		label: "Gadgetry",
 		sectionColour: 'cobalt',
+		element: <GadgetsGuidePage />,
 		parentRoute: true,
+		sectionName: 'gadgetry',
+	},
+	{
+		path: "/gadgetry/guide",
+		authLevel: 0,
+		label: "Guide",
+		sectionColour: 'cobalt',
+		element: <GadgetsGuidePage />,
+		parentRoute: false,
+		sectionName: 'gadgetry',
+	},
+	{
+		path: "/gadgetry/gadgets",
+		authLevel: 0,
+		label: "Gadgets",
+		sectionColour: 'cobalt',
+		element: <GadgetsPage />,
+		parentRoute: false,
+		sectionName: 'gadgetry',
 	},
 
 	{
@@ -257,4 +294,5 @@ export interface RouteDefinition {
 	sectionName?: string,
 	sectionColour: 'silver' | 'orange' | 'cyan' | 'purple' | 'scarlet' | 'cobalt' | 'mustard' | 'green',
 	parentRoute?: boolean,
+	omitFromSubNav?: boolean,
 }

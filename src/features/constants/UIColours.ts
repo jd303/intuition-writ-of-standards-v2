@@ -4,5 +4,6 @@ export enum UIColours {
 	grey = "grey",
 	cobalt = "cobalt",
 	purple = "purple",
-	orange = "orange"
+	orange = "orange",
+	cyan = "cyan"
 }

@@ -9,7 +9,5 @@
 	text-transform: uppercase;
 	font-size: var(--font-size-h1);
 	line-height: 100%;
-	border-bottom: 1px solid #aaa;
 	padding-bottom: calc(0.75 * var(--padding-standard));
-	margin: var(--padding-standard) 0;
 }

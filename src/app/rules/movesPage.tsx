@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../features/firebaseHooks';
 import { setMovesSearch } from '../../features/search/searchSlice';
 import { UIColours } from '../../features/constants/UIColours';
-import { Move } from '../../features/models/moveModel';
+import { MoveModel } from '../../features/models/moveModel';
 import ContentPageContainer from '../components/contentPage/contentPageContainer';
 import ContentList from '../components/contentList/contentList';
 import ControlBar from '../components/controlBar/controlBar';
@@ -17,12 +17,13 @@ export default function MovesPage() {
 	const dispatch = useAppDispatch();
 	const movesSearch = useAppSelector((state) => state.search.movesSearch);
 	const movesByCategory = useAppSelector((state) => state.movesData.moves);
+	console.log(movesByCategory);
 
 	const filteredMoves = useCallback((categoryKey: string) => {
 		return movesByCategory[categoryKey].moves.filter((move) => JSON.stringify(move).toLowerCase().includes(movesSearch.toLowerCase()));
 	}, [movesSearch, movesByCategory]);
 
-	const filteredExpertises = useCallback((moves: Move[]) => {
+	const filteredExpertises = useCallback((moves: MoveModel[]) => {
 		return moves.filter((move) => JSON.stringify(move).toLowerCase().includes(movesSearch.toLowerCase()));
 	}, [movesSearch]);
 
@@ -52,10 +53,10 @@ export default function MovesPage() {
 							<div className={[st.movesList, stcl.removeParentWhenEmpty].join(' ')}>
 								{filteredMoves(category).map((move, index) => (
 									<div className={st.moveContainer} key={`${move.name.replace(/ /g, '_')}-${index}`}>
-										<MoveBlock move={move} mode="display" />
+										<MoveBlock move={move} mode="display" skillPoints={0} />
 										<div className={st.expertises}>
 											{filteredExpertises(move.expertises || []).map((move, index) => (
-												<MoveBlock key={index} move={move} mode="display"></MoveBlock>
+												<MoveBlock key={index} move={move} mode="display" skillPoints={0}></MoveBlock>
 											))}
 										</div>
 									</div>

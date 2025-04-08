@@ -37,7 +37,7 @@ export default function CompanionMovesPage() {
 			</ControlBar>
 			{filteredItems.map((move) => (
 				<ContentCard colour={UIColours.green}>
-					<div className={st.header}>
+					<div className={`${st.header} trattatello`}>
 						<div className={st.name}>{getMedal(move.type.toString())} {move.name}</div>
 					</div>
 					<div className={st.desc}>{move.desc}</div>

@@ -7,5 +7,5 @@ export const writeDataForCurrentUser = (data: GenericModel[]) => {
 	const db = getDatabase();
 
 	if (!auth || !auth.currentUser) return;
-	set(ref(db, `characters/${auth.currentUser.uid}`), data);
+	set(ref(db, `characters_v2/${auth.currentUser.uid}`), data);
 }

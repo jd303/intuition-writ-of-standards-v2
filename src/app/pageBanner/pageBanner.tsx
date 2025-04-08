@@ -52,7 +52,7 @@ function PageBanner() {
 				{menu}
 			</nav>
 			<nav className={[st.secondary, st[`banner-${colour}`]].join(' ')}>
-				{routes.filter((route: RouteDefinition) => route.sectionName == currentSection && currentSection && !route.parentRoute).map((route: RouteDefinition, index: number) => (
+				{routes.filter((route: RouteDefinition) => route.sectionName == currentSection && currentSection && !route.parentRoute && !route.omitFromSubNav).map((route: RouteDefinition, index: number) => (
 					<Link key={route.label + index} to={route.path} className="trattatello">{route.label}</Link>
 				))}
 			</nav>

@@ -17,7 +17,7 @@
 	width: 100%;
 	padding: var(--padding-standard) 0;
 	margin-top: calc(-2 * var(--padding-standard));
-	background-color: #fff;
+	background-image: url('/public/images/bg.paper.texture.webp');
 
 	.controlBar {
 		flex-basis: 100%;
@@ -44,6 +44,14 @@
 
 		&.orange {
 			background-color: rgba(var(--colour-orange), 0.3);
+		}
+
+		&.cyan {
+			background-color: rgba(var(--colour-cyan), 0.3);
+		}
+
+		&.cobalt {
+			background-color: rgba(var(--colour-cobalt), 0.3);
 		}
 	}
 }

@@ -4,13 +4,14 @@ import CircledText from '../circledText/circledText';
 import mapPinIcon from '../../../../public/images/icons/ico.map_pin.svg';
 import targetIcon from '../../../../public/images/icons/ico.target.svg';
 import potionIcon from '../../../../public/images/icons/ico.potion.black.svg';
+import infusableIcon from '../../../../public/images/icons/ico.rune.svg';
 import st from './spellBlock.module.css';
 
 function SpellBlock( { spell }: { spell: Spell }) {
 	
 	return (
 		<div className={st.spellLayout}>
-			<div className={st.name}><div className={st.value}>{spell.name}</div> <div className={st.spellLevel}>{spell.level}</div></div>
+			<div className={st.name}><div className={`${st.value} trattatellodown`}>{spell.name}</div> <div className={st.spellLevel}>{spell.level}</div></div>
 			<div className={st.easyName}>{spell.easyname} - {spell.school}</div>
 			<div className={st.mechanics}>
 				<div className={st.leftMechanics}>
@@ -23,9 +24,10 @@ function SpellBlock( { spell }: { spell: Spell }) {
 						{spell.save}
 					</div>}
 				</div>
-				{spell.potable && <div className={st.potable}>
-					<img src={potionIcon} />
-				</div>}
+				<div className={st.potable}>
+					{spell.potable && <img src={potionIcon} />}
+					{spell.infusable && <img src={infusableIcon} />}
+				</div>
 			</div>
 			<ul className={st.effects}>
 				<li className={st.effect}>

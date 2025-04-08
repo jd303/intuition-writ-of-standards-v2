@@ -8,4 +8,9 @@ export default defineConfig({
     host: 'local.intuitionwritofstandards.com',
     port: 5174,
   },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    //setupFiles: "./src/setupTests.ts",
+  },
 })

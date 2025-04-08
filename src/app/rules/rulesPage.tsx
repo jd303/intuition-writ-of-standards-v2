@@ -18,12 +18,12 @@ export default function RulesPage() {
 		<>
 			<ContentPageContainer>
 				<ControlBar colour={UIColours.orange} className={st.controlBar}>
-					<SectionNav label='Section Navigator' sections={sectionDefinitions} />
+					<SectionNav label='Jump to' sections={sectionDefinitions} />
 				</ControlBar>
 				<div className={st.column2}>
 					<section className={st.intro} id="intro" ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)}>
 						<h1>Intro</h1>
-						<p>Intuition is a Point-buy system that gives you the freedom to create a character your way.  Instead of designing classes, each character can invest points in whichever Move or Mods they choose, designing the perfect character.</p>
+						<p>Intuition is a Point-buy system that gives you the freedom to create a character your way.  Instead of using pre-defined classes, each character can invest points in whichever Move or Mods they choose, designing the perfect character for them.</p>
 						<p>The system has some core concepts:</p>
 					</section>
 					<section className={st.characters} id="characters" ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)}>

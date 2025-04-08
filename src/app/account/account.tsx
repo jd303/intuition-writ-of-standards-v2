@@ -89,14 +89,14 @@ function Account() {
 						<div className={st.heading + " trattatello"}>Login</div>
 						<input type="text" name="email" placeholder="Email" value={loginEmailInput} onChange={onChangeLoginEmail} />
 						<input type="password" name="password" placeholder="Password" value={loginPasswordInput} onChange={onChangeLoginPassword} />
-						<button className="slimButton" type="button" onClick={login}>Login</button>
+						<button type="button" onClick={login}>Login</button>
 						<div className={st.error}>{loginError}</div>
 					</div>
 					<div className={st.form}>
 						<div className={st.heading + " trattatello"}>Register</div>
 						<input type="text" name="email" placeholder="Email" value={registerEmailInput} onChange={onChangeRegisterEmail} />
 						<input type="password" name="password" placeholder="Password" value={registerPasswordInput} onChange={onChangeRegisterPassword} />
-						<button className="slimButton" type="button" onClick={register}>Register</button>
+						<button type="button" onClick={register}>Register</button>
 						<div className={st.error}>{registerError || registerResult}</div>
 					</div>
 				</>

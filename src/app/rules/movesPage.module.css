@@ -30,26 +30,6 @@
 		border-bottom: var(--moves-border-style);
 	}
 
-	& .movesList, & .passivesList {
-		display: flex;
-		flex-direction: column;
-		gap: var(--padding-standard);
-
-		&:empty { display: none; }
-	}
-
-	& .movesList {
-		.expertises {
-			display: flex;
-			flex-direction: column;
-			gap: calc(0.5 * var(--padding-standard));
-			padding: var(--padding-standard) calc(1.5 * var(--padding-standard));
-			background-color: rgba(0, 0, 0, 0.08);
-
-			&:empty { display: none; }
-		}
-	}
-
 	& .passivesContainer {
 		flex-direction: column;
 		padding-top: var(--padding-standard);

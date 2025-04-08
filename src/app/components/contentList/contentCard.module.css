@@ -25,4 +25,12 @@
 	&.purple {
 		background-color: rgba(var(--colour-purple), 0.15);
 	}
+
+	&.cyan {
+		background-color: rgba(var(--colour-cyan), 0.15);
+	}
+
+	&.cobalt {
+		background-color: rgba(var(--colour-cobalt), 0.15);
+	}
 }

@@ -8,6 +8,8 @@ import equipmentDataReducer from './firebase/data/equipmentDataSlice';
 import menagerieDataReducer from './firebase/data/menagerieDataSlice';
 import companionMovesDataReducer from './firebase/data/companionMovesDataSlice';
 import magicSpellsDataReducer from './firebase/data/spellsDataSlice';
+import alchemicalsDataReducer from './firebase/data/alchemicalsDataSlice';
+import gadgetsDataReducer from './firebase/data/gadgetsDataSlice';
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +22,8 @@ export const store = configureStore({
 	menagerieData: menagerieDataReducer,
 	companionMovesData: companionMovesDataReducer,
 	magicSpells: magicSpellsDataReducer,
+	alchemicals: alchemicalsDataReducer,
+	gadgets: gadgetsDataReducer,
   },
 });
 

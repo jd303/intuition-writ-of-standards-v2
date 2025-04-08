@@ -14,24 +14,4 @@
 	margin-bottom: var(--padding-standard);
 }
 
-.equipmentList {
-	.item {
-		& .itemHead {
-			display: flex;
-			justify-content: space-between;
-			font-weight: bold;
-
-			& .name, & .cost {
-				font-family: trattatello;
-				text-transform: uppercase;
-				font-size: 1.1rem;
-				color: #000;
-			}
-		}
-
-		& .description {
-			max-width: 95%;
-			/*font-size: 0.8rem;*/
-		}
-	}
-}
+.equipmentList {}

@@ -1,0 +1,208 @@
+.characterSheetPageContainer {
+	width: 100%;
+	max-width: var(--max-width-character-sheet-page);
+	margin: auto;
+
+	/* REUSABLE STYLES */
+	.block {
+		padding: var(--padding-standard);
+		border: var(--border-dashed-style);
+		border-radius: var(--radius-standard);
+		background-color: rgb(var(--colour-cream-light));
+	}
+	
+	/* SPECIFIC STYLES */
+	.sections {
+		section:first-child {
+			margin-top: calc(2 * var(--padding-standard));
+		}
+
+		/* VITAE SECTION */
+		.sectionVitae {
+			--grid-template-columns: 1fr;
+
+			@media (min-width: 800px) {
+				--grid-template-columns: min(300px, 32%) auto;	
+			}
+
+			display: grid;
+			grid-template-columns: var(--grid-template-columns);
+			gap: var(--padding-standard);
+
+			.labelField {
+				display: flex;
+				gap: calc(0.5 * var(--padding-standard));
+				width: 100%;
+
+				label {
+					width: 70px;
+					min-width: 70px;
+				}
+
+				label:nth-of-type(2) {
+					width: 100px;
+				}
+			}
+
+			& [data-field="name"],
+			& [data-field="sessions"],
+			& [data-field="points"] .labelField,
+			& [data-field="race"],
+			& [data-field="attributes"] {
+				align-items: center;
+
+				input, select {
+					flex: 1;
+				}
+			}
+
+			& [data-field="profilephoto"] {
+				grid-column: 1;
+				grid-row: 1 / 7;
+
+				position: relative;
+				min-height: 300px;
+				border-radius: var(--radius-standard);
+				overflow: hidden;
+				margin-right: calc(0.5 * var(--padding-standard));
+
+				img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: 50%;
+				}
+			}
+
+			[data-field="points"],
+			[data-field="attributes"] {
+				display: flex;
+				gap: calc(0.5 * var(--padding-standard));
+
+				.labelField {
+					align-items: center;
+				}
+
+				.labelField:nth-child(2) label {
+					text-align: right;
+				}
+			}
+
+			[data-field="stats"] {
+				flex-wrap: wrap;
+
+				.statsFlex {
+					display: flex;
+					gap: calc(0.5 * var(--padding-standard));
+					width: 100%;
+				}
+
+				.statList {
+					--grid-template-columns: 1fr 1fr 1fr;
+
+					@media (min-width: 1300px) {
+						--grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+					}
+
+					display: grid;
+					grid-template-columns: var(--grid-template-columns);
+					flex-wrap: wrap;
+					gap: calc(0.5 * var(--padding-standard));
+
+					.stat {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: calc(0.5 * var(--padding-standard));
+						padding: calc(0.5 * var(--padding-standard));
+						border-radius: var(--radius-standard);
+						background-color: rgba(var(--colour-cream), 0.3);
+
+						img {
+							height: 25px;
+						}
+					}
+				}
+
+				.confirmButton {
+					flex-basis: 100%;
+				}
+			}
+
+			[data-field="racial_modifiers"],
+			[data-field="known_languages"] {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				margin-top: calc(0.5 * var(--padding-standard));
+
+				label {
+					width: 100%;
+				}
+			}
+		}
+
+		.sectionPreparedness {
+			display: grid;
+			gap: calc(0.5 * var(--padding-standard));
+			grid-template-columns: minmax(auto, 210px) 1fr;
+			border-color: rgba(var(--colour-scarlet), 0.6);
+
+			[data-field="verve"],
+			[data-field="mana"],
+			[data-field="psi"],
+			[data-field="statuses"],
+			[data-field="item_belt"] {
+				display: flex;
+				flex-wrap: wrap;
+				gap: calc(0.5 * var(--padding-standard));
+
+				h2 {
+					margin-bottom: 0;
+				}
+
+				.maxLabel {
+					font-size: 0.9rem;
+					font-style: italic;
+					color: #999;
+				}
+			}
+			
+			[data-field="verve"] {
+				grid-column: 1;
+				grid-row: 1;
+			}
+
+			[data-field="mana"] {
+				grid-column: 1;
+				grid-row: 2;
+			}
+
+			[data-field="psi"] {
+				grid-column: 1;
+				grid-row: 3;
+			}
+
+			[data-field="statuses"] {
+				grid-column: 2;
+				grid-row: 1/3;
+			}
+
+			[data-field="item_belt"] {
+				grid-column: 2;
+				grid-row: 3;
+			}
+
+			[data-field="skill_preparedness"] {
+				grid-column: 1/3;
+				grid-row: 4;
+			}
+		}
+		
+		.sectionCombat {
+			border-color: rgba(var(--colour-cobalt), 0.6);
+		}
+	}
+
+}

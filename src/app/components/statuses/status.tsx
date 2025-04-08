@@ -18,7 +18,7 @@ function Status( { status }: { status: StatusModel } ) {
 
 	return (
 		<div className={st.status}>
-			<div className={st.titleBlock}>
+			<div className={`${st.titleBlock} trattatello`}>
 				<div className={`${st.name} ${status.negative && st.negative || st.positive}`}>{status.name}</div>
 				<div className={st.domain}>{status.domain}</div>
 				<div className={st.duration}><img src={icoDuration} alt={status.type} />{getDuration()}</div>

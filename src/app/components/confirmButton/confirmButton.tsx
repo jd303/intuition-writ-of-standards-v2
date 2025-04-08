@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import st from './confirmButton.module.css';
 
-function ConfirmButton( { onClick, label, className }: { onClick: VoidFunction, label: string, className?: string } ) {
-
-	const confirmLabel = 'Tap again to confirm';
-
+function ConfirmButton( { onClick, label, confirmLabel = 'Tap again to confirm', className }: { onClick: VoidFunction, label: string, confirmLabel?: string, className?: string } ) {
 	const [confirmMode, setConfirmMode] = useState(false);
 	const triggerClick = () => {
 		if (confirmMode) {

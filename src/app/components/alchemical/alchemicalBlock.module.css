@@ -1,0 +1,117 @@
+
+.alchemicalBlockContainer {
+	display: grid;
+	grid-template-columns: auto 40px 40px;
+	gap: var(--padding-standard);
+
+	.alchemicalTitle {
+		grid-column: 1;
+		grid-row: 1;
+
+		display: flex;
+		gap: 5px;
+		font-size: 1.75rem;
+		align-self: center;
+	}
+
+	.type {
+		&:after {
+			content: "";
+			display: block;
+			width: 25px;
+			height: 25px;
+			margin-right: 7px;
+			background-size: contain;
+		}
+
+		&[data-type="Potion"]:after {
+			background-image: url("/public/images/icons/ico.potion.svg");
+		}
+
+		&[data-type="Bomb"]:after {
+			background-image: url("/public/images/icons/ico.bomb.svg");
+		}
+
+		&[data-type="Poison"]:after {
+			background-image: url("/public/images/icons/ico.poison.svg");
+		}
+
+		&[data-type="Salve"]:after {
+			background-image: url("/public/images/icons/ico.salve.svg");
+		}
+
+		&[data-type="Applicant"]:after {
+			background-image: url("/public/images/icons/ico.poisoned.dagger.svg");
+		}
+
+		&[data-type="Misc"]:after {
+			background-image: url("/public/images/icons/ico.misc.svg");
+		}
+	}
+
+	.reagentType {
+		grid-row: 1;
+		grid-column: 2/3;
+
+		display: flex;
+		gap: 5px;
+		font-size: 0.9rem;
+	}
+
+	.dc, .time {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& img {
+			width: 20px;
+		}
+	}
+
+	.dc {
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+	.time {
+		grid-row: 1;
+		grid-column: 3;
+	}
+
+	.effects {
+		grid-row: 2;
+		grid-column: 1;
+
+		padding-right: var(--padding-standard);
+	}
+
+	.description {
+		grid-row: 3;
+		grid-column: 1/3;
+
+		font-style: italic;
+	}
+
+	.requirements {
+		grid-row: 2;
+		grid-column: 3;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-align: right;
+		gap: 5px;
+
+		.reagent {
+			width: 95px;
+			padding: 3px;
+			border-radius: 3px;
+			color: #fff;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			-webkit-user-select: none;
+			user-select: none;
+			text-align: center;
+		}
+	}
+}

@@ -7,6 +7,8 @@ import ControlBar from "../components/controlBar/controlBar";
 import ContentCard from "../components/contentList/contentCard";
 import SearchControl from "../components/controlBar/searchControl";
 import { setEquipmentSearch } from "../../features/search/searchSlice";
+import EquipmentItemBlock from "../components/equipmentItem/equipmentItemBlock";
+import { EquipmentItemModel } from "../../features/models/equipmentItemModel";
 
 import st from './equipmentPage.module.css';
 import stcl from '../components/contentList/contentList.module.css';
@@ -16,10 +18,10 @@ function EquipmentPage() {
 	const equipmentSearch = useAppSelector((state) => state.search.equipmentSearch);
 	const equipment = useAppSelector((state) => state.equipmentData.equipment);
 
-	const categorisedItems = useMemo((): Record<string, GenericModel[]> => {
-		const sorted: Record<string, GenericModel[]> = {};
+	const categorisedItems = useMemo((): Record<string, EquipmentItemModel[]> => {
+		const sorted: Record<string, EquipmentItemModel[]> = {};
 
-		if (equipment.length) equipment.forEach((equipmentItem: GenericModel) => {
+		if (equipment.length) equipment.forEach((equipmentItem: EquipmentItemModel) => {
 			const key = equipmentItem.type.toString();
 			if (!Object.keys(sorted).includes(key)) sorted[key] = [];
 			sorted[key].push(equipmentItem);
@@ -53,13 +55,7 @@ function EquipmentPage() {
 						<div className={st.header}>{equipmentKey}</div>
 						<div className={[st.equipmentList, stcl.removeParentWhenEmpty].join(' ')}>
 							{filteredItems(equipmentKey).map((item, index) => (
-								<div className={st.item} key={`${equipmentKey} ${index}`}>
-									<div className={st.itemHead}>
-										<span className={st.name}>{item.name}</span>
-										<span className={st.cost}>{item.cost}</span>
-									</div>
-									<div className={st.description}>{item.description}</div>
-								</div>
+								<EquipmentItemBlock equipmentItem={item} key={`${equipmentKey} ${index}`} />
 							))}
 						</div>
 					</ContentCard>
