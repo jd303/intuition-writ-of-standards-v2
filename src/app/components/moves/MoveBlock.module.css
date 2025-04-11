@@ -1,26 +1,17 @@
 .move {
-	--width: 100%;
-	--flex-basis: 100%;
-	--flex-wrap: wrap;
-
-	@media (min-width: 768px) {
-		--width: min(200px, 14vw);
-		--flex-basis: auto;
-		--flex-wrap: none;
-	}
-
-	display: grid;
-	grid-template-columns: 1fr 80px;
-	gap: calc(0.5 * var(--padding-standard));
-	padding: var(--padding-standard) 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-half);
+	padding: var(--padding-3-4) 0;
 
 	&:not(:last-child) {
-		border-bottom: var(--border-dashed-strong);
-		
+		border-bottom: var(--border-dashed-subtle);
 	}
 
+	&.open {}
+
 	&.closed {
-		& .description, & .diceRoll {
+		& .description, & .diceRoll, & .expertises {
 			display: none;
 		}
 	}
@@ -37,23 +28,23 @@
 		grid-row: 1;
 
 		display: flex;
-		flex-wrap: wrap;
 		gap: calc(0.5 * var(--padding-standard));
 		justify-content: space-between;
 		font-size: 1.25rem;
 
 		& .title {
-			position: relative;
+			display: flex;
+			gap: var(--padding-half);
 			cursor: pointer;
 			align-items: center;
-
-			& .titleDetails {
-				font-size: 0.9em;
-				opacity: 0.8;
-			}
+			white-space: nowrap;
 			
 			&:hover {
 				text-decoration: underline;
+			}
+
+			.icon {
+				height: 20px;
 			}
 		}
 	}
@@ -80,30 +71,22 @@
 
 		padding-bottom: calc(0.5 * var(--padding-standard));
 	}
-}
 
-.upgrades {
-	color: #777;
-	font-style: italic;
-}
+	.expertises {
+		grid-column: 1;
+		grid-row: 3;
 
-.mode-default {
-}
+		margin-top: calc(0.5 * var(--padding-standard));
+	
+		.expertises {
+			display: flex;
+			flex-direction: column;
+			gap: calc(0.5 * var(--padding-standard));
+			padding: 0 var(--padding-standard);
+			background-color: rgba(0, 0, 0, 0.075);
+			border-bottom: var(--border-dashed-strong);
 
-.triangle {
-	position: absolute;
-	top: -10px;
-	width: 0;
-	height: 0;
-	margin: 13px 0 0 13px;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-
-	&.open {
-		border-top: 9px solid #888; /* Height is ~√3/2 * base */
+			&:empty { display: none; }
+		}
 	}
-
-	&.closed {
-		border-bottom: 9px solid #ccc; /* Height is ~√3/2 * base */
-	}
-  }
+}

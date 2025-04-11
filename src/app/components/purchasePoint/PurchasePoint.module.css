@@ -1,7 +1,11 @@
 .point {
-	width: 15px;
-	height: 15px;
+	width: var(--purchase-point-size);
+	height: var(--purchase-point-size);
 	border: 2px solid #000;
 	background-color: #fff;
 	box-sizing: border-box;
+
+	&[data-enabled="true"] {
+		background-color: #777;
+	}
 }

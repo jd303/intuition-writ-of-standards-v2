@@ -1,41 +1,51 @@
 .skillBlock {
 	display: flex;
 	flex-direction: column;
+	gap: calc(1 * var(--padding-standard));
+
+	&[data-open="false"] {
+		& .movesList,
+		& .description,
+		& div.passivesContainer { display: none !important; } 
+	}
 
 	.heading {
-		padding-bottom: var(--padding-standard);
-		border-bottom: var(--border-dashed-strong);
+		cursor: pointer;
 
 		.title {
-			display: flex;
-			gap: var(--padding-standard);
-			align-items: center;
-			margin-bottom: calc(0.5 * var(--padding-standard));
+			--flex-direction: column;
+			--align-items: flex-start;
+			--gap: var(--padding-half);
 
+			@media (min-width: 1000px) {
+				--flex-direction: row;
+				--align-items: center;
+				--gap: var(--padding-standard);
+			}
+
+			display: flex;
+			flex-direction: var(--flex-direction);
+			gap: var(--gap);
+			align-items: var(--align-items);
 			font-size: 1.6rem;
+
+			.name {
+				display: flex;
+				white-space: nowrap;
+			}
+		}
+
+		.description {
+			margin-top: calc(0.5 * var(--padding-standard));
 		}
 	}
 
-	.moveContainer {
-		margin-top: calc(0.5 * var(--padding-standard));
+	& .passivesContainer {
+		padding-top: var(--padding-half);
+		border-top: var(--moves-border-style);
 
-		& .movesList, & .passivesList {
-			display: flex;
-			flex-direction: column;
-			gap: var(--padding-standard);
-	
-			&:empty { display: none; }
-		}
-	
-		.expertises {
-			display: flex;
-			flex-direction: column;
-			gap: calc(0.5 * var(--padding-standard));
-			padding: 0 var(--padding-standard);
-			background-color: rgba(0, 0, 0, 0.075);
-			border-bottom: var(--border-dashed-strong);
-
-			&:empty { display: none; }
+		.passivesList {
+			width: 100%;
 		}
 	}
 }

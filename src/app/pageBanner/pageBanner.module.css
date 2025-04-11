@@ -57,11 +57,11 @@
 
 .banner-silver {
 	--active-colour: rgb(var(--colour-silver));
-	color: var(--colour-dark) !important;
+	color: rgb(var(--colour-dark)) !important;
 	background: var(--active-colour) !important;
 
 	& a {
-		color: var(--colour-dark) !important;
+		color: rgb(var(--colour-dark)) !important;
 	}
 
 	& .logo {
@@ -69,7 +69,7 @@
 	}
 
 	& button.hamburger .notch {
-		background-color: var(--colour-dark) !important;
+		background-color: rgb(var(--colour-dark)) !important;
 	}
 }
 

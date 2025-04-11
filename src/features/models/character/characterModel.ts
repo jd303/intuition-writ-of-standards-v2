@@ -1,3 +1,4 @@
+import { DamageDiceOptions } from "../damageDiceModel";
 import { GenericModel } from "./genericModel";
 
 export class CharacterModel {
@@ -23,7 +24,8 @@ export class CharacterModel {
 	racial_mods: {
 		primary: string,
 		secondary: string
-	} = { primary: '', secondary: '' }
+		stature: string,
+	} = { primary: '', secondary: '', stature: '' }
 
 	// Attribute Values
 	attributes: Record<string, number> = {
@@ -114,7 +116,7 @@ export class CharacterModel {
 	weapons: [
 		{
 			name: string,
-			damageDice: DamageDiceType,
+			damageDice: string,
 			bonus_raw: number,
 			bonus_damage: number
 			special: string
@@ -133,7 +135,7 @@ export class CharacterModel {
 		mana: number,
 		psi: number,
 
-		skills: Record<string, SkillPurchase>,
+		skills_and_expertises: Record<string, number>,
 	} = {
 		known_languages: 0,
 		magical_synergy: 0,
@@ -143,38 +145,83 @@ export class CharacterModel {
 		mana: 0,
 		psi: 0,
 
-		skills: {}
+		skills_and_expertises: {
+			"99d6763b": 4,
+			"eda86c1e": 2,
+			"c829531f": 1,
+		}
 	}
 
 	// Spellcraft Values
 	magical_synergies: string[] = [];
 	spells: string[] = [];
 
-	// Admin Values
-	inventory: string[] = [];
-	notes: string = "";
-
-	constructor(characterData?: GenericModel) {
-		console.log("CHARACTER LOADED", characterData);
+	// Inventory Values
+	inventory: Record<string, string> = {
+		item1: "",
+		item2: "",
+		item3: "",
 	}
-}
 
-interface SkillPurchase {
-	id: string;
-	points: number;
-}
+	// Notes Values
+	notes: Record<string, string> = {
+		item1: "",
+		item2: "",
+		item3: "",
+	}
 
-enum DamageDiceType {
-	"d4" = "d4",
-	"d6" = "d6",
-	"d8" = "d8",
-	"d10" = "d10",
-	"d12" = "d12",
-	"d20" = "d20",
-	"2d4" = "2d4",
-	"2d6" = "2d6",
-	"2d8" = "2d8",
-	"2d10" = "2d10",
-	"2d12" = "2d12",
-	"2d20" = "2d20",
+
+	// Constructor
+	constructor(data?: GenericModel) {
+		if (data) {
+			console.log(">> Character", data);
+			this.id = data.id;
+			this.name = data.name;
+			this.profile_photo = data.profile_photo;
+			this.race = data.race;
+			this.sessions = data.sessions || 0;
+			this.speed = data.speed;
+			this.source = data.source;
+			this.languages = data.languages || [];
+			this.updated = data.updated;
+			this.racial_mods = data.racial_mods;
+			this.attributes = data.attributes;
+			this.attributeslocked = data.attributeslocked;
+			this.points = data.points;
+			this.verve = data.verve;
+			this.mana = data.mana;
+			this.psi = data.psi;
+			this.armour = data.armour;
+			this.resistances = data.resistances;
+			this.statuses = data.statuses || [];
+			this.weapons = data.weapons || [];
+			this.weapon_specialisations = data.weapon_specialisations || [];
+			this.purchases = data.purchases;
+			this.magical_synergies = data.magical_synergies || [];
+			this.spells = data.spells || [];
+			this.inventory = data.inventory;
+			this.notes = data.notes;
+		}
+	}
+
+	// Modifiers
+	update(updatePath: string, value: string | number) {
+		// Duplicate the object to break readability
+		const data = JSON.parse(JSON.stringify(this));
+
+		// Follow the path to find the property we need
+		const pathSplit = updatePath.split(".");
+		let property = data;
+		pathSplit.forEach((pathKey, index: number) => {
+			if (index == pathSplit.length-1) {
+				property[pathKey] = value;
+			} else {
+				property = property[pathKey];
+				if (!property) throw new Error("Path key not found");
+			}
+		});
+
+		// Return a new character based on this
+		return new CharacterModel(data);
+	}
 }

@@ -1,20 +1,49 @@
-.purchasePointGroup {
-	display: grid;
-	gap: calc(0.25 * var(--padding-standard));
+.purchasePointContainer {
+	width: 100%;
+	container-type: inline-size;
 
-	&[data-columns="3"] {
-		grid-template-columns: repeat(3, 15px);
-	}
+	.purchasePointGroup {
+		display: grid;
+		gap: 2px;
 
-	&[data-columns="5"] {
-		grid-template-columns: repeat(5, 15px);
-	}
+		&[data-columns="3"] {
+			grid-template-columns: repeat(3, var(--purchase-point-size));
+		}
 
-	&[data-columns="10"] {
-		grid-template-columns: repeat(10, 15px);
-	}
+		&[data-columns="6"] {
+			grid-template-columns: repeat(6, var(--purchase-point-size));
+		}
+		@container (max-width: 90px) {
+			&[data-columns="6"] {
+				grid-template-columns: repeat(3, var(--purchase-point-size));
+			}
+		}
 
-	&[data-columns="12"] {
-		grid-template-columns: repeat(12, 15px);
+		&[data-columns="10"] {
+			grid-template-columns: repeat(10, var(--purchase-point-size));
+		}
+		@container (max-width: 150px) {
+			&[data-columns="10"] {
+				grid-template-columns: repeat(5, var(--purchase-point-size));
+			}
+		}
+
+		&[data-columns="12"] {
+			grid-template-columns: repeat(12, var(--purchase-point-size));
+		}
+		@container (max-width: 190px) {
+			&[data-columns="12"] {
+				grid-template-columns: repeat(6, var(--purchase-point-size));
+			}
+		}
+
+		&[data-columns="15"] {
+			grid-template-columns: repeat(15, var(--purchase-point-size));
+		}
+		@container (max-width: 210px) {
+			&[data-columns="15"] {
+				grid-template-columns: repeat(10, var(--purchase-point-size));
+			}
+		}
 	}
 }

@@ -1,6 +1,10 @@
 :root {
 	--padding-standard: 10px;
+	--padding-1-4: calc(0.25 * var(--padding-standard));
+	--padding-half: calc(0.5 * var(--padding-standard));
+	--padding-3-4: calc(0.75 * var(--padding-standard));
 	--radius-standard: 10px;
+	--purchase-point-size: 12px;
 	--font-size-standard: 0.9rem;
 	--font-size-h1: 1.75rem;
 	--font-size-h2: 1.25rem;
@@ -10,18 +14,19 @@
 	--inputs-height: 40px;
 	--max-width-content-page: 1000px;
 	--max-width-character-sheet-page: 1500px;
-	--border-dashed-style: 1px dashed #e8e8e8;
+	--border-dashed-subtle: 1px dashed #e8e8e8;
 	--border-dashed-strong: 1px dashed #aaa;
 
-	@media (min-width: 768px) {
+	@media (min-width: 769px) {
 		--padding-standard: 15px;
 		--font-size-standard: 0.95rem;
+		--purchase-point-size: 15px;
 	}
 
 	/* Colour Palette */
 	--colour-cream: 240, 233, 217;
 	--colour-cream-light: 251, 250, 247;
-	--colour-dark: #333;
+	--colour-dark: 51, 51, 51;
 	--colour-orange: 177, 110, 11;
 	--colour-purple: 71, 30, 185;
 	--colour-purple-light: 145, 148, 180;
@@ -197,7 +202,7 @@ html, body {
 	font-optical-sizing: auto;
 	font-variation-settings: "wdth" 100;
 	font-size: var(--font-size-standard);
-	color: var(--colour-dark);
+	color: rgb(var(--colour-dark));
 	background-image: url('public/images/bg.paper.texture.webp');
 }
 
@@ -232,10 +237,6 @@ h3 {
 	font-size: var(--font-size-h3);
 }
 
-.outer-container {
-	padding: var(--padding-standard);
-}
-
 section {
 	&:after {
 		content: "";
@@ -252,7 +253,7 @@ p:first-child {
 	margin-top: 0;
 }
 
-input, select {
+input, select, textarea {
 	height: var(--inputs-height);
 	line-height: var(--inputs-height);
 	padding: 0 calc(0.5 * var(--padding-standard));
@@ -264,6 +265,11 @@ input, select {
 
 select {
 	text-transform: capitalize;
+}
+
+textarea {
+	height: auto;
+	line-height: 125%;
 }
 
 button {
@@ -280,5 +286,14 @@ button {
 	&:hover {
 		background-color: color-mix(in srgb, rgb(var(--colour-cream)) 100%, #fff 50%);
 		box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.textHoverEffect {
+	transition: all 0.15s;
+
+	&:hover {
+		transform: translate(-2px, -2px);
+		text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.125);
 	}
 }

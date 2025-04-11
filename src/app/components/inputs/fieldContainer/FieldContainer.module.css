@@ -1,0 +1,15 @@
+.fieldContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-1-4);
+	width: 100%;
+
+	> div {
+		width: 100%;
+	}
+
+	input, select {
+		max-width: 100%;
+		width: 100%;
+	}
+}

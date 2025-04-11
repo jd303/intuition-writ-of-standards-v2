@@ -7,7 +7,7 @@
 	padding: calc(0.75 * var(--padding-standard));
 	background-color: #fff;
 	border-radius: var(--radius-standard);
-	border: var(--border-dashed-style);
+	border: var(--border-dashed-subtle);
 
 	&.mode-view_companion {
 		.hideViewMode {

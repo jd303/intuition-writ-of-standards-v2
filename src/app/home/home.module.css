@@ -10,14 +10,18 @@
 	}
 }
 
-.menu-container {
+.menuContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: var(--padding-standard);
 }
 
-.menu-card {
+.outerContainer {
+	padding: var(--padding-standard);
+}
+
+.menuCard {
 	position: relative;
 	display: flex;
 	align-items: center;

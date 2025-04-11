@@ -17,7 +17,7 @@
 		min-width: 270px;
 		text-transform: capitalize;
 		font-size: 1.4rem;
-		color: var(--colour-dark);
+		color: rgb(var(--colour-dark));
 		text-decoration: none;
 		padding: var(--padding-standard);
 		background-color: rgb(var(--colour-cream));

@@ -10,6 +10,10 @@ import companionMovesDataReducer from './firebase/data/companionMovesDataSlice';
 import magicSpellsDataReducer from './firebase/data/spellsDataSlice';
 import alchemicalsDataReducer from './firebase/data/alchemicalsDataSlice';
 import gadgetsDataReducer from './firebase/data/gadgetsDataSlice';
+import weaponSpecialisationsReducer from './firebase/data/weaponSpecialisationsDataSlice';
+import sourcesReducer from './firebase/data/sourcesDataSlice';
+import racialBonusesReducer from './firebase/data/racialBonusesDataSlice';
+import languagesReducer from './firebase/data/languagesDataSlice';
 
 export const store = configureStore({
   reducer: {
@@ -24,6 +28,10 @@ export const store = configureStore({
 	magicSpells: magicSpellsDataReducer,
 	alchemicals: alchemicalsDataReducer,
 	gadgets: gadgetsDataReducer,
+	weaponSpecialisations: weaponSpecialisationsReducer,
+	sources: sourcesReducer,
+	racialBonuses: racialBonusesReducer,
+	languages: languagesReducer
   },
 });
 

@@ -17,9 +17,13 @@ import { updateSpellsData } from '../features/firebase/data/spellsDataSlice.ts';
 import { updateStatusesData } from '../features/firebase/data/statusesDataSlice.ts';
 import { updateAlchemicalsData } from '../features/firebase/data/alchemicalsDataSlice.ts';
 import { updateGadgetsData } from '../features/firebase/data/gadgetsDataSlice.ts';
+import { updateWeaponSpecialisationsData }  from '../features/firebase/data/weaponSpecialisationsDataSlice.ts';
+import { updateSourcesData } from '../features/firebase/data/sourcesDataSlice.ts';
+import { updateRacialBonusesData } from '../features/firebase/data/racialBonusesDataSlice.ts';
 
 import WritLayout from './layout/writLayout.tsx';
 import Home from './home/home.tsx';
+import { updateLanguagesData } from '../features/firebase/data/languagesDataSlice.ts';
 
 export function App() {
 	const authState = useAuthState();
@@ -71,6 +75,36 @@ export function App() {
 			onValue(gadetsRef, (snapshot) => {
 				dispatch(updateGadgetsData(snapshot.val()));
 			});
+
+			// Collect equipment data
+			const equipmentRef = ref(database, '/equipment');
+			onValue(equipmentRef, (snapshot) => {
+				dispatch(updateEquipmentData(snapshot.val()));
+			});
+
+			// Collect Sources data
+			const sourcesRef = ref(database, '/sources');
+			onValue(sourcesRef, (snapshot) => {
+				dispatch(updateSourcesData(snapshot.val()));
+			});
+
+			// Collect companion moves data
+			const weaponSpecialisationsRef = ref(database, `/weapon_specialisations`);
+			onValue(weaponSpecialisationsRef, (snapshot) => {
+				dispatch(updateWeaponSpecialisationsData(snapshot.val()));
+			});
+
+			// Collect racial bonuses data
+			const racialBonusesRef = ref(database, `/racial_bonuses`);
+			onValue(racialBonusesRef, (snapshot) => {
+				dispatch(updateRacialBonusesData(snapshot.val()));
+			});
+
+			// Collect languages data
+			const languagesRef = ref(database, `/languages`);
+			onValue(languagesRef, (snapshot) => {
+				dispatch(updateLanguagesData(snapshot.val()));
+			});
 		}
 
 		if (authState.authLevel >= 2) {
@@ -85,12 +119,6 @@ export function App() {
 			const dcsRef = ref(database, '/dcs');
 			onValue(dcsRef, (snapshot) => {
 				dispatch(updateDcsData(snapshot.val()));
-			});
-
-			// Collect equipment data
-			const equipmentRef = ref(database, '/equipment');
-			onValue(equipmentRef, (snapshot) => {
-				dispatch(updateEquipmentData(snapshot.val()));
 			});
 		}
 

@@ -1,0 +1,30 @@
+.triangleNotch {
+	position: relative;
+	width: 16px;
+	height: 16px;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	[data-type="default"] {
+		&.open {
+			transform: scaleY(1);
+		}
+		&.closed {
+			transform: scaleY(-1);
+		}
+	}
+
+	&[data-type="plus"] {
+		img { display: none; }
+
+		&.open div:after {
+			content: "-";
+		}
+		&.closed div:after {
+			content: "+";
+		}
+	}
+}

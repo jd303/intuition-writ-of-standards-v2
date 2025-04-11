@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GenericModel } from "../../models/genericModel";
+import { CharacterModel } from "../../models/character/characterModel";
 
 interface CharactersData {
-	characters: GenericModel[]
+	characters: CharacterModel[]
 }
 
 const initialState: CharactersData = {

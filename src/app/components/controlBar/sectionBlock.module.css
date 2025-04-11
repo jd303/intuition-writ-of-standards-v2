@@ -21,12 +21,6 @@
 		cursor: pointer;
 		padding: calc(0.5 * var(--padding-standard)) 0;
 		text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-		transition: all 0.15s;
-
-		&:hover {
-			transform: translate(-2px, -2px);
-			text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.125);
-		}
 
 		img {
 			height: 25px;
@@ -40,7 +34,7 @@
 
 	.sectionContent {
 		padding: calc(0.5 * var(--padding-standard));
-		border: var(--border-dashed-style);
+		border: var(--border-dashed-subtle);
 		border-radius: var(--radius-standard);
 	}
 }

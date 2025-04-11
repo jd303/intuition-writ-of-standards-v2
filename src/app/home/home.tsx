@@ -1,12 +1,12 @@
 import { Link } from "react-router";
 import { useAuthState } from "../../features/firebase/firebase";
-import './home.css';
+import st from './home.module.css';
 
 export default function Menu() {
 	const auth = useAuthState();
 
 	return (
-		<main className="outer-container menu-container">
+		<main className={`${st.outerContainer} ${st.menuContainer}`}>
 			<LogoCard></LogoCard>
 			{cards.map(({ image, label, colour, route, authLevel }, index) => (
 				authLevel <= auth.authLevel && <NavCard key={index} image={image} label={label} colour={colour} route={route} index={index}></NavCard>
@@ -17,7 +17,7 @@ export default function Menu() {
 
 function LogoCard() {
 	return (
-		<div className="menu-card">
+		<div className={st.menuCard}>
 			<img className="logo" src="/public/images/lg.intuition.svg" alt="" />
 		</div>
 	);
@@ -25,10 +25,10 @@ function LogoCard() {
 
 function NavCard({ image, label, colour, route, index }: { image?: string, label: string, colour: string, route: string, index: number }) {
 	return (
-		<Link to={route} className={["menu-card", `link_${index}`].join(' ')}>
-			<img className="image" src={image} alt="" />
-			<div className="label trattatello">{label}</div>
-			<div className={["absolute object-cover h-full w-full mix-blend-color opacity-50 hover:opacity-0 transition ease", colour].join(' ')}></div>
+		<Link to={route} className={[st.menuCard, st[`link_${index}`]].join(' ')}>
+			<img className={st.image} src={image} alt="" />
+			<div className={st.label + ' trattatello'}>{label}</div>
+			<div className={colour}></div>
 		</Link>
 	);
 }

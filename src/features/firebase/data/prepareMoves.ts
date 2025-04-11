@@ -1,55 +1,22 @@
-import { Move } from "../../models/moveModel";
+import { MoveModel } from "../../models/moveModel";
 
 export type MovesCategories = Record<string, MovesCategorisation>;
 
 export interface MovesCategorisation {
 	category: string,
-	skill?: Move,
-	moves: Move[],
-	passives: Move[],
+	skill?: MoveModel,
+	moves: MoveModel[],
+	passives: MoveModel[],
+	purchaseIds: string[],
 }
 
-const categoryGrouping = {
-	wellness: [
-		'preparedness',
-		'defences',
-	],
-	combat: [
-		'combat',
-	],
-	general: [
-		'perception',
-		'athletics',
-		'knowledge',
-		'influence',
-	],
-	skilled: [
-		'engineering',
-		'crafty',
-		'deception',
-	],
-	magic: [
-		'magic',
-	],
-	inner_power: [
-		'inner_power'
-	],
-	beast_mastery: [
-		'beast_mastery'
-	],
-	psionics: [
-		'psionics'
-	]
-}
-
-export const prepareMoves = (movesData: Move[]) => {
-	//const movesData = [...providedData];
+export const prepareMoves = (movesData: MoveModel[]) => {
 	const response: MovesCategories = {};
-	let lastMove: Move | null = null;
+	let lastMove: MoveModel | null = null;
 	let skillStat: string;
 	let currentCategory: string;
 	
-	movesData.forEach((moveDataItem: Move) => {
+	movesData.forEach((moveDataItem: MoveModel) => {
 		currentCategory = moveDataItem.category;
 		if (!response[currentCategory]) response[currentCategory] = createCategory(moveDataItem.name);
 
@@ -65,14 +32,17 @@ export const prepareMoves = (movesData: Move[]) => {
 					if (!lastMoveReference) break;
 					if (!lastMoveReference.expertises) lastMoveReference.expertises = [];
 					lastMoveReference.expertises.push({ ...moveDataItem, stat: skillStat });
+					response[currentCategory].purchaseIds.push(moveDataItem.id);
 				}
 			break;
 			case "Passive":
 				response[currentCategory].passives.push({ ...moveDataItem, stat: skillStat });
+				response[currentCategory].purchaseIds.push(moveDataItem.id);
 			break;
 			default:
 				lastMove = moveDataItem;
 				response[currentCategory].moves.push({ ...moveDataItem, stat: skillStat });
+				response[currentCategory].purchaseIds.push(moveDataItem.id);
 		}
 	});
 
@@ -85,6 +55,7 @@ function createCategory(name: string) {
 		skill: undefined,
 		moves: [],
 		passives: [],
+		purchaseIds: []
 	}
 }
 
