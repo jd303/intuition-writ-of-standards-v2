@@ -1,21 +1,26 @@
 import st from './SelectField.module.css';
 import FieldContainer from '../fieldContainer/FieldContainer';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 interface SelectFieldOption {
 	value: string | number,
 	label: string | number,
 }
 
-function SelectField( { initialValue, disabled = false, options, label, onChange }: { initialValue: string | number, disabled?: boolean, options: SelectFieldOption[], label?: string, onChange: (value: string | number) => void } ) {
+function SelectField({ initialValue, disabled = false, options, label, onChange, type = "text", className }: { initialValue: string | number, disabled?: boolean, options: SelectFieldOption[], label?: string, onChange: (value: string | number) => void, type?: "text" | "number", className?: string }) {
 	const [value, setValue] = useState<string | number>(initialValue);
 	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
-			setValue(event.target.value);
-			if (onChange) onChange(event.target.value);
-		}
+		const value = type == "number" && parseInt(event.target.value) || event.target.value;
+		setValue(value);
+		if (onChange) onChange(value);
+	}
+
+	useEffect(() => {
+		setValue(initialValue);
+	}, [initialValue]);
 
 	return (
-		<FieldContainer label={label}>
+		<FieldContainer label={label} className={className}>
 			<select value={value} onChange={handleOnChange} disabled={disabled}>
 				{options.map((option, index) => (
 					<option value={option.value} key={`${label}-${index}`}>{option.label}</option>

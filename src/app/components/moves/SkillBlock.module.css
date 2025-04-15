@@ -40,6 +40,11 @@
 		}
 	}
 
+	.movesList {
+		display: flex;
+		flex-direction: column;
+	}
+
 	& .passivesContainer {
 		padding-top: var(--padding-half);
 		border-top: var(--moves-border-style);

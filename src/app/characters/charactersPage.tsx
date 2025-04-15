@@ -24,7 +24,7 @@ function CharactersPage() {
 		const charactersArray: CharacterModel[] = characters?.length && [ ...characters ] || [];
 		const characterData = new CharacterModel();
 		characterData.id = uuidv4();
-		characterData.name = newCharacterName;
+		characterData.vitae.name = newCharacterName;
 		charactersArray.push(characterData);
 		writeCharactersData(charactersArray);
 	}
@@ -40,7 +40,7 @@ function CharactersPage() {
 				<h1>Characters</h1>
 				{characters?.length && characters.map((character: CharacterModel) => (
 					<div className={st.characterItem} key={`${character.id}`}>
-						<Link className={st.characterLink + " trattatello"} to={`/characters/${character.id}`}>{character.name}</Link>
+						<Link className={st.characterLink + " trattatello"} to={`/characters/${character.id}`}>{character.vitae.name}</Link>
 						<ConfirmButton className={st.confirmButton} onClick={() => deleteCharacter(character.id.toString())} label="Delete" />
 					</div>
 				))}

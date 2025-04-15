@@ -1,0 +1,128 @@
+[
+    {
+        "dc": 1,
+        "effect": "While using any Move that changes your position, you can Activate this to have it let off Caltrops.  Squares with Caltrops are considered Difficult Terrain.  After activating it, you must recharge it with caltrops to the value of 2 Standards.",
+        "id": "6fc435b3",
+        "materials": "Iron",
+        "name": "Caltrop Spreader",
+        "standards": 5,
+        "type": "item"
+    },
+    {
+        "dc": 2,
+        "effect": "This gadget can be Activated to make an obnoxious noise.  The noise can be delayed by up to 5 minutes and can be heard from 200m away.  After activating it, you must recharge it with materials to the value of 1 Standard.",
+        "id": "af9a64de",
+        "materials": "Orraquartz",
+        "name": "Noisy Peeper",
+        "standards": 15,
+        "type": "item"
+    },
+    {
+        "dc": 2,
+        "effect": "This gadget includes 75m of cord and has vibration sensors.  If someone approaches within 15m, or disrupts the cord, it emits an obnoxious noise that can be heard up to 100m away then deactivates.  After activating its noise, you must recharge it with materials to the value of 2 Standards.",
+        "id": "2c102913",
+        "materials": "Orraquartz",
+        "name": "Guard Dog",
+        "standards": 15,
+        "type": "item"
+    },
+    {
+        "dc": 2,
+        "effect": "You make a rolling gadget that can carry 1kg and is cog-programmable to travel up to 50m making up to five 90 degree turns.  It will stop if it hits something.  After activating it, you must recharge it with materials to the value of 3 Standards.",
+        "id": "f4c53b47",
+        "materials": "Saltine",
+        "name": "Little Groundhog",
+        "standards": 10,
+        "type": "autogol"
+    },
+    {
+        "dc": 3,
+        "effect": "A gadget that can be hidden on your person.  Can be loaded with a single Dart or Throwing Knife.  You may perform the Ranged Basic Attack Move with it as a Free Action once per battle, however you only use your Weapon Damage to resolve Verve Loss.",
+        "id": "745804f6",
+        "materials": "Brass",
+        "name": "Hidden Launcher",
+        "standards": 15,
+        "type": "launcher"
+    },
+    {
+        "dc": 3,
+        "effect": "You create a device that can automatically pick 1 non-magical lock of up to DC 2, then breaks.",
+        "id": "f5d7ede3",
+        "materials": "Basilica",
+        "name": "Autopick",
+        "standards": 15,
+        "type": "item"
+    },
+    {
+        "dc": 4,
+        "effect": "You can attach this gadget to any immobile surface.  If anything passes this it fires a dart at that target, applying 5 Verve Loss.  It can hold up to 5 darts.  Fired darts are broken and must be restocked.",
+        "id": "2c67a9eb",
+        "materials": "Cold Iron",
+        "name": "Spring Launcher",
+        "standards": 40,
+        "type": "equipment"
+    },
+    {
+        "dc": 4,
+        "effect": "You can create a clamp that attaches to a Shield or Weapon.  As a Free Action, you can trigger it to deal 5 Sonic Damage.  If on a weapon, the damage is applied when resolving Basic Melee Attack.  If on a shield it occurs when resolving Block.  Holds 10 charges.",
+        "id": "f7bbd3b9",
+        "materials": "Thunderglass",
+        "name": "Vibrating Clamp",
+        "standards": 30,
+        "type": "trap"
+    },
+    {
+        "dc": 4,
+        "effect": "You create a long clockwork device which grinds and generates heat.  You can use it as a Free Action to generate a small flame that deals 2 Pyral Damage in a 1sq. space.  It has unlimited uses if stopped after 1 round, however if left to burn, the flame doubles in damage and increases its radius by 1sq each round.  By round 2, it can no longer be held safely.  If it reaches 4 rounds, it is destroyed.",
+        "id": "707d8bb1",
+        "materials": "Firestone",
+        "name": "Little Burner",
+        "standards": 20,
+        "type": "trap"
+    },
+    {
+        "dc": 4,
+        "effect": "You make a flying gadget that can carry 1kg and is cog-programmable to travel up to 50m making up to five 90 degree turns.  It will stop if it hits something.  After activating it, you must recharge it with materials to the value of 5 Standards.",
+        "id": "e6ac21a1",
+        "materials": "Saphirium",
+        "name": "Worker Bird",
+        "standards": 15,
+        "type": "autogol"
+    },
+    {
+        "dc": 5,
+        "effect": "You create a device that can automatically pick 1 mundane lock of up to DC 4, then breaks.",
+        "id": "d465b0da",
+        "materials": "Basilica",
+        "name": "Advanced Autopick",
+        "standards": 45,
+        "type": "item"
+    },
+    {
+        "dc": 5,
+        "effect": "You create a diminutive clockwork humanoid.  It can be set to move in one direction, and enters combat mode if it approaches something moving.  In combat mode, it swings wildly with pumelling fists creatures once per turn, friend or foe, applying 10 Verve Loss with each hit.  It has enough charge to run for 10 turns, after which it must be recharged with half a unit of Ebon Scoria.",
+        "id": "17c91312",
+        "materials": "Ebon Scoria",
+        "name": "Basic Autogol",
+        "standards": 75,
+        "type": "autogol"
+    },
+    {
+        "dc": 6,
+        "effect": "You create a diminutive clockwork humanoid.  It can be set to move a specified distance in one direction.  Once it does, it emits a blast at all targets within a 5 square radius, that deals 15 Sonic Damage and applies the Deafness Status if you beat the Defence (CON) of targets.  After doing so, it deactivates.  After expending itself, you must restock it with half a unit of Altsidian.",
+        "id": "75f62ede",
+        "materials": "Altsidian",
+        "name": "Sonic Bantam",
+        "standards": 75,
+        "type": "autogol"
+    },
+    {
+        "dc": 6,
+        "effect": "You create a diminutive clockwork humanoid.  It can be set to move a specified distance in one direction.  Once it does, it fires a dart, applying 5 Verve Loss, at the closest target each turn for 3 turns, then deactivates.  Fired darts are lost and must be restocked.",
+        "id": "248189bd",
+        "materials": "Orraquartz",
+        "name": "Spitting Bantam",
+        "standards": 75,
+        "type": "autogol"
+    }
+]

@@ -1,0 +1,125 @@
+[
+    {
+        "desc": "Your companion will guard an area, making a noise if someone they don't recognise enters.",
+        "id": "85702ddb",
+        "name": "Guard",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion will attack a target you specify.  Once given the attack command, your companion will continue attacking until there are no combatants remaining.",
+        "id": "98be0347",
+        "name": "Attack",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion will attempt to fetch an unguarded item.",
+        "id": "7d112f8f",
+        "name": "Fetch",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion will travel up to 10 minutes from you to see if there is any movement.  You can instruct them to either return and alert you, or alert when they see something.",
+        "id": "e78cb915",
+        "name": "Scout",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "If you show or let your companion smell something, they can search for more within 5 minutes travel of you.  Roll a Search Move using their Mental Bonus.",
+        "id": "5211abaa",
+        "name": "Find",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion moves its speed again.",
+        "id": "a744cdaf",
+        "name": "Sprint",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion finds one of your allies within 10 minutes of you and makes a noise.  You can impart information based on this noise if you've agreed on it beforehand.",
+        "id": "6da4980b",
+        "name": "Message",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion uses their Special Attack.",
+        "id": "8f655685",
+        "name": "Special Attack",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "If doing a task that is not dangerous, your companion can reduce the time by 15%",
+        "id": "50708771",
+        "name": "Aide",
+        "stat": "standard",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion Heals 3 HP.",
+        "id": "d3c1fb37",
+        "name": "Rest",
+        "stat": "advanced",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion uses their Attack Move, and may move both before and after the attack.",
+        "id": "1115d268",
+        "name": "Rush",
+        "stat": "advanced",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion delivers an item to a companion, or to an obvious location of your choice.",
+        "id": "0cc1dc5c",
+        "name": "Deliver",
+        "stat": "advanced",
+        "type": "move"
+    },
+    {
+        "desc": "If nearby, and if strong enough, your companion increases your Speed by 1 square, or your Jump distance and Climb Speed by 3 squares.",
+        "id": "1491203b",
+        "name": "Springboard",
+        "stat": "advanced",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion takes a Basic or Quick Attack that was not targeting them, from an enemy within range.",
+        "id": "4e860332",
+        "name": "Defend",
+        "stat": "advanced",
+        "type": "move"
+    },
+    {
+        "desc": "Your companion can deliver a spell with a range of Touch to an opponent.",
+        "id": "a6bda8ea",
+        "name": "Bond",
+        "stat": "advanced",
+        "type": "move"
+    },
+    {
+        "abilities": "Running, Climbing, Stealth.",
+        "desc": "A lithe animal, such as a cat or a stoat.",
+        "id": "c28353da",
+        "name": "Lithe Animal",
+        "stat": "dc1",
+        "stats": "Strength: 0, Dexterity: 3, Constitution: 1, Intelligence: 0, Wisdom: 0, Charisma: 0. Move 4sq. Verve: 20.",
+        "type": "beast"
+    },
+    {
+        "abilities": "Flying, Climbing, Swooping.",
+        "desc": "A flying animal, such as an eagle or a bat.",
+        "id": "095126cc",
+        "name": "Flying Animal",
+        "stat": "dc1",
+        "stats": "Strength: 0, Dexterity: 3, Constitution: 1, Intelligence: 0, Wisdom: 0, Charisma: 0.  Move 5sq.  Verve: 20.",
+        "type": "beast"
+    }
+]

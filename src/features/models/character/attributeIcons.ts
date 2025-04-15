@@ -7,11 +7,11 @@ import icoCharisma from '/public/images/icons/ico.thumbsup.svg';
 
 export const getAttributeIcon = (attrName: string) => {
 	switch (attrName) {
-		case "strength": return icoStrength;
-		case "constitution": return icoConstitution;
-		case "dexterity": return icoDexterity;
-		case "intelligence": return icoIntelligence;
-		case "wisdom": return icoWisdom;
-		case "charisma": return icoCharisma;
+		case "str": return icoStrength;
+		case "con": return icoConstitution;
+		case "dex": return icoDexterity;
+		case "int": return icoIntelligence;
+		case "wis": return icoWisdom;
+		case "cha": return icoCharisma;
 	}
 }

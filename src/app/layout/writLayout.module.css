@@ -9,6 +9,6 @@
 	& .pageContent {
 		display: flex;
 		flex-direction: column;
-		padding: calc(2 * var(--padding-standard));
+		padding: var(--padding-standard);
 	}
 }

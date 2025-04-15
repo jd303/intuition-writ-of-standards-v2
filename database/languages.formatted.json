@@ -1,0 +1,30 @@
+[
+    {
+        "id": "2d0b7484",
+        "name": "Common"
+    },
+    {
+        "id": "d3fa1c2d",
+        "name": "Elven"
+    },
+    {
+        "id": "77a2da4a",
+        "name": "Dwarven"
+    },
+    {
+        "id": "e8972c07",
+        "name": "Folk Common"
+    },
+    {
+        "id": "7749123f",
+        "name": "Fae"
+    },
+    {
+        "id": "8a98886d",
+        "name": "Abyssal"
+    },
+    {
+        "id": "04c7d5aa",
+        "name": "Arcane"
+    }
+]

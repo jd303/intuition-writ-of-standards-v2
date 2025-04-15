@@ -22,7 +22,7 @@
 	.controlBar {
 		flex-basis: 100%;
 		display: flex;
-		gap: calc(2 * var(--padding-standard));
+		gap: var(--padding-standard);
 		padding: var(--padding-standard);
 		clip-path: var(--shape-bevelled);
 

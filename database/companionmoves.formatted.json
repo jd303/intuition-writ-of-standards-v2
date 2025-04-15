@@ -1,0 +1,122 @@
+[
+    {
+        "desc": "Your companion will stay where directed, unless threatened.",
+        "id": "af9febab",
+        "name": "Stay",
+        "type": "basic"
+    },
+    {
+        "desc": "Your companion will go in a direction until they encounter something interesting or familiar.  Some smarter companions will go to a place of significance in the direction you specify.",
+        "id": "b3847f06",
+        "name": "Go",
+        "type": "basic"
+    },
+    {
+        "desc": "Your companion will come to you, and continue following you, if it can hear or see your command.",
+        "id": "f9ff36b8",
+        "name": "Come",
+        "type": "basic"
+    },
+    {
+        "desc": "Your companion will carry something, if it is capable of doing so, though it will not intrinsically do anything with the item it carries.",
+        "id": "4762b060",
+        "name": "Carry",
+        "type": "basic"
+    },
+    {
+        "desc": "Your companion will guard an area, making a noise if someone they don't recognise enters.",
+        "id": "85702ddb",
+        "name": "Guard",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion will attack a target you specify.  Once given the attack command, your companion will continue attacking until there are no combatants remaining.",
+        "id": "98be0347",
+        "name": "Attack",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion will attempt to fetch an unguarded item.",
+        "id": "7d112f8f",
+        "name": "Fetch",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion will travel up to 10 minutes from you to see if there is any movement.  You can instruct them to either return and alert you, or alert when they see something.",
+        "id": "e78cb915",
+        "name": "Scout",
+        "type": "standard"
+    },
+    {
+        "desc": "If you show or let your companion smell something, they can search for more within 5 minutes travel of you.  Roll a Search Move using their Mental Bonus.",
+        "id": "5211abaa",
+        "name": "Find",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion moves its speed again.",
+        "id": "a744cdaf",
+        "name": "Sprint",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion finds one of your allies within 10 minutes of you and makes a noise.  You can impart information based on this noise if you've agreed on it beforehand.",
+        "id": "6da4980b",
+        "name": "Message",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion delivers or drops an item it is carrying at a location that you can show them.  Some smarter companions will be able to deliver to a place of significance in a direction you show, even if you cannot point to it directly.",
+        "id": "c650103e",
+        "name": "Deliver",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion uses a Special Attack, if they have one.",
+        "id": "8f655685",
+        "name": "Special Attack",
+        "type": "standard"
+    },
+    {
+        "desc": "If doing a task that is not dangerous, your companion can reduce the time by 15%",
+        "id": "50708771",
+        "name": "Aide",
+        "type": "standard"
+    },
+    {
+        "desc": "Your companion Restores 10 Verve.",
+        "id": "d3c1fb37",
+        "name": "Rest",
+        "type": "advanced"
+    },
+    {
+        "desc": "Your companion expends 5 Verve to resolve the Attack Move twice this turn.",
+        "id": "1115d268",
+        "name": "Rush",
+        "type": "advanced"
+    },
+    {
+        "desc": "If nearby, and if strong enough, your companion increases your Speed by 1 square, or your Jump distance and Climb Speed by 3 squares.",
+        "id": "1491203b",
+        "name": "Springboard",
+        "type": "advanced"
+    },
+    {
+        "desc": "Your companion takes the Verve Loss from a Basic Attack that was not targeting them, from an enemy within range.",
+        "id": "4e860332",
+        "name": "Defend",
+        "type": "advanced"
+    },
+    {
+        "desc": "Your companion can deliver a spell that you cast with a range of Touch.",
+        "id": "a6bda8ea",
+        "name": "Bond",
+        "type": "advanced"
+    },
+    {
+        "desc": "Your companion goes to a location and tries to hide and create a noise that might distract opponents, if it's call is noteworthy to those in the area.",
+        "id": "2af586ad",
+        "name": "Distract",
+        "type": "advanced"
+    }
+]

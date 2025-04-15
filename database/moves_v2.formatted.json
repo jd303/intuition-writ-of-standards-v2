@@ -1,0 +1,2561 @@
+[
+    {
+        "category": "athletics",
+        "name": "Athletics",
+        "stat": "con",
+        "id": "3d117be9",
+        "type": "Skill",
+        "description": "You move yourself to somewhere else.  You cannot move through enemy creatures, and moving through squares that are difficult terrain costs twice the movement.  As part of the same Action, you may resolve multiple Athletics Moves, such as walking and then climbing, if you have the available movement squares.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "athletics",
+        "name": "Relocate",
+        "id": "a3e6a24d",
+        "type": "Primary",
+        "description": "You relocate your body by walking, running, swimming or flying.  Travelling through multiple squares of a Threatened Area of an enemy costs twice the movement for each square beyond the first. If you relocate under stress for a number of minutes greater than your Athletics Skill Score, you need to succeed at the Relocate Move every minute at an incrementing DC, or need to stop and gain the Exhausted Status."
+    },
+    {
+        "category": "athletics",
+        "name": "Alacrity",
+        "id": "8cd7a25c",
+        "type": "Expertise",
+        "description": "At the start of each combat, gain 1 Alacrity for each point of Expertise.  When you choose this Expertise, your may expend Alacrity to increase your Speed by 1 per Alacrity, until the end of your turn.  On any turn, you may only expend up to half your Expertise of Alacrity."
+    },
+    {
+        "category": "athletics",
+        "name": "Relocate Tactician",
+        "id": "0d4375b6",
+        "type": "Expertise",
+        "description": "When resolving the Relocate Move and using this Expertise, for each Expertise:\n-- Once per turn after an enemy has declared their movement, you may move up to half a square towards that enemy.\n-- You may move through half an enemy's square, or one Threatened Square, without penalty."
+    },
+    {
+        "category": "athletics",
+        "name": "Surefoot",
+        "id": "45f359d8",
+        "type": "Expertise",
+        "description": "On your turn for each Expertise you gain the following effects:\n-- You gain a +1 Bonus to Rolls that attempt to move you, including Push or Trip, and you can ignore actions that automatically Move you.  This effect applies until the start of your next turn.\n-- When you lose the Prone or Grappled Status, you add +1 Verve Loss to the first Move you make that applies Verve Loss.\n-- You may ignore the movement Penalty applied by difficult terrain of 1 square."
+    },
+    {
+        "category": "athletics",
+        "name": "Jump & Fall",
+        "id": "72450e9b",
+        "type": "Primary",
+        "description": "You perform a jump or attempt to fall with no damage.  When jumping, you move up to a number of squares horizontally equal to 1/2 your movement or vertically equal to 1/4 of your movement, however you must succeed at a Relocate Move Roll with the DC equal to the number of squares you are jumping.  The DC reduces by 1 if you get a run-up.  When falling, you safely fall a number of squares equal to half your Athletics bonus - any larger and you must succeed at a Relocate Move Roll with the DC equal to the number of squares you fall.  If you fail, you lose 4 Verve per square you fell, and may incur a negative Status."
+    },
+    {
+        "category": "athletics",
+        "name": "Aggressive Athlete",
+        "id": "24bb0406",
+        "type": "Expertise",
+        "description": "When using this Expertise, choose one effect:\n-- After jumping or falling in a straight line towards a target, you apply additional Verve Loss to the Total Damage when resolving the Melee Attack Move on the same turn, equal to the lower of the number of Squares your moved, and your Expertise.\n-- When jumping or falling, you may attempt to Slam the ground.  Resolve Athletics, gaining a +1 Bonus per point in this Expertise, and note the DC you beat. starting at DC 1.  You apply 1 Verve Loss to all adjacent creatures per DC you beat."
+    },
+    {
+        "category": "athletics",
+        "name": "Tumbler Expertise",
+        "id": "b26a66cb",
+        "type": "Expertise",
+        "description": "When using this Expertise, for each point:\n-- You may jump and climb half a square further.\n-- You may fall an additional square without incurring Verve Loss."
+    },
+    {
+        "category": "athletics",
+        "name": "Climb",
+        "id": "184109f3",
+        "type": "Primary",
+        "description": "You climb a surface a number of squares equal to half your movement speed, however you must succeed at a Relocate Move Roll with the DC equal to the difficulty of the surface."
+    },
+    {
+        "category": "athletics",
+        "name": "Acrobat",
+        "id": "e0b2f9f1",
+        "type": "Expertise",
+        "description": "When resolving the Relocate Move and using this Expertise, choose one of the following effects:\n-- You gain a +1 Bonus per point of Expertise, when resolving the Jump or Climb Moves to jump over or climb on enemies, or to kick off walls and structures.\n-- You may use your Expertise Bonus instead of your Defences Bonus, when resolving Block and Dodge."
+    },
+    {
+        "category": "athletics",
+        "name": "Athletics Master",
+        "id": "90ab3147",
+        "type": "Passive",
+        "description": "If you have at least 4 points in 2 Athletics Expertises, you may choose 2 Expertises when resolving Athletics Moves, however may only choose 1 Effect that increases Verve Loss."
+    },
+    {
+        "category": "preparedness",
+        "name": "Preparedness",
+        "stat": "con",
+        "id": "99d6763b",
+        "type": "Skill",
+        "description": "Your body is ready.  But if you don't keep your body rested and fed, such as by taking a Long Rest and eating and drinking at least once per day, you gain the Exhausted Status until you do.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "preparedness",
+        "name": "Short Rest",
+        "id": "327f8d06",
+        "type": "Primary",
+        "description": "When in a comfortable space, you take Rest for 10 minutes.  You Restore 20% of your total Verve, plus 2 per point in the Preparedness Skill.  You additionally restore 10 Mana, plus 1 per point in the Preparedness Skill.  You may gain the benefit of a Short Rest three times per day."
+    },
+    {
+        "category": "preparedness",
+        "name": "Long Rest",
+        "id": "70479f7f",
+        "type": "Primary",
+        "description": "When in a comfortable space, you Rest or Sleep for 8 hours, restoring all your Mana, Psi, Verve and Stamina, and remove 1 non-Wound Status.  Additionally, if you beat a DC 4 Rest Move, you reduce the severity of a Wound Status.  This may be reduced twice, once for a comfortable room and once if you are tended to by a healer for the night and they succeed at a DC 2 Knowing with Medicine."
+    },
+    {
+        "category": "preparedness",
+        "name": "Recouperative Rester",
+        "id": "c829531f",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Long Rest, depending on your Expertise score you gain one of the following effects:\n-- 1 Point: You may rest for an hour less and gain all the benefits.\n-- 2 Points: You Gain 5 Verve, 2 Mana and 1 Psi.\n-- 3 Points: You Gain a Hardy.  You may exchange a Hardy to ignore gaining the Incapacitated Status.\n-- 4 Points: You Gain 1 Lucky.  You may exchange a Lucky to reroll any d20 Roll.\n-- 5 Points: You may remove one Status that has the Ciar type.\n-- 6 Points: You may reduce the severity of a Wounded Status by 1 rank."
+    },
+    {
+        "category": "preparedness",
+        "name": "Combat Preparedness",
+        "id": "0e747388",
+        "type": "Primary",
+        "description": "You take a moment, Gaining 6 Verve."
+    },
+    {
+        "category": "preparedness",
+        "name": "Preparation",
+        "id": "eda86c1e",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Combat Preparedness, choose one effect per point in Combat Preparedness.  You may choose the same effect more than once.\n-- Gain an additional 2 Verve.\n-- Gain a +1 to Basic Defence until used or the start of your next turn.\n-- Gain a +1 to Resist Physica until used or the start of your next turn.\n-- Gain a +1 to Resist Mental until used or the start of your next turn."
+    },
+    {
+        "category": "preparedness",
+        "name": "Stabilise",
+        "id": "91e4a0d8",
+        "type": "Primary",
+        "description": "When you have the Incapacitated Status, you may attempt to stabilise and remove it.  You stabilise if you successfully resolve the Rest Move Roll at a DC2.  If your current Verve is less than -10 or you have a Wound Status, the DC raises to 3.  After Stabilising, you awaken with the Prone and Wound: Injured Statuses."
+    },
+    {
+        "category": "preparedness",
+        "name": "Quaff",
+        "id": "799ccc36",
+        "type": "Primary",
+        "description": "You drink an alchemical or potion that is in your Item Belt, or you apply one to an adjacent willing target.  If you are the target, this move is resolved as a Free Action once per round."
+    },
+    {
+        "category": "preparedness",
+        "name": "Targeted Medic",
+        "id": "17149395",
+        "type": "Expertise",
+        "description": "When using this Expertise, you may apply Quaff to a willing target up to 2sq away per point in Targeted Medic.  If you have at least 5 Expertise, you may also use this on an unwilling target, though you still have to beat their Defenses to do so."
+    },
+    {
+        "category": "preparedness",
+        "name": "Use Item",
+        "id": "0bbfd597",
+        "type": "Primary",
+        "description": "You trigger the effects of an item that does not need expert knowledge to activate, that is in your Item Belt.  If the item requires you to Resolve a Move, resolve that as well.  Some magical items may instead require the Trigger Magic Move in the Knowing Skill."
+    },
+    {
+        "category": "preparedness",
+        "name": "Evil Items",
+        "id": "07e4558b",
+        "type": "Expertise",
+        "description": "When using this Expertise, choose one effect:\n-- When resolving Use Item, any Verve Loss applied is increased by 1 per Expertise.\n-- When resolving to apply Weapon Oil, resolve a Raw Roll.  On [15|14|13|12|11|10], this is a Free Action.\n-- Bombs and explosives used gain 1sq additional volume, chosen by you adjacent to an existing sq of volume.\n-- When resolving Use Item, resolve a Raw Roll.  On [20|19|18|17|16|15] the item does not expend a charge, if it had multiple charges."
+    },
+    {
+        "category": "preparedness",
+        "name": "Rummage / Restock",
+        "id": "60b2e48f",
+        "type": "Primary",
+        "description": "You restock your Item Belt, or you stop to Rummage in your pack for up to 2 items that you know are there."
+    },
+    {
+        "category": "preparedness",
+        "name": "Field Medic",
+        "id": "62a32da0",
+        "type": "Expertise",
+        "description": "When using this Expertise, choose one effect:\n-- When resolving Quaff, any Verve Restoration is increased by 1 per point.\n-- When resolving Rummage / Restock, you may get 1 additional item that you know is there per point.\n-- When using Use Item, any Roll required to hit or comprehend the use of the item gains a +1 Bonus per point.\n-- Applied Weapon Oils apply an additional 1 Verve Loss when resolved."
+    },
+    {
+        "category": "preparedness",
+        "name": "Quick Healer",
+        "id": "05ad69e8",
+        "type": "Passive",
+        "description": "Any time you Restore Verve, you Restore 2 additional Verve."
+    },
+    {
+        "category": "preparedness",
+        "name": "Healthy Constitution",
+        "id": "d81eb037",
+        "type": "Passive",
+        "description": "Any time you Restore Verve you may treat it as Gaining Verve, however any Temporary Verve gained this way may not exceed 10."
+    },
+    {
+        "category": "preparedness",
+        "name": "Extended Wakefulness",
+        "id": "3d11e36e",
+        "type": "Passive",
+        "description": "You are used to long awake times.  You only need to resolve the Long Rest Move or eat once every 2 days to avoid Exhaustion.  You may use this ability once, and it is restored when you perform a Long Rest and eat a meal."
+    },
+    {
+        "category": "preparedness",
+        "name": "Utility Bandolier",
+        "id": "d1151cbe",
+        "type": "Passive",
+        "description": "Your item belt holds two more items safely."
+    },
+    {
+        "category": "preparedness",
+        "name": "Item Master",
+        "id": "99dc448a",
+        "type": "Passive",
+        "description": "If you have at least 3 points in 2 Preparedness Expertises, your item belt holds two more items safely, and all numeric effects of items (excluding duration) are increased by 1."
+    },
+    {
+        "category": "resist_physical",
+        "name": "Physical Resistance",
+        "stat": "str, dex, con",
+        "id": "8cf4f202",
+        "type": "Skill",
+        "description": "You resist non Basic Attack Moves that target STR, DEX or CON for their defences",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "resist_physical",
+        "name": "Resist Physical",
+        "id": "10ef99b0",
+        "type": "Reaction",
+        "description": "You use your incredible health, strength or alacrity to resist or avoid a Move from an opponent."
+    },
+    {
+        "category": "resist_physical",
+        "name": "Hardy Resistance",
+        "id": "89edd20c",
+        "type": "Expertise",
+        "description": "When failing Resist Physical and testing against Constitution, for each point in this Expertise reduce any Unresolved Verve Loss by 1."
+    },
+    {
+        "category": "resist_physical",
+        "name": "Limber Resistance",
+        "id": "9bd33521",
+        "type": "Expertise",
+        "description": "When failing Resist Physical and testing against Dexterity, for each point in this Expertise reduce any Unresolved Verve Loss by 1."
+    },
+    {
+        "category": "resist_physical",
+        "name": "Strong Resistance",
+        "id": "3e9ffe1a",
+        "type": "Expertise",
+        "description": "When failing Resist Physical and testing against Strength, for each point in this Expertise reduce any Unresolved Verve Loss by 1."
+    },
+    {
+        "category": "resist_mental",
+        "name": "Mental Resistance",
+        "stat": "int, wis, cha",
+        "id": "a39eb68b",
+        "type": "Skill",
+        "description": "You resist non Basic Attack Moves that target INT, WIS or CHA for their defences",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "resist_mental",
+        "name": "Resist Mental",
+        "id": "e9598ac6",
+        "type": "Reaction",
+        "description": "You use your developed intellect, wisdom or strength of will to resist or avoid a Move from an opponent."
+    },
+    {
+        "category": "resist_mental",
+        "name": "Intelligent Resistance",
+        "id": "3a54918e",
+        "type": "Expertise",
+        "description": "When failing Resist Mental and testing against Intelligence, for each point in this Expertise reduce any Unresolved Verve Loss by 1."
+    },
+    {
+        "category": "resist_mental",
+        "name": "Wise Resistance",
+        "id": "8b72cd6f",
+        "type": "Expertise",
+        "description": "When failing Resist Mental and testing against Wisdom, for each point in this Expertise reduce any Unresolved Verve Loss by 1."
+    },
+    {
+        "category": "resist_mental",
+        "name": "Charismatic Resistance",
+        "id": "16ef7edd",
+        "type": "Expertise",
+        "description": "When failing Resist Mental and testing against Charisma, for each point in this Expertise reduce any Unresolved Verve Loss by 1."
+    },
+    {
+        "category": "defences",
+        "name": "Basic Defence",
+        "stat": "str,dex",
+        "id": "b1197e9a",
+        "type": "Skill",
+        "description": "You resist certain Moves using your armour and ability to block.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "defences",
+        "name": "Block and Dodge",
+        "id": "71f786fd",
+        "type": "Reaction",
+        "description": "You resist basic attacks by either: a) blocking them with your armour and weaponry, or b) you move your body to completely avoid them.  If you succeed, you reduce the incoming Verve Damage by 50%.  Additionally, on a Raw Roll of 20 you reduce the incoming Verve loss to 0.  The incoming Verve Loss before you resolve Block and Dodge is the Unresolved Verve Loss, for the purposes of some Expertises.\n\nYou may only use a Blocker Expertise if you are wearing armour or wielding a melee weapon.  You may only use a Dodger Expertise if you do not have either the Encumbered or Bound status."
+    },
+    {
+        "category": "defences",
+        "name": "Stalwart Blocker",
+        "id": "ff2690cc",
+        "type": "Expertise",
+        "description": "When using this Expertise, choose one effect:\n1. If you succeed at your Block and Dodge, you reduce the Unresolved Verve Damage by the lower of: a) your Expertise, and b) your Armour Rating.\n2. You may apply the Broken tag to either your armour or shield that does not have the Broken tag already.  You ignore a number of Basic Attacks targeting you this turn equal to your Expertise."
+    },
+    {
+        "category": "defences",
+        "name": "Retaliator Blocker",
+        "id": "4c590c27",
+        "type": "Expertise",
+        "description": "When using this Expertise and you fail your Block and Dodge Move, choose one effect:\n1. You apply Verve Loss equal to your Expertise at each Melee attacker this turn.\n2. For each 5 Verve Loss enemies applied to you, you accrue a Bloodlust.  You may spend any amount of Bloodlust as a Free Action to add 3 Verve Loss to a Melee Attack.  You may store 1 Bloodlust for each point of Expertise you have."
+    },
+    {
+        "category": "defences",
+        "name": "Defender Blocker",
+        "id": "4c32e057",
+        "type": "Expertise",
+        "description": "When using this Expertise and Verve Loss is applied from a Basic Attack to an ally within your Threatened Area, you may divert up to 2 times your Expertise Verve Loss from your ally to yourself.  If you have 3 Expertise, you may also divert Verve Loss applied by targeted and Area-effect Spells and Effects.  You may trigger this Expertise when an ally needs to resolve Block and Dodge, instead of yourself."
+    },
+    {
+        "category": "defences",
+        "name": "Deflective Blocker",
+        "id": "4e291a20",
+        "type": "Expertise",
+        "description": "When using this Expertise and you are the target of one or more Basic Attacks, you may attempt to divert one of them to a target in your Threatened Area, whether a willing ally or an enemy.  On a Raw Roll of [15|14|13|12|11|10] you divert it to a willing ally.  On a Raw Roll of [18|18|17|17|16|16] you divert it to an enemy."
+    },
+    {
+        "category": "defences",
+        "name": "Ranged Dodger",
+        "id": "8e46f64b",
+        "type": "Expertise",
+        "description": "When using this Expertise, you reduce the Unresolved Verve Loss of 1 Ranged Basic Attack by your Expertise score."
+    },
+    {
+        "category": "defences",
+        "name": "Fast Dodger",
+        "id": "79e79a3b",
+        "type": "Expertise",
+        "description": "When using this Expertise and successfully resolving Dodge and Block, choose one effect:\n1. You may Relocate to another square adjacent to your attacker, moving up to your Expertise score in sq.\n2. You may Relocate anywhere, moving up to the lower of either your Expertise score, or the unused movement sq from your last turn."
+    },
+    {
+        "category": "defences",
+        "name": "Poised Dodger",
+        "id": "72ad9865",
+        "type": "Expertise",
+        "description": "When using this Expertise and successfully resolving Dodge and Block, you attempt to throw an item on your Item Belt at them.  On a Raw Roll of 14|13|12|11|10|9+ you succeed.  On a failure you do not expend your item."
+    },
+    {
+        "category": "defences",
+        "name": "Environmental Dodger",
+        "id": "ebccf62c",
+        "type": "Expertise",
+        "description": "When using this Expertise, if you are adjacent to an environmental object that could provide cover against an incoming attack (such as a pillar or barrel), you reduce the Unresolved Verve Loss by your Expertise score.  If you succeed at your Block and Dodge Move, you move 1sq closer to that object.  Subsequent uses of this Expertise with the same creature halve the Verve Loss reduction."
+    },
+    {
+        "category": "defences",
+        "name": "Uncanny Survivor",
+        "id": "2d1d07a4",
+        "type": "Passive",
+        "description": "Once per combat, you may reroll a failed Basic Defence Move with a -1 penalty."
+    },
+    {
+        "category": "defences",
+        "name": "Defenses Master",
+        "id": "da6fd058",
+        "type": "Passive",
+        "description": "If you have at least 3 points in both a Blocker and a Dodger Expertise, you may reroll a failed Basic Defence Move with a +1 Bonus once per combat, of the opposite type you failed with."
+    },
+    {
+        "category": "combat",
+        "name": "Combat",
+        "stat": "str,dex",
+        "id": "a72c2adb",
+        "type": "Skill",
+        "description": "You attack with a melee weapon or your body.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "combat",
+        "name": "Melee Attack",
+        "id": "c001a690",
+        "type": "Primary",
+        "description": "You make a single attack with a Melee Weapon.  Resolve a d20 Roll.  On a 1, you end your Melee Attack and do not apply any Verve Loss or effects.  Otherwise, you apply Verve Loss to a single target equal to your Combat Skill and your Weapon Damage Dice.  On a Raw Roll of 20 you apply your Weapon Damage Dice to your target again."
+    },
+    {
+        "category": "combat",
+        "name": "Multiple Melee Attack",
+        "type": "Expertise",
+        "description": "When resolving a Melee Attack and using this Expertise, for each point you have purchased you may split your damage to a number of creatures within your Threatened Area equal to your Expertise, and apply additional Verve Loss equal to half your Expertise to each target."
+    },
+    {
+        "category": "combat",
+        "name": "Furiosity Melee",
+        "type": "Expertise",
+        "description": "When resolving a Melee Attack and using this Expertise, you may apply 2 additional Verve Loss to your attack and half a Verve Loss to yourself a number of times up to to your Expertise.  If you critical, the additional Verve Loss you apply to your target doubles."
+    },
+    {
+        "category": "combat",
+        "name": "Charge",
+        "type": "Expertise",
+        "description": "When resolving a Melee Attack and using this Expertise, if you relocated exclusively in a straight line at least [5|4|3|2|2|2]sq to your opponent this turn, take the maximum value of one of your Weapon Damage Dice instead of rolling it.  If you have 5 Expertise, this no longer needs to be a straight line, and at 6 Expertise this applies to all Damage Dice."
+    },
+    {
+        "category": "combat",
+        "name": "Whirlwind",
+        "type": "Expertise",
+        "description": "When resolving a Melee Attack and using this Expertise, then on a Raw Roll of 11+ you apply an additional 3 Verve Loss.  You may roll this again, increasing the Raw Roll requirement by 1, adding an additional 3 Verve each time you succeed.  You may continue this whirlwind of strikes as many times as your Expertise, or until you fail."
+    },
+    {
+        "category": "combat",
+        "name": "Melee Sneak Attack",
+        "type": "Expertise",
+        "description": "When resolving a Melee Attack using this Expertise, if your target is unaware of you, and your weapon that has the Backstab Tag, then you perform a Sneak Attack.  Roll your Weapon Damage [1|1|2|2|3|3] additional times when resolving damage.  If you have 5 Expertise, your target need only be Flanked, rather than unaware of you.  You may use this ability per creature once every 2 turns."
+    },
+    {
+        "category": "combat",
+        "name": "Sapper Attack",
+        "type": "Expertise",
+        "description": "When resolving a Melee or Ranged attack and using this Expertise, choose one of the following effects:\n1. You reduce the movement speed of your struck creature by 2sq until your next turn.  On a Raw Roll of [19|18|18|17|17|16]+, this lasts indefinitely.\n2. You reduce the damage of a creature by 3 until your next turn.  On a Raw Roll of [19|18|17|17|16|16]+, this lasts indefinitely."
+    },
+    {
+        "category": "combat",
+        "name": "Grapple",
+        "id": "8a47d78e",
+        "type": "Primary",
+        "description": "You attempt to capture an opponent with your body if you succeed at a Grapple Move Roll against the target's STR.  For each size category larger than you, you incur a -4 penalty.  If you succeed, you gain the Encumbered Status and opponent gains the Bound (DC 2) Status.  If you fail, you apply your Combat Skill as Verve Loss instead."
+    },
+    {
+        "category": "combat",
+        "name": "Trip",
+        "id": "2ce87078",
+        "type": "Primary",
+        "description": "You attempt to apply the Prone Status on an opponent with your melee weapon or body, if you beat the target's DEX.  For each size category your target is larger than you, you incur a -4 penalty, and you cannot Trip creatures with 4 or more legs.  If you fail, you apply your Combat Skill as Verve Loss instead."
+    },
+    {
+        "category": "combat",
+        "name": "Disarm",
+        "id": "9d2d8b78",
+        "type": "Primary",
+        "description": "You attempt to disarm an opponent's weapon, shield, or held item with your weapon or body, if you succeed at a Disarm Move Roll against the target's STR or DEX, whichever is higher.  For each size category larger than you, you incur a -4 penalty.  If you succeed, your opponent drops their item on the ground.  If you fail, you apply your Combat Skill as Verve Loss instead."
+    },
+    {
+        "category": "combat",
+        "name": "Push",
+        "id": "68492c90",
+        "type": "Primary",
+        "description": "Resolve the Melee Attack Move against the weight or DC of an item or creature to violently push it.  On a success, it is pushed 2 sq (-1 per size category larger than you, and +1 per size category smaller than you) in a direction of your choice.  If it hits a creature or hard surface, both it and the creature or surface lose Verve equal to your Combat Skill."
+    },
+    {
+        "category": "combat",
+        "name": "Maneuvre Master",
+        "id": "2cc5acef",
+        "type": "Expertise",
+        "description": "When choosing to use this Expertise, you may apply one of the following effects:\n-- When successfully resolving any Combat Move, you reduce the Unresolved Verse Loss of counter attacks, by 2 points per Expertise.\n-- When successfully resolving the Grapple, Trip or Disarm Move, on a Raw Roll of [12|11|10|9|8|7]+ you may also attempt the Subterfuge Move against your target as a Free Action.\n-- When successfully resolving the Trip Move, you may attempt to trip a creature of any number of legs, and the penalty for each size category larger than you is reduced by your Expertise.  Additionally, after performing the Move, you apply 1 Verve Loss per Expertise.\n-- When successfully resolving the Disarm Move, on a Raw Roll of [17|16|15|14|13|12]+ you may either attempt an Influence Move against your target as a Free Action, or you kick the disarmed weapon or item a number of sq away equal to your Expertise."
+    },
+    {
+        "category": "combat",
+        "name": "Propel",
+        "id": "f30e54b8",
+        "type": "Expertise",
+        "description": "When resolving the Push Move and using this Expertise, you may move your target [1|1|2|2|3|3] additional squares, and apply an additional [1|2|3|4|5|6] Verve Loss when slammed against something, to all involved."
+    },
+    {
+        "category": "combat",
+        "name": "Ranged Attack",
+        "id": "c991e7c7",
+        "type": "Primary",
+        "description": "You make a single attack with a ranged Weapon.  Resolve a d20 Roll.  On a 1, you end your combat and do not apply any Verve Loss or effects.  Otherwise, you apply Verve Loss to a single target equal to your Combat Skill and your Weapon Damage Dice.  On a Raw Roll of 20 you apply your Weapon Damage Dice to your target again."
+    },
+    {
+        "category": "combat",
+        "name": "Multiple Ranged Attack",
+        "id": "a58ac930",
+        "type": "Expertise",
+        "description": "When resolving a Ranged Attack and using this Expertise, you target a number of creatures up to your Expertise that are within a number of squares equal to your Expertise.   When resolving applied Verve Loss, you only apply your Weapon Damage to each target."
+    },
+    {
+        "category": "combat",
+        "name": "Ranged Chance Attack",
+        "id": "836e02ef",
+        "type": "Expertise",
+        "description": "When resolving Basic Ranged Attack and using this Expertise, you resolve the attack as a Critical on a Raw Roll of [18|17|16|15|14|13]+ instead.  However you also resolve the attack as a Critical Fail on [1|2|3|4|5|6]+"
+    },
+    {
+        "category": "combat",
+        "name": "Ranged Quick Attack",
+        "id": "b740bb57",
+        "type": "Expertise",
+        "description": "When resolving Basic Ranged Attack and using this Expertise, you apply Verve Loss equal to your Weapon Damage to a second target that is within a number of squares from your original target equal to half your Expertise."
+    },
+    {
+        "category": "combat",
+        "name": "Focus Fire",
+        "id": "8b4b46f1",
+        "type": "Expertise",
+        "description": "When resolving Basic Ranged Attack and using this Expertise, you add an amount of Verve Loss equal to your Expertise.  If you use this Expertise on the same target a second time, you double the Expertise Verve Loss addition.  You may use this only once per creature per combat."
+    },
+    {
+        "category": "combat",
+        "name": "Distracting Shot",
+        "id": "ed1d32e1",
+        "type": "Expertise",
+        "description": "When resolving Basic Ranged Attack and using this Expertise on a target within [1|2|3|4|5|6] sq of you, you may sacrifice any number of Combat Skill points, gaining the same number of Basic Defence points against Moves they use against you on their next turn."
+    },
+    {
+        "category": "combat",
+        "name": "Precise",
+        "id": "322aca85",
+        "type": "Expertise",
+        "description": "When resolving Basic Ranged Attack and using this Expertise, you ignore an amount of PRes (and some URes) up to twice your Expertise."
+    },
+    {
+        "category": "combat",
+        "name": "Ranged Sneak Attack",
+        "id": "8f912207",
+        "type": "Expertise",
+        "description": "When resolving a Ranged Attack using this Expertise, if your target is unaware of you, and your weapon that has the Backstab Tag, then you perform a Sneak Attack.  Roll your Weapon Damage [1|1|2|2|3|3] additional times when resolving damage.  If you have 5 Expertise, your target need only be Flanked, rather than unaware of you.  You may use this ability per creature once every two turns."
+    },
+    {
+        "category": "combat",
+        "name": "Ammunitions Master",
+        "id": "5323f845",
+        "type": "Expertise",
+        "description": "When resolving a Ranged Attack and using this Expertise, you may use the special effects of Specialty Ammunition:\n- If using Blunt ammunition, you deal one half of the normal Verve Loss and knock back your target 1 sq to a safe space.  You additionally apply the Prone Status on a Raw Roll of [20|20|19|19|18|18]+.\n- If using Piercing ammunition, you pierce your target's PRes and some URes, to a value up to your Expertise.\n- If using Splintering ammunition, you resolve your attack as normal, and apply your Expertise as Verve Loss to all adjacent creatures (friend and foe).\n- If using Curved ammunition, you may target creature who is around a corner.  To determine if you can hit them, draw a straight line that you can perceive, then plot a perpendicular line up to a number of squares equal to your Expertise.  Targets that touch either line may be targeted.\n- If using Ricocheting ammunition, you may bounce your shot off [1|1|2|2|3|3] surfaces, each no more than [5|8|11|14|17|20] squares from each other, increasing your Critical Chance by 1 per ricochet."
+    },
+    {
+        "category": "combat",
+        "name": "Cover Shot",
+        "id": "53b87cbd",
+        "type": "Expertise",
+        "description": "When resolving a Ranged Attack and using this Expertise while behind a wall, pillar or defensible position, you gain a +[1|2|3|4|5|6] bonus to your Basic Defence Moves against ranged attacks and targeted spells.  You additionally gain the ability to defend against some untargeted spells."
+    },
+    {
+        "category": "combat",
+        "name": "Opportunity Attack",
+        "id": "1ac3f3a7",
+        "type": "Passive",
+        "description": "Once per turn when a creature leaves your Threatened Area, you apply your Combat Skill as Verve Loss to it."
+    },
+    {
+        "category": "combat",
+        "name": "Disruptive Blow",
+        "id": "f3c9d483",
+        "type": "Passive",
+        "description": "When resolving the Melee Attack or Ranged Attack Move, on a Raw Roll of 19+ you disrupt any concentration spells the enemy may be maintaining."
+    },
+    {
+        "category": "combat",
+        "name": "Press The Attack",
+        "id": "dc6aad17",
+        "type": "Passive",
+        "description": "After resolving an attack, you can either a) move yourself and a creature up tp your size category that you attacked 1 square in the same direction, or b) switch the position of yourself with the target you attacked."
+    },
+    {
+        "category": "combat",
+        "name": "Seasoned Attack",
+        "id": "154cf776",
+        "type": "Passive",
+        "description": "Once per combat, you may reroll all Damage Dice you rolled for Combat Moves this turn.  Take the higher of the two rolls."
+    },
+    {
+        "category": "combat",
+        "name": "Biting Melee Attack",
+        "id": "7d0350d3",
+        "type": "Passive",
+        "description": "Your Weapon Damage Dice improves by 1 rank, or if your rank is d12, add d4 whenever you resolve Weapon Damage."
+    },
+    {
+        "category": "combat",
+        "name": "Short Throw",
+        "id": "d46b442d",
+        "type": "Passive",
+        "description": "When resolving Ranged Attack with a weapon with the Throwable Tag and you target is within 2sq of you, take the maximum of your Damage Dice instead of rolling."
+    },
+    {
+        "category": "combat",
+        "name": "Throw Anything",
+        "id": "0793e94b",
+        "type": "Passive",
+        "description": "You may apply the Throwable Tag to any weapon or item of medium size or smaller, including objects you find in the environment."
+    },
+    {
+        "category": "combat",
+        "name": "Tactical Attacker",
+        "id": "ac5567fa",
+        "type": "Passive",
+        "description": "You attacks apply 1 more Verve Loss to targets who have the Bound, Rooted, Paralysed, Slow, or Blind Status.  Your Melee attacks apply 2 more Verve Loss to targets above you.  Your Ranged attacks apply 2 more Verve Loss to targets below you."
+    },
+    {
+        "category": "combat",
+        "name": "Killer",
+        "id": "c4af4396",
+        "type": "Passive",
+        "description": "Whenever you kill an opponent, you deal +1 Verve Loss when resolving Melee Attack, for the remainder of the combat."
+    },
+    {
+        "category": "combat",
+        "name": "Bow Bash",
+        "id": "02f24abf",
+        "type": "Passive",
+        "description": "You may use Ranged-only weapons when resolving Melee Basic Attacks."
+    },
+    {
+        "category": "combat",
+        "name": "Warning Shot",
+        "id": "f4f34c0a",
+        "type": "Passive",
+        "description": "If you missed with any of your Ranged Attacks, you may move your target 1sq into a safe space of your choosing."
+    },
+    {
+        "category": "combat",
+        "name": "Team Up",
+        "id": "59e4f1cb",
+        "type": "Passive",
+        "description": "As a Free Action, apply 1 Verve Loss to enemies within your Threatened Area, any time that an ally uses a Combat Move on them."
+    },
+    {
+        "category": "perception",
+        "name": "Perception",
+        "stat": "wis",
+        "id": "d4e2f861",
+        "type": "Skill",
+        "description": "You use your senses to perceive the world around you.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "perception",
+        "name": "Perceive",
+        "id": "c6c7d3a0",
+        "type": "Free",
+        "description": "You may ask the DM a question about what you can perceive of the area around you."
+    },
+    {
+        "category": "perception",
+        "name": "Tracking Expertise",
+        "id": "56459742",
+        "type": "Expertise",
+        "description": "When using this Expertise, you scan the area for clues about any creatures' movements.  The DC of difficulty that you may track to is equal to your Expertise.  If you succeed, you may ask a question about the tracks and movements of creatures through the area.  When using this Expertise, tell your DM your score."
+    },
+    {
+        "category": "perception",
+        "name": "Appraise Creature",
+        "id": "8b03caaf",
+        "type": "Expertise",
+        "description": "When using this Expertise, you appraise a creature.  If you succeed, you may ask a question based on your Expertise score.  At 1 point, you may ask about the approximate Basic Attacks or Damage.  At 2 points, Basic Defenses.  At 3 points, Percentage Health or Elemental Synergies.  At 4 points, Special Attacks.  At 5 points, Special Defenses.  At 6 points, all answers are exact and not approximate.  When using this Expertise, tell your DM your Expertise score."
+    },
+    {
+        "category": "perception",
+        "name": "Surprise Perception",
+        "id": "9e0071f5",
+        "type": "Expertise",
+        "description": "When you resolve Perceive to detect an invisible creature, to avoid an ambush, to not be surprised, or some other effects that obscure your ability to see normally, you may substitute your Perception Roll for [11|12|13|14|15|16] instead.  You must declare this before rolling."
+    },
+    {
+        "category": "perception",
+        "name": "Chaos Clarity",
+        "id": "4bae6826",
+        "type": "Expertise",
+        "description": "When within 8sq of at least [3|3|3|2|2|2] enemy creatures, you gain your Expertise as a Bonus to 1 Basic Defence, Resist Physical, Resist Mental, or Combat Move per turn."
+    },
+    {
+        "category": "perception",
+        "name": "Perceptive",
+        "id": "7bc138db",
+        "type": "Passive",
+        "description": "You may ask 2 questions of the DM when using the Perceive Move."
+    },
+    {
+        "category": "perception",
+        "name": "Unnatural Senses",
+        "id": "b06d26db",
+        "type": "Passive",
+        "description": "Your senses are naturally better than most.  While your senses are not magical and are still limited, you may have a better chance of seeing in low light, detecting unusual flavours, or hearing throughs walls.  When using the Perceive Move, ask the DM: Howhat does having Unnatural Senses affect this?"
+    },
+    {
+        "category": "knowledge",
+        "name": "Knowing",
+        "stat": "wis",
+        "id": "6ef9ecae",
+        "type": "Skill",
+        "description": "You consult your knowledge on a Topic you have learned, heard about, or is part of your cultural identity, or you activate a magical item that is not designed for simplicity.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "knowledge",
+        "name": "Recall Knowledge",
+        "id": "2ca75786",
+        "type": "Primary",
+        "description": "You attempt to recall knowledge about a topic.  You are severely limited by religion and history, the streets, the Arcane and Strata, medicine, survival and menagerial topics."
+    },
+    {
+        "category": "knowledge",
+        "name": "Religion and History Expertise",
+        "id": "d8b30649",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall knowledge about religion and history, to a DC equal to your Expertise.  Additionally, on a Raw Roll of [12|10|8|6|4|2] you may ask two questions about the topic."
+    },
+    {
+        "category": "knowledge",
+        "name": "Arcane Expertise",
+        "id": "e2b05f91",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall knowledge about the Arcane, Strata, and the creatures that make their home there, to a DC equal to your Expertise.  Additionally, on a Raw Roll of [12|10|8|6|4|2] you may ask two questions about the topic."
+    },
+    {
+        "category": "knowledge",
+        "name": "Survival Expertise",
+        "id": "6241dd9d",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall knowledge about survival, natural landscapes, plants, hunting and foraging, the weather, and undestanding where you are and where you need to go, to a DC equal to your Expertise.  Additionally, on a Raw Roll of [12|10|8|6|4|2] you may ask two questions about the topic.  \n\nInstead, you may attempt to spend an hour to find 0-3 common foods or alchemical reagents outside of populated areas.  When doing so and travelling, you incur a -2 Penalty and the search inhibits your travel speed.  If you have 4 points you may instead be able to find 0-1 uncommon foods or alchemical reagents."
+    },
+    {
+        "category": "knowledge",
+        "name": "Streetwise Expertise",
+        "id": "02b2bc88",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall knowledge about the streets, thieves cant, and shady power structures and shadowy guilds, to a DC equal to your Expertise.  Additionally, on a Raw Roll of [12|10|8|6|4|2] you may ask two questions about the topic."
+    },
+    {
+        "category": "knowledge",
+        "name": "Medicine Expertise",
+        "id": "8c25f474",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall knowledge about non-magical health and wellbeing, and treatment for those conditions, to a DC equal to your Expertise.  Additionally, on a Raw Roll of [12|10|8|6|4|2] you may ask two questions about the topic."
+    },
+    {
+        "category": "knowledge",
+        "name": "Menagerous Expertise",
+        "id": "dc976f3c",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall knowledge about animals and creatures of your Strata, such as their strengths, weaknesses and behaviours, to a DC equal to your Expertise.  Additionally, on a Raw Roll of [12|10|8|6|4|2] you may ask two questions about the topic.  You may also use this against known NPCs, or members of well-known guilds and archetypes."
+    },
+    {
+        "category": "knowledge",
+        "name": "Advisor Expertise",
+        "id": "bad7b096",
+        "type": "Expertise",
+        "description": "When resolving Recall Knowledge and using this Expertise, choose one effect:\n1. You verbally provide whatever wisdoms you can to an adjacent ally who is resolving Perception, Knowing, Influence, Alchemy, Arts/Craft, Engineering, Beast Mastery, or Spellcraft.  Resolve a Roll.  On a Raw Roll of 16+, you provide your Expertise to them as a Bonus to their Roll, otherwise you only provide half your Expertise.\n2. You determine the difficulty of performing a Move in a situation you are in.  On a Raw Roll of [10|9|8|7|6|5]+ you know the DC of the task."
+    },
+    {
+        "category": "knowledge",
+        "name": "Weakpoint Expertise",
+        "id": "41daaee0",
+        "type": "Expertise",
+        "description": "When using this Expertise, you recall the weak points or unguarded flesh of a target whose DC is no greater than your Expertise.  If you share this knowledge with your allies, the creature loses between 5 and 10% of it's total Verve.  You may use this once per creature."
+    },
+    {
+        "category": "knowledge",
+        "name": "Tactician Expertise",
+        "id": "3e8b1177",
+        "type": "Expertise",
+        "description": "When resolving Recall Knowledge and using this Expertise, you attempt to use your knowledge to aide and direct a number of allies equal to your Expertise.  On a Raw Roll of [18|16|14|12|10|8], all chosen allies gain +2 Sq Movement and +1 Threatened Area for 1 turn.  On a failure, all affected allies instead gain 2 UDR for 1 turn."
+    },
+    {
+        "category": "knowledge",
+        "name": "Meditation Expertise",
+        "id": "2c95544c",
+        "type": "Expertise",
+        "description": "When resolving Recall Knowledge and using this Expertise, choose one of the following effects:\n1. You generate Mana or adjust your Rage up or down equal to the value of your Expertise\n3. You generate Psi or Sanctity equal to half the value of your Expertise.\n\nAfter doing so, Resolve a Raw Roll.  On a [16|15|14|13|12|11]- you may not gain the benefit of this Expertise again today."
+    },
+    {
+        "category": "knowledge",
+        "name": "Appraise",
+        "id": "f6452bef",
+        "type": "Primary",
+        "description": "You make an appraisal using your knowledge to determine an object's relative value"
+    },
+    {
+        "category": "knowledge",
+        "name": "Trigger Magic",
+        "id": "de5b821f",
+        "type": "Primary",
+        "description": "You attempt trigger the magic in a Scroll, Wand, Rod or Amulet that requires intimate knowledge or magical aptitude.  You succeed if you beat the DC of the item, and automatically succeed activiting Scrolls if you have the Spellcraft required to learn the spell it holds."
+    },
+    {
+        "category": "knowledge",
+        "name": "Maintain Spell",
+        "id": "682ee89b",
+        "type": "Primary",
+        "description": "You attempt to maintain a concentrated spell that is under threat of disruption due to you incurring Verve Loss, or under some circumstances of stress and distraction.  You succeed, maintaining your spell, if you beat a DC equal to the level of the spell minus 1."
+    },
+    {
+        "category": "knowledge",
+        "name": "Linguist",
+        "id": "198ff959",
+        "type": "Passive",
+        "description": "Whenever you hear or see a language you don't know, you may Resolve Knowing.  On a Raw Roll of 18+ you have some idea about the meaning.  On a Raw Roll of 16+ you have a faint idea."
+    },
+    {
+        "category": "knowledge",
+        "name": "I heard that somewhere",
+        "id": "84418b9d",
+        "type": "Passive",
+        "description": "You attempt to recall or understand something you may have heard somewhere.  Resolve Recall Knowledge.  For less esoteric knowledge, on a Raw Roll of 16+ you succeed and may ask a single question about it, even if you are not familiar with a topic.  For more specialised knowledge, you succeed on a 19+ instead.  For knowledge of Godly import, you only succeed on a Raw Roll of 20.  On any failing Roll, you cannot use this ability on this topic again."
+    },
+    {
+        "category": "knowledge",
+        "name": "Pick the right time",
+        "id": "e1f18da0",
+        "type": "Passive",
+        "description": "Once per combat, you attempt to recall the flow of combat.  On a Raw Roll of 20+, you gain a Bonus Primary Action next turn.  If you use this after succesfully resolving Knowing prevously in combat, the Raw Roll requirement becomes 18+."
+    },
+    {
+        "category": "knowledge",
+        "name": "Font",
+        "id": "5683e840",
+        "type": "Passive",
+        "description": "You gain +1 Maximum Mana and Psi."
+    },
+    {
+        "category": "knowledge",
+        "name": "Rapid Recall",
+        "id": "5794bbea",
+        "type": "Passive",
+        "description": "You may use Knowing Moves as a Quick Action."
+    },
+    {
+        "category": "stealthery",
+        "name": "Stealthery",
+        "stat": "dex",
+        "id": "872601df",
+        "type": "Skill",
+        "description": "You attempt to fool, hide or be unseen, gaining the Stealth Status.  Stealth is automatically broken if someone has sight on you.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "stealthery",
+        "name": "Stealth",
+        "id": "9e3e7223",
+        "type": "Primary",
+        "description": "You attempt to sneak and hide from targets.  If you succeed, at a DC set by the DM based on the difficulty of the situation, you gain the Stealth Status.  If your condition changes, you may lose the Stealth Status or be asked to resolve Stealth again.\n\nSome Mods may also give you Cloak.  Whenever you gain any amount of Cloak, it replaces whatever Cloak you already had.  Whenever you may lose the Stealth Status and you are in an environment where you can maintain your Stealth, you may expend a Cloak to resolve the Stealth Move again, though you attempt any Move that applies a negative Status or Verve Loss, you lose the renewed Stealth before resolving the Move.  You may store a maximum number of Cloak equal to one quarter of the number of Points in Stealth you have."
+    },
+    {
+        "category": "stealthery",
+        "name": "Vanish Expertise",
+        "id": "9ec83a1c",
+        "type": "Expertise",
+        "description": "When resolving the Stealth Move and using this Expertise, you resolve Stealth as a Free Action.  Using this Expertise costs [10|8|6|4|2|0] Verve."
+    },
+    {
+        "category": "stealthery",
+        "name": "Cloaked Expertise",
+        "id": "a9ab7f4c",
+        "type": "Expertise",
+        "description": "When resolving the Stealth Move and using this Expertise, you gain 1 Cloak on a Raw Roll of [10|8|6|4|2|0]+."
+    },
+    {
+        "category": "stealthery",
+        "name": "Forgettable Expertise",
+        "id": "cd904464",
+        "type": "Expertise",
+        "description": "When resolving the Stealth Move and using this Expertise while in combat with at least 3 connected creatures (at least one of which is an ally), or if no creatures have line of sight to your position, you attempt to be forgotten.  Resolve a Stealth; if you succeed you gain the Stealth Status for one turn, and this turn any limitations on using the Melee or Ranged Sneak Attack Expertises are ignored, plus all creatures are considered unaware of you.  If you fail, you only gain the Stealth Status.  Using this Expertise costs [12|10|8|6|4|2] Verve."
+    },
+    {
+        "category": "stealthery",
+        "name": "Disappearance Expertise",
+        "id": "55d40a5b",
+        "type": "Expertise",
+        "description": "When resolving Relocate with the Stealth Status and using this Expertise when your enemies have something else to focus on, you distract your opponents to your movements cunningly.  You may move through line of sight up to [1|2|3|4|5|6] squares without breaking Stealth this turn.  However foes may still perceive you; resolve a Raw Roll and on a [9|11|13|15|17|19]+ you lose Stealth at the start of your next turn.  If there is nothing in the environment to distract your opponent, you may propose a second Move to the DM, such as Dissuade, Ranged Attack or Cast a Spell, and you may be able to attempt to resolve this Expertise as a Quick Action in conjunction with that second Move."
+    },
+    {
+        "category": "stealthery",
+        "name": "Forced Flanking",
+        "id": "e27a656f",
+        "type": "Expertise",
+        "description": "When using this Expertise and you do not have the Stealth Status, resolve Stealth as a Free Action.  If you succeed, and achieve a Raw Roll of [10|8|6|4|2|0]+, instead of entering Stealth you lose all Cloak and are considered Flanking an adjacent creature of your choice, or one that you reach with your Relocate Action this turn.  "
+    },
+    {
+        "category": "stealthery",
+        "name": "Adrenal Vamoose",
+        "id": "beb0d83e",
+        "type": "Passive",
+        "description": "If you have less than 20% of your HP remaining and move to a location where you cannot be seen, you immediately enter Stealth successfully and gain 1 Cloak."
+    },
+    {
+        "category": "stealthery",
+        "name": "Rooftop Runner",
+        "id": "260a8770",
+        "type": "Passive",
+        "description": "You gain +1 to resolve the Stealth Move if you are above or below all your targets."
+    },
+    {
+        "category": "stealthery",
+        "name": "Cloak Master",
+        "id": "f222343f",
+        "type": "Passive",
+        "description": "You start Combat with 1 Cloak, which you can use after you first successfuly resolve the Stealth Move."
+    },
+    {
+        "category": "stealthery",
+        "name": "Cunning Riposte",
+        "id": "1224cb6e",
+        "type": "Passive",
+        "description": "You may expend a Cloak to apply your Weapon Damage Dice to a target within your Threatened Area.  If you have the Stealth Status, you apply the maximum value of your Weapon Damage Dice and lose the Stealth Status."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Subterfuge",
+        "stat": "dex",
+        "id": "e43ece8d",
+        "type": "Skill",
+        "description": "You have a number of sneaky physical tricks you can perform, and you have streetwise experience with traps and locks.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "subterfuge",
+        "name": "Pick Pocket",
+        "id": "1c1c9000",
+        "type": "Primary",
+        "description": "You attempt to pick the pocket of a target to whom you are unseen and unheard. If you beat the target's Defence (WIS), you take something of value that is available in their pockets, or on an accessory belt or similar.  You can typically steal items or coin up to the value of 10 Standards per point in Subterfuge.  If you try to steal something more valuable, the DC increases.  You cannot use this Move in Combat."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Legerdemain",
+        "id": "94e0b4c2",
+        "type": "Primary",
+        "description": "You perform a feat of dexterity with your hands, that succeeds either based on the onlookers' Defence (WIS), or their Dodge (DEX), depending on the situation.  Such acts include juggling, taking something in sight, hiding something on your person quickly, swiping an object or distracting someone from looking at a part of your body."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Disguise",
+        "id": "7951c6e5",
+        "type": "Primary",
+        "description": "You attempt to create a disguise of props and distraction, assuming you have the materials to do so.  Disguising yourself takes time and is longer than a Primary Action.  You resolve this Move when under scrutiny by someone who would want to see through your disguise, based on the DC of the Defence (WIS).  You may gain a bonus to your roll if you also encorporate a successful perform resolved using the Perform Move."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Uncanny Trapwork",
+        "id": "0eae3c7e",
+        "type": "Primary",
+        "description": "You've experienced disarming common traps in your past.  You can find and disarm traps up to DC 2 as per the Locksmith Engineering Move.  If you have 6 points in Subterfuge, this raises to DC 3, and again to DC4 at 10 points."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Uncanny Lockwork",
+        "id": "57d64f5a",
+        "type": "Primary",
+        "description": "You've experienced picking locks in your past.  You can pick locks up to DC 2 as per the Locksmith Engineering Move.  If you have 6 points in Subterfuge, this raises to DC3, and again to DC4 at 10 points."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Blinding Expertise",
+        "id": "0e293673",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Legerdemain, you scoop up dust and dirt and throw it in the face of a target which has eyes.   On a Raw Roll of 17+ you apply the Blind Status to them for 1 turn.  On a Raw Roll of [16|15|14|13|12|11]+, you may instead attempt the Stealth Move as a Free Action, with your obscuring dirt as enough opportunity to hide for this round."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Coop Expertise",
+        "id": "25829276",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Legerdemain Move while you are hidden from a target by an adjacent ally, then on a Raw Roll of [18|17|16|15|14|13]+ you apply the Flanked Status to an opponent within the Threatened Area of either yourself or your ally, and either yourself or your ally automatically satisfies all requirements of the Sneak Attack Move.  Whether you succeed or fail, you may attempt the Stealth Move as a Free Action with a +2 Bonus, and are considered hidden for this turn."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Feint Expertise",
+        "id": "319f75df",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Legerdemain Move while an opponent is in your Threatened Area, you attempt to feint and trick your opponent.  On a Raw Roll of [15|14|13|12|11|10]+ then this move becomes a Free Action, your attacks apply additional Verve Loss equal to your Expertise and you gain half your Expertise to Basic Defence Moves.  If you fail, you only gain the Basic Defence bonus.  You may use this ability on each creature once per combat."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Malingering Expertise",
+        "id": "986de247",
+        "type": "Expertise",
+        "description": "When resolving a Legerdemain and using this Expertise, resolve one of the following effects:\n1. You divert up to half your Expertise score of Basic Attacks aimed at you to an ally who is adjacent to you.\n2. You gain URes equal to your Expertise."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Combat Pockets Expertise",
+        "id": "82a0502d",
+        "type": "Expertise",
+        "description": "When resolving Pick Pocket in combat and using this Expertise, you attempt to steal something from them.  When you only have 1 Expertise, you may only attempt to steal something that is visible on an Item Belt.  With 2 Expertise, you do so automatically.  Alternatively, you may attempt to resolve the Pick Pockets Move on invisible or harder to aquie items, on creatures up to DC [1|1|2|2|3|4]."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Rushed and Risky",
+        "id": "20ceca0c",
+        "type": "Passive",
+        "description": "Instead of resolving Pick Pocket or Legerdemain as normal, you hurriedly perform the Move as a Free Action.  On a Raw Roll of 17+ you succeed, and on a Raw Roll of 4- you fail and are noticed.  Anything inbetween has no effect."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Sly Guy",
+        "id": "6438f5a0",
+        "type": "Passive",
+        "description": "Once per turn when you have at least 1 Cloak, you may reduce the Verve Loss of an attack by 1, or apply 1 additional Verve Loss on a Melee Attack or Ranged Attack."
+    },
+    {
+        "category": "influence",
+        "name": "Influence",
+        "stat": "cha",
+        "id": "9c77681c",
+        "type": "Skill",
+        "description": "You sway the opinions and emotions of those around you.  Some Moves require that you share a language.  Some particularly fierce and strong-headed creatures are either immune or resistant to these effects.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "influence",
+        "name": "Unnerve",
+        "id": "3f00f576",
+        "type": "Primary",
+        "description": "You use your force of will to unnerve someone, applying the Unnerved Status to them with an effect of your choosing, if you beat a DC against their Defence (CHA)."
+    },
+    {
+        "category": "influence",
+        "name": "Provoking Presence",
+        "id": "fdaeed05",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Unnerve, choose one of the following effects:\n-- If your target is within [1|2|3|4|5|6] squares of you, you gain a +3 Bonus.\n-- If you succeed, you gain a Bonus to Basic Defence equal to [1|1|2|2|3|3]."
+    },
+    {
+        "category": "influence",
+        "name": "Threatening Presence",
+        "id": "fdaeed05",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Unnerve, choose one of the following effects:\n-- You halve the movement of affected enemies within and through squares up to [1|2|3|4|5|6] squares away from you.  Additionally, enemies automatically gain the Unnerved: Intimidated Status if they pass you in a direction you choose.\n-- You move an enemy who has used an offensive Move against the party up to [1|2|3|4|5|6] squares into a safe space."
+    },
+    {
+        "category": "influence",
+        "name": "No, not me!",
+        "id": "707faad5",
+        "type": "Expertise",
+        "description": "When using this Expertise and you successfully resolve Unnerve to apply Unnerved: Dissuade to a target, then if you are within [2|3|4|5|6|7] squares of them, or have moved at least [5|4|3|2|1|0] squares from them, they will absolutely not target you if they have another valid target."
+    },
+    {
+        "category": "influence",
+        "name": "Mass Influence",
+        "id": "07452ea4",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Unnerve, you may target [2|3|4|4|5|5] targets within an area of radius [1|2|2|3|3|4] squares."
+    },
+    {
+        "category": "influence",
+        "name": "Convince",
+        "id": "ffd8c364",
+        "type": "Primary",
+        "description": "You convince to perform an action or make a certain decision, if you beat a DC against their Defence (CHA).  You target must have some interest for making the decision, or you must provide them with one or have leverage over them.  You must share a language with your target."
+    },
+    {
+        "category": "influence",
+        "name": "Encourage",
+        "id": "fba1e698",
+        "type": "Primary",
+        "description": "You encourage an ally, applying the Enlivened: Encouraged Status to them if you beat a DC of 2.  You must share a language with your target."
+    },
+    {
+        "category": "influence",
+        "name": "Snap out of it!",
+        "id": "ecd1a4cf",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Convince or Encourage on an Ally, choose one of the following effects:\n1. You reduce the duration of a mental effect on a target by [0|0|1|1|1|2] rounds.\n2. Your target gains +[1|1|1|2|2|2] to the Raw Roll of their next Move.  If they failed the same move last turn, this Bonus increases to +[1|2|2|3|3|4].\n3. If your Ally switches their current target from another creature to one that you are currently fighting, you both gain +[1|2|3|4|5|6] to Basic Defence against that creature until the start of your next turn."
+    },
+    {
+        "category": "influence",
+        "name": "Sense Motive",
+        "id": "ec4290ae",
+        "type": "Primary",
+        "description": "You sense the motives of creature.  If you beat the enemy's Defence (CHA), you may ask the DM a question about whether they are lying or withholding information, or if their intentions differ from their words or actions.  The DM may be creative in their answer."
+    },
+    {
+        "category": "influence",
+        "name": "Combat Motive",
+        "id": "3381fa00",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Sense Motive in combat, choose one of the following effects:\n1. You may move up to [1|2|3|4|5|6] allies within [5|6|7|8|10] squares of you by 1 square.\n2. You may ask questions about creatures up to DC [1|2|3|4|5|6] relating to the motives this creature has such as what target they prefer, or anything they might prefer to avoid.\n3. You may ask questions about creatures up to DC [1|2|3|4|5|6] relating to the motives this creature has such as what special abilities or spells this creature might have."
+    },
+    {
+        "category": "influence",
+        "name": "Empathy",
+        "id": "14ba5829",
+        "type": "Passive",
+        "description": "When you have spent at least 10 minutes with someone, you gain a +1 Bonus to Influence Moves against them.  Additionally, when resolving Sense Motive you may ask questions about the target's emotional state."
+    },
+    {
+        "category": "influence",
+        "name": "Flirt",
+        "id": "da2dd404",
+        "type": "Passive",
+        "description": "You gain a +1 Bonus to your Convince and Encourage against targets who are receptive to your flirtations."
+    },
+    {
+        "category": "influence",
+        "name": "Excuisitely Exfoliated Skin",
+        "id": "9f7b41a5",
+        "type": "Passive",
+        "description": "An hour after you have applied 2 Standard coins worth of exfoliant and perfumes, you gain +2 to the Convince Move when your target would appreciate a good skin regime.  This bonus increases to 3 if you use 10 Standards worth of materials."
+    },
+    {
+        "category": "influence",
+        "name": "Challenge",
+        "id": "8ccba8af",
+        "type": "Passive",
+        "description": "When you use Influence to resolve Provoke with yourself as the target, you gain a +5 Bonus."
+    },
+    {
+        "category": "influence",
+        "name": "Mocking Retort",
+        "id": "02b0a7ec",
+        "type": "Passive",
+        "description": "If you succeed at a Defence Move against an adjacent target, you may resolve the Unnerve Move without Expertises against them as a Free Action."
+    },
+    {
+        "category": "influence",
+        "name": "Let that be a warning",
+        "id": "88aabf3c",
+        "type": "Passive",
+        "description": "If you killed an opponent this round, you may resolve the Unnerve Move without Expertises against a target within 5 sq of you as a Free Action."
+    },
+    {
+        "category": "influence",
+        "name": "Internationalist",
+        "id": "c1c6bf79",
+        "type": "Passive",
+        "description": "When you don't share a languages with your target, instead of the Convince and Dissuade Moves being impossible, they incurs a penatly which the DM will determine based on the situation."
+    },
+    {
+        "category": "influence",
+        "name": "Rapid Eye",
+        "id": "4fc7cf4d",
+        "type": "Passive",
+        "description": "You may resolve the Sense Motive Move in Combat as a Free Action."
+    },
+    {
+        "category": "influence",
+        "name": "Rally",
+        "id": "d76ec530",
+        "type": "Passive",
+        "description": "Whenever you successfully resolve Convince or Encourage, your allies may move up to 2 squares directly towards you."
+    },
+    {
+        "category": "engineering",
+        "name": "Engineer",
+        "stat": "int",
+        "id": "b7237065",
+        "type": "Skill",
+        "description": "You are accomplished in the field of engineering, able to review and understand, and sometimes build and repair, engineered items from clockwork to castles.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "engineering",
+        "name": "Locksmith",
+        "id": "75ed6ede",
+        "type": "Primary",
+        "description": "You can use engineering to create and dismantle non-magical locks.  Creating a lock takes 1 day per DC of the lock.  Unlocking one takes 1 minute per DC.  You cannot attempt lockwork of DC 4 or higher until you purchase 6 points in Engineering."
+    },
+    {
+        "category": "engineering",
+        "name": "Trapsmith",
+        "id": "8a13c0ea",
+        "type": "Primary",
+        "description": "You can use engineering to find, create and dismantle non-magical traps.  Creating a mechanical trap takes 1 day per DC of the trap.  Disarming one takes 1 minute per DC.  You cannot attempt trapwork of DC 4 or higher until you purchase 6 points in Engineering."
+    },
+    {
+        "category": "engineering",
+        "name": "Construction",
+        "id": "32d226c4",
+        "type": "Primary",
+        "description": "You understand the structural basis of buildings and man-made spaces, as well as gear work and mechanicals (excluding Gadgetry). If you beat the DC of the item, you understand part of the item, and can contribute to it or begin to understand how to disable it."
+    },
+    {
+        "category": "engineering",
+        "name": "Smithing",
+        "id": "ecf46846",
+        "type": "Primary",
+        "description": "You can create and repair armours, weaponry, and items of metals and leather.  The DC to create an item is the item's value divided by 10, and the time it takes is 1 day per DC.  To repair, the DC and duration is halved, or sometimes quartered.  Additionally, you can Oil and Prepare a weapon or piece of armour, improving it to the Fine version of that piece, if it was less effective before.  To oil and prepare, you must beat a DC of 1, and if you succeed it takes 30 minutes and materials costing 3 Standards."
+    },
+    {
+        "category": "engineering",
+        "name": "Construction",
+        "id": "c14a77fd",
+        "type": "Primary",
+        "description": "You know about the workings of machinery and structures, and may be able to determine how to use, repair, or analyse machines and structures."
+    },
+    {
+        "category": "engineering",
+        "name": "Structural Weakness",
+        "id": "e00a67eb",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Construction Move, you determine the best way to damage structures and some creatures like constructs and Gigans.  The Construction Move is a Free Action when doing so, and if resolved successfully grants you [2|3|4|5|6|7] additional Verve Loss to all effects that apply Verve Loss until you next Long Rest."
+    },
+    {
+        "category": "engineering",
+        "name": "Well-oiled",
+        "id": "8be6b121",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Smithing Move to Oil and Prepare, you may apply this effect to [1|2|3|4|5|6] pieces for the same time and cost as one, and requires no Roll."
+    },
+    {
+        "category": "engineering",
+        "name": "Instinctive Mechanics",
+        "id": "91aa9c32",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Trapsmith Move to disarm a trap, you reduce any Verve Loss applied by the trap (whether triggered by a failure, or by a devious trap's success effect) by [3|6|9|12|15|18]."
+    },
+    {
+        "category": "engineering",
+        "name": "Break Lock",
+        "id": "d2a1fbbc",
+        "type": "Passive",
+        "description": "You attempt to break a lock instead of pick it.  Resolve the Locksmith Move at a DC 1 lower than normal.  On a Raw Roll of 7- you damage the lock, potentially jamming the door or chest closed."
+    },
+    {
+        "category": "engineering",
+        "name": "Adjacent Knowledge",
+        "id": "0dd7d4b2",
+        "type": "Passive",
+        "description": "You gain 5 UDR against Verve Loss applied by Gadgets."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Gadgetry",
+        "stat": "int",
+        "id": "53f41090",
+        "type": "Skill",
+        "description": "You are a tinker of gadgets, with an understanding of building and deploying gadgetry, even if you have no idea about general engineering.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "gadgetry",
+        "name": "Craft Gadget",
+        "id": "1f570ba4",
+        "type": "Primary",
+        "description": "You craft a Gadget from raw materials and your talent.  To craft a Gadget, pick a Gadget Schematic.  If you beat the DC of the Gadget, you spend the Prime Material and pay the Standards cost to create the Gadget, as well as spending 4 hours per DC.  You do not need to spend the time in one block.\n\nInitially you can only create Gadgetry Items."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Use Gadget",
+        "id": "b1d1ff50",
+        "type": "Primary",
+        "description": "You use a Gadget that you have created and which is handy or on your accessory belt."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Dismantle Gadget",
+        "id": "1d371777",
+        "type": "Expertise",
+        "description": "When using this Expertise and successuflly resolving the Craft Gadget Move, you dismantle a Gadget returning [30|40|50|60|70|80]% of the Standards spent on it, as well as returning half the material it required on a Raw Roll of [15|14|13|12|11|10]+."
+    },
+    {
+        "category": "gadgetry",
+        "name": "MacGuyver Expertise",
+        "id": "dfefa8cc",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Craft Gadget Move, you reduce the total crafting time by an hour and the Standard costs by 5 per Expertise."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Careful Tinker Expertise",
+        "id": "ce8ce961",
+        "type": "Expertise",
+        "description": "When using this Expertise and successfully resolving the Craft Gadget Move, on a Raw Roll of [16|14|12|10|8|6]+, you've created an Ingenious Gadget, which is free to recharge or restock once after it is expended."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Remote Controller Expertise",
+        "id": "c1a5f710",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Use Gadget Move in Combat, you double the Verve Loss application of up to [1|2|3|4|5|6] of your gadgets that are within [2|4|6|8|10|12] squares of you."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Careful Gadgetry",
+        "id": "0fd0aeec",
+        "type": "Passive",
+        "description": "Resolve Use Gadget when not in Initiative Mode with a +3 Bonus."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Craft Autogol",
+        "id": "f8f09f20",
+        "type": "Passive",
+        "description": "You can craft Autogols from the Gadgets list."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Craft Equipment Mods",
+        "id": "485fcb6e",
+        "type": "Passive",
+        "description": "You can craft Equipment Mods from the Gadgets list."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Craft Launchers",
+        "id": "c12dc5ff",
+        "type": "Passive",
+        "description": "You can craft Launchers from the Gadgets list."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Craft Trap",
+        "id": "66e5eb80",
+        "type": "Passive",
+        "description": "You can craft Traps from the Gadgets list."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Smugness",
+        "id": "c1a5f710",
+        "type": "Passive",
+        "description": "You gain the Inspired Status when you are within 3sq of one of your active Gadgets."
+    },
+    {
+        "category": "creativity",
+        "name": "Creativity",
+        "stat": "cha",
+        "id": "12635fb1",
+        "type": "Skill",
+        "description": "You use your creativity to create a work of art.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "creativity",
+        "name": "Create Artwork",
+        "id": "11f888a1",
+        "type": "Primary",
+        "description": "You paint, craft, or otherwise create a piece of art.  The DC is based on the relative difficulty of the piece, and your familiarity with the artform, and it takes 4-8 hours per DC of the item.  Created works are typically worth 10-20 Standards per DC of the item, and typically cost 2 Standards per DC."
+    },
+    {
+        "category": "creativity",
+        "name": "Create Performance",
+        "id": "42c3727b",
+        "type": "Primary",
+        "description": "You create a performance of song, dance, comedy or drama; one in which you've had experience or the talent for.  The DC is based on the general target's Defence (CHA), modified by the difficulty of the performance.  You can typically charge 10-20 Standards per DC of the performance, though its value reduces over time.  Composing or preparing the work is typically 2 days per DC."
+    },
+    {
+        "category": "creativity",
+        "name": "Cooking",
+        "id": "51997986",
+        "type": "Primary",
+        "description": "You attempt to create a work of wondrous food.  If feeding a crew, you resolve this automatically.  If attempting to impress, or otherwise use cooking to your advantage, you must beat an easy DC."
+    },
+    {
+        "category": "creativity",
+        "name": "Fine Creativity Expertise",
+        "id": "4be30d78",
+        "type": "Expertise",
+        "description": "When using this Expertise, you add 2 Standards to the value of each DC you beat, for each point in this Expertise."
+    },
+    {
+        "category": "creativity",
+        "name": "Flow Creativity Expertise",
+        "id": "a280f3b2",
+        "type": "Expertise",
+        "description": "When using this Expertise, you reduce the time to create artworks by half an hour and performances by half a day, each for every point in this Expertise."
+    },
+    {
+        "category": "creativity",
+        "name": "Artist's Influence",
+        "id": "6757d5c8",
+        "type": "Passive",
+        "description": "When presenting the results of Create Artwork or Create Performance to a subject, you gain +1 to the Influence Move against persons receiving or experiencing your creation, for each of DC that the creation was created at."
+    },
+    {
+        "category": "creativity",
+        "name": "Fiercely Protective",
+        "id": "8fbc289a",
+        "type": "Passive",
+        "description": "You gain +3 to all Rolls to protect something that you've created, whether by Art/Craft or Smithing or another applicable Skill."
+    },
+    {
+        "category": "creativity",
+        "name": "Work of Genius",
+        "id": "af07ec99",
+        "type": "Passive",
+        "description": "When you resolve a Creativity Move, on a Raw Roll of 20 you create a piece worthy of the ages.  The value is increased twofold, and it is desired by those who would appreciate the creation."
+    },
+    {
+        "category": "alchemy",
+        "name": "Alchemy",
+        "stat": "int",
+        "id": "e6d05e7b",
+        "type": "Skill",
+        "description": "You are experienced with non-magical herbs and alchemicals.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "alchemy",
+        "name": "Craft Alchemical",
+        "id": "e80458ad",
+        "type": "Primary",
+        "description": "You craft a non-magical alchemical from herbs and equipment that you have available.  To craft an Alchemical, you need to spend an hour per DC as well as sacrifice ingredients that match the Alchemical recipe.  DC 1 Alchemicals can be created without equipment.  DC 2 requires equipment available in a standard Alchemical Travel Bag or a kitchen.  DC 3 or higher requires a kitchen, Fine Alchemy Kit or better.  DC 4 and higher may only be created using specialised equipment in an alchemy lab.  \n\nYour roll determines the efficacy of the Alchemical.  If you beat the DC of the alchemical, you create it.  If you beat the DC + 1, it becomes a Perfect Alchemical, adding 50% of the non-duration numeric effects when used.  If you fail to meet the DC, it becomes a Sloppy Alchemical, reducing the effects by 50%, though you may instead choose to lose half the ingredients and cancel the creation instead.\n\nNote Perfect and Sloppy Alchemicals with their varied effects in your inventory."
+    },
+    {
+        "category": "alchemy",
+        "name": "Transmute Alchemical",
+        "id": "88708777",
+        "type": "Primary",
+        "description": "You extract the core essences of Alchemical Reagents.  If you have access to moderate alchemical tools, a Fine Alchemical FieldKit, or a kitchen or laboratory, you can extract each individual Effect from a Reagent into the equivalent Alchemical Extracts.  You typically have enough time to perform this on one alchemical per day.  This increases to 2 when you have at least 4 points in Alchemy, and 3 when you have 8.  When you attempt this, Resolve Transmute Alchemy against a DC of the rarity of the alchemical you are attempting this on.  On a success, you extract all Effects.  On a failure, one Effect of your choice is lost."
+    },
+    {
+        "category": "alchemy",
+        "name": "Perfect Alchemical Expertise",
+        "id": "84399587",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Craft Alchemical, on a Raw Roll of [16|14|12|10|8|6] you create an Enhanced Alchemical.  In addition to any benefits from Perfect Alchemicals, one numeric effect has +5 added to it, or if it has a duration this is increases by 2 rounds.\n\nNote Enhanced and Perfect Enahnced Alchemicals with the enhanced effect in your inventory."
+    },
+    {
+        "category": "alchemy",
+        "name": "Concentrated Alchemy Expertise",
+        "id": "4c004480",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Craft Alchemical, choose one of the following effects:\n1. For each 2 Reagents that you add to your Alchemical recipe (of any type that the Recipe requires), the DC of the Recipe is reduced by 1.\n2. For each doubling of the creation time, you may reduce the number of Reagent symbols by 1.\n3. For each DC you increase to your creation, reduce the creation time by 1 hour.  DC added this way does not itself change the creation time.\n\nYou may apply one of these effects to a creation, up to a number of times equal to your Expertise."
+    },
+    {
+        "category": "alchemy",
+        "name": "Application Expertise",
+        "id": "26cae0ef",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Use Item with Alchemicals, it is a Free Action on a Raw Roll of [16|15|14|13|12|11].  Each time you meet the Raw Roll, you may attempt it again with a cumulative +1 Penalty."
+    },
+    {
+        "category": "alchemy",
+        "name": "Blood Alchemy Expertise",
+        "id": "add1ed3b",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving Craft Alchemical when adjacent to a creature, on a Raw Roll of [13|12|11|10|9|8] you quickly and safely scoop up its bodily weepings or plucking a part of it off as a Free Action.  After successfully resolving this, choose one of the following effects:\n1. You Transfer it to a safe container, gaining it and a Wept Solvent.\n2. You resolve a Basic Ranged Attack with it as a second Free Action, adding whatever effects it has on top of your ranged attack."
+    },
+    {
+        "category": "alchemy",
+        "name": "Spring Loaded Mechanisms",
+        "id": "3bbcf463",
+        "type": "Passive",
+        "description": "When creating Alchemical Recipes that have an affect in a radius, you increase the radius by 1sq."
+    },
+    {
+        "category": "alchemy",
+        "name": "Hasty Concoction",
+        "id": "f120cfa7",
+        "type": "Passive",
+        "description": "If you have your alchemical ingredients in your Item Belt, you may resolve the Craft Alchemical Move with DC 1 Alchemicals as a Free Action."
+    },
+    {
+        "category": "alchemy",
+        "name": "Restock",
+        "id": "5a77674d",
+        "type": "Passive",
+        "description": "You may restock one item in your Item Belt as a Free Action, once per turn."
+    },
+    {
+        "category": "alchemy",
+        "name": "Smug Alchemist",
+        "id": "c8621266",
+        "type": "Passive",
+        "description": "You gain the Inspired Status when you are within 3sq a creature under the effects of one of your Alchemicals."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Animal Empathy",
+        "stat": "cha",
+        "id": "f73a1fd2",
+        "type": "Skill",
+        "description": "You can soothe and sway the actions of animals and beasts, and you can attempt to ride horses and other ridable animals.",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Soothe Animal",
+        "id": "e1b08304",
+        "type": "Primary",
+        "description": "Descibe how you wish to change the actions or emotion of a beast target, such as a horse, wolf or other animal.  If you pierce their defenses, the DC of which is set by their Defend (CHA) and the willingness of the target, then you describe how you achieve the change.  Some creatures will not change their instinctive behaviour unless you show a compelling reason for them to."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Riding",
+        "id": "4c87f785",
+        "type": "Primary",
+        "description": "You attempt to ride at speed, or at distance, or to perform a maneuvre without issue.  The DC will be determined by the DM based on the willingness of the animal and the difficulty of the action or maneuvre you are attempting."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Command Beast",
+        "id": "43f6d615",
+        "type": "Primary",
+        "description": "You issue a command to your companion that you've trained them in.  Commands last for 2 rounds, unless they are superceded by a new Command.  You know 1 Command per point you spend in Animal Empathy, and you can only learn Advanced Commands once you have 5 points in Animal Empathy."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Multi-command Expertise",
+        "id": "04f93e06",
+        "type": "Expertise",
+        "description": "When using this Expertise and using Command Beast, you may issue a number of commands up to your Expertise + 1.  Your companion will attempt to comply with these in order.  If conditions change and they cannot comply with any command, resolve a Raw Roll.  On a [13|11|9|7|5|3] they use their own intellect to perform a new, related command, or to reorder the commands relevantly."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Mounted Combatant",
+        "id": "11418c91",
+        "type": "Expertise",
+        "description": "When resolving Melee Attack or Ranged Melee Attack while mounted and choosing this Expertise, you apply additional Verve Loss equal to the lower of you Expertise and the number of squares you moved.  You additionally do not incur any penalty to Combat moves while mounted."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Out for blood",
+        "id": "cb5e8841",
+        "type": "Expertise",
+        "description": "For each point in this Expertise, your Companion applies an additional Verve Loss in combat.  At certain point values, you may also choose one of the following effects per round:\n1. At 3 points, you may use Command Beast with a special command: Harry.  Your beast gains +2 Move sq and will move towards a target you nominate.  If it reaches, it applies 5 Verve Loss and attempts to get back to you.  Your companions cannot be the target of attacks this round.\n2. At 5 points, you may use Command Beast with a special command: Pounce.  Your Companion becomes enraged with bloodlust for a particular target, becoming immune to mental effects, gaining 3sq movement, and applying a further 3 additional Verve Loss with its attacks, however they will ignore their own wellbeing and any further commands until its target is killed."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Swap places",
+        "id": "eeecc60c",
+        "type": "Passive",
+        "description": "Once per turn as a Free Action you may swap places with an adjacent Companion."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Soothe Monster",
+        "id": "deac53b3",
+        "type": "Passive",
+        "description": "You may attempt to resolve Soothe Animal with a monster as your target with a -3 penalty.  If you fail, this becomes a Free Action and the DM will describe something useful about its nature to you."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Lasting Commnad",
+        "id": "dd85a7b6",
+        "type": "Passive",
+        "description": "Resolve Command Beast.  Your command lasts until the end of battle, or 5 minutes, whichever is shorter."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Affinity",
+        "id": "f48db6c6",
+        "type": "Passive",
+        "description": "Using the Command Beast Move is a Free Action.  You may use this passive once per combat."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Fallen Hero",
+        "id": "8de54b16",
+        "type": "Passive",
+        "description": "If you fall into the Incapacitated state, your companion will become Hasted and Raged and will only take actions that defend you and the immediate area around you."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Horse Riding Afficionado",
+        "id": "e9872179",
+        "type": "Passive",
+        "description": "You are proficient at riding horses and are no longer tired by riding them, nor are they tired up to 30km of travel."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Spellcraft",
+        "stat": "int",
+        "id": "797d1feb",
+        "type": "Skill",
+        "description": "You aim to be a master of spells",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Learn Spell",
+        "id": "9be36277",
+        "type": "Primary",
+        "description": "When performing this Move, you comprehend a new spell whose level is equal to up to half your points in Spellcraft.  For each point you purchase in Spell Knowledge, you may have 2 Spells in your known list."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Forget Spell",
+        "id": "0e3c1475",
+        "type": "Primary",
+        "description": "You may perform this Move when you purchase a point in Spellcraft.  When you do, you may remove up to 2 Spells from your known Spells."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Mimic Spell Expertise",
+        "id": "73f09e3c",
+        "type": "Expertise",
+        "description": "When resolving Learn Spell and choosing this Expertise, you may expend [5|4|3|2|1|0] Verve to attempt to mimic a spell that you see being cast.  Resolve Cast a Spell with a Penalty of [2|1|0|0|0|0].  If you succeed and the spell is of a level that you could learn according to your Learn Spell score, you cast the spell.  If the spell is beyond you or you fail, you do not cast the spell but you do identify it."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Weird Flow Expertise",
+        "id": "16ce0705",
+        "type": "Expertise",
+        "description": "When resolving Learn Spell and choosing this Expertise, you may expend 5 Verve to attempt to cast a spell that you don't know.  Resolve the Spellcraft Move at the DC of your chosen spell.  If you succeed, you may resolve Cast a Spell Move with the spell you chose, paying its mana cost and choosing targets and effects as normal. You may choose Spells that are beyond your level in Spellcraft, but the DC raises by an additional 1."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Cast",
+        "stat": "int,wis,cha",
+        "id": "9aa1d2f7",
+        "type": "Skill",
+        "description": "You have the ability to shape The Flow into spells of power.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "magic_cast",
+        "name": "Cast a Spell",
+        "id": "f4911ac0",
+        "type": "Primary",
+        "description": "You may cast a spell, invoking it's Cantrip, Standard or Overpowered effect if you pay its Mana cost.  Many spells require you to beat the Defences of your target.  Your spell has no effect and the Mana is expended if you fail to beat your target's Defences."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Reactive Defenses Expertise",
+        "id": "b0a3a3c7",
+        "type": "Expertise",
+        "description": "You may choose to use this Expertise as a Reaction to yourself or an ally being the target of a Basic Attack.  Before the attack and any defenses are resolved, you may cast one of the following spells, if you know them and as their Cantrip effect only, as a Free Action: Blurring Forme\nStonerous Skin, Mirrorising Image, Flow Reflectorium or Shielding Ward.  The cost for casting the spell is increased by [4|3|3|2|2|1] and the spell lasts only until all Basic Attacks against the target are resolved.  Additionally, at 3 points you may use the Standard effect of the spell, and at 5 points you may use the Overpowered effect."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Reactive Offenses Expertise",
+        "id": "5b23fa6b",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, you may resolve the Cantrip effect of any Spell as a Free Action, but may not resolve the Cast a Spell Move again on your turn.  The cost for casting the spell is increased by [3|3|2|2|1|1].  You may use this Expertise [1|2|2|3|3|4] times per combat."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Wild Magic",
+        "id": "7b9e9900",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, resolve a Raw Roll and apply the following effects:\n1. Raw Roll 1-2: The DM can choose a different spell that you cast, from any spell, and can choose a new target.\n2. Raw Roll 3-5: You must choose a different spell that you cast, from your known Spells.\n3. 6-9: Your spell costs 1 less Mana.\n4. 10-14: Add 4 to all numeric effects of your spell, excluding duration.\n5. 15-18: Add 4 to all numeric effects of your spell, excluding duration, or reduce the Mana by 2, or extend the duration by 2 rounds.\n6. 19-20: Add 4 to all numeric effects of your spell, excluding duration, and reduce the Mana by 2, and extend the duration by 2 rounds.  "
+    },
+    {
+        "category": "magic_cast",
+        "name": "Powerful Flow Expertise",
+        "id": "7b2dc8b9",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, the power of your Flow channeling is Kinetic, and you may push yourself or your target away, up to [1|1|2|2|3|3] squares.  Additionally, you gain a +[1|2|3|4|5|6] to Basic Defence rolls when targeted by them next turn."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Resistance Piercing Expertise",
+        "id": "8f5355cd",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, choose one of the following effects before resolving Cast a Spell:\n1. You gain a +[1|2|3|4|5|6] Bonus to your Cast a Spell roll to pierce the Resistances of targets who have resisted a Spell from you this combat.\n2. Even if the subject resists, any applicable Verve Loss is reduced not to 0 but to [1|2|3|4|5|6] instead.\n3. If the subject resists, the cost of the spell is reduced by up to [1|2|3|4|5|6]."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Metamagic Expertise",
+        "id": "6fdd26cc",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, choose one of the following effects:\n- You may add a number of squares onto your spell's Shape, up to your Expertise score, with each square increasing the Mana cost by 1.\n-- By paying 1 additional Mana, the shape and range of a spell is treated as originating from an ally that you can perceive with a number of squares of you equal to twice your Expertise.  Additionally, Touch spells originating from an ally do not need your ally to physically touch.\n-- By paying 5 additional Mana, for your spell whose effects are determined by rolling Dice, you may take the maximum value of [1|2|2|3|3|4] of the dice.\n-- You may maintain a spell with a duration up to a number of additional rounds equal to your Expertise.  Each round that you do so costs you an additional 3 Mana.\n-- By paying [6|5|5|4|4|3] additional mana, you may cast a spell without either a Verbal or a Somatic component.  You may pay this cost twice to remove both components."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Preparation Expertise",
+        "id": "7dc033bf",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, the spell you cast is stored within your body as potential.   It remains there indefinitely, but your mana total is reduced by the cost of the spell.  You are easier to discover with the Detect Magic Spell while you have a prepared spell, and you may only have 1 Prepared Spell.  As a Free Action, you may at any time:\n1. Cast your spell, with all numeric effects, excluding duration, reduced by [5|4|3|2|1|0], to a minimum of 1.\n2. Release the magic as a raw blast to all creatures within 2 sq of you, applying [2|3|4|5|6] Verve Loss."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Life Magic Expertise",
+        "id": "7489fae0",
+        "type": "Expertise",
+        "description": "When resolving Cast a Spell and using this Expertise, you may pay 3 Verve per Mana to replace the Mana cost of your spell.  You may only do this for [1|2|3|4|5] of the mana cost, and this lost Verve may not be restored with magic until the end of the day."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Willing Coterie",
+        "id": "9972ce28",
+        "type": "Passive",
+        "description": "When you Resolve the Cast Move, you may draw Verve or Mana from a willing target, or yourself, within 5sq.  For each 2 Mana or 5 Verve you draw, you gain 1 Mana towards your Spell.  Any Mana not used for your Spell is lost."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Unwilling Coterie",
+        "id": "655109c3",
+        "type": "Passive",
+        "description": "When you Resolve the Cast a Spell Move, you may attempt to draw Mana from an unwilling target that is within 5sq.  Resolve a Raw ROll.  On a 17+, you draw 1 Mana from your target.  If they don't have any, you draw 5 Verve which becomes 1 Mana for you."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Weak Spell",
+        "id": "0460155f",
+        "type": "Passive",
+        "description": "You may halve the mana cost, as well as all numeric effects including duration, when you resolve Cast a Spell.  Spells without numeric effects will be weakened by the DM accordingly."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Mana Master",
+        "id": "cb567bd2",
+        "type": "Passive",
+        "description": "When resolving Cast a Spell and using this Expertise, as a Free Action you may choose one of the following effects:\n1. You may unravel a spell that you cast which has an active duration.  It ends, and you regain 1 Mana per round remaining.\n2. If you already cast the spell you are casting now in this combat, it costs 1 Mana Less."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Defensive Cast",
+        "id": "457f0ea9",
+        "type": "Passive",
+        "description": "You may resolve a Cantrip or Standard Touch spell as a Quick Action against a target you attempted to Block or Dodge last turn, if they are still in your Threatened Area on your turn, however your spell costs 2 additional Mana.  Additionally, you may resolve your spell as a Reaction against a target that you attempt to Block and Dodge on the opponent's turn, however this costs 3 additonal Mana."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Slice and cast",
+        "id": "076d47e0",
+        "type": "Passive",
+        "description": "If you used Basic Melee Attack on a target last round, spells you cast that use Touch or Single Visible Target and which target that creature cost 1 less Mana this turn."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Cover Casting",
+        "id": "4f6526c1",
+        "type": "Passive",
+        "description": "When behind a wall, pillar or defensible position, you may attempt to keep yourself defended and resolve the Cast a Spell Move.  You gain a +2 bonus to the Dodge Move and Block (STR) Move Rolls against Spells and Ranged attacks, but suffer -2 to your rolls to pierce your target's defenses."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Flow Verve",
+        "id": "420a2a0a",
+        "type": "Passive",
+        "description": "As a Free Action, you may exchange any number of Mana to ignore three times the number of lost Verve from 1 source."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Flow Master",
+        "id": "acc5a2e9",
+        "type": "Passive",
+        "description": "Each time you cast a spell, you gain one Flow.  As a Free Action, you may exchange 3 Flow for 1 Mana."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Elemental Master",
+        "id": "519e8e40",
+        "type": "Passive",
+        "description": "Your Magical Synergy critical effect occurs on a Raw Roll of 19+"
+    },
+    {
+        "category": "magic_cast",
+        "name": "Elemental Shift",
+        "id": "88ac0ac3",
+        "type": "Passive",
+        "description": "When you cast an Energy Spell, you can choose to apply an elemental type for which you don't have Magical Synergy.  The spell costs 3 more Mana than normal and cannot achieve the Magical Synergy critical effect."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Synergy Sink",
+        "id": "e43cbbc8",
+        "type": "Passive",
+        "description": "When you are the target of a magical effect that has the same type as an Elemental Effect that you have Magical Synergy with, you gain 1 Flow.  As a Free Action, you may exchange 3 Flow for 1 Mana."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Fresh Cast",
+        "id": "3fbbb0f6",
+        "type": "Passive",
+        "description": "When you Resolve the Cast a Spell Move for the first time in an hour, your Spell costs 1 Less Mana (to a minimum of 1, or a minimum of 0 for Cantrips)."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Critical Cast",
+        "id": "44844313",
+        "type": "Passive",
+        "description": "When you Resolve the Cast a Spell Move that requires you Pierce your target's Defenses and you achieve a Raw Roll of 20, you Restore 1 Mana."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Spell Sink",
+        "id": "ec97ebcc",
+        "type": "Passive",
+        "description": "When you use the Basic Melee or Ranged Attack Move against a target that is under the effect of a spell you cast, you apply an additional Verve Loss to them."
+    },
+    {
+        "category": "magic_cast",
+        "name": "Comprehending Cast",
+        "id": "eb207670",
+        "type": "Passive",
+        "description": "When resolving a spell that grants you knowledge (such as Detect Magic), you instantly comprehend what it tells you, even in combat, without spending time."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "Enchanting",
+        "stat": "wis",
+        "id": "3461da9d",
+        "type": "Skill",
+        "description": "You leave lasting magics in items."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "(On Hold) Enchant Item",
+        "id": "9eaf5a8c",
+        "type": "Primary",
+        "description": "You enchant an item temporarily, or imbue your magics permanently into an item."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "Concoct Magic Potion",
+        "id": "f8ee4bd7",
+        "type": "Primary",
+        "description": "You imbue a liquid with the Standard effects of a Magic Spell, up to level 2, that has the Potable Tag.  To create your concoction, you need to know the Spell Effect and have an alchemical Potion Solution prepared.  Over a number of hours equal to the Spell Effect you are creating, you must cast the spell 3 times per hour to perfect the stability of the Potion.  When you attempt this, Resolve Enchanting; if you beat the DC of the Spell Effect, you creation your potion.  If you fail, you only lose 30 minutes, and your alchemical base is not affected.  You may create one potion per day maximum."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "Inscribe Magic Scroll",
+        "id": "d67c3140",
+        "type": "Primary",
+        "description": "You create a Scroll that can be read and cast by a Magic User, in order to unleash the Standard effects of a Magic Spell up to level 2.  The Scroll contains shorthand magic, ready for casting at speed and in combat.  To inscribe your Spell, you need to know the Spell Effect or have a reference book to the Spell, and to transcribe the magic onto a piece of vellum or paper over a number of hours equal to the level of the Spell.  Resolve Enchanting; if you beat the DC of the Spell, you successfully transcribe a single-user Scroll of the Spell.  If you fail, you lose half the time and your paper or vellum is lost.  Rules for reading and casting the spell on the scroll are found under the Trigger Magic Move."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "Infuse Runic Seal",
+        "id": "3f30f345",
+        "type": "Primary",
+        "description": "You create a runic stone or symbol that can be activated by any user to unleash the Standard effects of a Magic Spell up to level 2.  To infuse the Seal, you need to know the Spell Effect and to create a Flow connection between your Source and a Seal or symbol worth 2 Standards, over a number of hours equal to half the level of the Spell.  Resolve Enchanting; if you beat the DC of the Spell, you successfully infuse the Seal and permanently increment the Infuse field on your character sheet by the Mana cost of the Spell.  If you fail, you lose half the time.  You may subtract the Infuse value on your character sheet when the Seal is used or after a month, whichever is first."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "Proficient Enchanting",
+        "id": "6d89be5f",
+        "type": "Passive",
+        "description": "The level of Spell effect that you can enchant with increases by 2."
+    },
+    {
+        "category": "magic_enchanting",
+        "name": "Masterful Enchanting",
+        "id": "480305be",
+        "type": "Passive",
+        "description": "The level of Spell effect that you can enchant with increases by 3.  You may only purchase this if you own Proficient Enchanting."
+    },
+    {
+        "category": "wildform",
+        "name": "Wildform",
+        "stat": "str",
+        "id": "ca587f10",
+        "type": "Skill",
+        "description": "You fully or partially transform into creatures of the forest and wilds.  After each Long Rest, you gain one Wild Charge per point in Wildform.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "wildform",
+        "name": "Full Transformation",
+        "id": "82810316",
+        "type": "Primary",
+        "description": "If you beat the DC of a creature on the Wildform Creatures List, you fully transform into that creature, gaining it's physical stats, attacks and special abilities.  Maintaining the form for 1 minute outside of combat, or 3 rounds in Combat, expends 1 Wild Charge.\n\nYou are limited to transforming into creatures on the Wildfrom Creatures List that have DCs up to are half the number of points you've spent in Wildform."
+    },
+    {
+        "category": "wildform",
+        "name": "Partial Transformation",
+        "id": "27299b7a",
+        "type": "Primary",
+        "description": "You partially transform into a creature on the Wildform Creatures List, gaining one physical stat, or one special ability.  Maintaining the form for 1 minute outside of combat, or 3 rounds in Combat, expends 1 Wild Charge."
+    },
+    {
+        "category": "wildform",
+        "name": "Wild Ability",
+        "id": "b9e5c789",
+        "type": "Primary",
+        "description": "You use a Wild Ability that you have stored, while you are in Wildform.  If it must pierce Defences, resolve this with the most appropriate Move you can use."
+    },
+    {
+        "category": "wildform",
+        "name": "Wilform Expertise",
+        "id": "d2017984",
+        "type": "Expertise",
+        "description": "When resolving Wildform and using this Expertise, choose one of the following effects:\n1. You may choose a creature [1|1|1|2|2|2] DCs higher than you normally can.  The DC to beat is only increased by 1 when you do.\n2. You may expend [12|10|8|6|4|2] Verve to gain 1 Wild Charge to use for this Wildfrom Move."
+    },
+    {
+        "category": "wildform",
+        "name": "Status Wildform Expertise",
+        "id": "cd44645f",
+        "type": "Expertise",
+        "description": "As a Free Action when in a Wildform, if you have an active positive Status Effect, you may remove [1|2|3|4|5|6] rounds of the effect to gain half the number of Wild Charges.  If you have 5 points in Status Wildform Expertise, you may instead apply this to negative Status Effects."
+    },
+    {
+        "category": "wildform",
+        "name": "Enraged Expertise",
+        "id": "4ac06aaa",
+        "type": "Expertise",
+        "description": "As a Free Action when in a Wildform, you may enter an enraged form.  You increase 1 size category and gain +1 to all stats and all Rolls, and add +3 to any Verve Loss applied by attacks.  You may maintain an enraged form for [1|1|2|2|3|4] rounds.  Doing so immediately expends a Wild Charge."
+    },
+    {
+        "category": "wildform",
+        "name": "Wild Harvest Expertise",
+        "id": "6ea5b378",
+        "type": "Expertise",
+        "description": "As a Free Action when in Wildform and a creature is killed within [1|2|3|4|5|6] squares of you, you mimic a form of its Special Ability.  Expend a Wildform Charge to gain 1 Wild Ability that you may use once.  You may store up to [1|2|3|4|5|6] Wild abilities."
+    },
+    {
+        "category": "wildform",
+        "name": "Adrenal Wildform",
+        "id": "5ebb3f34",
+        "type": "Passive",
+        "description": "If you have less than 10% of your HP remaining, you gain 10% of your HP when you use Wildform.  You may use this passive once per day."
+    },
+    {
+        "category": "wildform",
+        "name": "Innate Wildform",
+        "id": "e12ee1fe",
+        "type": "Passive",
+        "description": "Whenever you perform a Short Rest, you restore up to 2 Wildform Charges."
+    },
+    {
+        "category": "wildform",
+        "name": "Killform",
+        "id": "3d952c5c",
+        "type": "Passive",
+        "description": "If you kill a target while in Wildform, you gain 1 Wildform Charge."
+    },
+    {
+        "category": "ki",
+        "name": "Ki",
+        "stat": "con",
+        "id": "160be273",
+        "type": "Skill",
+        "description": "You are trained in the truth of Ki.  Ki attuned may have 2 active Ki Marks per point in Ki you have purchased, or 1/2 a Ki Mark when out of combat.  Ki Marks may be applied to yourself and your enemies.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "ki",
+        "name": "Ki Attunement",
+        "id": "85f6c688",
+        "type": "Free",
+        "description": "You enable a Ki Attunement.  This turn you may apply a Ki Mark to a target you hit with a Basic Attack, to one you Grapple or Trip, or to yourself."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Flow",
+        "id": "b35258f7",
+        "type": "Primary",
+        "description": "You apply a Ki Mark to a target that you can perceive that already has one, or 2 to yourself."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Flurry Expertise",
+        "id": "a473b0b1",
+        "type": "Expertise",
+        "description": "When resolving Ki Attunement and using this Expertise, you expend up to your Expertise score in Ki Marks on yourself or adjacent targets.  If you do, you apply 1 attack that automatically hits for each Ki Mark expended.  You may apply each attack to different targets.  If you have at least 5 points in Ki Flurry, you may instead expend Ki Marks on targets you can perceive, and move within Threatened Area of any creature you expended Marks on, to resolve these attacks."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Torrent Expertise",
+        "id": "ed0f20c2",
+        "type": "Expertise",
+        "description": "When resolving Ki Attunement and using this Expertise, you may apply up to your Expertise score Ki Marks to targets in your Threatened Area, but a maximum of 1 per target."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Conduit Expertise",
+        "id": "fe59c680",
+        "type": "Expertise",
+        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from targets within your Threatened Area and choose one of the following effects:\n1. You deal 5 Magical Damage to each creature you expended Ki Marks on, for each Ki Mark they have.  This damage ignores armour and magical resistances.  When expending Ki Marks for this effect, you may expend them from creatures you can perceive, rather than just those within your Threatened Area.\n2. Instead of dealing damage, you apply the Stunned Status to targets up to DC 2 that you expended Ki Marks on.  If there are no valid targets, this Move is cancelled and your Primary Action is not expended.\n3. You slam a creature up to 1 size category larger than you up to 3sq per Ki Mark you used.  Creatures who hit a surface are slammed for 4 Verve Loss per square you moved them.  Resolve a Trip with no bonus against creatures that do not hit a surface."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Self Expertise",
+        "id": "304e1507",
+        "type": "Expertise",
+        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from targets within your Threatened Area and choose one of the following effects:\n1. If in combat, you reduce the duration of a Status at a rate of 1 round per Ki Mark expended.\n2. If in combat, you restore 5 Verve per Mark.\n3. You become enveloped in Pyral, Luminal, Umral, Arcanic or Zephyral energy for 1 Round per Ki Mark expended.  You gain the Energy Shielded Status (DC 1) for 1 round per Ki Mark.\n4. You gain 2sq of Movement this turn per Ki Mark expended, and you may treat difficult terrain, water, gaseous, vertical surfaces, falling, and occupied spaces as normal spaces."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Eye",
+        "id": "c07fc7c8",
+        "type": "Expertise",
+        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from targets within your Threatened Area.  You automatically resolve Block and Dodge a number of times equal to the Ki Marks you expended, which can be applied to most Special Attacks as well.  Additionally, you may resolve this as a Reaction to an opponent's Move.  For each attack you avoided, apply a Ki Mark to the attacker at the end of the turn."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Catalyst",
+        "id": "34e11fca",
+        "type": "Passive",
+        "description": "Apply a Ki Mark to yourself for each enemy you kill or completely disable."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Ranged Diversion",
+        "id": "24f1c112",
+        "type": "Passive",
+        "description": "When resolving Dodge against a Ranged Attack, if you successfully Dodge, you may Expend a Ki Mark on yourself or the Ranged Attacker and choose a new target for the projectile that is within 45(deg) of the flight path of the projectile.  If the projectile is dangerous to handle (for example flaming arrows), you incur the attack as well as your new target."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Presence",
+        "id": "46b4a925",
+        "type": "Passive",
+        "description": "When Ki Attuned, you can apply Ki Marks by thrown weapons to targets within 5sq, instead of just by touch."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Point Status",
+        "id": "231b6d40",
+        "type": "Passive",
+        "description": "When expending Ki Marks on targets, including yourself, that have a negative Status Effect and at least 1 Ki Mark, treat the creature as having one additional Ki Mark."
+    },
+    {
+        "category": "rage",
+        "name": "Rage",
+        "stat": "str",
+        "id": "971c8657",
+        "type": "Skill",
+        "description": "You have the ability to enter a Rage.  If you ever reach 0 Raging you gain the Prone Status, and you can no longer gain Raging for the remainder of the Combat.  On any turn that you do not use the Melee Attack or Unnerve Moves, lose 3 Raging.  Whenever you deal Damage to a target, or receive Damage from any source, you gain a Raging.\n\nIf you ever reach 10 Raging, then at the end of your turn you gain the Unstoppable Rage Status.  ",
+        "secondPass": "✅"
+    },
+    {
+        "category": "rage",
+        "name": "Rage",
+        "id": "67f35321",
+        "type": "Free",
+        "description": "If you are not already, you enter a Combat Rage, gaining a number of Raging equal to half of your points in Rage.  If you are already in a Combat Rage, gain 1 Raging."
+    },
+    {
+        "category": "rage",
+        "name": "Unnerving Rage Expertise",
+        "id": "8c0384aa",
+        "type": "Expertise",
+        "description": "When resolving Rage and using this Expertise, choose one of the following effects:\n1. You may apply the Unnerve Move to additional targets equal to half your Expertise.  Lose 1 Raging per target you choose.\n2. You may move a number of opponents equal to your Expertise 1sq away from you, if there is a safe square to do so.  Lose 1 Raging per target you choose.\n3. You unnerve a number of opponents equal to half your Expertise.  Until your next turn, Critical Hit Raw Rolls apply with a +1 Bonus.  Lose 1 Raging per target you choose."
+    },
+    {
+        "category": "rage",
+        "name": "Metabolic Rage Expertise",
+        "id": "cbc676f8",
+        "type": "Expertise",
+        "description": "When resolving Rage and using this Expertise, choose one of the following effects:\n1. Expend up to your Expertise in Raging to add 1sq to your leap distance and height this turn.\n2. Ignore the effects of any Mental Status, or the Damage Over Time Status this turn.  Lose 2 Raging per DC of the Status.\n3. Expend up to your Expertise in Raging to add +3 Verve Loss to all Melee Attacks this turn, or +1/2 to the Grapple or Trip Moves."
+    },
+    {
+        "category": "rage",
+        "name": "Powerful Rage Expertise",
+        "id": "122e4d28",
+        "type": "Expertise",
+        "description": "When resolving Rage and using this Expertise, choose one of the following effects:\n1. You slam a creature within your Threatened Area into a surface or another creature up to 1 sq per Raging spent.  For each sq your target moves, both your target and the surface or creature it hits incurs 5 Verve Loss per sq moved.\n2. You stab and slice a creature, applying the Damage Over Time (DC 2) Status to them.  Lose 5 Raging.\n3. Resolve one Melee Combat Move (with no Expertises) against up to 3 targets in a Line Shape beginning from you.  You end your turn in a free square adjacent to your last target.  Lose 8 Raging."
+    },
+    {
+        "category": "rage",
+        "name": "Brutal Sympathy",
+        "id": "45c373c3",
+        "type": "Passive",
+        "description": "When you have the Combat Rage Status, gain 1 Raging every time an ally takes Damage."
+    },
+    {
+        "category": "rage",
+        "name": "Brutal Rebuke",
+        "id": "f17a4fcf",
+        "type": "Passive",
+        "description": "When you have the Combat Rage Status, gain 1 Rage every time you successfully resolve Block and Dodge."
+    },
+    {
+        "category": "rage",
+        "name": "Brutal Kill",
+        "id": "85376f2d",
+        "type": "Passive",
+        "description": "When you have the Combat Rage Status, gain 2 Rage every time you kill a target."
+    },
+    {
+        "category": "rage",
+        "name": "Roaring Relocate",
+        "id": "e9c17777",
+        "type": "Passive",
+        "description": "You may once expend 1 Rage to ignore occupied spaces of opponents up to 1 size category larger, when using Relocate.  You may move any target that you push through to an adjacent safe square.  You may use only 1 Roaring Passive per turn."
+    },
+    {
+        "category": "rage",
+        "name": "Roaring Presence",
+        "id": "7f0d6b87",
+        "type": "Passive",
+        "description": "You may once expend 1 Rage to gain 3UDR against one source this turn.  You may use only 1 Roaring Passive per turn."
+    },
+    {
+        "category": "rage",
+        "name": "Roaring Leap",
+        "id": "3c0e6b68",
+        "type": "Passive",
+        "description": "You may once expend 1 Rage to gain +2sq of movement when resolving your Relocate Action.  You may use only 1 Roaring Passive per turn."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Channel Divinity",
+        "stat": "wis",
+        "id": "e46bd134",
+        "type": "Skill",
+        "description": "You Channel the very power of the gods via your Source to bring your divine will to those around you.  After a Long Rest, you gain a number of Divinity equal to your Channel Divinity, losing any unused Divinity you already had.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Lay on Hands",
+        "id": "0c83d544",
+        "type": "Primary",
+        "description": "While in combat, you may spend a Divinity to Restore the Verve of a target by 1 Verve per point in Channel Divinity."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Holy Word",
+        "id": "64a24b3e",
+        "type": "Primary",
+        "description": "You may spend a Divinity to attempt to rebuke up to half your Channel Divinity of Undead targets that you can perceive.  If you beat their Defence (CHA), you apply the Frightened Status to them."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Blessing",
+        "id": "5664dab9",
+        "type": "Primary",
+        "description": "You may spend a Divninity to grant one target you can perceive +1 to their next Move Roll."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Righteous Weapon",
+        "id": "5678fe82",
+        "type": "Quick",
+        "description": "You may spend a Divninity to create a weapon appropriate to your deity.  This weapon is treated as a fine weapon and is magical for the purposes of beating resistances.  It replaces any weapon you are currently wielding, and lasts for 1 turn."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Blessed Healer Expertise",
+        "id": "c26f4133",
+        "type": "Expertise",
+        "description": "When resolving Lay on Hands and using this Expertise, you Restore an additional 2 Verve per Expertise.  When you have at least 4 points, Verve acquired this way is Gained instead."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Powerful Rebuke Expertise",
+        "id": "cae5cea5",
+        "type": "Expertise",
+        "description": "When resolving Holy Word and using this Expertise, you can target additional creature types based on your Expertise.  1: Beasts.  2: Humanoids.  3: Fae, Abberation and Demonic.  4: Monstrous.  Additionally, at 5 points you instead apply Terrified.  And at 6 points your targets incur 10 Verve Loss."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Blessful Expertise",
+        "id": "8066ec74",
+        "type": "Expertise",
+        "description": "When resolving Blessing and using this Expertise, you may apply Blessing to a number of additional targets equalto your Expertise."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Holy Arms Expertise",
+        "id": "cb70a900",
+        "type": "Expertise",
+        "description": "When resolving Righteous Weapon and using this Expertise, your weapon applies an additional Verve Loss at 1, 3 and 5 Expertise, and it lasts one turn longer at 2, 4 and 6 Expertise."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Blood Word",
+        "id": "f9c49610",
+        "type": "Passive",
+        "description": "When resolving Holy Word, you gain +3 to beat the Defences of any creature that applied a Status or reduced your Verve Loss last turn."
+    },
+    {
+        "category": "channel_divinity",
+        "name": "Blessing Channel II",
+        "id": "1eec9806",
+        "type": "Passive",
+        "description": "Resolve the Blessing Move as a Quick Action."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Rhapsody",
+        "stat": "cha",
+        "id": "1cd6df36",
+        "type": "Skill",
+        "description": "Something about your form, your movement, your voice, and your creations is beyond those of even the greatest creatives.  By weaving energies of your Source into your performance and creations, you can enact amazing feats of inspiration and uplifiting of the spirit.  When resolving Performance, Create Artwork, Cooking or Rhapsodic Creation, you may use the Skill of either Creativity or Rhapsody as your Roll Bonus.",
+        "secondPass": "✅"
+    },
+    {
+        "category": "rhapsody",
+        "name": "Rhapsodic Creation",
+        "id": "f1802d7c",
+        "type": "Primary",
+        "description": "You create or reveal a Rhapsodic work: a performance, a song, a scent, or even an object of art or work of wondrous cooking.  Resolve a Rhapsodic Creation and note the DC Rank you beat.  The first time a target experiences this work, they Gain 1 Verve per DC rank of your Creation starting at DC 0.  You may apply this effect to a number of targets equal to half your Rhapsody Score.  If your creation is art or food that you created earlier, you may apply this effect when you first reveal it, however you may only have 1 creation stored.  You are considered under the effect of a Rhapsodic Creation if you were the target of Rhapsodic Creation in this combat or if Rhapsodic Creation has allowed you to Gain Verve above your total which you still have."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Weave Expertise",
+        "id": "69d80a6c",
+        "type": "Expertise",
+        "description": "When resolving Rhapsodic Creation and using this Expertise, you attempt to copy part of the effect of a Spell that you could see being Cast this round.  You resolve Cast a Spell as Free Action copying the spell with new targets of your choice, however all numeric effects are reduced by [6|5|4|3|2|1] including duration, to a minimum of 1."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Creation Expertise",
+        "id": "7ca122f7",
+        "type": "Expertise",
+        "description": "When resolving Rhapsodic Creation and using this Expertise, instead of the normal resolution, you grant anyone under the effects of a Rhapsodic Creation may exchange [14|12|10|8|6|4] Verve to apply one of the following Statuses to themselves: Enlivened: Inspired, Enlivened: Uplifted, Fortified (5), or to increase the duration of a positive Status already on them by 3 turns, or to reduce the duration of a negative Status on them by 1."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Uplifting Creation",
+        "id": "d9e3fef1",
+        "type": "Passive",
+        "description": "When resolving Rhapsodic Creation, you also apply the Enlivened: Uplifted Status to your targets.  You may not apply the effects of another Passive."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Inspired Creation",
+        "id": "f5cb9ac2",
+        "type": "Passive",
+        "description": "When resolving Rhapsodic Creation, you also apply the Enlivened: Inspired Status to your targets.  You may not apply the effects of another Passive."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Sympathetic Creation",
+        "id": "7dd05d25",
+        "type": "Passive",
+        "description": "When resolving Rhapsodic Creation, you also copy a positive Status (including remaining duration) on one of your targets to another of your targets, if you exceed the DC of the copied Status.  You may not apply the effects of another Passive."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Unsympathetic Creation",
+        "id": "6a81c9b9",
+        "type": "Passive",
+        "description": "When resolving Rhapsodic Creation, you also remove a negative Status (including remaining duration) on one of your targets, optionally applying it to another targets that you can perceive, if you exceed the DC of the copied Status.  You may not apply the effects of another Passive."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Cymbal Clash",
+        "id": "33eb31df",
+        "type": "Passive",
+        "description": "Whenever you successfully resolve Block and Dodge, reset the duration of any Status applied by a Rhapsodic Creation that is in effect, on one target."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Rhapsodic Presence",
+        "id": "7cade4dd",
+        "type": "Primary",
+        "description": "Your presence is felt in your movements, your voice and your creations, and when you focus you can control how you project this feeling.  Resolve Rhapsodic Presence and note how many DC Ranks you beat, starting at DC 0.  You gain 2 Presence for each rank you beat, and with some other passives you will be able to use them for interesting effects using Rhapsody Passives."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Facilitating Presence",
+        "id": "69c1bf5e",
+        "type": "Expertise",
+        "description": "As a Free Action you may spend a Presence to replace one die that calculates Damage or Healing with the value of [4|5|6|7|8|9].  You may use this a maximum of once per turn."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Discordant Presence",
+        "id": "ab030a1b",
+        "type": "Expertise",
+        "description": "As a Free Action you may spend 2 Presence to perform a Raw Roll when an enemy resolves a Basic Attack or Move, choosing one of the below effects.  You may only use this on each creature once per turn.\n-- On [20|20|19|19|19|18]+ the Move does not occur and the originator of the Move cannot replace it.\n-- On a [20|19|18|17|16|15]+ the originator of the Move must choose a new target, if there is another valid target.  This does not apply to Area of Effect or Aura abilities."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Requiem Presence",
+        "id": "30a62705",
+        "type": "Expertise",
+        "description": "As a Free Action you may spend 1 Presence to apply [4|6|8|10|12|14] Verve Loss to a creature.  You may use this a maximum of once per turn.  This Verve Loss is only reduced by MRes and URes."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Harmonic Chorus",
+        "id": "05df29a7",
+        "type": "Passive",
+        "description": "If an ally resolves a Creativity Move to help you and beats a DC of 1, then until the end of your next turn, you gain a +1 Bonus to Rhapsodic Creation or Rhapsodic Presence.  This increases to a +2 Bonus if they beat a DC of 2."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Noooooooo!",
+        "id": "1e3d896d",
+        "type": "Passive",
+        "description": "If one of your allies has entered the Incapacitated state this turn, the Rhapsodic Creation or Rhapsodic Presence Move is a Quick Action this turn."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Tragic Artist",
+        "id": "598934df",
+        "type": "Passive",
+        "description": "When under the effect of a negative spell, effect, or Status, you gain a +1 bonus to the Rhapsodic Creation or Rhapsodic Presence Move."
+    },
+    {
+        "category": "rhapsody",
+        "name": "Final Song",
+        "id": "ac7c6919",
+        "type": "Passive",
+        "description": "If you gain the Incapacitated Status you automatically resolve and apply Rhapsodic Performance with either the Uplifting or Inspired Creation Passive."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Kineticist",
+        "stat": "str",
+        "id": "3f0b799e",
+        "type": "Skill",
+        "description": "You have the ability to manipulate astral energy within your body into kinetic energies."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Spark Kinetics",
+        "id": "542ac312",
+        "type": "Primary",
+        "description": "You Spark Kinetics, making Kinetics your sole Psionic Focus."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Manifest Kinetics",
+        "id": "db181a33",
+        "type": "Primary",
+        "description": "You Manifest a Kinetic Power from the Kinetics Power List, if you have the available PSI."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Draw Kinetics",
+        "id": "0d0e5e60",
+        "type": "Primary",
+        "description": "You stop and charge your Psionic Power from the Eternal Horizon, gaining 2 PSI."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Kinetic Draw Expertise",
+        "id": "0a7fd7f4",
+        "type": "Expertise",
+        "description": "If you successfully Dodged a target last turn, you may use Kinetics to Draw."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Delayed Kinetics",
+        "id": "bc2d5adc",
+        "type": "Expertise",
+        "description": "You may hold your Stealth Move until a condition arises before your next turn.  If that condition doesn't arise, you lose your Stealth"
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Quieted Kinetics",
+        "id": "6eff6a69",
+        "type": "Expertise",
+        "description": "When not in a tense situation, you can hide the visual or mental feedback of your Kinetic Manifestation"
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Manipulation Expertise",
+        "id": "e9347711",
+        "type": "Expertise",
+        "description": "You may perform any action you could do with two hands, from afar.  Items manipulated cannot weight more than 1kg."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Absolute Quieted Kinetics",
+        "id": "7daa2ef9",
+        "type": "Passive",
+        "description": "When not in a tense situation, you can hide both the visual and mental feedback of your Kinetic Manifestation"
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Kinetic Talent: Kinetics",
+        "id": "a078ede2",
+        "type": "Passive",
+        "description": "With Kinetics Sparked, you may levitate small objects weighing no more than 1kg at a speed of 6sq."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Kinetic Talent: Dodge",
+        "id": "d3bf528f",
+        "type": "Passive",
+        "description": "You gain +1 to the Dodge Move until your next turn."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Kinetic Talent: Motion",
+        "id": "dbec8dbc",
+        "type": "Passive",
+        "description": "You gain +1 Movement Speed until your next turn."
+    },
+    {
+        "category": "psionics_kinetics",
+        "name": "Kinetic Talent Master",
+        "id": "d85c124b",
+        "type": "Passive",
+        "description": "Your Kinetic Talents this turn are Free Actions."
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Clairsenticist",
+        "stat": "int",
+        "id": "55833ba0",
+        "type": "Skill",
+        "description": "You have the ability to read the whims of astral energies as future and past sight, as well as mental resonances"
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Spark Clairsentience",
+        "id": "07b1eade",
+        "type": "Primary",
+        "description": "You Spark Clairsentience, making Clairsentience your sole Psionic Focus."
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Manifest Clairsentience",
+        "id": "6e8a6b05",
+        "type": "Primary",
+        "description": "You Manifest a Clairsentience Power from the Clairsentience Power List, if you have the available PSI."
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Draw Clairsentience",
+        "id": "d5ffd8f4",
+        "type": "Primary",
+        "description": "You stop and charge your Psionic Power from the Eternal Horizon, gaining 2 PSI."
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Clairsentient Draw Expertise",
+        "id": "03859d7e",
+        "type": "Expertise",
+        "description": "If you successfully [ condition ], you may use Clairsentience to Draw as a Quick Action."
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Clairsentient Talent: thing",
+        "id": "dc3f379f",
+        "type": "Expertise",
+        "description": "[Talent].  Quick Action."
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Delayed Clairesentience Expertise",
+        "id": "1054dd41",
+        "type": "Passive",
+        "description": "You may hold your Clairesentience Move until a condition arises before your next turn.  If that condition doesn't arise, you lose your Clairesentience"
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Absolute Quieted Clairesentience",
+        "id": "729855a6",
+        "type": "Passive",
+        "description": "When not in a tense situation, you can hide both the visual and mental feedback of your Clairesentience Manifestation"
+    },
+    {
+        "category": "psionics_clair",
+        "name": "Quieted Clairesentience",
+        "id": "9042f7b0",
+        "type": "Passive",
+        "description": "When not in a tense situation, you can hide the visual or mental feedback of your Clairesentience Manifestation"
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Telepath",
+        "stat": "cha",
+        "id": "38f4ea1a",
+        "type": "Skill",
+        "description": "You have the ability to repath astral energies that weave through sentient life."
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Spark Telepathy",
+        "id": "9c951654",
+        "type": "Primary",
+        "description": "You Spark Telepathy, making Telepathy your sole Psionic Focus."
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Manifest Telepathy",
+        "id": "f736bfd2",
+        "type": "Primary",
+        "description": "You Manifest a Telepathic Power from the Telepathy Power List, if you have the available PSI."
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Draw Telepathy",
+        "id": "de806710",
+        "type": "Primary",
+        "description": "You stop and charge your Psionic Power from the Eternal Horizon, gaining 2 PSI."
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Telepathic Draw Expertise",
+        "id": "c8801590",
+        "type": "Expertise",
+        "description": "If you successfully [ condition ], you may use Telepathy to Draw as a Quick Action."
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Telepathic Talent: thing",
+        "id": "cf8e735e",
+        "type": "Expertise",
+        "description": "[Talent].  Quick Action."
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Delayed Telepathy",
+        "id": "fea55109",
+        "type": "Passive",
+        "description": "You may hold your Telepathy Move until a condition arises before your next turn. If that condition doesn't arise, you lose your Telepathy"
+    },
+    {
+        "category": "psionics_telepath",
+        "name": "Quieted Telepathy",
+        "id": "544ce875",
+        "type": "Passive",
+        "description": "When not in a tense situation, you can hide the visual or mental feedback of your Telepathy Manifestation"
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Metabolicist",
+        "stat": "con",
+        "id": "5eefe62e",
+        "type": "Skill",
+        "description": "You have the ability to reconduit astral energies into your cells and blood."
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Spark Psychometabolism",
+        "id": "c55cabb7",
+        "type": "Primary",
+        "description": "You Spark Psychometabolism, making Psychometabolism your sole Psionic Focus."
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Manifest Psychometabolism",
+        "id": "ea8ad157",
+        "type": "Primary",
+        "description": "You Manifest a Psychometabolism Power from the Psychometabolism Power List, if you have the available PSI."
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Draw Psychometabolism",
+        "id": "880dfd98",
+        "type": "Primary",
+        "description": "You stop and charge your Psionic Power from the Eternal Horizon, gaining 2 PSI."
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Psychometabolic Draw Expertise",
+        "id": "98a8f2c3",
+        "type": "Expertise",
+        "description": "If you successfully Blocked a target last turn, you may use Psychometabolism to Draw as a Quick Action."
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Psychmetabolic Talent: thing",
+        "id": "95d06a4b",
+        "type": "Expertise",
+        "description": "[Talent].  Quick Action."
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Delayed Psychometabolism",
+        "id": "f8f687dc",
+        "type": "Passive",
+        "description": "You may hold your Psychometabolism Move until a condition arises before your next turn. If that condition doesn't arise, you lose your Psychometabolism"
+    },
+    {
+        "category": "psionics_metab",
+        "name": "Quieted Psychometabolism",
+        "id": "aece252b",
+        "type": "Passive",
+        "description": "When not in a tense situation, you can hide the visual or mental feedback of your Psychometabolism Manifestation"
+    },
+    {
+        "category": "psionics_metapsi",
+        "name": "Metapsion",
+        "stat": "wis",
+        "id": "d867aac0",
+        "type": "Skill",
+        "description": "You have the ability to reconduit astral energies into your cells and blood."
+    },
+    {
+        "category": "psionics_metapsi",
+        "name": "Metapsionics",
+        "id": "d5beff27",
+        "type": "Primary",
+        "description": "They say that the Awakened Mind can reach The Nexus.  Some ability based on that, please.  Also, are shadows psionic?  The psychic imprint that light leaves, from the horizon?"
+    },
+    {
+        "category": "psionics_metapsi",
+        "name": "Bodyfuel Expertise",
+        "id": "b4a3d59b",
+        "type": "Expertise",
+        "description": "You may use your own HP to power your Telepathy.  Doing so costs 2 HP per Psi you expend."
+    }
+]

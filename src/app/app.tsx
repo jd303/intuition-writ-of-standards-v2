@@ -24,6 +24,7 @@ import { updateRacialBonusesData } from '../features/firebase/data/racialBonuses
 import WritLayout from './layout/writLayout.tsx';
 import Home from './home/home.tsx';
 import { updateLanguagesData } from '../features/firebase/data/languagesDataSlice.ts';
+import { updateSynergiesData } from '../features/firebase/data/synergiesDataSlice.ts';
 
 export function App() {
 	const authState = useAuthState();
@@ -104,6 +105,12 @@ export function App() {
 			const languagesRef = ref(database, `/languages`);
 			onValue(languagesRef, (snapshot) => {
 				dispatch(updateLanguagesData(snapshot.val()));
+			});
+
+			// Collect synergies data
+			const synergiesRef = ref(database, `/synergies`);
+			onValue(synergiesRef, (snapshot) => {
+				dispatch(updateSynergiesData(snapshot.val()));
 			});
 		}
 

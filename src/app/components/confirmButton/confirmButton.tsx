@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import st from './confirmButton.module.css';
 
-function ConfirmButton( { onClick, label, confirmLabel = 'Tap again to confirm', className }: { onClick: VoidFunction, label: string, confirmLabel?: string, className?: string } ) {
+function ConfirmButton( { onClick, label, confirmLabel = 'Tap again to confirm', className, confirmValue = undefined, disabled = false }: { onClick: (value: string | number | boolean | void) => void, label: string, confirmLabel?: string, className?: string, confirmValue?: string | number | boolean, disabled?: boolean } ) {
 	const [confirmMode, setConfirmMode] = useState(false);
 	const triggerClick = () => {
 		if (confirmMode) {
-			onClick();
+			if (confirmValue) onClick(confirmValue);
+			else onClick();
 			setConfirmMode(false);
 		}
 
@@ -18,7 +19,7 @@ function ConfirmButton( { onClick, label, confirmLabel = 'Tap again to confirm',
 	}
 
 	return (
-		<button onClick={triggerClick} className={[className, (confirmMode && st.confirmMode || '')].join(' ')}>{confirmMode && confirmLabel || label}</button>
+		<button onClick={triggerClick} className={[className, (confirmMode && st.confirmMode || '')].join(' ')} disabled={disabled}>{confirmMode && confirmLabel || label}</button>
 	)
 }
 

@@ -34,6 +34,26 @@
 			grid-template-columns: var(--grid-template-columns-auto-left);
 		}
 	}
+
+	&[data-purchasemode="buy"] {
+		[data-purchasepointgroup]:not([data-atmax="true"]) {
+			box-shadow: 0 0 12px rgba(220,160,0, .85);
+		}
+	}
+	&[data-purchasemode="sell"] {
+		[data-purchasepointgroup]:not([data-atmin="true"]) {
+			box-shadow: 0 0 12px rgba(240,20,0, .85);
+		}
+	}
+
+	&[data-searching="true"] {
+		section:first-of-type,
+		[data-name="Wellness"],
+		[data-name="Inventory"],
+		[data-name="Notes"] {
+			display: none !important;
+		}
+	}
 	
 	/* SPECIFIC STYLES */
 	.sections {
@@ -56,33 +76,35 @@
 			.metaData {
 				display: flex;
 				flex-direction: column;
-				gap: var(--padding-half);
+				gap: var(--padding-standard);
 			}
 
 			.labelField {
+				--flex-direction: column;
+				--align-items: flex-start;
+				--label-width: 100px;
+				--second-label-width: 200px;
+
+				@media (min-width: 500px) {
+					--flex-direction: row;
+					--align-items: center;
+					--label-width: 70px;
+					--second-label-width: 100px
+				}
+
 				display: flex;
+				flex-direction: var(--flex-direction);
+				align-items: var(--align-items);
 				gap: calc(0.5 * var(--padding-standard));
 				width: 100%;
 
 				label {
-					width: 70px;
+					width: var(--label-width);
 					min-width: 70px;
 				}
 
 				label:nth-of-type(2) {
-					width: 100px;
-				}
-			}
-
-			& [data-field="name"],
-			& [data-field="sessions"],
-			& [data-field="points"] .labelField,
-			& [data-field="race"],
-			& [data-field="attributes"] {
-				align-items: center;
-
-				input, select {
-					flex: 1;
+					width: var(--second-label-width);
 				}
 			}
 
@@ -95,12 +117,42 @@
 				border-radius: var(--radius-standard);
 				overflow: hidden;
 
-				img {
+				&.selectModetrue {
+					overflow: visible;
+				}
+
+				> img {
 					position: absolute;
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
 					object-position: 50%;
+				}
+
+				.profileSelector {
+					--grid-template-columns: 1fr 1fr;
+
+					@media (min-width: 600px) {
+						--grid-template-columns: 1fr 1fr 1fr;
+					}
+
+					position: absolute;
+					display: grid;
+					grid-template-columns: var(--grid-template-columns);
+					width: 80vw;
+					height: 50vh;
+					overflow: scroll;
+					border-radius: var(--radius-standard);
+
+					img {
+						width: 100%;
+					}
+				}
+			}
+
+			[data-field="sessions"] {
+				label:last-child {
+					color: #888;
 				}
 			}
 
@@ -108,32 +160,31 @@
 			[data-field="attributes"] {
 				display: flex;
 				gap: calc(0.5 * var(--padding-standard));
-
-				.labelField {
-					align-items: center;
-				}
-
-				.labelField:nth-child(2) label {
-					text-align: right;
-				}
 			}
 
 			[data-field="stats"] {
 				flex-wrap: wrap;
 
 				.statsFlex {
-					display: flex;
-					gap: calc(0.5 * var(--padding-standard));
-					width: 100%;
-				}
+					--flex-direction: column;
+					--grid-template-columns: 1fr 1fr;
 
-				.statList {
-					--grid-template-columns: 1fr 1fr 1fr;
+					@media (min-width: 500px) {
+						--flex-direction: row;
+						--grid-template-columns: 1fr 1fr 1fr;
+					}
 
 					@media (min-width: 1300px) {
 						--grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 					}
 
+					display: flex;
+					flex-direction: var(--flex-direction);
+					gap: calc(0.5 * var(--padding-standard));
+					width: 100%;
+				}
+
+				.statList {
 					display: grid;
 					grid-template-columns: var(--grid-template-columns);
 					flex-wrap: wrap;
@@ -187,6 +238,7 @@
 				display: flex;
 				flex-wrap: wrap;
 				gap: calc(0.5 * var(--padding-standard));
+				align-content: flex-start;
 
 				h2 {
 					margin-bottom: 0;
@@ -196,6 +248,21 @@
 					font-size: 0.9rem;
 					font-style: italic;
 					color: #999;
+				}
+			}
+
+			[data-field="statuses"] {
+				flex-direction: column;
+
+				.status {
+					display: flex;
+					gap: var(--padding-half);
+					width: 100%;
+
+					textarea {
+						width: 100%;
+						height: 70px;
+					}
 				}
 			}
 
@@ -215,6 +282,22 @@
 					gap: var(--padding-half);
 
 					& > * { max-width: 100px; }
+
+					.overResourced,
+					.overResourced input {
+						color: rgb(var(--colour-scarlet));
+					}
+				}
+			}
+
+			[data-field="item_belt"] {
+				h2 {
+					flex-basis: 100%;
+				}
+
+				.beltValues {
+					display: flex;
+					gap: var(--padding-half);
 				}
 			}
 			
@@ -327,6 +410,11 @@
 
 		.sectionMagic {
 			background-color: rgba(var(--colour-scarlet), 0.15);
+
+			.synergies {
+				grid-column: 1 / 3;
+				grid-row: 1;
+			}
 		}
 
 		.sectionPsionics {
@@ -335,8 +423,14 @@
 
 		.sectionInventory,
 		.sectionNotes {
+			--grid-template-columns: 1fr;
+
+			@media (min-width: 768px) {
+				--grid-template-columns: 1fr 1fr 1fr;
+			}
+
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: var(--grid-template-columns);
 			gap: var(--padding-half);
 
 			textarea {

@@ -1,4 +1,9 @@
 .sectionBlock {
+
+	&:empty {
+		display: none;
+	}
+
 	&.open {}
 
 	&.closed {

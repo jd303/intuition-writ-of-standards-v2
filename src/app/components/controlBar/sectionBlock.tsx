@@ -8,7 +8,7 @@ export const SectionBlock = ( { children, name, className, innerClassName, secti
 	const [isOpen, toggleIsOpen] = useToggleableBooleanState(true);
 
 	return (
-		<section className={`${st.sectionBlock} ${className || ''} ${(isOpen && st.open || st.closed)}`} ref={el => addSectionRef(el!, sectionRefs)} id={name}>
+		<section className={`${st.sectionBlock} ${className || ''} ${(isOpen && st.open || st.closed)}`} ref={el => addSectionRef(el!, sectionRefs)} id={name} data-name={name}>
 			<h1 className={`${st.title} textHoverEffect`} onClick={toggleIsOpen}><span>{icon ? <img src={icon} alt={name} /> : <></>} {name}</span> <TriangleNotch isOpen={isOpen} /></h1>
 			<div className={`${st.sectionContent} ${innerClassName}`}>{children}</div>
 		</section>

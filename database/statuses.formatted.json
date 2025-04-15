@@ -1,0 +1,234 @@
+[
+    {
+        "type": "short (1)",
+        "id": "f813c6a6",
+        "negative": true,
+        "name": "Bound",
+        "domain": "corpus",
+        "effect": "At Status DC 1, you cannot use your Relocate Action and receive a -3 to Move Rolls used with your Primary Action.  At Status DC 2, you are additionally unable to perform many Primary Actions, depending on the DM ruling."
+    },
+    {
+        "type": "short (1)",
+        "id": "f947c7b8",
+        "negative": false,
+        "name": "Energy Shielded",
+        "domain": "ciar",
+        "effect": "You are enveloped in a shield of energy.  While shielded, you reduce Verve Loss applied by energy of that type by 3 per DC, apply 3 Verve Loss of the energy type to Moves that bring you into contact with an enemy, including Melee Attack and Block and Dodge."
+    },
+    {
+        "type": "short (1)",
+        "id": "f6236599",
+        "negative": false,
+        "name": "Free Move",
+        "domain": "corpus",
+        "effect": "You can move through enemy squares and over difficult terrain with no penalty.  Additionally, you cannot be the target of Opportunity Attacks."
+    },
+    {
+        "type": "short (1)",
+        "id": "12ee8d87",
+        "negative": true,
+        "name": "Prone",
+        "domain": "corpus",
+        "effect": "Available in two modes:\n-- You are alert but prone: All Defence Move Rolls suffer a -3 Penalty.  Attacks against you apply 5 Bonus Verve Loss.  You can remove the Prone Status by sacrificing your Relocate Move.\n-- You are not alert, such as when unconcsious: You do not use Defence Reactions, and attacks against you apply 20 Bonus Verve Loss."
+    },
+    {
+        "type": "standard (3)",
+        "id": "0f1b200e",
+        "negative": false,
+        "name": "Attribute Buffed",
+        "domain": "corpus",
+        "effect": "All Skill Moves that you resolve with the Buffed Attribute gain a +(DC) Bonus."
+    },
+    {
+        "type": "standard (3)",
+        "id": "12744298",
+        "negative": true,
+        "name": "Blind / Invisible",
+        "domain": "mentus",
+        "effect": "You are either unable to see, or are not visible.\n-- When unable to see: you fail any check that absolutely requires sight, and reroll successful Move Rolls that involve sight.\n-- When invisible: you reroll failed Moves that gain an advantage by you being invisible, such as those in Combat and Defences."
+    },
+    {
+        "type": "standard (3)",
+        "id": "78f6a36a",
+        "negative": true,
+        "name": "Confused",
+        "domain": "corpus",
+        "effect": "When attempting any Move, a Raw Value of 8- grants the DM the ability to choose a new target, or cancel the action.  If the Move does not require a Roll, you must Roll for the Raw Value."
+    },
+    {
+        "type": "standard (3)",
+        "id": "5cfd7939",
+        "negative": true,
+        "name": "Damage Over Time",
+        "domain": "corpus",
+        "effect": "You are under the effect of Poison, Acid, Burning, or Bleeding.\n-- Bleeding: You incur (DC) Verve Loss per turn, and 1 additional per square you move.\n-- Acid: You incur 3(DC) Verve Loss per turn.\n-- Burning: You incur 2(DC) Verve Loss per turn.  You may put yourself out by expending 2 Actions over any number of rounds.\n-- Poison: You incur 2(DC) Verve Loss per turn.  The Status renews at the end of the duration.  If cured, the Status continues until the end of the duration."
+    },
+    {
+        "type": "standard (3)",
+        "id": "733f9696",
+        "negative": true,
+        "name": "Deaf / Silent",
+        "domain": "mentus",
+        "effect": "You are either unable to hear, or are completely silent:\n-- Deaf: You fail any check that requires hearing, and reroll successful Move Rolls that involve hearing.  You fail the Cast a Spell Move on a Raw Roll of 5-.\n-- Silent: You cannot use the Cast a Spell Move.  You gain a +4 Bonus to the Stealth Move and +2 to the Pickpocket Move."
+    },
+    {
+        "type": "standard (3)",
+        "id": "bc9c51bf",
+        "negative": true,
+        "name": "Demoralised",
+        "domain": "mentus",
+        "effect": "You incur 3(DC) Verve Loss each time you fail a Move, when someone saves against one of your Moves, or when one of your Weapon Damage Dice rolls lower than half the total."
+    },
+    {
+        "type": "standard (3)",
+        "id": "d2bacc5a",
+        "negative": false,
+        "name": "Enlivened",
+        "domain": "mentus",
+        "effect": "You are Enlivened with positivity.\n-- Encouraged: You Restore 1 Verve per Status DC each time you succeed at a Move, even when resolving Basic Melee and Basic Ranged Attack.\n-- Inspired: Roll an additional D4 on one Roll per turn.\n-- Uplifted: Reroll any Roll once per turn."
+    },
+    {
+        "type": "standard (3)",
+        "id": "eb65bb44",
+        "negative": true,
+        "name": "Incapacitated",
+        "domain": "corpus",
+        "effect": "The target has lost too much Verve and may die.  You may be able to resolve the Stabilise Move in the Rest Skill to save yourself.  If you have the Dying Status for three rounds, you perish from wounds and exhaustion."
+    },
+    {
+        "type": "standard (3)",
+        "id": "5e75dfa0",
+        "negative": true,
+        "name": "Enraged",
+        "domain": "mentus",
+        "effect": "The enraged target will aggressively approach and attack targets it considers their opponents, using only the Relocate and Unmodded Attack Moves if it can unless unable to.  Attacks made when Enraged apply 5 additional Verve Loss."
+    },
+    {
+        "type": "standard (3)",
+        "id": "95b27798",
+        "negative": false,
+        "name": "Fortified",
+        "domain": "ciar",
+        "effect": "The maximum Verve Loss you can have applied to you from any single source, after resolving defences, is limited based on the DC of Fortified.  The maximum Verve is equal to 20 minus 2 per DC beyond 1.  For example, 18 Verve at DC 2."
+    },
+    {
+        "type": "standard (3)",
+        "id": "171709ae",
+        "negative": false,
+        "name": "Hasted",
+        "domain": "corpus",
+        "effect": "Your speed is multiplied by 1.5.  You gain 1 additional Primary, Relocate or Quick Action each turn.  When you leave Hasted, you gain the Stunned / Slowed (Stunned) Status."
+    },
+    {
+        "type": "standard (3)",
+        "id": "84286d9f",
+        "negative": true,
+        "name": "Stunned / Slowed",
+        "domain": "mentus",
+        "effect": "You are inhibited due to beign shocked, stunned, paralysed or slowed.  You may attempt to remove the Dazed or Stunned effects by resolving Resist Mental, once each turn as a Free Action.\n-- Dazed: Your vision is reduced to 6 squares and Quick Actions are resolved as Primary Actions.\n-- Stunned: Your vision is reduced to 6 squares and you lose your Primary Action, and you can no longer maintain concentration.\n-- Paralysed: You lose all your actions.  Attempting to resist Paralysed each turn incurs a -3 Penalty.\n-- Slowed: Your speed is halved and you lose either your Primary or Relocate Action each turn.\n-- Chilled: Your speed is reduced by (DC)."
+    },
+    {
+        "type": "standard (3)",
+        "id": "3babc32d",
+        "negative": true,
+        "name": "Unnerved",
+        "domain": "mentus",
+        "effect": "You partially lose control of your emotions.\n-- Dissuaded: You will prefer not to take an action or target a creature or place, depending on the Dissuade command.  You may ignore this effect, but will fumble and lose your action on a Raw Roll of 3+(DC)-.\n-- Provoked: You prefer to target the object of your provoking and will prefer offensive moves against them.  If you do not, you incur 2(DC) Verve Loss per action you take, though if you are doing so due to significant danger to yourself, this is only 1/2(DC).\n-- Intimidated: You prefer to avoid the target of your intimidation.  If you ignore this, Unresolved Verve Loss you apply is reduced by 2(DC)."
+    },
+    {
+        "type": "long (∞)",
+        "id": "f54d66ec",
+        "negative": true,
+        "name": "Charmed",
+        "domain": "mentus",
+        "effect": "Your decisions are influenced by another.  When this Status ends, if you peformed an action that you would not normally have wanted to do, Resolve Resist Mental.  If you succeed, you know that your mind was influenced, but the source of the influence only if that was clear to you.\n-- Charmed: Unless they break your trust or ethics, you consider the source of the Charm Effect as a friend, and suggestions they make are more positive to you than they normally would be.\n-- Compelled: You will attempt to perform any actions you have been told to do by the source of the Compel.  If you are clever, you might be able to perform the action favourably to your own needs.\n-- Dominated: As Compelled, however you must perform the action to favourably to the Dominator."
+    },
+    {
+        "type": "long (∞)",
+        "id": "b6c99dec",
+        "negative": true,
+        "name": "Discordant",
+        "domain": "ciar",
+        "effect": "Fate works against you.\n-- Jinxed: You fail Move Rolls on a Raw Roll of 16+, or Basic Attacks on a 5-.  Once you have failed due to this effect, the Status ends.\n-- Limited: You may only use up to 5 Points from Skills, and 3 from Expertises.\n-- Cursed: Reroll all successful Move Rolls once."
+    },
+    {
+        "type": "long (∞)",
+        "id": "cd95feb0",
+        "negative": true,
+        "name": "Debilitated",
+        "domain": "mentus",
+        "effect": "You incur a -(DC) penalty to Move Rolls or Move Rolls of a certain type (such as Moves using a Mental Stat, Defences, or Resistances), and automatically fail to hit in combat on a Raw Roll of (DC+1)-.  The Penalty does not apply to other Raw Rolls.  Debilitated effects stack.  Unique Debilitated sources include:\n-- Fear and Terror: Only active while you can perceive the source of the Status.\n-- Shocked (Mental Moves) and Gusted (Effects that try to move the player): Applied by magic criticals.\n... and others can include being Sickened, Weakened"
+    },
+    {
+        "type": "long (∞)",
+        "id": "52cbf2ff",
+        "negative": true,
+        "name": "Diseased",
+        "domain": "corpus",
+        "effect": "Whenever you perform a Raw Roll lower than 2(DC)-, you gain the Exhausted Status.  Doing so again applies the Stunned / Slowed: Dazed Status."
+    },
+    {
+        "type": "long (∞)",
+        "id": "c1ed5597",
+        "negative": true,
+        "name": "Enfeebled",
+        "domain": "ciar",
+        "effect": "You are sapped of your physical or mental strength.\n-- Physical: you cannot use Moves that use a Physical Stat.\n-- Mental: you cannot use Moves that use a Mental Stat."
+    },
+    {
+        "type": "long (∞)",
+        "id": "ecdb6cee",
+        "negative": true,
+        "name": "Exhausted",
+        "domain": "corpus",
+        "effect": "Your maximum Verve is reduced to 70% of the total, and you cannot gain more than that amount."
+    },
+    {
+        "type": "long (∞)",
+        "id": "82e65a18",
+        "negative": true,
+        "name": "Flanked",
+        "domain": "corpus",
+        "effect": "A character is Flanked if they are adjacent to 3 enemies or if 2 enemies are adjacent and on opposite sides of them.  Enemies: may be Backstabbed, and players achieve a Critical Hit on a Raw Roll 1 fewer than normal.  Players: incur a -1 penalty to the Defence move."
+    },
+    {
+        "type": "long (∞)",
+        "id": "ea0f287e",
+        "negative": true,
+        "name": "Hindered",
+        "domain": "corpus",
+        "effect": "Your movement speed is reduced by 1sq, and you get a -2 Penalty to Moves that use the Dex Attribute.  Effects that directly Hinder you, such as cold damage, can be removed by spending 2 Relocate Actions over any number of turns."
+    },
+    {
+        "type": "long (∞)",
+        "id": "6f711d40",
+        "negative": false,
+        "name": "Stealth",
+        "domain": "corpus",
+        "effect": "You are unseen and unheard, and cannot be targeted by enemy Moves.  If anything sees or hears you (and can identify the source of the sound), you lose the Stealth Status."
+    },
+    {
+        "type": "long (∞)",
+        "id": "0a068f68",
+        "negative": false,
+        "name": "Unstoppable Rage",
+        "domain": "mentus",
+        "effect": "You gain 3 UDR, may no longer gain Raging, and may only use the Relocate and Melee Attack Moves with no Expertise, or the Rage Move and Expertises or Rage Passives.  Unstoppable Rage ends when combat ends or if you run out of Raging."
+    },
+    {
+        "type": "long (∞)",
+        "id": "e7c84844",
+        "negative": true,
+        "name": "Vulnerable",
+        "domain": "ciar",
+        "effect": "Whenever you receive Verve loss, you receive (DC) more, and any time you incur 15 or more Resolved Verve Loss, you also gain or increase the Wounded Status."
+    },
+    {
+        "type": "long (∞)",
+        "id": "beb7d604",
+        "negative": true,
+        "name": "Wounded",
+        "domain": "wounded",
+        "effect": "Your body is wounded, inhibiting your actions.  The effects change depending on the severity of the Wounded Status, and you can progress up and down based on healing and incurring more wounds:\n-- Injured: All Move Rolls are performed with a -1 penalty.\n-- Any time you Restore or Gain Verve, reduce this by 3 (minimum of 1).  All Move Rolls are performed with a -1 penalty.\n-- Any time you Restore or Gain Verve, reduce this by 6 (minimum of 1).  All Move Rolls are performed with a -2 penalty.  Your movement is reduced by 1."
+    }
+]

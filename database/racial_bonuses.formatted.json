@@ -1,0 +1,170 @@
+[
+    {
+        "name": "Flight-capable wings",
+        "id": "6eccaa20",
+        "type": "primary",
+        "description": "You may fly at your movement speed.  Under stressful flying conditions, you will need to perform Athletics Tests or risk failing and gaining the exhausted Status."
+    },
+    {
+        "name": "Quick Learner",
+        "id": "c5558e07",
+        "type": "primary",
+        "description": "5 bonus Development Points."
+    },
+    {
+        "name": "Naturalist",
+        "id": "3f62bfe8",
+        "type": "primary",
+        "description": "Rolls in Forest environments gain +1."
+    },
+    {
+        "name": "Undergrounder",
+        "id": "8afdba00",
+        "type": "primary",
+        "description": "Rolls in Underground environments gain +1."
+    },
+    {
+        "name": "Seasider",
+        "id": "e9fb9a1f",
+        "type": "primary",
+        "description": "Rolls aboard ships, and above or underwater gain +1."
+    },
+    {
+        "name": "Citysider",
+        "id": "86eea993",
+        "type": "primary",
+        "description": "Rolls in large cities gain +1."
+    },
+    {
+        "name": "Sensorium",
+        "id": "e134883b",
+        "type": "primary",
+        "description": "You can see in darkness to 10sq.  Immune to Blind and Deaf Status Effects.  Perception Move +1 Bonus.  No disadvantage when attacking invisible or hidden creatures."
+    },
+    {
+        "name": "Sure-footed",
+        "id": "251861ef",
+        "type": "primary",
+        "description": "You gain +1sq Jump vertical, +3sq Fall vertical.  You are immune to difficult terrain.  You cannot be tripped.  Athletics Move +2 Bonus."
+    },
+    {
+        "name": "Influencer",
+        "id": "518a9428",
+        "type": "primary",
+        "description": "You gain a +1 Bonus to: Perception, Influence, Subterfuge, Creativity, Stealther and Mental Resistance."
+    },
+    {
+        "name": "Flow Battery",
+        "id": "c0f81f11",
+        "type": "primary",
+        "description": "Once per day as a Free Action, you can release energy at Touch that applies Verve Loss equal to 5 + your maximum Skill Purchase, and is of the type of one of your Magical Synergies.  This attack automatically hits and is considered a Critical Cast.  You regain this ability after a Long Rest, or whenever a Spell is Cast on you."
+    },
+    {
+        "name": "Hardy",
+        "id": "4a6d52a3",
+        "type": "primary",
+        "description": "Any time you take Verve Damage, you take 1 less."
+    },
+    {
+        "name": "Push your limits",
+        "id": "ef8bbf5b",
+        "type": "primary",
+        "description": "As a Free Action, you may sacrifice 20 Verve to use an additional Expertise on a Move."
+    },
+    {
+        "name": "Natural Athlete",
+        "id": "414f0e7f",
+        "type": "primary",
+        "description": "Move sq +1.  You can perform a Relocate for an additional hour before requiring an Athletics Roll to check Exhaustion."
+    },
+    {
+        "name": "Fated",
+        "id": "7dc74050",
+        "type": "primary",
+        "description": "Your rolls count towards World Changers when you roll a 19 or 20."
+    },
+    {
+        "name": "Lucky",
+        "id": "32eaf856",
+        "type": "secondary",
+        "description": "You may reroll one Roll per day."
+    },
+    {
+        "name": "Quick Sleeper",
+        "id": "76145881",
+        "type": "secondary",
+        "description": "Taking a Long Rest is only 6 hours."
+    },
+    {
+        "name": "Deep Breaths",
+        "id": "3c6a0be0",
+        "type": "secondary",
+        "description": "You may hold your breath safely for 5 minutes.  You can perform a Relocate for an additional hour before requiring an Athletics Roll to check Exhaustion."
+    },
+    {
+        "name": "Animal Kinship",
+        "id": "eb3e585e",
+        "type": "secondary",
+        "description": "You gain a +1 Bonus to Animal Empathy, and can learn advanced Moves when you only have 3 points in Animal Empathy."
+    },
+    {
+        "name": "Channeller",
+        "id": "1f5f0f44",
+        "type": "secondary",
+        "description": "Bonus Mana: 5"
+    },
+    {
+        "name": "Conduit",
+        "id": "9473134c",
+        "type": "secondary",
+        "description": "Bonus Psi: 3"
+    },
+    {
+        "name": "Vervatious",
+        "id": "8983ad97",
+        "type": "secondary",
+        "description": "Bonus Verve: 15"
+    },
+    {
+        "name": "Jack of All Trades",
+        "id": "9dee48d6",
+        "type": "secondary",
+        "description": "Your maximum Skill Purchase gains a +1 Bonus."
+    },
+    {
+        "name": "Faeform",
+        "id": "e7f9a023",
+        "type": "secondary",
+        "description": "You transform your body as per the Transmute Flesh Spell Standard Effect, 3 times per day, with the effects lasting for 2 hours.  You always adopt the same form, which you choose at character creation from Human, Elven, Dwarven or Halfling of any gender."
+    },
+    {
+        "name": "Tiny Stature",
+        "id": "fa560e14",
+        "type": "stature",
+        "description": "Unavailable for players.  Defend Skill +3, MoveSq. -2, Strength-based Moves -2."
+    },
+    {
+        "name": "Small Stature",
+        "id": "219b73b9",
+        "type": "stature",
+        "description": "Defend Skill +1, MoveSq. -1"
+    },
+    {
+        "name": "Medium Stature",
+        "id": "6b51a528",
+        "type": "stature",
+        "description": "No change"
+    },
+    {
+        "name": "Larger Stature",
+        "id": "76377c99",
+        "type": "stature",
+        "description": "Defend Skill -1, Strength-based Moves +1"
+    },
+    {
+        "name": "Huge Stature",
+        "id": "68d8fce7",
+        "type": "stature",
+        "description": "Unavailable for players.  Defend Skill -3, Starting Verve +20, Strength-based Moves +2."
+    }
+]

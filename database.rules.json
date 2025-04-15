@@ -60,6 +60,10 @@
 			".read": true,
 			".write": false
 		},
+		"synergies": {
+			".read": true,
+			".write": false
+		},
 		"statuses": {
 			".read": true,
 			".write": false

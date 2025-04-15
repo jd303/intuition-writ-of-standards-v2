@@ -1,0 +1,37 @@
+[
+    {
+        "description": "Your Critical Raw Roll is 19+",
+        "id": "bc5a5c74",
+        "name": "Bladed"
+    },
+    {
+        "description": "You deal your Bonus Damage twice on Critical Hits.",
+        "id": "005efa3e",
+        "name": "Axes"
+    },
+    {
+        "description": "You apply 2 Stagger on Critical Hits.",
+        "id": "7817dd36",
+        "name": "Blunt"
+    },
+    {
+        "description": "Your Threatening Range is 2sq.",
+        "id": "016177e7",
+        "name": "Lashing"
+    },
+    {
+        "description": "Your Critical Raw Roll is 19+",
+        "id": "e2c26e88",
+        "name": "Bows"
+    },
+    {
+        "description": "You deal your Bonus Damage twice on Critical Hits.",
+        "id": "da256890",
+        "name": "Crossbows"
+    },
+    {
+        "description": "Resolve an additional Basic Attack on Critical Hits.",
+        "id": "de8720dc",
+        "name": "Thrown"
+    }
+]

@@ -14,6 +14,7 @@ import weaponSpecialisationsReducer from './firebase/data/weaponSpecialisationsD
 import sourcesReducer from './firebase/data/sourcesDataSlice';
 import racialBonusesReducer from './firebase/data/racialBonusesDataSlice';
 import languagesReducer from './firebase/data/languagesDataSlice';
+import synergies from './firebase/data/synergiesDataSlice';
 
 export const store = configureStore({
   reducer: {
@@ -30,6 +31,7 @@ export const store = configureStore({
 	gadgets: gadgetsDataReducer,
 	weaponSpecialisations: weaponSpecialisationsReducer,
 	sources: sourcesReducer,
+	synergies: synergies,
 	racialBonuses: racialBonusesReducer,
 	languages: languagesReducer
   },
