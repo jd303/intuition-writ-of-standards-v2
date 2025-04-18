@@ -15,7 +15,7 @@ export class CharacterModel {
 	updated: number = 0;
 	vitae: VitaeRecord = {
 		name: "New Character",
-		profile_photo: '',
+		profile_photo: '_Generic.Character.Male.webp',
 		race: '',
 		sessions: 0,
 		speed: 5,
@@ -78,13 +78,18 @@ export class CharacterModel {
 		}
 
 	// Defences Values
-	armour: {
-		name: string,
-		bonus: number,
-	} = {
-			name: "Provide Armour",
-			bonus: 0,
+	armour: ArmourDefinition[] = [
+		{
+			name: '',
+			pres: 0,
+			effect: '',
+		},
+		{
+			name: '',
+			pres: 0,
+			effect: '',
 		}
+	];
 
 	resistances: {
 		URes: number,
@@ -119,14 +124,14 @@ export class CharacterModel {
 		{
 			name: '',
 			damageDice: 'd4',
-			bonus_raw: 0,
+			threat_range: 1,
 			bonus_damage: 0,
 			special: ''
 		},
 		{
 			name: '',
 			damageDice: 'd4',
-			bonus_raw: 0,
+			threat_range: 1,
 			bonus_damage: 0,
 			special: ''
 		}
@@ -145,9 +150,7 @@ export class CharacterModel {
 		psi: 0,
 
 		skills_and_expertises: {
-			"99d6763b": 4,
-			"eda86c1e": 2,
-			"c829531f": 1,
+			default: 0,
 		}
 	}
 
@@ -156,17 +159,23 @@ export class CharacterModel {
 	spells: string[] = [];
 
 	// Inventory Values
-	inventory: Record<string, string> = {
-		item1: "",
-		item2: "",
-		item3: "",
+	inventory: InventoryDefinition = {
+		standards: 0,
+		equipment: [''],
+		adventuring: [''],
+		consumables: [''],
+	}
+
+	item_belt = {
+		bonus_usable: 0,
+		bonus_throwable: 0,
 	}
 
 	// Notes Values
 	notes: Record<string, string> = {
-		item1: "",
-		item2: "",
-		item3: "",
+		notes1: "",
+		notes2: "",
+		notes3: "",
 	}
 
 	// Constructor
@@ -198,6 +207,7 @@ export class CharacterModel {
 			this.magical_synergies = data.magical_synergies || [];
 			this.spells = data.spells || [];
 			this.inventory = data.inventory;
+			this.item_belt = data.item_belt;
 			this.notes = data.notes;
 		}
 	}
@@ -226,8 +236,17 @@ export class CharacterModel {
 			});
 		});
 
-		// Cleanup Statuses
+		// Cleanup Statuses & Inventory
 		data.statuses = data.statuses.filter((st: string) => st.length > 0);
+		data.inventory.equipment = data.inventory.equipment?.filter((inv: string) => inv.length > 0);
+		data.inventory.adventuring = data.inventory.adventuring?.filter((inv: string) => inv.length > 0);
+		data.inventory.consumables = data.inventory.consumables?.filter((inv: string) => inv.length > 0);
+
+		// Set defaults to avoid Firebase clearing fields
+		if (!data.statuses) data.statuses = [''];
+		if (!data.inventory.equipment) data.inventory.equipment = [''];
+		if (!data.inventory.adventuring) data.inventory.adventuring = [''];
+		if (!data.inventory.consumables) data.inventory.consumables = [''];
 
 		// Return a new character based on this
 		return new CharacterModel(data);
@@ -278,12 +297,25 @@ interface VitaeRecord {
 	}
 }
 
+interface ArmourDefinition {
+	name: string;
+	pres: number;
+	effect: string;
+}
+
 interface WeaponDefinition {
 	name: string;
 	damageDice: string;
-	bonus_raw: number;
+	threat_range: 1 | 2 | 3;
 	bonus_damage: number;
 	special: string;
+}
+
+interface InventoryDefinition {
+	standards: number;
+	equipment: string[];
+	adventuring: string[];
+	consumables: string[];
 }
 
 export interface CharacterPurchasesModel {

@@ -386,7 +386,7 @@
         "name": "Melee Attack",
         "id": "c001a690",
         "type": "Primary",
-        "description": "You make a single attack with a Melee Weapon.  Resolve a d20 Roll.  On a 1, you end your Melee Attack and do not apply any Verve Loss or effects.  Otherwise, you apply Verve Loss to a single target equal to your Combat Skill and your Weapon Damage Dice.  On a Raw Roll of 20 you apply your Weapon Damage Dice to your target again."
+        "description": "You make a single attack with a Melee Weapon.  Resolve a Raw Roll.  On a 1, you end your Melee Attack and do not apply any Verve Loss or effects.  Otherwise, you apply Verve Loss to a single target equal to your Combat Skill and your Weapon Damage Dice.  On a Raw Roll of 20 you apply your Weapon Damage Dice to your target again."
     },
     {
         "category": "combat",
@@ -471,7 +471,7 @@
         "name": "Ranged Attack",
         "id": "c991e7c7",
         "type": "Primary",
-        "description": "You make a single attack with a ranged Weapon.  Resolve a d20 Roll.  On a 1, you end your combat and do not apply any Verve Loss or effects.  Otherwise, you apply Verve Loss to a single target equal to your Combat Skill and your Weapon Damage Dice.  On a Raw Roll of 20 you apply your Weapon Damage Dice to your target again."
+        "description": "You make a single attack with a ranged Weapon.  Resolve a Raw Roll.  On a 1, you end your combat and do not apply any Verve Loss or effects.  Otherwise, you apply Verve Loss to a single target equal to your Combat Skill and your Weapon Damage Dice.  On a Raw Roll of 20 you apply your Weapon Damage Dice to your target again."
     },
     {
         "category": "combat",
@@ -919,31 +919,17 @@
     },
     {
         "category": "subterfuge",
+        "name": "Combat Pockets Expertise",
+        "id": "82a0502d",
+        "type": "Expertise",
+        "description": "When resolving Pick Pocket in combat and using this Expertise, you attempt to steal something from them.  When you only have 1 Expertise, you may only attempt to steal something that is visible on an Item Belt.  With 2 Expertise, you do so automatically.  Alternatively, you may attempt to resolve the Pick Pockets Move on invisible or harder to aquie items, on creatures up to DC [1|1|2|2|3|4]."
+    },
+    {
+        "category": "subterfuge",
         "name": "Legerdemain",
         "id": "94e0b4c2",
         "type": "Primary",
         "description": "You perform a feat of dexterity with your hands, that succeeds either based on the onlookers' Defence (WIS), or their Dodge (DEX), depending on the situation.  Such acts include juggling, taking something in sight, hiding something on your person quickly, swiping an object or distracting someone from looking at a part of your body."
-    },
-    {
-        "category": "subterfuge",
-        "name": "Disguise",
-        "id": "7951c6e5",
-        "type": "Primary",
-        "description": "You attempt to create a disguise of props and distraction, assuming you have the materials to do so.  Disguising yourself takes time and is longer than a Primary Action.  You resolve this Move when under scrutiny by someone who would want to see through your disguise, based on the DC of the Defence (WIS).  You may gain a bonus to your roll if you also encorporate a successful perform resolved using the Perform Move."
-    },
-    {
-        "category": "subterfuge",
-        "name": "Uncanny Trapwork",
-        "id": "0eae3c7e",
-        "type": "Primary",
-        "description": "You've experienced disarming common traps in your past.  You can find and disarm traps up to DC 2 as per the Locksmith Engineering Move.  If you have 6 points in Subterfuge, this raises to DC 3, and again to DC4 at 10 points."
-    },
-    {
-        "category": "subterfuge",
-        "name": "Uncanny Lockwork",
-        "id": "57d64f5a",
-        "type": "Primary",
-        "description": "You've experienced picking locks in your past.  You can pick locks up to DC 2 as per the Locksmith Engineering Move.  If you have 6 points in Subterfuge, this raises to DC3, and again to DC4 at 10 points."
     },
     {
         "category": "subterfuge",
@@ -971,14 +957,28 @@
         "name": "Malingering Expertise",
         "id": "986de247",
         "type": "Expertise",
-        "description": "When resolving a Legerdemain and using this Expertise, resolve one of the following effects:\n1. You divert up to half your Expertise score of Basic Attacks aimed at you to an ally who is adjacent to you.\n2. You gain URes equal to your Expertise."
+        "description": "When resolving Legerdemain and using this Expertise, resolve one of the following effects:\n1. You divert up to half your Expertise score of Basic Attacks aimed at you to an ally who is adjacent to you.\n2. You gain URes equal to your Expertise."
     },
     {
         "category": "subterfuge",
-        "name": "Combat Pockets Expertise",
-        "id": "82a0502d",
-        "type": "Expertise",
-        "description": "When resolving Pick Pocket in combat and using this Expertise, you attempt to steal something from them.  When you only have 1 Expertise, you may only attempt to steal something that is visible on an Item Belt.  With 2 Expertise, you do so automatically.  Alternatively, you may attempt to resolve the Pick Pockets Move on invisible or harder to aquie items, on creatures up to DC [1|1|2|2|3|4]."
+        "name": "Disguise",
+        "id": "7951c6e5",
+        "type": "Primary",
+        "description": "You attempt to create a disguise of props and distraction, assuming you have the materials to do so.  Disguising yourself takes time and is longer than a Primary Action.  You resolve this Move when under scrutiny by someone who would want to see through your disguise, based on the DC of the Defence (WIS).  You may gain a bonus to your roll if you also encorporate a successful perform resolved using the Perform Move."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Uncanny Trapwork",
+        "id": "0eae3c7e",
+        "type": "Primary",
+        "description": "You've experienced disarming common traps in your past.  You can find and disarm traps up to DC 2 as per the Locksmith Engineering Move.  If you have 6 points in Subterfuge, this raises to DC 3, and again to DC4 at 10 points."
+    },
+    {
+        "category": "subterfuge",
+        "name": "Uncanny Lockwork",
+        "id": "57d64f5a",
+        "type": "Primary",
+        "description": "You've experienced picking locks in your past.  You can pick locks up to DC 2 as per the Locksmith Engineering Move.  If you have 6 points in Subterfuge, this raises to DC3, and again to DC4 at 10 points."
     },
     {
         "category": "subterfuge",
@@ -1169,10 +1169,24 @@
     },
     {
         "category": "engineering",
+        "name": "Instinctive Mechanics",
+        "id": "91aa9c32",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Trapsmith Move to disarm a trap, you reduce any Verve Loss applied by the trap (whether triggered by a failure, or by a devious trap's success effect) by [3|6|9|12|15|18]."
+    },
+    {
+        "category": "engineering",
         "name": "Smithing",
         "id": "ecf46846",
         "type": "Primary",
         "description": "You can create and repair armours, weaponry, and items of metals and leather.  The DC to create an item is the item's value divided by 10, and the time it takes is 1 day per DC.  To repair, the DC and duration is halved, or sometimes quartered.  Additionally, you can Oil and Prepare a weapon or piece of armour, improving it to the Fine version of that piece, if it was less effective before.  To oil and prepare, you must beat a DC of 1, and if you succeed it takes 30 minutes and materials costing 3 Standards."
+    },
+    {
+        "category": "engineering",
+        "name": "Well-oiled",
+        "id": "8be6b121",
+        "type": "Expertise",
+        "description": "When using this Expertise and resolving the Smithing Move to Oil and Prepare, you may apply this effect to [1|2|3|4|5|6] pieces for the same time and cost as one, and requires no Roll."
     },
     {
         "category": "engineering",
@@ -1187,20 +1201,6 @@
         "id": "e00a67eb",
         "type": "Expertise",
         "description": "When using this Expertise and resolving the Construction Move, you determine the best way to damage structures and some creatures like constructs and Gigans.  The Construction Move is a Free Action when doing so, and if resolved successfully grants you [2|3|4|5|6|7] additional Verve Loss to all effects that apply Verve Loss until you next Long Rest."
-    },
-    {
-        "category": "engineering",
-        "name": "Well-oiled",
-        "id": "8be6b121",
-        "type": "Expertise",
-        "description": "When using this Expertise and resolving the Smithing Move to Oil and Prepare, you may apply this effect to [1|2|3|4|5|6] pieces for the same time and cost as one, and requires no Roll."
-    },
-    {
-        "category": "engineering",
-        "name": "Instinctive Mechanics",
-        "id": "91aa9c32",
-        "type": "Expertise",
-        "description": "When using this Expertise and resolving the Trapsmith Move to disarm a trap, you reduce any Verve Loss applied by the trap (whether triggered by a failure, or by a devious trap's success effect) by [3|6|9|12|15|18]."
     },
     {
         "category": "engineering",
@@ -1235,13 +1235,6 @@
     },
     {
         "category": "gadgetry",
-        "name": "Use Gadget",
-        "id": "b1d1ff50",
-        "type": "Primary",
-        "description": "You use a Gadget that you have created and which is handy or on your accessory belt."
-    },
-    {
-        "category": "gadgetry",
         "name": "Dismantle Gadget",
         "id": "1d371777",
         "type": "Expertise",
@@ -1260,6 +1253,13 @@
         "id": "ce8ce961",
         "type": "Expertise",
         "description": "When using this Expertise and successfully resolving the Craft Gadget Move, on a Raw Roll of [16|14|12|10|8|6]+, you've created an Ingenious Gadget, which is free to recharge or restock once after it is expended."
+    },
+    {
+        "category": "gadgetry",
+        "name": "Use Gadget",
+        "id": "b1d1ff50",
+        "type": "Primary",
+        "description": "You use a Gadget that you have created and which is handy or on your accessory belt."
     },
     {
         "category": "gadgetry",
@@ -1336,13 +1336,6 @@
     },
     {
         "category": "creativity",
-        "name": "Cooking",
-        "id": "51997986",
-        "type": "Primary",
-        "description": "You attempt to create a work of wondrous food.  If feeding a crew, you resolve this automatically.  If attempting to impress, or otherwise use cooking to your advantage, you must beat an easy DC."
-    },
-    {
-        "category": "creativity",
         "name": "Fine Creativity Expertise",
         "id": "4be30d78",
         "type": "Expertise",
@@ -1354,6 +1347,13 @@
         "id": "a280f3b2",
         "type": "Expertise",
         "description": "When using this Expertise, you reduce the time to create artworks by half an hour and performances by half a day, each for every point in this Expertise."
+    },
+    {
+        "category": "creativity",
+        "name": "Cooking",
+        "id": "51997986",
+        "type": "Primary",
+        "description": "You attempt to create a work of wondrous food.  If feeding a crew, you resolve this automatically.  If attempting to impress, or otherwise use cooking to your advantage, you must beat an easy DC."
     },
     {
         "category": "creativity",
@@ -1395,13 +1395,6 @@
     },
     {
         "category": "alchemy",
-        "name": "Transmute Alchemical",
-        "id": "88708777",
-        "type": "Primary",
-        "description": "You extract the core essences of Alchemical Reagents.  If you have access to moderate alchemical tools, a Fine Alchemical FieldKit, or a kitchen or laboratory, you can extract each individual Effect from a Reagent into the equivalent Alchemical Extracts.  You typically have enough time to perform this on one alchemical per day.  This increases to 2 when you have at least 4 points in Alchemy, and 3 when you have 8.  When you attempt this, Resolve Transmute Alchemy against a DC of the rarity of the alchemical you are attempting this on.  On a success, you extract all Effects.  On a failure, one Effect of your choice is lost."
-    },
-    {
-        "category": "alchemy",
         "name": "Perfect Alchemical Expertise",
         "id": "84399587",
         "type": "Expertise",
@@ -1427,6 +1420,13 @@
         "id": "add1ed3b",
         "type": "Expertise",
         "description": "When using this Expertise and resolving Craft Alchemical when adjacent to a creature, on a Raw Roll of [13|12|11|10|9|8] you quickly and safely scoop up its bodily weepings or plucking a part of it off as a Free Action.  After successfully resolving this, choose one of the following effects:\n1. You Transfer it to a safe container, gaining it and a Wept Solvent.\n2. You resolve a Basic Ranged Attack with it as a second Free Action, adding whatever effects it has on top of your ranged attack."
+    },
+    {
+        "category": "alchemy",
+        "name": "Transmute Alchemical",
+        "id": "88708777",
+        "type": "Primary",
+        "description": "You extract the core essences of Alchemical Reagents.  If you have access to moderate alchemical tools, a Fine Alchemical FieldKit, or a kitchen or laboratory, you can extract each individual Effect from a Reagent into the equivalent Alchemical Extracts.  You typically have enough time to perform this on one alchemical per day.  This increases to 2 when you have at least 4 points in Alchemy, and 3 when you have 8.  When you attempt this, Resolve Transmute Alchemy against a DC of the rarity of the alchemical you are attempting this on.  On a success, you extract all Effects.  On a failure, one Effect of your choice is lost."
     },
     {
         "category": "alchemy",
@@ -1496,17 +1496,17 @@
     },
     {
         "category": "beast_mastery",
-        "name": "Mounted Combatant",
-        "id": "11418c91",
-        "type": "Expertise",
-        "description": "When resolving Melee Attack or Ranged Melee Attack while mounted and choosing this Expertise, you apply additional Verve Loss equal to the lower of you Expertise and the number of squares you moved.  You additionally do not incur any penalty to Combat moves while mounted."
-    },
-    {
-        "category": "beast_mastery",
         "name": "Out for blood",
         "id": "cb5e8841",
         "type": "Expertise",
         "description": "For each point in this Expertise, your Companion applies an additional Verve Loss in combat.  At certain point values, you may also choose one of the following effects per round:\n1. At 3 points, you may use Command Beast with a special command: Harry.  Your beast gains +2 Move sq and will move towards a target you nominate.  If it reaches, it applies 5 Verve Loss and attempts to get back to you.  Your companions cannot be the target of attacks this round.\n2. At 5 points, you may use Command Beast with a special command: Pounce.  Your Companion becomes enraged with bloodlust for a particular target, becoming immune to mental effects, gaining 3sq movement, and applying a further 3 additional Verve Loss with its attacks, however they will ignore their own wellbeing and any further commands until its target is killed."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Mounted Combatant",
+        "id": "11418c91",
+        "type": "Expertise",
+        "description": "When resolving Melee Attack or Ranged Melee Attack while mounted and choosing this Expertise, you apply additional Verve Loss equal to the lower of you Expertise and the number of squares you moved.  You additionally do not incur any penalty to Combat moves while mounted."
     },
     {
         "category": "beast_mastery",
@@ -1549,44 +1549,6 @@
         "id": "e9872179",
         "type": "Passive",
         "description": "You are proficient at riding horses and are no longer tired by riding them, nor are they tired up to 30km of travel."
-    },
-    {
-        "category": "magic_spellcraft",
-        "name": "Spellcraft",
-        "stat": "int",
-        "id": "797d1feb",
-        "type": "Skill",
-        "description": "You aim to be a master of spells",
-        "secondPass": "✅",
-        "undefined": "✅"
-    },
-    {
-        "category": "magic_spellcraft",
-        "name": "Learn Spell",
-        "id": "9be36277",
-        "type": "Primary",
-        "description": "When performing this Move, you comprehend a new spell whose level is equal to up to half your points in Spellcraft.  For each point you purchase in Spell Knowledge, you may have 2 Spells in your known list."
-    },
-    {
-        "category": "magic_spellcraft",
-        "name": "Forget Spell",
-        "id": "0e3c1475",
-        "type": "Primary",
-        "description": "You may perform this Move when you purchase a point in Spellcraft.  When you do, you may remove up to 2 Spells from your known Spells."
-    },
-    {
-        "category": "magic_spellcraft",
-        "name": "Mimic Spell Expertise",
-        "id": "73f09e3c",
-        "type": "Expertise",
-        "description": "When resolving Learn Spell and choosing this Expertise, you may expend [5|4|3|2|1|0] Verve to attempt to mimic a spell that you see being cast.  Resolve Cast a Spell with a Penalty of [2|1|0|0|0|0].  If you succeed and the spell is of a level that you could learn according to your Learn Spell score, you cast the spell.  If the spell is beyond you or you fail, you do not cast the spell but you do identify it."
-    },
-    {
-        "category": "magic_spellcraft",
-        "name": "Weird Flow Expertise",
-        "id": "16ce0705",
-        "type": "Expertise",
-        "description": "When resolving Learn Spell and choosing this Expertise, you may expend 5 Verve to attempt to cast a spell that you don't know.  Resolve the Spellcraft Move at the DC of your chosen spell.  If you succeed, you may resolve Cast a Spell Move with the spell you chose, paying its mana cost and choosing targets and effects as normal. You may choose Spells that are beyond your level in Spellcraft, but the DC raises by an additional 1."
     },
     {
         "category": "magic_cast",
@@ -1672,7 +1634,7 @@
         "name": "Unwilling Coterie",
         "id": "655109c3",
         "type": "Passive",
-        "description": "When you Resolve the Cast a Spell Move, you may attempt to draw Mana from an unwilling target that is within 5sq.  Resolve a Raw ROll.  On a 17+, you draw 1 Mana from your target.  If they don't have any, you draw 5 Verve which becomes 1 Mana for you."
+        "description": "When you Resolve the Cast a Spell Move, you may attempt to draw Mana from an unwilling target that is within 5sq.  Resolve a Raw Roll.  On a 17+, you draw 1 Mana from your target.  If they don't have any, you draw 5 Verve which becomes 1 Mana for you."
     },
     {
         "category": "magic_cast",
@@ -1700,7 +1662,7 @@
         "name": "Slice and cast",
         "id": "076d47e0",
         "type": "Passive",
-        "description": "If you used Basic Melee Attack on a target last round, spells you cast that use Touch or Single Visible Target and which target that creature cost 1 less Mana this turn."
+        "description": "If you used Basic Melee Attack on a target last round, spells you cast that use Touch or Single Visible Target and which target that creature cost 1 less Mana this turn, they cannot fail on a 1, and their Critical Range is improved by 1."
     },
     {
         "category": "magic_cast",
@@ -1742,7 +1704,7 @@
         "name": "Synergy Sink",
         "id": "e43cbbc8",
         "type": "Passive",
-        "description": "When you are the target of a magical effect that has the same type as an Elemental Effect that you have Magical Synergy with, you gain 1 Flow.  As a Free Action, you may exchange 3 Flow for 1 Mana."
+        "description": "When you are the target of a magical effect that has the same type as an Elemental Effect that you have Magical Synergy with, for each 10 Verve Loss it applies, you Gain 1 Mana."
     },
     {
         "category": "magic_cast",
@@ -1771,6 +1733,44 @@
         "id": "eb207670",
         "type": "Passive",
         "description": "When resolving a spell that grants you knowledge (such as Detect Magic), you instantly comprehend what it tells you, even in combat, without spending time."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Spellcraft",
+        "stat": "int",
+        "id": "797d1feb",
+        "type": "Skill",
+        "description": "You aim to be a master of spells",
+        "secondPass": "✅",
+        "undefined": "✅"
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Learn Spell",
+        "id": "9be36277",
+        "type": "Primary",
+        "description": "When performing this Move, you comprehend a new spell whose level is equal to up to half your points in Spellcraft.  For each point you purchase in Spell Knowledge, you may have 2 Spells in your known list."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Forget Spell",
+        "id": "0e3c1475",
+        "type": "Primary",
+        "description": "You may perform this Move when you purchase a point in Spellcraft.  When you do, you may remove up to 2 Spells from your known Spells."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Mimic Spell Expertise",
+        "id": "73f09e3c",
+        "type": "Expertise",
+        "description": "When resolving Learn Spell and choosing this Expertise, you may expend [5|4|3|2|1|0] Verve to attempt to mimic a spell that you see being cast.  Resolve Cast a Spell with a Penalty of [2|1|0|0|0|0].  If you succeed and the spell is of a level that you could learn according to your Learn Spell score, you cast the spell.  If the spell is beyond you or you fail, you do not cast the spell but you do identify it."
+    },
+    {
+        "category": "magic_spellcraft",
+        "name": "Weird Flow Expertise",
+        "id": "16ce0705",
+        "type": "Expertise",
+        "description": "When resolving Learn Spell and choosing this Expertise, you may expend 5 Verve to attempt to cast a spell that you don't know.  Resolve the Spellcraft Move at the DC of your chosen spell.  If you succeed, you may resolve Cast a Spell Move with the spell you chose, paying its mana cost and choosing targets and effects as normal. You may choose Spells that are beyond your level in Spellcraft, but the DC raises by an additional 1."
     },
     {
         "category": "magic_enchanting",

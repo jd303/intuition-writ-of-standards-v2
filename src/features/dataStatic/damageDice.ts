@@ -12,3 +12,9 @@ export const DamageDiceOptions = [
 	"2d12",
 	"2d20",
 ]
+
+export const ThreatRangeOptions  = [
+	1,
+	2,
+	3
+]

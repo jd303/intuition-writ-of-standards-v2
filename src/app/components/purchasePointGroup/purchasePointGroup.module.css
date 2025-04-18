@@ -40,7 +40,7 @@
 		&[data-columns="15"] {
 			grid-template-columns: repeat(15, var(--purchase-point-size));
 		}
-		@container (max-width: 210px) {
+		@container (max-width: 245px) {
 			&[data-columns="15"] {
 				grid-template-columns: repeat(10, var(--purchase-point-size));
 			}

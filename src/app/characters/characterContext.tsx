@@ -14,10 +14,10 @@ type CharacterSheetContextType = {
 
 export const CharacterSheetContext = createContext<CharacterSheetContextType | undefined>(undefined);
 
-export const usePurchaseMode = () => {
+export const useCharacterContext = () => {
 	const context = useContext(CharacterSheetContext);
 	if (!context) {
-		throw new Error("usePurchaseMode must be used within a PurchaseModeProvider");
+		throw new Error("useCharacterContext must be used within a PurchaseModeProvider");
 	}
 	return context;
 };

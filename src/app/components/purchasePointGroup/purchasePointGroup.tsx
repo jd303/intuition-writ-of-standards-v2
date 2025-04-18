@@ -1,11 +1,12 @@
 import st from './PurchasePointGroup.module.css';
 import PurchasePoint from '../purchasePoint/PurchasePoint';
-import { usePurchaseMode } from '../../characters/purchaseModeContext';
+import { useCharacterContext } from '../../characters/characterContext';
 
 function PurchasePointGroup({ count, columns, purchased, purchaseCallback, maxPurchases }: { count: number, columns: 1 | 3 | 6 | 10 | 12 | 15, purchased: number, purchaseCallback: VoidFunction, maxPurchases: number }) {
-	const { purchaseMode } = usePurchaseMode();
+	const { purchaseMode } = useCharacterContext();
 
 	const handleClick = (event) => {
+		console.log("HANDLE CLICK", purchased, maxPurchases);
 		if (purchaseMode == "buy") {
 			if (purchased < maxPurchases) {
 				purchaseCallback();

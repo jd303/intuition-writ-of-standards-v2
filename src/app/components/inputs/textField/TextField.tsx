@@ -12,7 +12,7 @@ function TextField({ initialValue, type = "text", label, disabled = false, class
 		if (changeTimeout.current) clearTimeout(changeTimeout.current);
 		changeTimeout.current = setTimeout(() => {
 			if (onChange) onChange(updatedValue);
-		}, 600);
+		}, 1000);
 	}
 
 	useEffect(() => {

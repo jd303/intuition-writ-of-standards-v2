@@ -6,7 +6,7 @@ import { UIColours } from "../../features/constants/UIColours";
 import { useAppDispatch, useAppSelector } from "../../features/firebaseHooks";
 import { setCharacterSheetSearch } from "../../features/search/searchSlice";
 import { saveCharacter } from '../../features/firebase/data/writeCharactersData';
-import { DamageDiceOptions } from '../../features/dataStatic/damageDice';
+import { DamageDiceOptions, ThreatRangeOptions } from '../../features/dataStatic/damageDice';
 import { ResistanceOptions } from '../../features/dataStatic/resistances';
 import ControlBar from "../components/controlBar/controlBar";
 import SearchControl from "../components/controlBar/searchControl";
@@ -20,7 +20,7 @@ import { getAttributeIcon } from '../../features/models/character/attributeIcons
 import ConfirmButton from '../components/confirmButton/confirmButton';
 import PurchasePointGroup from '../components/purchasePointGroup/purchasePointGroup';
 import SkillBlock from '../components/moves/SkillBlock';
-import { CharacterSheetContext } from './purchaseModeContext';
+import { CharacterSheetContext } from './characterContext';
 import SelectorDropdown from '../components/controlBar/selectorDropdown';
 import profilePhotos from './characterProfilePhotos.ts';
 
@@ -59,7 +59,7 @@ function CharacterSheetPage() {
 	const [chooseProfileMode, setChooseProfileMode] = useState<boolean>(false);
 
 	// Update the character
-	const [purchaseMode, setPurchaseMode] = useState('disabled');
+	const [purchaseMode, setPurchaseMode] = useState('none');
 	const purchaseModeOptions = [{ value: "buy", label: "Buy" }, { value: "sell", label: "Sell" }];
 
 	useEffect(() => {
@@ -77,7 +77,7 @@ function CharacterSheetPage() {
 		updateCharacter(updatedCharacter);
 	}
 	const updateCharacterPurchases = (updatePath: string, isSkill: boolean) => {
-		if (purchaseMode == "disabled") return;
+		if (purchaseMode == "none") return;
 		if (purchaseMode == "buy" && character.points.spent >= totalPoints) return;
 		const updatedCharacter = character.updatePurchase(updatePath, isSkill, purchaseMode == "buy");
 		updateCharacter(updatedCharacter, true);
@@ -117,6 +117,7 @@ function CharacterSheetPage() {
 
 	// Weapon Specialisation
 	const damageDiceOptions = useMemo(() => { return DamageDiceOptions.map((dd) => { return { value: dd, label: dd } }); }, []);
+	const threatRangeOptions = useMemo(() => { return ThreatRangeOptions.map((dd) => { return { value: dd, label: dd } }); }, []);
 	const weaponSpecialisationsData = useAppSelector((state) => state.weaponSpecialisations.weaponSpecialisations);
 	const weaponSpecialisations = useMemo(() => {
 		return weaponSpecialisationsData.map((ws) => { return { value: ws.id, label: `${ws.name} - ${ws.description}` } });
@@ -151,13 +152,18 @@ function CharacterSheetPage() {
 	const languages = useAppSelector((state) => state.languages.languages);
 	const languageOptions = [{ value: '', label: 'Choose' }, ...useMemo(() => languages.map((l) => { return { value: l.id, label: l.name } }), [languages])];
 
+	// Inventory data
+	const inventoryEquipment = useMemo(() => [...(character.inventory.equipment || []).map(inv => inv || ''), ''], [character]);
+	const inventoryAdventuring = useMemo(() => [...(character.inventory.adventuring || []).map(inv => inv || ''), ''], [character]);
+	const inventoryConsumables = useMemo(() => [...(character.inventory.consumables || []).map(inv => inv || ''), ''], [character]);
+
 	return (
 		<CharacterSheetContext.Provider value={{ purchaseMode, setPurchaseMode, characterPurchases, characterPurchaseUpdater, characterSheetSearch, maxMovePoints, characterStatValues, characterRacialBonuses: { primary: character.vitae.racial_mods.primary, secondary: character.vitae.racial_mods.secondary } }}>
 			<div className={st.characterSheetPageContainer} data-purchasemode={purchaseMode} data-searching={characterSheetSearch != ''}>
 				<ControlBar colour={UIColours.cobalt}>
 					<SectionNav sections={sectionDefinitions} label={"Jump to"} />
 					<SearchControl name={"Search"} initialValue={characterSheetSearch} onChange={(value: string) => dispatch(setCharacterSheetSearch(value))} />
-					<SelectorDropdown label="Purchase" initialValue={purchaseMode} defaultValue="disabled" options={purchaseModeOptions} onChange={(value) => setPurchaseMode(value)} />
+					<SelectorDropdown label="Purchase" initialValue={purchaseMode} defaultValue="none" options={purchaseModeOptions} onChange={(value) => setPurchaseMode(value)} />
 				</ControlBar>
 				<div className={st.sections}>
 					<SectionBlock name={character.vitae.name} icon={icoDocument} innerClassName={st.sectionVitae} sectionRefs={sectionRefs}>
@@ -252,25 +258,7 @@ function CharacterSheetPage() {
 							<div className={st.resourceFields}>
 								<TextField label="Current" type="number" initialValue={character.verve.current} onChange={characterValueUpdater('verve.current')} className={(character.verve.current > totalVerve) ? st.overResourced : ''} />
 								<TextField label="Bonus" type="number" initialValue={character.verve.bonus} onChange={characterValueUpdater('verve.bonus')} />
-								<TextField label="Total" type="number" initialValue={totalVerve} />
-							</div>
-						</div>
-						<div data-field="mana" className={st.block}>
-							<h2>Mana <div className={st.maxLabel}>{character.baseMana} + {character.manaPerPoint} / point.</div></h2>
-							<div><PurchasePointGroup count={30} columns={15} purchased={character.purchases.mana} purchaseCallback={characterPurchaseUpdater('mana')} maxPurchases={5 + maxMovePoints * 2} /></div>
-							<div className={st.resourceFields}>
-								<TextField label="Current" type="number" initialValue={character.mana.current} onChange={characterValueUpdater('mana.current')} className={(character.mana.current > totalMana) ? st.overResourced : ''} />
-								<TextField label="Bonus" type="number" initialValue={character.mana.bonus} onChange={characterValueUpdater('mana.bonus')} />
-								<TextField label="Total" type="number" initialValue={totalMana} />
-							</div>
-						</div>
-						<div data-field="psi" className={st.block}>
-							<h2>Psi <div className={st.maxLabel}>{character.basePsi} + {character.psiPerPoint} / point.</div></h2>
-							<div><PurchasePointGroup count={30} columns={15} purchased={character.purchases.psi} purchaseCallback={characterPurchaseUpdater('psi')} maxPurchases={5 + maxMovePoints * 2} /></div>
-							<div className={st.resourceFields}>
-								<TextField label="Current" type="number" initialValue={character.psi.current} onChange={characterValueUpdater('psi.current')} className={(character.psi.current > totalPsi) ? st.overResourced : ''} />
-								<TextField label="Bonus" type="number" initialValue={character.psi.bonus} onChange={characterValueUpdater('psi.bonus')} />
-								<TextField label="Total" type="number" initialValue={totalPsi} />
+								<TextField label="Total" type="number" initialValue={totalVerve} disabled={true} />
 							</div>
 						</div>
 						<div data-field="statuses" className={st.block}>
@@ -286,14 +274,14 @@ function CharacterSheetPage() {
 						<div data-field="item_belt" className={st.block}>
 							<h2>Item Belt</h2>
 							<div className={st.beltValues}>
-								<TextField label="Usable" type="number" initialValue={2} disabled={true} /> <TextField label="Usable Bonus" type="number" initialValue={2} />
+								<TextField label="Usable" type="number" initialValue={2 + character.item_belt.bonus_usable} disabled={true} /> <TextField label="+ Bonus" type="number" initialValue={character.item_belt.bonus_usable} onChange={characterValueUpdater('item_belt.bonus_usable')} />
 							</div>
 							<div className={st.beltValues}>
-								<TextField label="Throwable" type="number" initialValue={3} disabled={true} /> <TextField label="Throwable Bonus" type="number" initialValue={0} />
+								<TextField label="Throwable" type="number" initialValue={3 + character.item_belt.bonus_throwable} disabled={true} /> <TextField label="+ Bonus" type="number" initialValue={character.item_belt.bonus_throwable} onChange={characterValueUpdater('item_belt.bonus_throwable')} />
 							</div>
 						</div>
 						<div data-field="skill_preparedness" className={st.block}>
-							<SkillBlock skillCategory={movesByCategory.preparedness} mode="default" purchasedPoints={0} />
+							<SkillBlock skillCategory={movesByCategory.preparedness} mode="default" />
 						</div>
 					</SectionBlock>
 					<SectionBlock name="Combat and Defences" icon={icoCombat} innerClassName={st.sectionCombat} sectionRefs={sectionRefs} className={stcl.contentListParent}>
@@ -304,24 +292,24 @@ function CharacterSheetPage() {
 									<TextField label="Name" initialValue={character.weapons[0].name} onChange={characterValueUpdater('weapons.0.name')} />
 									<SelectField label="Damage" options={damageDiceOptions} initialValue={character.weapons[0]!.damageDice || damageDiceOptions[0].value} onChange={characterValueUpdater('weapons.0.damageDice')} />
 									<TextField label="+ Dam" type="number" initialValue={character.weapons[0].bonus_damage} onChange={characterValueUpdater('weapons.0.bonus_damage')} />
-									<TextField label="+ Raw" type="number" initialValue={character.weapons[0].bonus_raw} onChange={characterValueUpdater('weapons.0.bonus_raw')} />
+									<SelectField label="Rnge" options={threatRangeOptions} initialValue={character.weapons[0]!.threat_range || threatRangeOptions[0].value} onChange={characterValueUpdater('weapons.0.threat_range')} />
 									<TextField label="Effects" initialValue={character.weapons[0].special} onChange={characterValueUpdater('weapons.0.special')} />
 									<TextField initialValue={character.weapons[1].name} onChange={characterValueUpdater('weapons.1.name')} />
 									<SelectField options={damageDiceOptions} initialValue={character.weapons[1]!.damageDice || damageDiceOptions[0].value} onChange={characterValueUpdater('weapons.1.damageDice')} />
 									<TextField type="number" initialValue={character.weapons[1].bonus_damage} onChange={characterValueUpdater('weapons.1.bonus_damage')} />
-									<TextField type="number" initialValue={character.weapons[1].bonus_raw} onChange={characterValueUpdater('weapons.1.bonus_raw')} />
+									<SelectField options={threatRangeOptions} initialValue={character.weapons[1]!.threat_range || threatRangeOptions[1].value} onChange={characterValueUpdater('weapons.1.threat_range')} />
 									<TextField initialValue={character.weapons[1].special} onChange={characterValueUpdater('weapons.1.special')} />
 								</div>
 							</div>
 							<div data-field="armour" className={st.block}>
 								<h2><img src={icoArmour} alt="Armour" />Armour / Shield</h2>
 								<div className={st.armourFields}>
-									<TextField label="Name" initialValue="Armour Name" />
-									<TextField label="PRes" initialValue="PRes" />
-									<TextField label="Effects" initialValue="Effects" />
-									<TextField initialValue="Shield Name" />
-									<TextField initialValue="PRes" />
-									<TextField initialValue="Effects" />
+									<TextField label="Name" initialValue={character.armour[0].name} onChange={characterValueUpdater('armour.0.name')} />
+									<TextField label="PRes" type="number" initialValue={character.armour[0].pres} onChange={characterValueUpdater('armour.0.pres')} />
+									<TextField label="Effects" initialValue={character.armour[0].effect} onChange={characterValueUpdater('armour.0.effect')} />
+									<TextField initialValue={character.armour[1].name} onChange={characterValueUpdater('armour.1.name')} />
+									<TextField type="number" initialValue={character.armour[1].pres} onChange={characterValueUpdater('armour.1.pres')} />
+									<TextField initialValue={character.armour[1].effect} onChange={characterValueUpdater('armour.1.effect')} />
 								</div>
 							</div>
 							<div data-field="weapon_specialisations" className={st.block}>
@@ -345,66 +333,105 @@ function CharacterSheetPage() {
 							</div>
 						</div>
 						<div className={`${st.combatSkillsLayout} ${st.gridLayout}`}>
-							<SkillBlock className={st.block} skillCategory={movesByCategory.defences} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} characterPurchaseUpdater={characterPurchaseUpdater} />
-							<SkillBlock className={st.block} skillCategory={movesByCategory.combat} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-							<SkillBlock className={st.block} skillCategory={movesByCategory.resist_physical} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-							<SkillBlock className={st.block} skillCategory={movesByCategory.resist_mental} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+							<SkillBlock className={st.block} skillCategory={movesByCategory.defences} mode="default" />
+							<SkillBlock className={st.block} skillCategory={movesByCategory.combat} mode="default" />
+							<SkillBlock className={st.block} skillCategory={movesByCategory.resist_physical} mode="default" />
+							<SkillBlock className={st.block} skillCategory={movesByCategory.resist_mental} mode="default" />
 						</div>
 					</SectionBlock>
 					<SectionBlock name="General Moves" icon={icoCircles} innerClassName={`${st.sectionGeneral} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.perception} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.athletics} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.knowledge} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.influence} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.perception} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.athletics} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.knowledge} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.influence} mode="default" />
 					</SectionBlock>
 					<SectionBlock name="Subterfuge Moves" icon={icoDagger} innerClassName={`${st.sectionSubterfuge} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.stealthery} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.subterfuge} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.stealthery} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.subterfuge} mode="default" />
 					</SectionBlock>
 					<SectionBlock name="Crafting Moves" icon={icoTool} innerClassName={`${st.sectionCrafting} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.creativity} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.alchemy} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.engineering} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.gadgetry} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.creativity} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.alchemy} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.engineering} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.gadgetry} mode="default" />
 					</SectionBlock>
 					<SectionBlock name="Beast Mastery" icon={icoBeast} innerClassName={`${st.sectionBeastMastery} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.beast_mastery} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.beast_mastery} mode="default" />
 						<div data-field="companion" className={st.block}>
 							COMPANION
 						</div>
 					</SectionBlock>
 					<SectionBlock name="Inner Power" icon={icoFist} innerClassName={`${st.sectionInnerPower} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.wildform} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.channel_divinity} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.ki} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.rage} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.rhapsody} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.wildform} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.channel_divinity} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.ki} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.rage} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.rhapsody} mode="default" />
 					</SectionBlock>
 					<SectionBlock name="Magic" icon={icoMagic} innerClassName={`${st.sectionMagic} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<div className={`${st.block} ${st.synergies}`}>
-							<h2>Synergies <PurchasePointGroup count={3} columns={3} purchased={character.purchases.magical_synergy} maxPurchases={3} purchaseCallback={characterPurchaseUpdater('magical_synergy')} /></h2>
-							<SelectField options={synergiesOptions} initialValue={character.magical_synergies[0]} onChange={characterValueUpdater('magical_synergies.0')} />
+						<div data-field="magic-meta" className={st.fullRowBlock}>
+							<div data-field="mana" className={st.block}>
+								<h2>Mana <div className={st.maxLabel}>{character.baseMana} + {character.manaPerPoint} / point.</div></h2>
+								<div><PurchasePointGroup count={30} columns={15} purchased={character.purchases.mana} purchaseCallback={characterPurchaseUpdater('mana')} maxPurchases={5 + maxMovePoints * 2} /></div>
+								<div className={st.resourceFields}>
+									<TextField label="Current" type="number" initialValue={character.mana.current} onChange={characterValueUpdater('mana.current')} className={(character.mana.current > totalMana) ? st.overResourced : ''} />
+									<TextField label="Bonus" type="number" initialValue={character.mana.bonus} onChange={characterValueUpdater('mana.bonus')} />
+									<TextField label="Total" type="number" initialValue={totalMana} />
+								</div>
+							</div>
+							<div data-field="synergies" className={st.block}>
+								<h2>Synergies <PurchasePointGroup count={3} columns={3} purchased={character.purchases.magical_synergy} maxPurchases={3} purchaseCallback={characterPurchaseUpdater('magical_synergy')} /></h2>
+								<SelectField options={synergiesOptions} initialValue={character.magical_synergies[0]} onChange={characterValueUpdater('magical_synergies.0')} />
+							</div>
 						</div>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.magic_spellcraft} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.magic_cast} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.magic_enchanting} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.magic_spellcraft} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.magic_cast} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.magic_enchanting} mode="default" />
 					</SectionBlock>
 					<SectionBlock name="Psionics" icon={icoFist} innerClassName={`${st.sectionPsionics} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_kinetics} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_clair} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_telepath} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_metab} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
-						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_metapsi} mode="default" searchFilter={characterSheetSearch} purchasedPoints={0} />
+						<div data-field="psi" className={`${st.block} ${st.fullRowBlock}`}>
+							<h2>Psi <div className={st.maxLabel}>{character.basePsi} + {character.psiPerPoint} / point.</div></h2>
+							<div><PurchasePointGroup count={30} columns={15} purchased={character.purchases.psi} purchaseCallback={characterPurchaseUpdater('psi')} maxPurchases={5 + maxMovePoints * 2} /></div>
+							<div className={st.resourceFields}>
+								<TextField label="Current" type="number" initialValue={character.psi.current} onChange={characterValueUpdater('psi.current')} className={(character.psi.current > totalPsi) ? st.overResourced : ''} />
+								<TextField label="Bonus" type="number" initialValue={character.psi.bonus} onChange={characterValueUpdater('psi.bonus')} />
+								<TextField label="Total" type="number" initialValue={totalPsi} />
+							</div>
+						</div>
+						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_kinetics} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_clair} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_telepath} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_metab} mode="default" />
+						<SkillBlock className={st.block} skillCategory={movesByCategory.psionics_metapsi} mode="default" />
 					</SectionBlock>
 					<SectionBlock name="Inventory" sectionRefs={sectionRefs} innerClassName={`${st.sectionInventory} ${st.gridLayout}`}>
-						<TextField type="textarea" initialValue={character.inventory.item1} onChange={characterValueUpdater('inventory.item1')} />
-						<TextField type="textarea" initialValue={character.inventory.item2} onChange={characterValueUpdater('inventory.item2')} />
-						<TextField type="textarea" initialValue={character.inventory.item3} onChange={characterValueUpdater('inventory.item3')} />
+						<div className={`${st.standards} ${st.block}`}>
+							<h2>Standards</h2>
+							<TextField type="number" initialValue={character.inventory.standards as number} onChange={characterValueUpdater(`inventory.standards`)} />
+						</div>
+						<div className={st.block}>
+							<h2>Equipment</h2>
+							{inventoryEquipment.map((item, index) => (
+								<TextField type="text" initialValue={item} onChange={characterValueUpdater(`inventory.equipment.${index}`)} key={`inv-equ-${index}`} />
+							))}
+						</div>
+						<div className={st.block}>
+							<h2>Adventuring</h2>
+							{inventoryAdventuring.map((item, index) => (
+								<TextField type="text" initialValue={item} onChange={characterValueUpdater(`inventory.adventuring.${index}`)} key={`inv-adv-${index}`} />
+							))}
+						</div>
+						<div className={`${st.consumables} ${st.block}`}>
+							<h2>Consumables</h2>
+							{inventoryConsumables.map((item, index) => (
+								<TextField type="text" initialValue={item} onChange={characterValueUpdater(`inventory.consumables.${index}`)} key={`inv-con-${index}`} />
+							))}
+						</div>
 					</SectionBlock>
 					<SectionBlock name="Notes" sectionRefs={sectionRefs} innerClassName={`${st.sectionNotes} ${st.gridLayout}`}>
-						<TextField type="textarea" initialValue={character.notes.item1} onChange={characterValueUpdater('notes.item1')} />
-						<TextField type="textarea" initialValue={character.notes.item2} onChange={characterValueUpdater('notes.item2')} />
-						<TextField type="textarea" initialValue={character.notes.item3} onChange={characterValueUpdater('notes.item3')} />
+						<TextField type="textarea" initialValue={character.notes.notes1} onChange={characterValueUpdater('notes.notes1')} />
+						<TextField type="textarea" initialValue={character.notes.notes2} onChange={characterValueUpdater('notes.notes2')} />
+						<TextField type="textarea" initialValue={character.notes.notes3} onChange={characterValueUpdater('notes.notes3')} />
 					</SectionBlock>
 				</div>
 			</div>
