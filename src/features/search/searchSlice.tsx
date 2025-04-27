@@ -8,6 +8,9 @@ interface SearchState {
 	magicSourceSelection: string;
 	magicPotionsSearch: string;
 	enchantingSelection: string;
+	psionicPowersSearch: string;
+	psionicLevelSelection: string;
+	psionicAptitudeSelection: string;
 	movesSearch: string;
 	statusesSearch: string;
 	statusesCategorySelection: string;
@@ -27,19 +30,22 @@ interface SearchState {
 
 const initialState: SearchState = {
 	spellsSearch: localStorage.getItem('spellsSearch') || '',
-	spellLevelSelection: localStorage.getItem('spellLevelSelection') || '',
-	spellSchoolSelection: localStorage.getItem('spellSchoolSelection') || '',
-	magicSourceSelection: localStorage.getItem('magicSourceSelection') || '',
+	spellLevelSelection: localStorage.getItem('spellLevelSelection') || SELECTOR_DEFAULT,
+	spellSchoolSelection: localStorage.getItem('spellSchoolSelection') || SELECTOR_DEFAULT,
+	magicSourceSelection: localStorage.getItem('magicSourceSelection') || SELECTOR_DEFAULT,
 	magicPotionsSearch: localStorage.getItem('magicPotionsSearch') || '',
-	enchantingSelection: localStorage.getItem('enchantingSelection') || '',
+	enchantingSelection: localStorage.getItem('enchantingSelection') || SELECTOR_DEFAULT,
+	psionicPowersSearch: localStorage.getItem('psionicPowersSearch') || '',
+	psionicLevelSelection: localStorage.getItem('psionicLevelSelection') || SELECTOR_DEFAULT,
+	psionicAptitudeSelection: localStorage.getItem('psionicAptitudeSelection') || SELECTOR_DEFAULT,
 	movesSearch: localStorage.getItem('movesSearch') || '',
 	statusesSearch: localStorage.getItem('statusesSearch') || '',
 	statusesCategorySelection: localStorage.getItem('statusesCategorySelection') || SELECTOR_DEFAULT,
 	alchemyRecipesSearch: localStorage.getItem('alchemyRecipesSearch') || '',
-	alchemyRecipesTypeSelector: localStorage.getItem('alchemyRecipesTypeSelector') || '',
+	alchemyRecipesTypeSelector: localStorage.getItem('alchemyRecipesTypeSelector') || SELECTOR_DEFAULT,
 	alchemyReagentsSearch: localStorage.getItem('alchemyReagentsSearch') || '',
-	alchemyReagentsTypeSelector: localStorage.getItem('alchemyReagentsTypeSelector') || '',
-	alchemyReagentsComponentSelector: localStorage.getItem('alchemyReagentsComponentSelector') || '',
+	alchemyReagentsTypeSelector: localStorage.getItem('alchemyReagentsTypeSelector') || SELECTOR_DEFAULT,
+	alchemyReagentsComponentSelector: localStorage.getItem('alchemyReagentsComponentSelector') || SELECTOR_DEFAULT,
 	gadgetsSearch: localStorage.getItem('gadgetsSearch') || '',
 	companionsSearch: localStorage.getItem('companionsSearch') || '',
 	companionMovesSearch: localStorage.getItem('companionMovesSearch') || '',
@@ -50,7 +56,7 @@ const initialState: SearchState = {
 }
 
 // Writes state to localStorage
-let writeTimeout: number | undefined;
+let writeTimeout: NodeJS.Timeout | undefined;
 const writeLocalStorageValue = (key: string, value: string) => {
 	clearTimeout(writeTimeout);
 	writeTimeout = setTimeout(() => {
@@ -85,6 +91,18 @@ const searchSlice = createSlice({
 		setEnchantingSelection: (state, action) => {
 			state.enchantingSelection = action.payload;
 			writeLocalStorageValue('enchantingSelection', action.payload);
+		},
+		setPsionicPowersSearch: (state, action) => {
+			state.psionicPowersSearch = action.payload;
+			writeLocalStorageValue('psionicPowersSearch', action.payload);
+		},
+		setPsionicLevelSelection: (state, action) => {
+			state.psionicLevelSelection = action.payload;
+			writeLocalStorageValue('psionicLevelSelection', action.payload);
+		},
+		setPsionicAptitudeSelection: (state, action) => {
+			state.psionicAptitudeSelection = action.payload;
+			writeLocalStorageValue('psionicAptitudeSelection', action.payload);
 		},
 		setMovesSearch: (state, action) => {
 			state.movesSearch = action.payload;
@@ -156,6 +174,9 @@ export const {
 	setSpellSchoolSelection,
 	setMagicPotionsSearch,
 	setEnchantingSelection,
+	setPsionicPowersSearch,
+	setPsionicLevelSelection,
+	setPsionicAptitudeSelection,
 	setMovesSearch,
 	setStatusesSearch,
 	setStatusesCategorySelection,

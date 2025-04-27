@@ -11,7 +11,7 @@
 	&.open {}
 
 	&.closed {
-		& .description, & .diceRoll, & .expertises {
+		& > .description, & > .diceRoll {
 			display: none;
 		}
 	}
@@ -30,6 +30,7 @@
 		display: flex;
 		gap: calc(0.5 * var(--padding-standard));
 		justify-content: space-between;
+		align-items: center;
 		font-size: 1.25rem;
 
 		& .title {
@@ -77,6 +78,7 @@
 		grid-row: 3;
 
 		margin-top: calc(0.5 * var(--padding-standard));
+		padding-left: var(--padding-standard);
 	
 		.expertises {
 			display: flex;
@@ -89,4 +91,8 @@
 			&:empty { display: none; }
 		}
 	}
+}
+
+.expertiseUpcoming {
+	color: #999;
 }

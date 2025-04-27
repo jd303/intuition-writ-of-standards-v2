@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useAppDispatch, useAppSelector } from '../../features/firebaseHooks';
 import { setStatusesSearch, setStatusesCategorySelection } from '../../features/search/searchSlice';
 import { UIColours } from '../../features/constants/UIColours';
-import { Status as StatusModel } from '../../features/models/statusModel';
+import { StatusModel } from '../../features/models/statusModel';
 import Status from '../components/statuses/status';
 import ContentList from '../components/contentList/contentList';
 import ControlBar from '../components/controlBar/controlBar';
@@ -38,7 +38,7 @@ export default function StatusesPage() {
 		<ContentPageContainer>
 			<ContentList colour={UIColours.orange} style="list">
 				<ControlBar colour={UIColours.orange} className={st.controlBar}>
-					<SelectorDropdown label="Type" options={categoryOptions} initialValue={statusesCategorySelection} onChange={(value: string) => dispatch(setStatusesCategorySelection(value))} onDefault={() => { }} />
+					<SelectorDropdown label="Type" options={categoryOptions} initialValue={statusesCategorySelection} onChange={(value: string) => dispatch(setStatusesCategorySelection(value))} />
 					<SearchControl name="Search" initialValue={statusesSearch} onChange={(value: string) => dispatch(setStatusesSearch(value))}></SearchControl>
 				</ControlBar>
 				{filteredStatuses.map((status: StatusModel) => (

@@ -1,0 +1,5 @@
+.characterCombatPageContainer {
+	width: 100%;
+	max-width: var(--max-width-character-sheet-page);
+	margin: auto;
+}

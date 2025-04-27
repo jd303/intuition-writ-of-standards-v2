@@ -7,9 +7,10 @@ import { MovesCategorisation } from '../../../features/firebase/data/prepareMove
 import PurchasePointGroup from '../purchasePointGroup/purchasePointGroup.tsx';
 import { useToggleableBooleanState } from '../../../features/uiHooks.ts';
 import { useCharacterContext } from '../../characters/characterContext.tsx';
+import { MoveDisplayMode } from '../../../features/models/moveDisplayModes.ts';
 
-function SkillBlock({ skillCategory, mode, className }: { skillCategory: MovesCategorisation, mode: "default" | "display", className?: string }) {
-	const { characterPurchaseUpdater, characterPurchases, characterRacialBonuses, characterSheetSearch, maxMovePoints, characterStatValues } = useCharacterContext();
+function SkillBlock({ skillCategory, mode, className }: { skillCategory: MovesCategorisation, mode: MoveDisplayMode, className?: string }) {
+	const { characterPurchaseUpdater, character, characterSheetSearch, maxSkillPoints } = useCharacterContext();
 	const [isOpen, toggleisOpen] = useToggleableBooleanState();
 
 	const [skillEmpty, filteredMoves, filteredPassives] = useMemo(() => {
@@ -24,25 +25,24 @@ function SkillBlock({ skillCategory, mode, className }: { skillCategory: MovesCa
 	const maxSkillPurchases = useMemo(() => {
 		const skillStat = skillCategory?.skill?.stat || '';
 		let characterStatValue = 0;
-		[...skillStat.split(',')].forEach(stat => characterStatValue = Math.max(characterStatValue, characterStatValues[stat.trim()]));
-		const jackOfAllTradesBonus = characterRacialBonuses.secondary == '9dee48d6' && 1 || 0;
-		return Math.min(12, maxMovePoints + characterStatValue + jackOfAllTradesBonus);
-	}, [characterStatValues, maxMovePoints]);
+		[...skillStat.split(',')].forEach(stat => characterStatValue = Math.max(characterStatValue, character.attributes[stat.trim()]));
+		return Math.min(12, maxSkillPoints + characterStatValue);
+	}, [character, maxSkillPoints, skillCategory]);
 
 	const purchasedSkillPoints = useMemo(() => {
-		if (characterPurchases.skills_and_expertises) {
-			return characterPurchases.skills_and_expertises[skillCategory?.skill!.id] || 0;
+		if (character.purchases.skills_and_expertises) {
+			return character.purchases.skills_and_expertises[skillCategory?.skill!.id] || 0;
 		} else {
 			return 0;
 		}
-	}, [characterPurchases, skillCategory]);
+	}, [character, skillCategory]);
 
 	if (!skillEmpty) return (
-		<div className={`${st.skillBlock} ${className}`} data-open={isOpen}>
+		<div className={`${st.skillBlock} ${className}`} data-open={isOpen} data-type="Skill" data-purchases={character?.purchases?.skills_and_expertises[skillCategory?.skill?.id || ''] > 0}>
 			<div className={st.heading} onClick={toggleisOpen}>
 				<div className={`${st.title} trattatello textHoverEffect`}>
 					<div className={st.name}>{skillCategory?.skill?.name}</div>
-					<PurchasePointGroup count={12} columns={12} purchased={purchasedSkillPoints} purchaseCallback={characterPurchaseUpdater(skillCategory?.skill!.id, true)} maxPurchases={maxSkillPurchases} />
+					<PurchasePointGroup count={12} columns={12} purchased={purchasedSkillPoints} purchaseCallback={characterPurchaseUpdater(skillCategory?.skill!.id, true)!} maxPurchases={maxSkillPurchases} />
 				</div>
 				<div className={st.description}><span className="trattatello">({skillCategory?.skill?.stat})</span> {skillCategory?.skill?.description}</div>
 			</div>
@@ -56,7 +56,7 @@ function SkillBlock({ skillCategory, mode, className }: { skillCategory: MovesCa
 			<div className={[st.passivesContainer, stcl.contentListParent].join(' ')}>
 				<div className={[st.passivesList, stcl.removeParentWhenEmpty].join(' ')}>
 					{filteredPassives.map((move) => (
-						<MoveBlock key={move.id} move={move} mode="display" parentSkillPoints={purchasedSkillPoints} />
+						<MoveBlock key={move.id} move={move} mode={mode} parentSkillPoints={purchasedSkillPoints} />
 					))}
 				</div>
 			</div>

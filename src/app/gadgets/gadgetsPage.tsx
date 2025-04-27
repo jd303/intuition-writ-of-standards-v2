@@ -9,13 +9,6 @@ import ContentList from "../components/contentList/contentList";
 import ContentCard from "../components/contentList/contentCard";
 import { GadgetModel } from "../../features/models/gadgetModel";
 import GadgetBlock from "../components/gadgets/gadgetBlock";
-import SelectorDropdown, { SELECTOR_DEFAULT } from "../components/controlBar/selectorDropdown";
-
-import bronzeMedal from "/public/images/icons/ico.medal.bronze.svg";
-import silverMedal from "/public/images/icons/ico.medal.silver.svg";
-import goldMedal from "/public/images/icons/ico.medal.gold.svg";
-import abstrateGoldMedal from "/public/images/icons/ico.medal.abstrategold.svg";
-import st from './gadgetsPage.module.css';
 
 function GadgetsPage() {
 	const dispatch = useAppDispatch();

@@ -20,14 +20,13 @@
 			@media (min-width: 1000px) {
 				--flex-direction: row;
 				--align-items: center;
-				--gap: var(--padding-standard);
 			}
 
 			display: flex;
 			flex-direction: var(--flex-direction);
 			gap: var(--gap);
 			align-items: var(--align-items);
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 
 			.name {
 				display: flex;

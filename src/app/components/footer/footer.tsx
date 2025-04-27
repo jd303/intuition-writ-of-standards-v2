@@ -4,7 +4,7 @@ import './footer.css';
 function Footer() {
 	return (
 		<footer>
-			<IntuitionLogo />
+			<IntuitionLogo shrink={true} />
 		</footer>
 	)
 }

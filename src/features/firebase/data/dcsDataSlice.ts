@@ -14,6 +14,4 @@ export const dcsDataSlice = createSlice({
 
 export const { updateDcsData } = dcsDataSlice.actions;
 
-export const selectDcsData = (state) => state.dcsData.value;
-
 export default dcsDataSlice.reducer;

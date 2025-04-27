@@ -1,4 +1,4 @@
-export interface Spell {
+export interface SpellModel {
 	id: string,
 	name: string,
 	easyname: string,

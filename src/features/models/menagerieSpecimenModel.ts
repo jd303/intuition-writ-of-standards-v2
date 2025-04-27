@@ -1,3 +1,5 @@
+import { StatusModel } from "./statusModel";
+
 enum MenagerieType {
 	Arcanic = "Arcanic",
 	Beast = "Beast",
@@ -55,7 +57,8 @@ export interface MenagerieSpecimenModel {
 	_unique_id?: string,
 	base?: string,
 	notes?: string,
-	statuses?: any[],
+	statuses?: StatusModel[],
+	turnTaken?: boolean,
 	current_verve?: number,
 }
 
@@ -93,6 +96,6 @@ export interface MenagerieSpecimenDataModel {
 	_unique_id?: string,
 	base?: string,
 	notes?: string,
-	statuses?: any[],
+	statuses?: StatusModel[],
 	current_verve?: number,
 }

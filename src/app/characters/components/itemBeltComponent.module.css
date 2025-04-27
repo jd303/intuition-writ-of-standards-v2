@@ -1,0 +1,8 @@
+.beltValues {
+	display: flex;
+	gap: var(--padding-1-4);
+
+	input {
+		max-width: 85px;
+	}
+}

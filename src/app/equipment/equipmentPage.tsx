@@ -1,7 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { useAppDispatch, useAppSelector } from "../../features/firebaseHooks";
 import ContentList from "../components/contentList/contentList";
-import { GenericModel } from "../../features/models/genericModel";
 import { UIColours } from "../../features/constants/UIColours";
 import ControlBar from "../components/controlBar/controlBar";
 import ContentCard from "../components/contentList/contentCard";

@@ -33,4 +33,8 @@
 	&.cobalt {
 		background-color: rgba(var(--colour-cobalt), 0.15);
 	}
+
+	&.scarlet {
+		background-color: rgba(var(--colour-scarlet), 0.1);
+	}
 }

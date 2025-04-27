@@ -1,10 +1,10 @@
-import lgIntuition from '../../../../public/images/lg.intuition.svg';
+import lgIntuition from '/images/lg.intuition.svg';
 
 import './intuition-logo.css';
 
-function IntuitionLogo() {
+function IntuitionLogo( { shrink = false }: { shrink?: boolean }) {
 	return (
-		<div className="logo">
+		<div className={`logo ${shrink ? 'shrink' : ''}`}>
 			<img src={lgIntuition} alt="Intuition" />
 		</div>
 	)

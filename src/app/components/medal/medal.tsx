@@ -1,7 +1,7 @@
-import bronzeMedal from "/public/images/icons/ico.medal.bronze.svg";
-import silverMedal from "/public/images/icons/ico.medal.silver.svg";
-import goldMedal from "/public/images/icons/ico.medal.gold.svg";
-import abstrateGoldMedal from "/public/images/icons/ico.medal.abstrategold.svg";
+import bronzeMedal from "/images/icons/ico.medal.bronze.svg";
+import silverMedal from "/images/icons/ico.medal.silver.svg";
+import goldMedal from "/images/icons/ico.medal.gold.svg";
+import abstrateGoldMedal from "/images/icons/ico.medal.abstrategold.svg";
 
 import st from "./medal.module.css";
 

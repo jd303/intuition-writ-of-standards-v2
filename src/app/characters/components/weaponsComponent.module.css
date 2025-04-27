@@ -1,0 +1,66 @@
+.weaponsContainer {
+	position: relative;
+	container-type: inline-size;
+
+	--grid-template-columns: minmax(125px, 1fr) 70px 50px 50px minmax(150px, 2.5fr);
+
+	.addWeaponButton {
+		position: absolute;
+		top: -2px;
+		right: 0;
+		height: 30px;
+		line-height: 30px;
+	}
+
+	.weaponFields {
+		display: flex;
+		flex-direction: column;
+		gap: var(--padding-1-4);
+		margin-bottom: var(--padding-standard);
+	}
+
+	.weapon {
+		display: grid;
+		gap: var(--padding-1-4);
+		grid-template-columns: var(--grid-template-columns);
+
+		.effects {
+			display: flex;
+			align-items: flex-end;
+			gap: var(--padding-1-4);
+
+			button {
+				width: 30px;
+			}
+		}
+
+		&:not(:first-of-type) label {
+			display: none;
+		}
+	}
+
+	@container (max-width: 500px) {
+		.weapon {
+			--grid-template-columns: minmax(125px, 1fr) 60px 50px;
+
+			> *:nth-child(5n+1),
+			> *:nth-child(5n) {
+				grid-column: 1 / -1;
+			}
+
+			> div:first-child label {
+				margin-top: var(--padding-standard);
+			}
+
+			&:not(:first-of-type) label {
+				display: block;
+			}
+		}
+	}
+
+	.weaponSpecialisations {
+		display: flex;
+		flex-direction: column;
+		gap: var(--padding-half);
+	}
+}

@@ -2,8 +2,8 @@ import { AlchemicalModel } from '../../../features/models/alchemicalModel';
 import { collateAlchemicalReagents, ReagentResponse } from '../../../features/collateAlchemicalReagents';
 import Medal from '../medal/medal';
 
-import dcIcon from '../../../../public/images/icons/ico.dc.svg';
-import timeIcon from '../../../../public/images/icons/ico.clock.svg';
+import dcIcon from '/images/icons/ico.dc.svg';
+import timeIcon from '/images/icons/ico.clock.svg';
 import st from './alchemicalBlock.module.css';
 
 function AlchemicalBlock({ alchemical, isReagent = false }: { alchemical: AlchemicalModel, isReagent?: boolean }) {
@@ -26,7 +26,7 @@ function AlchemicalBlock({ alchemical, isReagent = false }: { alchemical: Alchem
 			</>}
 			{ isReagent && <>
 				<div className={st.reagentType}>
-					<div className={st.rarity}><Medal className="rarity" size="small" rarity={alchemical.rarity} /></div>
+					<div className={st.rarity}><Medal className="rarity" size="small" rarity={alchemical.rarity.toString()} /></div>
 					<div className={st.type}>{alchemical.subtype}</div>
 				</div>
 			</>}

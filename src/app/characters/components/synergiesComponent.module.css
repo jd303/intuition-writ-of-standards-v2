@@ -1,0 +1,4 @@
+.synergy {
+	display: flex;
+	gap: var(--padding-1-4);
+}

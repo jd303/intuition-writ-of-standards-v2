@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GenericModel } from "../../models/genericModel";
+import { CompanionMoveModel } from "../../models/companionMoveModel";
 
 interface CompanionMovesData {
-	companionMoves: GenericModel[]
+	companionMoves: CompanionMoveModel[]
 }
 
 const initialState: CompanionMovesData = {

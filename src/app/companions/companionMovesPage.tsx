@@ -8,9 +8,9 @@ import SearchControl from '../components/controlBar/searchControl';
 
 import st from './companionMovesPage.module.css';
 
-import bronzeMedal from "/public/images/icons/ico.medal.bronze.svg";
-import silverMedal from "/public/images/icons/ico.medal.silver.svg";
-import goldMedal from "/public/images/icons/ico.medal.gold.svg";
+import bronzeMedal from "/images/icons/ico.medal.bronze.svg";
+import silverMedal from "/images/icons/ico.medal.silver.svg";
+import goldMedal from "/images/icons/ico.medal.gold.svg";
 import ContentCard from '../components/contentList/contentCard';
 
 export default function CompanionMovesPage() {

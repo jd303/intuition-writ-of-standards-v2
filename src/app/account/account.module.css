@@ -1,13 +1,13 @@
 .signingForm {
 	display: flex;
 	flex-direction: column;
-	gap: var(--padding-standard);
+	gap: calc(2 * var(--padding-standard));
 
 	& .form {
 		display: flex;
 		flex-direction: column;
 		gap: calc(0.5 * var(--padding-standard));
-		max-width: 300px;
+		max-width: min(100%, 375px);
 	}
 
 	& .heading {

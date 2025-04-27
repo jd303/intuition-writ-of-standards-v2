@@ -1,33 +1,29 @@
-import { useEffect, useRef, useState } from "react";
 import ContentPageContainer from "../components/contentPage/contentPageContainer";
 import ControlBar from "../components/controlBar/controlBar";
 import { UIColours } from "../../features/constants/UIColours";
-import SectionNav, { SectionNavDefinition } from "../components/controlBar/sectionNav";
+import SectionNav from "../components/controlBar/sectionNav";
 import { Link } from "react-router";
+import { useSectionNav } from "../components/controlBar/useSectionNav";
+import { SectionBlock } from "../components/controlBar/sectionBlock";
 
 function MagicGuidePage() {
-	const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-	const [sectionDefinitions, setSectionDefinitions] = useState<SectionNavDefinition[]>([]);
-	useEffect(() => {
-		const sectionRefDefinitions: SectionNavDefinition[] = sectionRefs.current.map((sectionRef: HTMLElement | null) => { return { name: sectionRef?.getAttribute('id'), element: sectionRef } });
-		setSectionDefinitions(sectionRefDefinitions);
-	}, [sectionRefs]);
+	const [sectionRefs, sectionDefinitions] = useSectionNav();
 
 	return (
 		<ContentPageContainer>
 			<ControlBar colour={UIColours.purple}>
-				<SectionNav sections={sectionDefinitions} label={"Jump to"} />
+				<SectionNav sections={sectionDefinitions} label={"Go"} />
 			</ControlBar>
-			<section ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)} id="overview">
+			<SectionBlock name="Overview" sectionRefs={sectionRefs}>
 				<h1>Overview</h1>
 				<p>There are some rare few that can take the Flow that passes through their Source and work it into wondrous spells.  Some call them gods, freaks, healers, untrustworthy twisters of nature.  Whatever you call them, Source Weavers, as the Occurrens officially refers to them, are powerful - and with the right training could change the world.</p>
-			</section>
-			<section ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)} id="the choice">
+			</SectionBlock>
+			<SectionBlock name="The Choice" sectionRefs={sectionRefs}>
 				<h1>The Choice</h1>
 				<p>A strange thing happens to about 5% of the population of Alhember: they dream of complex and confrontational emotional events that may or may not have happened, and are offered a Choice. Most know that they are being offered a Choice, though most do not really know what they are Choosing. Those that agree to The Choice awaken with the ability to shape Magics and Cast Spells.</p>
 				<p>One who has agreed to the Choice is considered awakened, cursed, troubled, sage or empowered, depending on who you ask. One who denies The Choice is saved, powerless, enlightened, or feebled - but are otherwise not really affected. Most receive The Dream of Choosing in their teens, though extremely rare cases arise of those in later, or even younger years.</p>
-			</section>
-			<section ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)} id="learning">
+			</SectionBlock>
+			<SectionBlock name="Learning" sectionRefs={sectionRefs}>
 				<h1>Learning Spells</h1>
 				<h2>Source</h2>
 				<p>Every sentient creature on Alhember, save the monstrous, undead, demonic or abberative, are born with a Source.  Researchers, such as the Heirs of the True Source, are unable to determine predictable patterns as to which Source a person develops, though those who match the season that they are born in tend to achieve grander feats of magic.</p>
@@ -52,8 +48,8 @@ function MagicGuidePage() {
 				</ul>
 				<h2>Buying and Forgetting Spells</h2>
 				<p>There are two key Moves you can take to learn and forget spells.  These are available under the Spellcraft Skill as Learn Spell and Forget Spell, and are explained on the <Link to="/rules/moves">Rules: Moves page</Link>, as well as on your Character Sheet.</p>
-			</section>
-			<section ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)} id="casting">
+			</SectionBlock>
+			<SectionBlock name="Casting" sectionRefs={sectionRefs}>
 				<h1>Casting Spells</h1>
 				<p>A Source Weaver casts wondrous spells that can perform feats unavailable to the mundane.  To cast a Spell, a Source Weaver must be able to expend Mana and Components, perform the Cast a Spell Action, and choose a Spell Severity and targets, then resolve the effects.  Some spells last for longer than instantaneous - for these spells the Source Weaver should be ready to apply the effects whenever they apply, and be aware of the duration.</p>
 				<h2>Actions</h2>
@@ -115,11 +111,11 @@ function MagicGuidePage() {
 					<li><strong>Wall:</strong> You may place the centre-most point of the wall anywhere you can see, and it extends 8sq in both directions as a straight line at any angle of your choice.</li>
 					<li><strong>Aura:</strong> You are always the centre-most point of the spell, and the aura moves as you do.  Creatures that enter the aura resolve the effects on themselves immediately.  The spell effect then ends for any creature who is not in the aura, at the end of their turn.</li>
 				</ul>
-			</section>
-			<section ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)} id="potions and enchanting">
+			</SectionBlock>
+			<SectionBlock name="Potions and Enchanting" sectionRefs={sectionRefs}>
 				<h1>Potions & Enchanting</h1>
 				<p>Source Weavers may brew magical potions and Enchant items with their magic.  The rules for these can be found under Concoct Magic Potion, Enchant Item, Inscribe Magic Scroll and Infuse Runic Seal Moves, on the <Link to="/rules/moves">Rules: Moves page</Link>, as well as on your Character Sheet.</p>
-			</section>
+			</SectionBlock>
 		</ContentPageContainer>
 	)
 }

@@ -7,7 +7,7 @@ export interface AlchemicalModel {
 	desc: string,
 	time?: string,
 	reagents: string,
-	rarity: string,
+	rarity: string | number,
 }
 
 export enum ReagentComponents {

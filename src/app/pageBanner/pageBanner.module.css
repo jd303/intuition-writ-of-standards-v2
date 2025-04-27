@@ -112,7 +112,7 @@ nav.main {
 	width: 100%;
 	margin: auto;
 	padding: var(--padding-standard) calc(2 * var(--padding-standard)) calc(2 * var(--padding-standard));
-	background-image: url('../public/images/bg.paper.texture.webp');
+	background-image: url('/images/bg.paper.texture.webp');
 	border-bottom-right-radius: var(--radius-standard);
 	border-bottom-left-radius: var(--radius-standard);
 	box-shadow: inset -8px -8px 8px rgba(0,0, 0, 0.2);
@@ -129,7 +129,7 @@ nav.main {
 	}
 
 	& a {
-		padding: calc(0.5 * var(--padding-standard)) 0;
+		padding: var(--padding-half) 0;
 		text-decoration: none;
 		color: black;
 		font-size: 1.4em;
@@ -192,6 +192,7 @@ button.hamburger {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	vertical-align: middle;
 
 	&:hover {
 		& .notch {

@@ -1,13 +1,13 @@
-import { Spell } from '../../../features/models/spellModel';
+import { SpellModel } from '../../../features/models/spellModel';
 import CircledText from '../circledText/circledText';
 
-import mapPinIcon from '../../../../public/images/icons/ico.map_pin.svg';
-import targetIcon from '../../../../public/images/icons/ico.target.svg';
-import potionIcon from '../../../../public/images/icons/ico.potion.black.svg';
-import infusableIcon from '../../../../public/images/icons/ico.rune.svg';
+import mapPinIcon from '/images/icons/ico.map_pin.svg';
+import targetIcon from '/images/icons/ico.target.svg';
+import potionIcon from '/images/icons/ico.potion.black.svg';
+import infusableIcon from '/images/icons/ico.rune.svg';
 import st from './spellBlock.module.css';
 
-function SpellBlock( { spell }: { spell: Spell }) {
+function SpellBlock( { spell }: { spell: SpellModel }) {
 	
 	return (
 		<div className={st.spellLayout}>

@@ -76,15 +76,27 @@ function Account() {
 
 	return (
 		<div className={st.signingForm}>
+			<hr />
 			{loggedIn && (
 				<div className={st.form}>
+					<div className={st.heading + " trattatello"}>Account</div>
 					<div>You are logged in as {loggedInUserEmail}.</div>
-					<button onClick={goToCharacters}>Characters</button>
+					<div>&nbsp;</div>
 					<ConfirmButton onClick={logout} label="Logout"></ConfirmButton>
+					<hr />
+					<div className={st.heading + " trattatello"}>Intuition</div>
+					<p>Intuition is a Point-buy system that gives you the freedom to create a character your way. Instead of using pre-defined classes, each character can invest points in whichever Skills or Expertises they choose, designing the perfect character for them.</p>
+					<div className={st.heading + " trattatello"}>Characters</div>
+					<p>View and manage your characters.</p>
+					<button onClick={goToCharacters}>Characters Page</button>
 				</div>
 			)}
 			{!loggedIn && (
 				<>
+					<div className={st.form}>
+						<div className={st.heading + " trattatello"}>Welcome</div>
+						<p>Login, or create an account to build and manage your Intuition Characters.</p>
+					</div>
 					<div className={st.form}>
 						<div className={st.heading + " trattatello"}>Login</div>
 						<input type="text" name="email" placeholder="Email" value={loginEmailInput} onChange={onChangeLoginEmail} />
@@ -101,6 +113,7 @@ function Account() {
 					</div>
 				</>
 			)}
+			<hr />
 		</div>
 	)
 }

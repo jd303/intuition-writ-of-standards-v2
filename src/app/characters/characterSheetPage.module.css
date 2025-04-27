@@ -4,26 +4,21 @@
 	margin: auto;
 
 	/* REUSABLE STYLES */
-	.block {
-		padding: var(--padding-standard);
-		border: var(--border-dashed-subtle);
-		border-radius: var(--radius-standard);
-		background-color: rgb(var(--colour-cream-light));
-
-		h2 {
-			display: flex;
-			white-space: nowrap;
-			gap: var(--padding-half);
-		}
+	h2 img {
+		height: 20px;
+		vertical-align: middle;
+		margin-right: 6px;
 	}
 
 	.gridLayout {
 		--grid-template-columns: 1fr;
 		--grid-template-columns-auto-left: 1fr;
+		--grid-template-columns-auto-right: 1fr;
 
 		@media (min-width: 768px) {
 			--grid-template-columns: 1fr 1fr;
 			--grid-template-columns-auto-left: auto 1fr;
+			--grid-template-columns-auto-right: 1fr auto;
 		}
 
 		display: grid;
@@ -34,17 +29,17 @@
 			grid-template-columns: var(--grid-template-columns-auto-left);
 		}
 
-		.fullRowBlock {
-			--grid-template-columns: 1fr;
-			--grid-column: 1;
+		&.autoGridRight {
+			grid-template-columns: var(--grid-template-columns-auto-right);
+		}
+	}
 
-			@media (min-width: 768px) {
-				--grid-template-columns: 30% 1fr;
-				--grid-column: 1 / 3;
-			}
+	.flexLayout {
+		display: flex;
+		gap: var(--padding-half);
 
-			grid-row: 1;
-			grid-column: var(--grid-column);
+		&.autoFlexColumn {
+			flex-direction: column;
 		}
 	}
 
@@ -67,35 +62,6 @@
 			display: none !important;
 		}
 	}
-	
-	/* SPECIFIC STYLES */
-	[data-field="verve"],
-	[data-field="mana"],
-	[data-field="psi"] {
-		display: flex;
-		flex-direction: column;
-		gap: var(--padding-standard);
-
-		h2 { margin-bottom: 0; }
-
-		.resourceFields {
-			display: flex;
-			gap: var(--padding-half);
-
-			& > * { max-width: 100px; }
-
-			.overResourced,
-			.overResourced input {
-				color: rgb(var(--colour-scarlet));
-			}
-		}
-
-		.maxLabel {
-			font-size: 0.9rem;
-			font-style: italic;
-			color: #999;
-		}
-	}
 
 	.sections {
 		/* VITAE SECTION */
@@ -109,12 +75,6 @@
 			display: grid;
 			grid-template-columns: var(--grid-template-columns);
 			gap: var(--padding-half);
-
-			.metaData {
-				display: flex;
-				flex-direction: column;
-				gap: var(--padding-standard);
-			}
 
 			.labelField {
 				--flex-direction: column;
@@ -132,7 +92,7 @@
 				display: flex;
 				flex-direction: var(--flex-direction);
 				align-items: var(--align-items);
-				gap: calc(0.5 * var(--padding-standard));
+				gap: var(--padding-1-4);
 				width: 100%;
 
 				label {
@@ -217,7 +177,7 @@
 
 					display: flex;
 					flex-direction: var(--flex-direction);
-					gap: calc(0.5 * var(--padding-standard));
+					gap: calc(0.5 * var(--padding-half));
 					width: 100%;
 				}
 
@@ -225,14 +185,14 @@
 					display: grid;
 					grid-template-columns: var(--grid-template-columns);
 					flex-wrap: wrap;
-					gap: calc(0.5 * var(--padding-standard));
+					gap: var(--padding-half);
 
 					.stat {
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						gap: calc(0.5 * var(--padding-standard));
-						padding: calc(0.5 * var(--padding-standard));
+						gap: var(--padding-half);
+						padding: var(--padding-half);
 						border-radius: var(--radius-standard);
 						background-color: rgba(var(--colour-cream), 0.3);
 
@@ -246,52 +206,28 @@
 					flex-basis: 100%;
 				}
 			}
-
-			[data-field="racial_bonuses"],
-			[data-field="known_languages"] {
-				display: flex;
-				flex-direction: column;
-				box-sizing: border-box;
-
-				label {
-					display: flex;
-					white-space: nowrap;
-					gap: var(--padding-half);
-					width: 100%;
-				}
-			}
 		}
 
 		.sectionWellness {
-			display: grid;
-			gap: calc(0.5 * var(--padding-standard));
 			background-color: rgba(var(--colour-scarlet), 0.15);
 
-			[data-field="verve"],
-			[data-field="statuses"],
-			[data-field="item_belt"] {
-				display: flex;
-				flex-wrap: wrap;
-				gap: calc(0.5 * var(--padding-standard));
-				align-content: flex-start;
-
-				h2 {
-					margin-bottom: 0;
-				}
+			.itemBeltField,
+			.armoursField,
+			.skillsField {
+				grid-column: 1 / -1;
 			}
 
-			[data-field="statuses"] {
-				flex-direction: column;
+			.statusesField {
+				grid-column: 1 / -1;
 
 				.status {
 					position: relative;
 					display: flex;
-					gap: var(--padding-half);
+					gap: var(--padding-1-4);
 					width: 100%;
 
 					textarea {
 						width: 100%;
-						height: 70px;
 					}
 
 					button {
@@ -305,92 +241,19 @@
 					}
 				}
 			}
-
-			[data-field="item_belt"] {
-				h2 {
-					flex-basis: 100%;
-				}
-
-				.beltValues {
-					display: flex;
-					gap: var(--padding-half);
-				}
-			}
-			
-			@media (min-width: 768px) {
-				[data-field="verve"] {
-					grid-column: 1;
-					grid-row: 1;
-				}
-
-				[data-field="item_belt"] {
-					grid-column: 2;
-					grid-row: 1;
-				}
-
-				[data-field="statuses"] {
-					grid-column: 1 / 3;
-					grid-row: 2;
-				}
-
-				[data-field="skill_preparedness"] {
-					grid-column: 1/3;
-					grid-row: 3;
-				}
-			}
 		}
 		
 		.sectionCombat {
-			display: flex;
-			flex-direction: column;
-			gap: var(--padding-half);
 			background-color: rgba(var(--colour-dark), 0.15);
 
-			[data-field="resistances"] {
-				display: flex;
-				flex-direction: column;
+			[data-field="combat_skills"] {
+				grid-row: auto;
+				grid-column: 1;
 
-				.addResistance {
-					display: flex;
-					gap: var(--padding-half);
-					align-items: flex-end;
-					margin-bottom: var(--padding-standard);
+				@media (min-width: 768px) {
+					grid-row: 2;
+					grid-column: 1 / 3;
 				}
-
-				.resistanceList {
-					.activeResistance {
-						display: flex;
-						gap: var(--padding-half);
-						align-items: flex-end;
-					}
-				}
-			}
-
-			.combatMetaLayout {
-				.weaponFields,
-				.armourFields {
-					display: grid;
-					gap: var(--padding-half);
-				}
-
-				.weaponFields {
-					grid-template-columns: 115px 75px 50px 50px auto;
-				}
-
-				.armourFields {
-					grid-template-columns: 115px 75px auto;
-				}
-			}
-
-			h2 img {
-				height: 20px;
-				vertical-align: middle;
-				margin-right: 6px;
-			}
-
-			.combatSkillsLayout {
-				grid-row: 2;
-				grid-column: 1 / 3;
 			}
 		}
 
@@ -408,6 +271,41 @@
 
 		.sectionBeastMastery {
 			background-color: rgba(var(--colour-green), 0.15);
+
+			.beast_skill_and_moves {
+				display: flex;
+				flex-direction: column;
+				gap: var(--padding-half);
+			}
+
+			.companionField {
+				> h2 {
+					position: relative;
+
+					button {
+						position: absolute;
+						right: 0;
+						top: -2px;
+						height: 35px;
+						line-height: 35px;
+					}
+				}
+
+				.companionNotes textarea {
+					width: 100%;
+					height: 60px;
+				}
+
+				.companionLayout {
+					display: flex;
+					flex-direction: column;
+					gap: var(--padding-half);
+
+					.companionBlock {
+						grid-column: 1 / 3;
+					}
+				}
+			}
 		}
 
 		.sectionInnerPower {
@@ -417,10 +315,27 @@
 		.sectionMagic {
 			background-color: rgba(var(--colour-scarlet), 0.15);
 
-			[data-field="magic-meta"] {
-				display: grid;
-				grid-template-columns: var(--grid-template-columns);
-				gap: var(--padding-half);
+			.spellsField {
+				grid-column: 1 / -1;
+
+				.spellBlock {
+					--width: 100%;
+					--margin-right: 0;
+
+					@media (min-width: 600px) {
+						--width: calc(50% - 12px);
+						--margin-right: 10px;
+					}
+
+					display: flex;
+					gap: var(--padding-1-4);
+					width: var(--width);
+					margin-right: var(--margin-right);
+
+					button {
+						min-width: 38px;
+					}
+				}
 			}
 		}
 
@@ -435,15 +350,9 @@
 				--full-columns: 1 / 3;
 			}
 
-			.standards,
-			.consumables {
+			.standardsField,
+			.consumablesField {
 				grid-column: var(--full-columns);
-			}
-
-			.block {
-				display: flex;
-				flex-direction: column;
-				gap: var(--padding-half);
 			}
 		}
 
@@ -466,3 +375,21 @@
 	}
 
 }
+
+/* Combat Mode Trial */
+/* Abandoned: not enough control */
+/*section > h1,
+.standards,
+[data-name="Notes"],
+.sectionVitaeOuter,
+[data-type="Skill"][data-purchases="false"],
+[data-type="Expertise"][data-purchases="false"],
+[data-type="Passive"][data-purchases="false"] {
+	display: none !important;
+}
+
+section:after {
+	height: 10px;
+	margin: 0px !important;
+	background-image: none !important;
+}*/

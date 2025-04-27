@@ -20,11 +20,12 @@ import { updateGadgetsData } from '../features/firebase/data/gadgetsDataSlice.ts
 import { updateWeaponSpecialisationsData }  from '../features/firebase/data/weaponSpecialisationsDataSlice.ts';
 import { updateSourcesData } from '../features/firebase/data/sourcesDataSlice.ts';
 import { updateRacialBonusesData } from '../features/firebase/data/racialBonusesDataSlice.ts';
+import { updateLanguagesData } from '../features/firebase/data/languagesDataSlice.ts';
+import { updateSynergiesData } from '../features/firebase/data/synergiesDataSlice.ts';
+import { updatePsionicPowersData } from '../features/firebase/data/psionicPowersDataSlice.ts';
 
 import WritLayout from './layout/writLayout.tsx';
 import Home from './home/home.tsx';
-import { updateLanguagesData } from '../features/firebase/data/languagesDataSlice.ts';
-import { updateSynergiesData } from '../features/firebase/data/synergiesDataSlice.ts';
 
 export function App() {
 	const authState = useAuthState();
@@ -47,7 +48,13 @@ export function App() {
 				dispatch(updateSpellsData(snapshot.val()));
 			});
 
-			// Collect spells data
+			// Collect psionic powers data
+			const psionicPowersDataRef = await ref(database, '/psionic_powers');
+			onValue(psionicPowersDataRef, (snapshot) => {
+				dispatch(updatePsionicPowersData(snapshot.val()));
+			});
+
+			// Collect alchemicals data
 			const alchemicalsDataRef = await ref(database, '/alchemicals');
 			onValue(alchemicalsDataRef, (snapshot) => {
 				dispatch(updateAlchemicalsData(snapshot.val()));

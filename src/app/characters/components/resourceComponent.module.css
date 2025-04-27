@@ -1,0 +1,5 @@
+.resourceContainer {
+	display: flex;
+	gap: var(--padding-standard);
+	flex-wrap: wrap;
+}

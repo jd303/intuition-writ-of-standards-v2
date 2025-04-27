@@ -20,6 +20,10 @@
 		}
 	}
 
+	h1 {
+		margin-bottom: var(--padding-1-4);
+	}
+
 	.title {
 		display: flex;
 		justify-content: space-between;
@@ -37,9 +41,13 @@
 		}
 	}
 
-	.sectionContent {
-		padding: calc(0.5 * var(--padding-standard));
-		border: var(--border-dashed-subtle);
-		border-radius: var(--radius-standard);
+	&.plain {}
+
+	&.default {
+		.sectionContent {
+			padding: calc(0.5 * var(--padding-standard));
+			border: var(--border-dashed-subtle);
+			border-radius: var(--radius-standard);
+		}
 	}
 }

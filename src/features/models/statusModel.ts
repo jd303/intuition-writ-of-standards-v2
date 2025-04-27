@@ -1,4 +1,4 @@
-export interface Status {
+export interface StatusModel {
 	type: string,
 	id: string,
 	negative: boolean,

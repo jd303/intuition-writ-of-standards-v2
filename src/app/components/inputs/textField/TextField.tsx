@@ -1,8 +1,7 @@
-import st from './TextField.module.css';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import FieldContainer from '../fieldContainer/FieldContainer';
 
-function TextField({ initialValue, type = "text", label, disabled = false, className, onChange }: { initialValue: string | number, type?: "text" | "textarea" | "number", label?: string, disabled?: boolean, className?: string, onChange?: (value: string | number) => void }) {
+function TextField({ initialValue, type = "text", label, disabled = false, className, onChange, autosize = false }: { initialValue: string | number, type?: "text" | "textarea" | "number", label?: string, disabled?: boolean, className?: string, onChange?: (value: string | number) => void, autosize?: boolean }) {
 	const changeTimeout = useRef<NodeJS.Timeout>(null);
 	const [value, setValue] = useState<string | number>(initialValue);
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -15,14 +14,25 @@ function TextField({ initialValue, type = "text", label, disabled = false, class
 		}, 1000);
 	}
 
+	// Autosize textareas
+	const textareaRef = useRef(null);
+	const statusFieldClassName = useEffect(() => {
+		if (type == "textarea" && autosize && textareaRef.current) {
+			setTimeout(() => {
+				(textareaRef.current! as HTMLElement).style.height = 'auto';
+				(textareaRef.current! as HTMLElement).style.height = `${Math.max(25, (textareaRef.current! as HTMLElement).scrollHeight + 10)}px`;
+			}, 500);
+		}
+	}, [type, autosize, initialValue]);
+
 	useEffect(() => {
 		setValue(initialValue);
 	}, [initialValue]);
 
 	return (
-		<FieldContainer label={label} className={className}>
+		<FieldContainer label={label} className={className || ''} data-size={statusFieldClassName}>
 			{type == "textarea" ? (
-				<textarea value={value} onChange={handleOnChange} disabled={disabled} />
+				<textarea value={value} onChange={handleOnChange} disabled={disabled} ref={textareaRef} />
 			) : (
 				<input type={type} value={value} onChange={handleOnChange} disabled={disabled} />
 			)}

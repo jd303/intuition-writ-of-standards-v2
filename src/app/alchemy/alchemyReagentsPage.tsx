@@ -11,10 +11,10 @@ import { AlchemicalModel, ReagentComponents } from "../../features/models/alchem
 import AlchemicalBlock from "../components/alchemical/alchemicalBlock";
 import SelectorDropdown, { SELECTOR_DEFAULT } from "../components/controlBar/selectorDropdown";
 
-import bronzeMedal from "/public/images/icons/ico.medal.bronze.svg";
-import silverMedal from "/public/images/icons/ico.medal.silver.svg";
-import goldMedal from "/public/images/icons/ico.medal.gold.svg";
-import abstrateGoldMedal from "/public/images/icons/ico.medal.abstrategold.svg";
+import bronzeMedal from "/images/icons/ico.medal.bronze.svg";
+import silverMedal from "/images/icons/ico.medal.silver.svg";
+import goldMedal from "/images/icons/ico.medal.gold.svg";
+import abstrateGoldMedal from "/images/icons/ico.medal.abstrategold.svg";
 import st from './alchemyReagentsPage.module.css';
 
 function AlchemyReagentsPage() {

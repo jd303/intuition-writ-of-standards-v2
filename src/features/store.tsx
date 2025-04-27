@@ -8,6 +8,7 @@ import equipmentDataReducer from './firebase/data/equipmentDataSlice';
 import menagerieDataReducer from './firebase/data/menagerieDataSlice';
 import companionMovesDataReducer from './firebase/data/companionMovesDataSlice';
 import magicSpellsDataReducer from './firebase/data/spellsDataSlice';
+import psionicPowersDataReducer from './firebase/data/psionicPowersDataSlice';
 import alchemicalsDataReducer from './firebase/data/alchemicalsDataSlice';
 import gadgetsDataReducer from './firebase/data/gadgetsDataSlice';
 import weaponSpecialisationsReducer from './firebase/data/weaponSpecialisationsDataSlice';
@@ -27,6 +28,7 @@ export const store = configureStore({
 	menagerieData: menagerieDataReducer,
 	companionMovesData: companionMovesDataReducer,
 	magicSpells: magicSpellsDataReducer,
+	psionicPowers: psionicPowersDataReducer,
 	alchemicals: alchemicalsDataReducer,
 	gadgets: gadgetsDataReducer,
 	weaponSpecialisations: weaponSpecialisationsReducer,

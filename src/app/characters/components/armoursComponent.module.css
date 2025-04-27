@@ -1,0 +1,36 @@
+.armourContainer {
+	container-type: inline-size;
+
+	.armourList {
+		display: grid;
+		gap: var(--padding-1-4);
+		grid-template-columns: 150px 50px auto;
+
+		div:nth-child(4) label,
+		div:nth-child(5) label,
+		div:nth-child(6) label {
+			display: none;
+		}
+
+		@container (max-width: 500px) {
+			grid-template-columns: 45px auto auto;
+
+			div:nth-child(4) label,
+			div:nth-child(5) label,
+			div:nth-child(6) label {
+				display: block;
+			}
+			
+			label {
+				margin-top: var(--padding-1-4);
+			}
+
+			.name {
+				grid-column: 1 / 4;
+			}
+			.effects {
+				grid-column: 2 / 4;
+			}
+		}
+	}
+}

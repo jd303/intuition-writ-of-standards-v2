@@ -1,0 +1,39 @@
+.container {
+	position: fixed;
+	z-index: 50;
+	top: 50%;
+	left: 50%;
+	display: none;
+
+	&.open {
+		display: block;
+	}
+
+	.content {
+		position: relative;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+		width: min(450px, 82vw);
+		padding: var(--padding-standard);
+		border-radius: var(--radius-standard);
+		background-color: rgba(var(--colour-cream));
+		box-shadow: var(--box-shadow-standard);
+
+		.close {
+			position: absolute;
+			left: 0;
+			bottom: calc(100% + 5px);
+			width: 40px;
+		}
+	}
+
+	.closer {
+		width: 10000px;
+		height: 10000px;
+		position: absolute;
+		z-index: 1;
+		left: -5000px;
+		top: -5000px;
+		background-color: rgba(0, 0, 0, 0.25);
+	}
+}

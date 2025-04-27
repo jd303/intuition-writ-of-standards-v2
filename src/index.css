@@ -4,13 +4,14 @@
 	--padding-half: calc(0.5 * var(--padding-standard));
 	--padding-3-4: calc(0.75 * var(--padding-standard));
 	--radius-standard: 10px;
-	--purchase-point-size: 12px;
+	--purchase-point-size: 10px;
 	--font-size-standard: 0.9rem;
 	--font-size-h1: 1.75rem;
 	--font-size-h2: 1.25rem;
 	--font-size-h3: 1.1rem;
 	--bevel-size: 7px;
 	--text-shadow-standard: 2px 2px 5px rgba(0, 0, 0, 0.9);
+	--box-shadow-standard: 5px 5px 4px rgba(0, 0, 0, 0.1);
 	--inputs-height: 40px;
 	--max-width-content-page: 1000px;
 	--max-width-character-sheet-page: 1500px;
@@ -20,7 +21,7 @@
 	@media (min-width: 769px) {
 		--padding-standard: 15px;
 		--font-size-standard: 0.95rem;
-		--purchase-point-size: 15px;
+		--purchase-point-size: 13px;
 	}
 
 	/* Colour Palette */
@@ -74,6 +75,13 @@
 			#FFE9B4 80%,
 			#FFD062 84%,
 			#ffffff);
+	--colour-gold-abstrate-gradient: linear-gradient(-72deg,
+			#FB672E,
+			#FF9C3D 16%,
+			#FFE9B4 21%,
+			#FF9C3D 60%,
+			#FB672E 84%,
+			#FB672E);
 
 	--shape-bevelled: polygon(0 var(--bevel-size),
 			calc(var(--bevel-size) / 2) var(--bevel-size),
@@ -96,7 +104,7 @@
 
 @font-face {
 	font-family: "trattatello";
-	src: url("public/fonts/trattatello/trattatello.woff2") format("woff2"), url("public/fonts/trattatello/trattatello.woff") format("woff");
+	src: url("/fonts/trattatello/trattatello.woff2") format("woff2"), url("/fonts/trattatello/trattatello.woff") format("woff");
 }
 
 @media screen {
@@ -203,7 +211,7 @@ html, body {
 	font-variation-settings: "wdth" 100;
 	font-size: var(--font-size-standard);
 	color: rgb(var(--colour-dark));
-	background-image: url('public/images/bg.paper.texture.webp');
+	background-image: url('/images/bg.paper.texture.webp');
 }
 
 h1, h2, h3, h4 {
@@ -244,7 +252,7 @@ section {
 		margin: calc(2 * var(--padding-standard)) 0;
 		width: 100%;
     	height: 20px;
-		background-image: url('/public/images/gr.charactersheet.border.svg');
+		background-image: url('/images/gr.charactersheet.border.svg');
     	opacity: .075;
 	}
 }
@@ -281,11 +289,12 @@ button {
 	border-radius: calc(0.75 * var(--radius-standard));
 	background-color: rgb(var(--colour-cream));
 	cursor: pointer;
+	color: #000;
 	transition: all 0.25s;
 	
 	&:hover {
 		background-color: color-mix(in srgb, rgb(var(--colour-cream)) 100%, #fff 50%);
-		box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: var(--box-shadow-standard);
 	}
 }
 

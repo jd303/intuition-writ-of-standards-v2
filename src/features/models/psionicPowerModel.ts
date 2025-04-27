@@ -1,0 +1,18 @@
+export interface PsionicPowerModel {
+	id: string,
+	name: string,
+	level: number,
+	aptitude: string,
+	shape: string,
+	desc: string,
+	mod1pt: number,
+	mod1: string,
+	mod2pt: number,
+	mod2: string,
+	mod3pt: number,
+	mod3: string,
+	mod4pt: number,
+	mod4: string,
+	duration: string,
+	save: string,
+}

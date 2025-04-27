@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GenericModel } from "../../models/genericModel";
 import { AlchemicalModel } from "../../models/alchemicalModel";
 
 interface AlchemicalsData {
@@ -17,8 +16,8 @@ export const alchemicalsDataSlice = createSlice({
 	initialState: initialState,
 	reducers: {
 		updateAlchemicalsData: (state, data) => {
-			state.recipes = data.payload.filter((item: GenericModel) => item.type == "recipe");
-			state.reagents = data.payload.filter((item: GenericModel) => item.type == "reagent");
+			state.recipes = data.payload.filter((item: AlchemicalModel) => item.type == "recipe");
+			state.reagents = data.payload.filter((item: AlchemicalModel) => item.type == "reagent");
 		}
 	}
 });

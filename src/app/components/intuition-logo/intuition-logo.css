@@ -1,6 +1,10 @@
 .logo {
 	height: 100%;
-	aspect-ratio: 2/2;
+	aspect-ratio: 1/1.5;
+
+	&.shrink {
+		height: 75%;
+	}
 
 	& img {
 		max-height: 100%;

@@ -14,6 +14,4 @@ export const combatDataSlice = createSlice({
 
 export const { updateCombatData } = combatDataSlice.actions;
 
-export const selectCombatData = (state) => state.combatData.value;
-
 export default combatDataSlice.reducer;

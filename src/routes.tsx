@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import Account from "./app/account/account";
 import CharactersPage from "./app/characters/charactersPage";
 import CharacterSheetPage from "./app/characters/characterSheetPage";
+import CharacterCombatPage from "./app/characters/characterCombatPage";
 import RulesPage from "./app/rules/rulesPage";
 import GlossaryPage from "./app/rules/glossaryPage";
 import MovesPage from "./app/rules/movesPage";
@@ -18,6 +19,8 @@ import AlchemyRecipesPage from "./app/alchemy/alchemyRecipesPage";
 import AlchemyReagentsPage from "./app/alchemy/alchemyReagentsPage";
 import GadgetsGuidePage from "./app/gadgets/gadgetsGuidePage";
 import GadgetsPage from "./app/gadgets/gadgetsPage";
+import PsionicsGuidePage from "./app/psionics/psionicsGuidePage";
+import PsionicPowersPage from "./app/psionics/psionicsPowersPage";
 
 export const routes: RouteDefinition[] = [
 	{
@@ -53,6 +56,16 @@ export const routes: RouteDefinition[] = [
 		label: "Character Sheet",
 		sectionColour: 'cobalt',
 		element: <CharacterSheetPage />,
+		parentRoute: false,
+		omitFromSubNav: true,
+		sectionName: 'characterInfo',
+	},
+	{
+		path: "/characters/:id/combat",
+		authLevel: 1,
+		label: "Combat Sheet",
+		sectionColour: 'cobalt',
+		element: <CharacterCombatPage />,
 		parentRoute: false,
 		omitFromSubNav: true,
 		sectionName: 'characterInfo',
@@ -133,7 +146,27 @@ export const routes: RouteDefinition[] = [
 		authLevel: 0,
 		label: "Psionics",
 		sectionColour: 'scarlet',
+		element: <PsionicsGuidePage />,
 		parentRoute: true,
+		sectionName: 'psionics',
+	},
+	{
+		path: "/psionics/guide",
+		authLevel: 0,
+		label: "Guide",
+		sectionColour: 'scarlet',
+		element: <PsionicsGuidePage />,
+		parentRoute: false,
+		sectionName: 'psionics',
+	},
+	{
+		path: "/psionics/powers",
+		authLevel: 0,
+		label: "Powers",
+		sectionColour: 'scarlet',
+		element: <PsionicPowersPage />,
+		parentRoute: false,
+		sectionName: 'psionics',
 	},
 
 	{

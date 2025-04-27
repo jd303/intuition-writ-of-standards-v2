@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Spell } from "../../models/spellModel";
+import { SpellModel } from "../../models/spellModel";
 
 interface SpellsData {
-	spells: Spell[]
+	spells: SpellModel[]
 }
 
 const initialState: SpellsData = {

@@ -2,15 +2,22 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--padding-standard);
+	padding: var(--padding-standard) 0;
+	
+	&:first-of-type {
+		margin-bottom: var(--padding-standard);
+	}
 
 	& h1 {
 		margin-bottom: 0;
 	}
 
 	& .characterItem {
-		display: flex;
-		gap: calc(0.5 * var(--padding-standard));
+		display: grid;
+		grid-template-columns: 1fr 70px;
+		gap: var(--padding-half);
 		align-items: center;
+		max-width: 400px;
 	}
 
 	& .characterLink {
@@ -31,23 +38,25 @@
 	}
 
 	& .confirmButton {
-		height: 50px;
+		min-height: 100%;
 		padding-left: var(--padding-standard);
 		padding-right: var(--padding-standard);
 	}
 }
 
 .newCharacterForm {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--padding-standard);
+	max-width: 400px;
+	display: grid;
+	grid-template-columns: 1fr 70px;
+	gap: var(--padding-half);
+	width: 100%;
 }
 
 hr {
 	height: 30px;
 	margin: var(--padding-standard) 0;
 	opacity: 0.075;
-	background-image: url('/public/images/gr.charactersheet.border.svg');
+	background-image: url('/images/gr.charactersheet.border.svg');
 	outline: none;
 	border: none;
 }

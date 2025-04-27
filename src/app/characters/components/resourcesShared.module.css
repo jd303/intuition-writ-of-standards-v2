@@ -1,0 +1,22 @@
+.resourceFields {
+	display: flex;
+	gap: var(--padding-1-4);
+
+	label {
+		margin: 2px 0 4px 0;
+	}
+
+	& > * { max-width: 100px; }
+
+	.overResourced,
+	.overResourced input {
+		color: rgb(var(--colour-scarlet));
+	}
+}
+
+.maxLabel {
+	font-size: 0.9rem;
+	font-style: italic;
+	color: #999;
+	margin-right: var(--padding-standard);
+}

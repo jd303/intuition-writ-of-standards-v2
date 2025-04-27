@@ -13,7 +13,7 @@
         "negative": false,
         "name": "Energy Shielded",
         "domain": "ciar",
-        "effect": "You are enveloped in a shield of energy.  While shielded, you reduce Verve Loss applied by energy of that type by 3 per DC, apply 3 Verve Loss of the energy type to Moves that bring you into contact with an enemy, including Melee Attack and Block and Dodge."
+        "effect": "You are enveloped in a shield of energy.  You reduce Verve Loss applied by energy of that type by 3 per DC, apply 3 Verve Loss of the energy type to Moves that bring you into contact with an enemy, including Melee Attack and Basic Defence."
     },
     {
         "type": "short (1)",
@@ -53,7 +53,7 @@
         "negative": true,
         "name": "Confused",
         "domain": "corpus",
-        "effect": "When attempting any Move, a Raw Value of 8- grants the DM the ability to choose a new target, or cancel the action.  If the Move does not require a Roll, you must Roll for the Raw Value."
+        "effect": "When attempting any Move, a Raw Value of 3(DC)- grants the DM the ability to choose a new target, or cancel the action.  If the Move does not require a Roll, you must Roll for the Raw Value."
     },
     {
         "type": "standard (3)",
@@ -89,6 +89,14 @@
     },
     {
         "type": "standard (3)",
+        "id": "0a068f68",
+        "negative": false,
+        "name": "Enraged",
+        "domain": "mentus",
+        "effect": "You are aggressive and angry.\n-- Aggravated: You aggressively approach and attack targets you consider opponents, using only the Relocate and Combat Moves (unless unable to).  Attacks made when Enraged apply 5 additional Verve Loss.\n-- Unstoppable Rage: You gain 3 UDR, may no longer gain Raging for the rest of the combat, reduce Raging by 1 point per turn, gain immunity to mental effects, and may only use the Relocate and Melee Attack Moves with no Expertise, or the Rage Move and Expertises or Rage Passives.  Unstoppable Rage ends when combat ends or if you run out of Raging."
+    },
+    {
+        "type": "standard (3)",
         "id": "eb65bb44",
         "negative": true,
         "name": "Incapacitated",
@@ -97,35 +105,27 @@
     },
     {
         "type": "standard (3)",
-        "id": "5e75dfa0",
-        "negative": true,
-        "name": "Enraged",
-        "domain": "mentus",
-        "effect": "The enraged target will aggressively approach and attack targets it considers their opponents, using only the Relocate and Unmodded Attack Moves if it can unless unable to.  Attacks made when Enraged apply 5 additional Verve Loss."
-    },
-    {
-        "type": "standard (3)",
         "id": "95b27798",
         "negative": false,
         "name": "Fortified",
         "domain": "ciar",
-        "effect": "The maximum Verve Loss you can have applied to you from any single source, after resolving defences, is limited based on the DC of Fortified.  The maximum Verve is equal to 20 minus 2 per DC beyond 1.  For example, 18 Verve at DC 2."
+        "effect": "The maximum Verve Loss you can have applied to you from any Resolved single source is limited based on the DC of Fortified.  The maximum Verve is equal to 14 minus 2 per DC beyond 1.  For example, 12 Verve at DC 2."
     },
     {
         "type": "standard (3)",
         "id": "171709ae",
         "negative": false,
-        "name": "Hasted",
+        "name": "Temporality",
         "domain": "corpus",
-        "effect": "Your speed is multiplied by 1.5.  You gain 1 additional Primary, Relocate or Quick Action each turn.  When you leave Hasted, you gain the Stunned / Slowed (Stunned) Status."
+        "effect": "Your body inhabits a different temporality:\n-- When Hasted: Your speed is multiplied by 1.5.  You gain 1 additional Primary, Relocate or Quick Action each turn.  When you leave Hasted, you gain the Scrambled: Stunned Status for 1 round.\n-- When Slowed: Your speed is halved and you lose either your Primary or Relocate Action each turn."
     },
     {
         "type": "standard (3)",
         "id": "84286d9f",
         "negative": true,
-        "name": "Stunned / Slowed",
+        "name": "Scrambled",
         "domain": "mentus",
-        "effect": "You are inhibited due to beign shocked, stunned, paralysed or slowed.  You may attempt to remove the Dazed or Stunned effects by resolving Resist Mental, once each turn as a Free Action.\n-- Dazed: Your vision is reduced to 6 squares and Quick Actions are resolved as Primary Actions.\n-- Stunned: Your vision is reduced to 6 squares and you lose your Primary Action, and you can no longer maintain concentration.\n-- Paralysed: You lose all your actions.  Attempting to resist Paralysed each turn incurs a -3 Penalty.\n-- Slowed: Your speed is halved and you lose either your Primary or Relocate Action each turn.\n-- Chilled: Your speed is reduced by (DC)."
+        "effect": "You are inhibited due to beign shocked, stunned or paralysed.  You may attempt to remove the Dazed or Stunned effects by resolving Resist Mental, once each turn as a Free Action.\n-- Dazed: Your vision is reduced to 6sq, Quick / Free Actions are resolved as Primary Actions, and all Moves fail on a Raw Roll of 2-.\n-- Stunned: Your vision is reduced to 6sq and you lose your Primary Action, and you can no longer maintain concentration.\n-- Fascinated: Your vision is reduced to 6sq and you lose your Reaction Actions, unless you are considering the object / creature of your Fascination.\n-- Paralysed: You lose all your actions.\n-- Psitosis: Your vision is reduced to 6sq and you lose your Primary and Reaction Actions, and you can no longer maintain concentration.\n-- Chilled: Your speed is reduced by (DC)."
     },
     {
         "type": "standard (3)",
@@ -133,7 +133,7 @@
         "negative": true,
         "name": "Unnerved",
         "domain": "mentus",
-        "effect": "You partially lose control of your emotions.\n-- Dissuaded: You will prefer not to take an action or target a creature or place, depending on the Dissuade command.  You may ignore this effect, but will fumble and lose your action on a Raw Roll of 3+(DC)-.\n-- Provoked: You prefer to target the object of your provoking and will prefer offensive moves against them.  If you do not, you incur 2(DC) Verve Loss per action you take, though if you are doing so due to significant danger to yourself, this is only 1/2(DC).\n-- Intimidated: You prefer to avoid the target of your intimidation.  If you ignore this, Unresolved Verve Loss you apply is reduced by 2(DC)."
+        "effect": "You partially lose control of your emotions.\n-- Dissuaded: You will prefer not to take an action or target a creature or place, depending on the Dissuade command.  You may ignore this effect, but will fumble and lose your action on a Raw Roll of 3+(DC)-.\n-- Provoked: You prefer to target the object of your provoking and will prefer offensive moves against them.  If you do not, you incur 3(DC) Verve Loss per action you take, though if you are doing so due to significant danger to yourself, this is only 1(DC).\n-- Intimidated: You prefer to avoid the target of your intimidation.  If you ignore this, Unresolved Verve Loss you apply is reduced by 2(DC)."
     },
     {
         "type": "long (∞)",
@@ -157,7 +157,7 @@
         "negative": true,
         "name": "Debilitated",
         "domain": "mentus",
-        "effect": "You incur a -(DC) penalty to Move Rolls or Move Rolls of a certain type (such as Moves using a Mental Stat, Defences, or Resistances), and automatically fail to hit in combat on a Raw Roll of (DC+1)-.  The Penalty does not apply to other Raw Rolls.  Debilitated effects stack.  Unique Debilitated sources include:\n-- Fear and Terror: Only active while you can perceive the source of the Status.\n-- Shocked (Mental Moves) and Gusted (Effects that try to move the player): Applied by magic criticals.\n... and others can include being Sickened, Weakened"
+        "effect": "You are debilitated.  Debilitated sources include:\n-- Fear and Terror: -1 per DC to Move Rolls against the source of the Status.\n-- Weakened: -1 per DC to Moves using a physical Stat.\n-- Shocked: -1 per DC to Moves using a Mental Stat.\n-- Gusted: -2 per DC to saves of Moves that try to move the player."
     },
     {
         "type": "long (∞)",
@@ -165,7 +165,7 @@
         "negative": true,
         "name": "Diseased",
         "domain": "corpus",
-        "effect": "Whenever you perform a Raw Roll lower than 2(DC)-, you gain the Exhausted Status.  Doing so again applies the Stunned / Slowed: Dazed Status."
+        "effect": "Whenever you perform a Raw Roll lower than 2(DC)-, you gain the Exhausted Status.  Doing so again applies the Scrambled: Dazed Status."
     },
     {
         "type": "long (∞)",
@@ -206,14 +206,6 @@
         "name": "Stealth",
         "domain": "corpus",
         "effect": "You are unseen and unheard, and cannot be targeted by enemy Moves.  If anything sees or hears you (and can identify the source of the sound), you lose the Stealth Status."
-    },
-    {
-        "type": "long (∞)",
-        "id": "0a068f68",
-        "negative": false,
-        "name": "Unstoppable Rage",
-        "domain": "mentus",
-        "effect": "You gain 3 UDR, may no longer gain Raging, and may only use the Relocate and Melee Attack Moves with no Expertise, or the Rage Move and Expertises or Rage Passives.  Unstoppable Rage ends when combat ends or if you run out of Raging."
     },
     {
         "type": "long (∞)",

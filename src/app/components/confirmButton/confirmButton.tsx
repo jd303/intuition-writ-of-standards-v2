@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import st from './confirmButton.module.css';
 
-function ConfirmButton( { onClick, label, confirmLabel = 'Tap again to confirm', className, confirmValue = undefined, disabled = false }: { onClick: (value: string | number | boolean | void) => void, label: string, confirmLabel?: string, className?: string, confirmValue?: string | number | boolean, disabled?: boolean } ) {
+function ConfirmButton( { onClick, label, confirmLabel = 'Confirm?', className, confirmValue = undefined, disabled = false }: { onClick: (value: string | number | boolean | void) => void, label: string, confirmLabel?: string, className?: string, confirmValue?: string | number | boolean, disabled?: boolean } ) {
 	const [confirmMode, setConfirmMode] = useState(false);
 	const triggerClick = () => {
 		if (confirmMode) {

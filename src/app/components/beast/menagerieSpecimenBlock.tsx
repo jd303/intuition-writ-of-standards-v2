@@ -13,24 +13,28 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 	const modifyBase = (event: ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value;
 		const newMonster = { ...menagerieSpecimen, base: value };
+		console.log(newMonster);
 		//modifyMonster(newMonster);
 	}
 
-	const modifyNotes = (event) => {
+	const modifyNotes = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		const value = event.target.value;
 		const newMonster = { ...menagerieSpecimen, notes: value };
+		console.log(newMonster);
 		//modifyMonster(newMonster);
 	}
 
 	const verveUp = () => {
-		const value = menagerieSpecimen.current_verve;
+		const value = menagerieSpecimen.current_verve || menagerieSpecimen.verve;
 		const newMonster = { ...menagerieSpecimen, current_verve: value + 1 };
+		console.log(newMonster);
 		//modifyMonster(newMonster);
 	}
 
 	const verveDown = () => {
-		const value = menagerieSpecimen.current_verve;
+		const value = menagerieSpecimen.current_verve || menagerieSpecimen.verve;
 		const newMonster = { ...menagerieSpecimen, current_verve: value - 1 };
+		console.log(newMonster);
 		//modifyMonster(newMonster);
 	}
 
@@ -58,7 +62,7 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 		//modifyMonster(newMonster);
 	}*/
 
-	const applyStatusOrDuration = (status) => {
+	/*const applyStatusOrDuration = (status) => {
 		const statusesValue = [...menagerieSpecimen.statuses] || [];
 
 		const existingStatus = statusesValue.find(comparedStatus => comparedStatus.id == status.id);
@@ -81,21 +85,23 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 					return 10;
 			}
 		}
-	}
+	}*/
 
 	const [statusVisible, setStatusVisible] = useState(false);
-	const modifyStatusDuration = (status, adjustment) => {
+	console.log(statusVisible);
+	/*const modifyStatusDuration = (status, adjustment) => {
 		let statusesValue = menagerieSpecimen.statuses && JSON.parse(JSON.stringify(menagerieSpecimen.statuses)) || [];
 		const existingStatus = statusesValue.find(comparedStatus => comparedStatus.id == status.id);
 		if (existingStatus && existingStatus.duration > 0) existingStatus.duration += adjustment;
 		if (existingStatus && existingStatus.duration === 0) statusesValue = statusesValue.filter(comparedStatus => comparedStatus.id !== status.id);
 		const newMonster = { ...menagerieSpecimen, statuses: statusesValue };
 		//modifyMonster(newMonster);
-	}
+	}*/
 
 	const toggleTurnTaken = () => {
 		const turnTaken = !menagerieSpecimen.turnTaken;
 		const newMonster = { ...menagerieSpecimen, turnTaken: turnTaken };
+		console.log(newMonster);
 		//modifyMonster(newMonster);
 	}
 
@@ -106,9 +112,10 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 	const toggleDesc = () => setDescShowing(!descShowing);
 
 	const [thisMinimalMode, setThisMinimalMode] = useState(false);
-	const expandMonster = () => {
+	console.log(thisMinimalMode, setThisMinimalMode);
+	/*const expandMonster = () => {
 		setThisMinimalMode(!thisMinimalMode);
-	}
+	}*/
 
 	return (
 		<div className={[st.specimenLayout, st[`mode-${mode}`]].join(' ')}>
@@ -124,7 +131,7 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 					<button className={[st.expandMonster, (thisMinimalMode && st.activeMinimalMode || '')].join(' ')} onClick={() => expandMonster(monster)}>⇩</button>
 				)*/}
 			<div className={st.metaBar}>
-				<h1 className={st.title}>{menagerieSpecimen.name} {menagerieSpecimen.description?.length && <span onClick={toggleDesc}>ⓘ</span>}</h1>
+				<div className={`${st.title} trattatello`}>{menagerieSpecimen.name} {menagerieSpecimen.description?.length && <span onClick={toggleDesc}>ⓘ</span>}</div>
 				<div className={st.subtitle}>
 					{menagerieSpecimen.type}, DC {menagerieSpecimen.dc}, {menagerieSpecimen.size}
 					<span className={[st.identifier, st.hideViewMode].join(' ')}><input className={st.subtleInput} value={menagerieSpecimen.base} onChange={modifyBase} /></span>
@@ -133,7 +140,7 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 				<div className={st.trackingBar}>
 					<div className={[st.verve, (menagerieSpecimen.current_verve !== undefined && menagerieSpecimen.current_verve <= 0) ? st.depleted : ''].join(' ')}>
 						<div className={st.verveValues}>
-							<h2>Verve:</h2>
+							<div className={`${st.verveTitle} trattatello`}>Verve:</div>
 							<span className={st.hideViewMode}>{menagerieSpecimen.current_verve || menagerieSpecimen.verve} /</span>{menagerieSpecimen.verve}
 							<button className={st.hideViewMode} onClick={() => verveUp()}>+</button>
 							<button className={st.hideViewMode} onClick={() => verveDown()}>-</button>
@@ -142,13 +149,13 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 				</div>
 			</div>
 
-			<div className={[st.imageContainer, imageLarge && st.imageLarge || ''].join(' ')} onClick={toggleImageLarge}><img src={`/public/menagerie/${menagerieSpecimen.image}`} alt="Monster" /></div>
+			<div className={[st.imageContainer, imageLarge && st.imageLarge || ''].join(' ')} onClick={toggleImageLarge}><img src={`/menagerie/${menagerieSpecimen.image}`} alt="Monster" /></div>
 			<div className={[st.statuses, st.paddedInnerSection, st.hideViewMode].join(' ')}>
 				<div className={st.column}>
 					<h2>Statuses <button onClick={() => setStatusVisible(true)}>Edit</button></h2>
 					<div className={st.statusList}>
 						{menagerieSpecimen.statuses?.map(status => (
-							<button key={`mon-${menagerieSpecimen._unique_id}-status-${status.id}`} className={[st.status].join(' ')} onClick={() => setStatusVisible(true)}>{status.name}: {status.duration}</button>
+							<button key={`mon-${menagerieSpecimen._unique_id}-status-${status.id}`} className={[st.status].join(' ')} onClick={() => setStatusVisible(true)}>{status.name}: {status.type}</button>
 						))}
 					</div>
 				</div>

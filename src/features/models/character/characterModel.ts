@@ -1,5 +1,3 @@
-import { GenericModel } from "./genericModel";
-
 export class CharacterModel {
 	// Initial Values
 	baseCharacterPoints = 24; // How many you start with at Session 0, adding 1 for session 1.
@@ -7,8 +5,8 @@ export class CharacterModel {
 	vervePerPoint = 5;
 	baseMana = 3; // How many Mana you start with
 	manaPerPoint = 3;
-	basePsi = 3; // How many Psi you start with
-	psiPerPoint = 1;
+	basePsi = 5; // How many Psi you start with
+	psiPerPoint = 2;
 
 	// Vitae values
 	id: string = "";
@@ -91,43 +89,24 @@ export class CharacterModel {
 		}
 	];
 
-	resistances: {
-		URes: number,
-		PRes: number,
-		MRes: number,
-		PyRes: number,
-		CryRes: number,
-		ElecRes: number,
-		ZephRes: number,
-		SonRes: number,
-		AcidRes: number,
-		UmbralRes: number,
-		LuminalRes: number,
-	} = {
-			URes: 0,
-			PRes: 0,
-			MRes: 0,
-			PyRes: 0,
-			CryRes: 0,
-			ElecRes: 0,
-			ZephRes: 0,
-			SonRes: 0,
-			AcidRes: 0,
-			UmbralRes: 0,
-			LuminalRes: 0,
-		}
+	resistances: ResistanceValues = {
+		URes: 0,
+		PRes: 0,
+		MRes: 0,
+		PyRes: 0,
+		CryRes: 0,
+		ElecRes: 0,
+		ZephRes: 0,
+		SonRes: 0,
+		AcidRes: 0,
+		UmbRes: 0,
+		LumRes: 0
+	}
 
 	statuses: string[] = [];
 
 	// Combat Values
 	weapons: WeaponDefinition[] = [
-		{
-			name: '',
-			damageDice: 'd4',
-			threat_range: 1,
-			bonus_damage: 0,
-			special: ''
-		},
 		{
 			name: '',
 			damageDice: 'd4',
@@ -178,10 +157,16 @@ export class CharacterModel {
 		notes3: "",
 	}
 
+	companion: CompanionDefinition = {
+		id: '',
+		current_verve: 0,
+		moves: [],
+		notes: ''
+	}
+
 	// Constructor
-	constructor(data?: GenericModel) {
+	constructor(data?: CharacterModel) {
 		if (data) {
-			console.log(">> Character", data);
 			this.id = data.id;
 			this.updated = data.updated;
 			this.vitae.name = data.vitae.name;
@@ -206,9 +191,11 @@ export class CharacterModel {
 			this.purchases = data.purchases;
 			this.magical_synergies = data.magical_synergies || [];
 			this.spells = data.spells || [];
+			this.companion = data.companion;
 			this.inventory = data.inventory;
 			this.item_belt = data.item_belt;
 			this.notes = data.notes;
+			console.log(">> Character", data);
 		}
 	}
 
@@ -216,6 +203,14 @@ export class CharacterModel {
 	updateValue(updatePath: string | string[], value: unknown | unknown[]) {
 		// Duplicate the object
 		const data = JSON.parse(JSON.stringify(this));
+
+		// Set defaults to avoid Firebase clearing fields
+		if (!data.statuses) data.statuses = [''];
+		if (!data.weapons) data.weapons = [''];
+		if (!data.inventory.equipment) data.inventory.equipment = [''];
+		if (!data.inventory.adventuring) data.inventory.adventuring = [''];
+		if (!data.inventory.consumables) data.inventory.consumables = [''];
+		if (!data.companion.moves) data.companion.moves = [''];
 
 		if (!Array.isArray(updatePath)) updatePath = [updatePath];
 		if (!Array.isArray(value)) value = [value];
@@ -231,22 +226,17 @@ export class CharacterModel {
 					property[pathKey] = (value as unknown[])[pathIndex];
 				} else {
 					property = property[pathKey];
-					if (!property) throw new Error("Path key not found");
+					if (!property) throw new Error(`Path key not found ${updatePath}`);
 				}
 			});
 		});
 
 		// Cleanup Statuses & Inventory
 		data.statuses = data.statuses.filter((st: string) => st.length > 0);
+		data.weapons = data.weapons.filter((weapon: string) => weapon !== '');
 		data.inventory.equipment = data.inventory.equipment?.filter((inv: string) => inv.length > 0);
 		data.inventory.adventuring = data.inventory.adventuring?.filter((inv: string) => inv.length > 0);
 		data.inventory.consumables = data.inventory.consumables?.filter((inv: string) => inv.length > 0);
-
-		// Set defaults to avoid Firebase clearing fields
-		if (!data.statuses) data.statuses = [''];
-		if (!data.inventory.equipment) data.inventory.equipment = [''];
-		if (!data.inventory.adventuring) data.inventory.adventuring = [''];
-		if (!data.inventory.consumables) data.inventory.consumables = [''];
 
 		// Return a new character based on this
 		return new CharacterModel(data);
@@ -303,7 +293,7 @@ interface ArmourDefinition {
 	effect: string;
 }
 
-interface WeaponDefinition {
+export interface WeaponDefinition {
 	name: string;
 	damageDice: string;
 	threat_range: 1 | 2 | 3;
@@ -316,6 +306,27 @@ interface InventoryDefinition {
 	equipment: string[];
 	adventuring: string[];
 	consumables: string[];
+}
+
+interface ResistanceValues {
+	URes: number;
+	PRes: number;
+	MRes: number;
+	PyRes: number;
+	CryRes: number;
+	ElecRes: number;
+	ZephRes: number;
+	SonRes: number;
+	AcidRes: number;
+	UmbRes: number;
+	LumRes: number;
+}
+
+interface CompanionDefinition {
+	id: string,
+	current_verve: number;
+	moves: string[],
+	notes: string
 }
 
 export interface CharacterPurchasesModel {

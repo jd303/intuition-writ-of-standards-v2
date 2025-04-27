@@ -9,7 +9,7 @@ footer {
 	box-sizing: border-box;
 	border-top-left-radius: calc(3 * var(--radius-standard));
 	border-top-right-radius: calc(3 * var(--radius-standard));
-	background-image: url('../../public/images/bg.nav.webp');
+	background-image: url('/images/bg.nav.webp');
 	background-size: cover;
 	background-position: 0 80%;
 }

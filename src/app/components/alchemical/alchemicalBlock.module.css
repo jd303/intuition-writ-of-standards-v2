@@ -25,27 +25,27 @@
 		}
 
 		&[data-type="Potion"]:after {
-			background-image: url("/public/images/icons/ico.potion.svg");
+			background-image: url("/images/icons/ico.potion.svg");
 		}
 
 		&[data-type="Bomb"]:after {
-			background-image: url("/public/images/icons/ico.bomb.svg");
+			background-image: url("/images/icons/ico.bomb.svg");
 		}
 
 		&[data-type="Poison"]:after {
-			background-image: url("/public/images/icons/ico.poison.svg");
+			background-image: url("/images/icons/ico.poison.svg");
 		}
 
 		&[data-type="Salve"]:after {
-			background-image: url("/public/images/icons/ico.salve.svg");
+			background-image: url("/images/icons/ico.salve.svg");
 		}
 
 		&[data-type="Applicant"]:after {
-			background-image: url("/public/images/icons/ico.poisoned.dagger.svg");
+			background-image: url("/images/icons/ico.poisoned.dagger.svg");
 		}
 
 		&[data-type="Misc"]:after {
-			background-image: url("/public/images/icons/ico.misc.svg");
+			background-image: url("/images/icons/ico.misc.svg");
 		}
 	}
 

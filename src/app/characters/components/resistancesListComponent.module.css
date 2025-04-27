@@ -1,0 +1,13 @@
+.resistancesListContainer {
+	width: 100%;
+
+	.resistanceList {
+		display: grid;
+		gap: var(--padding-1-4);
+		grid-template-columns: repeat(auto-fill, 56px);
+
+		> * {
+			width: 56px;
+		}
+	}
+}

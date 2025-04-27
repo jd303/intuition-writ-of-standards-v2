@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 
-import icoClose from '../../../../public/images/icons/ico.close.thick.svg';
+import icoClose from '/images/icons/ico.close.thick.svg';
 import st from './searchControl.module.css';
 
 function SearchControl( { name, initialValue, onChange }: { name: string, initialValue: string, onChange: (value: string) => void }) {

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "intuition-writ-of-persona"
+    "default": "intuition-writ-of-persona",
+	"staging": "intuition-writ-of-persona-staging"
   }
 }

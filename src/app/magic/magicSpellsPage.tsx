@@ -3,7 +3,7 @@ import { RootState } from "../../features/store";
 import { useAppDispatch, useAppSelector } from '../../features/firebaseHooks';
 import { setEnchantingSelection, setMagicSourceSelection, setSpellLevelSelection, setSpellSchoolSelection, setSpellsSearch } from '../../features/search/searchSlice';
 import { UIColours } from "../../features/constants/UIColours";
-import { Spell as SpellModel } from "../../features/models/spellModel";
+import { SpellModel } from "../../features/models/spellModel";
 import ControlBar from '../components/controlBar/controlBar';
 import SearchControl from "../components/controlBar/searchControl";
 import SpellBlock from "../components/spell/spellBlock";

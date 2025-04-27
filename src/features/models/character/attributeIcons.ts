@@ -1,9 +1,9 @@
-import icoStrength from '/public/images/icons/ico.fist.svg';
-import icoConstitution from '/public/images/icons/ico.runningman.svg';
-import icoDexterity from '/public/images/icons/ico.heartbeat.svg';
-import icoIntelligence from '/public/images/icons/ico.brain.svg';
-import icoWisdom from '/public/images/icons/ico.puzzlebrain.svg';
-import icoCharisma from '/public/images/icons/ico.thumbsup.svg';
+import icoStrength from '/images/icons/ico.fist.svg';
+import icoConstitution from '/images/icons/ico.runningman.svg';
+import icoDexterity from '/images/icons/ico.heartbeat.svg';
+import icoIntelligence from '/images/icons/ico.brain.svg';
+import icoWisdom from '/images/icons/ico.puzzlebrain.svg';
+import icoCharisma from '/images/icons/ico.thumbsup.svg';
 
 export const getAttributeIcon = (attrName: string) => {
 	switch (attrName) {

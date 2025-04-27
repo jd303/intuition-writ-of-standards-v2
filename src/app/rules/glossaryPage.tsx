@@ -1,25 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
 import { UIColours } from '../../features/constants/UIColours';
 import ContentPageContainer from '../components/contentPage/contentPageContainer';
 import ControlBar from '../components/controlBar/controlBar';
-import SectionNav, { SectionNavDefinition } from '../components/controlBar/sectionNav';
+import SectionNav from '../components/controlBar/sectionNav';
 import st from './glossaryPage.module.css';
+import { useSectionNav } from '../components/controlBar/useSectionNav';
+import { SectionBlock } from '../components/controlBar/sectionBlock';
 
 export default function GlossaryPage() {
-	const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-	const [sectionDefinitions, setSectionDefinitions] = useState<SectionNavDefinition[]>([]);
-	useEffect(() => {
-		const sectionRefDefinitions: SectionNavDefinition[] = sectionRefs.current.map((sectionRef: HTMLElement | null) => { return { name: sectionRef?.getAttribute('id'), element: sectionRef } });
-		setSectionDefinitions(sectionRefDefinitions);
-	}, [sectionRefs]);
+	const [sectionRefs, sectionDefinitions] = useSectionNav();
 
 	return (
 		<ContentPageContainer className={st.glossaryLayout}>
 			<ControlBar colour={UIColours.orange}>
-				<SectionNav sections={sectionDefinitions} label="Jump to" />
+				<SectionNav sections={sectionDefinitions} label="Go" />
 			</ControlBar>
-			<section id="standard terms" ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)}>
-				<h1>Standard Terms</h1>
+			<SectionBlock name="Standard Terms" style="plain" sectionRefs={sectionRefs}>
 				<ol>
 					<li><span className={st.termName}>Restore</span>: You restore missing resources, and any restored resource that exceeds your total is lost.  For example, if you are missing 5 Verve and Restore 10 Verve, 5 are lost.</li>
 					<li><span className={st.termName}>Gain</span>: You gain missing resources, and any gained that exceeds your total becomes temporary resources.  For example, if you are missing 3 Verve and Gain 10 Verve, you go over your maximum by 7 (as Temporary Verve).</li>
@@ -28,9 +23,8 @@ export default function GlossaryPage() {
 					<li><span className={st.termName}>Raw Roll</span>: The exact number shown on the dice you rolled.  Some Moves and Expertises trigger effects on a Raw Roll, or on a Raw Roll range (such as 18+).</li>
 					<li><span className={st.termName}>DC Penalty</span>: The DC of your Roll is more difficult, as stated by the Penalty's terms.</li>
 				</ol>
-			</section>
-			<section id="wellness terms" ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)}>
-				<h1>Wellness Terms</h1>
+			</SectionBlock>
+			<SectionBlock name="Wellness Terms" style="plain" sectionRefs={sectionRefs}>
 				<ol>
 					<li>
 						<span className={st.termName}>Base Damage</span>: The Damage you deal with various Moves. Comes in 3 flavours:
@@ -65,9 +59,8 @@ export default function GlossaryPage() {
 						</ul>
 					</li>
 				</ol>
-			</section>
-			<section id="combat terms" ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)}>
-				<h1>Combat Terms</h1>
+			</SectionBlock>
+			<SectionBlock name="Combat Terms" style="plain" sectionRefs={sectionRefs}>
 				<ol>
 					<li><span className={st.termName}>Threatened Area</span>: Squares that your melee weapon can reach.  For most, this is 1 adjacent square.  For enemies, Threatening Range may also extend to their Special Move and unusually long reach.</li>
 					<li><span className={st.termName}>Stagger</span>: A measurement of how unbalanced a target is.  Each point in Stagger reduces the requirement for a successful Roll to Trip, Grapple and Disarm a target.</li>
@@ -76,13 +69,12 @@ export default function GlossaryPage() {
 					<li><span className={st.termName}>Difficult Terrain</span>: Ground that is unstable, whether due to rocks, vines, or magical effects.  Moving over difficult terrain halves your Movement Sq.</li>
 					<li><span className={st.termName}>Maximum Block / Dodge</span>: This is the maximum that you can apply to the Block and Dodge Moves to resist Basic Attacks.  It does not apply to magic Spells.</li>
 				</ol>
-			</section>
-			<section id="magic terms" ref={(el) => (sectionRefs.current[sectionRefs.current.length] = el)}>
-				<h1>Magic Terms</h1>
+			</SectionBlock>
+			<SectionBlock name="Magic Terms" style="plain" sectionRefs={sectionRefs}>
 				<ol>
 					<li><span className={st.termName}>Critical Cast</span>: A spell that requires you pierce your target's Defenses, for which you achieve a Raw Roll within your Critical Range, typically 20.</li>
 				</ol>
-			</section>
+			</SectionBlock>
 		</ContentPageContainer>
 	);
 }

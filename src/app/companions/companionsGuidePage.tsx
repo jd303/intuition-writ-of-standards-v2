@@ -1,9 +1,9 @@
 import { Link } from 'react-router';
 import st from './companionsGuidePage.module.css';
 
-import bronzeMedal from "/public/images/icons/ico.medal.bronze.svg";
-import silverMedal from "/public/images/icons/ico.medal.silver.svg";
-import goldMedal from "/public/images/icons/ico.medal.gold.svg";
+import bronzeMedal from "/images/icons/ico.medal.bronze.svg";
+import silverMedal from "/images/icons/ico.medal.silver.svg";
+import goldMedal from "/images/icons/ico.medal.gold.svg";
 
 export default function CompanionsGuidePage() {
 	return (
