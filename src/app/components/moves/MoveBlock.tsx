@@ -45,8 +45,8 @@ function MoveBlock({ move, mode, parentSkillPoints = 0 }: { move: MoveModel, mod
 				<div className={st.title} onClick={toggleIsOpen}>
 					<img className={st.icon} src={moveIcon} alt="Icon" /> {move.name}
 				</div>
-				{move.type == "Expertise" && mode != MoveDisplayMode.default && <PurchasePointGroup count={6} columns={6} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={parentSkillPoints} />}
-				{move.type == "Passive" && mode != MoveDisplayMode.default && <PurchasePointGroup count={1} columns={1} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={1} />}
+				{move.type == "Expertise" && mode != MoveDisplayMode.display && <PurchasePointGroup count={6} columns={6} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={parentSkillPoints} />}
+				{move.type == "Passive" && mode != MoveDisplayMode.display && <PurchasePointGroup count={1} columns={1} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={1} />}
 			</div>
 			<div className={st.description} dangerouslySetInnerHTML={{ __html: moveDescription }}></div>
 			{move.type == "Primary" ? <div className={st.diceRoll}><button className={st.diceRoll} onClick={toggleRollPopup.bind(null, move.name, character?.purchases?.skills_and_expertises[move.id])}>Roll <img src={icoDice} alt="Roll this Move" /></button></div> : <></>}

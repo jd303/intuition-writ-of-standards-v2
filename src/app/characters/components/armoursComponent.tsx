@@ -4,24 +4,24 @@ import { useCharacterContext } from '../characterContext';
 import TextField from '../../components/inputs/textField/TextField';
 
 import icoArmour from '/images/icons/ico.armour.svg';
+import { MoveDisplayMode } from '../../../features/models/moveDisplayModes';
 
-function Armours() {
+function Armours({ mode }: { mode?: MoveDisplayMode }) {
 	const { character, characterValueUpdater } = useCharacterContext(true);
 
 	return (
-		<div className={st.armourContainer}>
+		<div className={st.armourContainer} data-displaymode={mode}>
 			<BlockHeading
 				icon={icoArmour}
 				label='Armour / Shields' />
-			<div className={st.armourList}>
-				<TextField className={st.name} label="Armour" initialValue={character.armour[0].name} onChange={characterValueUpdater('armour.0.name')!} />
-				<TextField className={st.pres} label="PRes" type="number" initialValue={character.armour[0].pres} onChange={characterValueUpdater('armour.0.pres')!} />
-				<TextField className={st.effects} label="Effects" initialValue={character.armour[0].effect} onChange={characterValueUpdater('armour.0.effect')!} />
-				<TextField className={st.name} label="Armour 2" initialValue={character.armour[1].name} onChange={characterValueUpdater('armour.1.name')!} />
-				<TextField className={st.pres} label="PRes" type="number" initialValue={character.armour[1].pres} onChange={characterValueUpdater('armour.1.pres')!} />
-				<TextField className={st.effects} label="Effects" initialValue={character.armour[1].effect} onChange={characterValueUpdater('armour.1.effect')!} />
-			</div>
-		</div>
+			{character?.armour.map((armour, index: number) => (
+				<div className={st.armourList} key={`armour-${index}`}>
+					<TextField className={st.name} label="Armour" initialValue={armour.name} onChange={characterValueUpdater(`armour.${index}.name`)!} />
+					<TextField className={st.pres} label="PRes" type="number" initialValue={armour.pres} onChange={characterValueUpdater(`armour.${index}.pres`)!} />
+					<TextField className={st.effects} label="Effects" initialValue={armour.effect} onChange={characterValueUpdater(`armour.${index}.effect`)!} />
+				</div>
+			))}
+		</div >
 	)
 }
 

@@ -37,6 +37,7 @@
 		}
 
 		& .searchControl {
+			max-width: 115px;
 			height: var(--control-height);
 			padding: var(--control-padding-vert) var(--control-padding-horz);
 			box-sizing: border-box;

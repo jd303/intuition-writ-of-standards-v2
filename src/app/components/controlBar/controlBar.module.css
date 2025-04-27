@@ -16,6 +16,7 @@
 	top: var(--banner-height);
 	width: 100%;
 	padding: var(--padding-standard) 0;
+	margin-top: calc(-1 * var(--padding-standard));
 	margin-bottom: calc(2 * var(--padding-standard));
 	background-image: url('/images/bg.paper.texture.webp');
 

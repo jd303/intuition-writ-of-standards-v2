@@ -1,0 +1,20 @@
+.status {
+	position: relative;
+	display: flex;
+	gap: var(--padding-1-4);
+	width: 100%;
+
+	textarea {
+		width: 100%;
+	}
+
+	button {
+		width: 30px;
+
+		@media (max-width: 600px) {
+			position: absolute;
+			right: 0;
+			margin: calc(-1 * var(--padding-half)) -6px 0 0;
+		}
+	}
+}

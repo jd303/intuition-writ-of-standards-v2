@@ -42,7 +42,7 @@ function SkillBlock({ skillCategory, mode, className }: { skillCategory: MovesCa
 			<div className={st.heading} onClick={toggleisOpen}>
 				<div className={`${st.title} trattatello textHoverEffect`}>
 					<div className={st.name}>{skillCategory?.skill?.name}</div>
-					<PurchasePointGroup count={12} columns={12} purchased={purchasedSkillPoints} purchaseCallback={characterPurchaseUpdater(skillCategory?.skill!.id, true)!} maxPurchases={maxSkillPurchases} />
+					{mode != MoveDisplayMode.display && <PurchasePointGroup count={12} columns={12} purchased={purchasedSkillPoints} purchaseCallback={characterPurchaseUpdater(skillCategory?.skill!.id, true)!} maxPurchases={maxSkillPurchases} />}
 				</div>
 				<div className={st.description}><span className="trattatello">({skillCategory?.skill?.stat})</span> {skillCategory?.skill?.description}</div>
 			</div>

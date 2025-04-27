@@ -25,6 +25,7 @@ export const prepareMoves = (movesData: MoveModel[]) => {
 				lastMove = null;
 				response[currentCategory].skill = moveDataItem;
 				skillStat = moveDataItem.stat;
+				if (!response[currentCategory].purchaseIds.includes(moveDataItem.id)) response[currentCategory].purchaseIds.push(moveDataItem.id);
 			break;
 			case "Expertise":
 				if (lastMove != null) {
@@ -32,17 +33,16 @@ export const prepareMoves = (movesData: MoveModel[]) => {
 					if (!lastMoveReference) break;
 					if (!lastMoveReference.expertises) lastMoveReference.expertises = [];
 					lastMoveReference.expertises.push({ ...moveDataItem, stat: skillStat });
-					response[currentCategory].purchaseIds.push(moveDataItem.id);
+					if (!response[currentCategory].purchaseIds.includes(moveDataItem.id)) response[currentCategory].purchaseIds.push(moveDataItem.id);
 				}
 			break;
 			case "Passive":
 				response[currentCategory].passives.push({ ...moveDataItem, stat: skillStat });
-				response[currentCategory].purchaseIds.push(moveDataItem.id);
+				if (!response[currentCategory].purchaseIds.includes(moveDataItem.id)) response[currentCategory].purchaseIds.push(moveDataItem.id);
 			break;
 			default:
 				lastMove = moveDataItem;
 				response[currentCategory].moves.push({ ...moveDataItem, stat: skillStat });
-				response[currentCategory].purchaseIds.push(moveDataItem.id);
 		}
 	});
 

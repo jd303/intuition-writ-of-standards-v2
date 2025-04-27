@@ -19,8 +19,10 @@ function TextField({ initialValue, type = "text", label, disabled = false, class
 	const statusFieldClassName = useEffect(() => {
 		if (type == "textarea" && autosize && textareaRef.current) {
 			setTimeout(() => {
-				(textareaRef.current! as HTMLElement).style.height = 'auto';
-				(textareaRef.current! as HTMLElement).style.height = `${Math.max(25, (textareaRef.current! as HTMLElement).scrollHeight + 10)}px`;
+				if (textareaRef.current) {
+					(textareaRef.current as HTMLElement).style.height = 'auto';
+					(textareaRef.current as HTMLElement).style.height = `${Math.max(25, (textareaRef.current! as HTMLElement).scrollHeight + 10)}px`;
+				}
 			}, 500);
 		}
 	}, [type, autosize, initialValue]);

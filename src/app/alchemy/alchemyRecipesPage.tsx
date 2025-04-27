@@ -29,8 +29,8 @@ function AlchemyRecipesPage() {
 	return (
 		<>
 			<ControlBar colour={UIColours.cyan}>
-				<SelectorDropdown label="Type" initialValue={recipeTypeSelection} options={recipesTypeOptions} onChange={(value) => dispatch(setAlchemyRecipesTypeSelection(value))} />
 				<SearchControl name="Search" initialValue={recipesSearch} onChange={(value: string) => dispatch(setAlchemyRecipesSearch(value))} />
+				<SelectorDropdown label="Type" initialValue={recipeTypeSelection} options={recipesTypeOptions} onChange={(value) => dispatch(setAlchemyRecipesTypeSelection(value))} />
 			</ControlBar>
 			<ContentList colour={UIColours.cyan} style="grid">
 				{filteredRecipes.map((recipe: AlchemicalModel) => (

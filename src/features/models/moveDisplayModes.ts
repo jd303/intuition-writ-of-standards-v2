@@ -1,4 +1,4 @@
 export enum MoveDisplayMode {
-	"default",
-	"display",
+	"default" = "default",
+	"display" = "display",
 }

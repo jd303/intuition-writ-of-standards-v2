@@ -39,11 +39,11 @@ function MagicSpellsPage() {
 	return (
 		<>
 			<ControlBar colour={UIColours.purple}>
-				<SelectorDropdown label="Spell Level" initialValue={spellLevelSelection} options={levelOptions} onChange={(value) => dispatch(setSpellLevelSelection(value))} />
+				<SearchControl name="Search" initialValue={spellsSearch} onChange={(value: string) => dispatch(setSpellsSearch(value))} />
+				<SelectorDropdown label="Level" initialValue={spellLevelSelection} options={levelOptions} onChange={(value) => dispatch(setSpellLevelSelection(value))} />
 				<SelectorDropdown label="Source" initialValue={magicSourceSelection} options={sourceOptions} onChange={(value) => dispatch(setMagicSourceSelection(value))} />
 				<SelectorDropdown label="School" initialValue={spellSchoolSelection} options={schoolOptions} onChange={(value) => dispatch(setSpellSchoolSelection(value))} />
 				<SelectorDropdown label="Enchantability" initialValue={enchantingSelection} options={enchantingOptions} onChange={(value) => dispatch(setEnchantingSelection(value))} />
-				<SearchControl name="Search" initialValue={spellsSearch} onChange={(value: string) => dispatch(setSpellsSearch(value))} />
 			</ControlBar>
 			<ContentList colour={UIColours.purple} style="grid">
 				{filteredSpells.map((spell: SpellModel) => (

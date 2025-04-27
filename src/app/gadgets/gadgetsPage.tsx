@@ -31,9 +31,9 @@ function GadgetsPage() {
 	return (
 		<>
 			<ControlBar colour={UIColours.cobalt}>
+				<SearchControl name="Search" initialValue={gadgetsSearch} onChange={(value: string) => dispatch(setGadgetsSearch(value))} />
 				{/*<SelectorDropdown label="Type" initialValue={alchemyReagentsTypeSelector} options={reagentTypeOptions} onChange={(value) => dispatch(setAlchemyReagentsTypeSelector(value))} />
 				<SelectorDropdown label="Contains" initialValue={alchemyReagentsComponentSelector} options={reagentComponentsOptions} onChange={(value) => dispatch(setAlchemyReagentsComponentSelector(value))} />*/}
-				<SearchControl name="Search" initialValue={gadgetsSearch} onChange={(value: string) => dispatch(setGadgetsSearch(value))} />
 			</ControlBar>
 			<ContentList colour={UIColours.cobalt} style="grid">
 				{filteredGadgets.map((gadget: GadgetModel) => (

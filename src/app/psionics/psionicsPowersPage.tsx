@@ -34,9 +34,9 @@ function PsionicPowersPage() {
 	return (
 		<>
 			<ControlBar colour={UIColours.scarlet}>
+				<SearchControl name="Search" initialValue={powersSearch} onChange={(value: string) => dispatch(setPsionicPowersSearch(value))} />
 				<SelectorDropdown label="Level" initialValue={powersLevelSelection} options={levelOptions} onChange={(value) => dispatch(setPsionicLevelSelection(value))} />
 				<SelectorDropdown label="Aptitude" initialValue={powerAptitudeSelection} options={aptitudeOptions} onChange={(value) => dispatch(setPsionicAptitudeSelection(value))} />
-				<SearchControl name="Search" initialValue={powersSearch} onChange={(value: string) => dispatch(setPsionicPowersSearch(value))} />
 			</ControlBar>
 			<ContentList colour={UIColours.scarlet} style="grid">
 				{filteredSpells.map((power: PsionicPowerModel) => (

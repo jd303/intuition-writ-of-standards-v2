@@ -38,8 +38,8 @@ export default function StatusesPage() {
 		<ContentPageContainer>
 			<ContentList colour={UIColours.orange} style="list">
 				<ControlBar colour={UIColours.orange} className={st.controlBar}>
-					<SelectorDropdown label="Type" options={categoryOptions} initialValue={statusesCategorySelection} onChange={(value: string) => dispatch(setStatusesCategorySelection(value))} />
 					<SearchControl name="Search" initialValue={statusesSearch} onChange={(value: string) => dispatch(setStatusesSearch(value))}></SearchControl>
+					<SelectorDropdown label="Type" options={categoryOptions} initialValue={statusesCategorySelection} onChange={(value: string) => dispatch(setStatusesCategorySelection(value))} />
 				</ControlBar>
 				{filteredStatuses.map((status: StatusModel) => (
 					<ContentCard colour={UIColours.orange} key={status.name}>

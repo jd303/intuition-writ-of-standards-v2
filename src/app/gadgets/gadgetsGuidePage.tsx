@@ -13,8 +13,7 @@ function GadgetsGuidePage() {
 			<ControlBar colour={UIColours.cobalt}>
 				<SectionNav sections={sectionDefinitions} label={"Go"} />
 			</ControlBar>
-			<SectionBlock name="overview" sectionRefs={sectionRefs}>
-				<h1>Overview</h1>
+			<SectionBlock name="overview" sectionRefs={sectionRefs} style="plain">
 				<p>Gadgeteering is a newer discipline con the continent of The Civil Holds.  Spearheaded by the studies of Scholars from Sim's Edge and enabled by discoveries of interesting materials and Arcanamaterials, Gadgeteers can create weird and wonderful automatons and mechanical creations.</p>
 				<p>Whether a Gadgeteer utilises the Sonic properties of Orraquartz or the energy-storage and distribution when working Endelsand, the results are kooky and oddly-shaped creations.</p>
 				<p>A good Gadgeteer will understand the principles of Gadgets:</p>
@@ -23,8 +22,7 @@ function GadgetsGuidePage() {
 					<li><strong>Cost:</strong> While creations are expensive, they often can be repurposed multiple times.  The cost of a creation represents other materials used to create the gadget (such as timber, metals and adhesives), and, unless the narrative requires it, can be freely paid in assumption that the player has already acquired the materials..</li>
 				</ul>
 			</SectionBlock>
-			<SectionBlock name="creating gadgets" sectionRefs={sectionRefs}>
-				<h1>Creating Gadgets</h1>
+			<SectionBlock name="creating gadgets" sectionRefs={sectionRefs} style="plain">
 				<p>The full rules for creating Gadgets can be found in the Craft Gadget Move.</p>
 			</SectionBlock>
 		</ContentPageContainer>

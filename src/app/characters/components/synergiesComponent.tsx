@@ -23,7 +23,7 @@ function Synergies() {
 				addendum={<PurchasePointGroup count={2} columns={3} purchased={character.purchases.magical_synergy} maxPurchases={2} purchaseCallback={characterPurchaseUpdater('magical_synergy')!} />} />
 			{
 				Array.from(Array(character.purchases.magical_synergy + 1)).map((_, index) => (
-					<div className={st.synergy}>
+					<div className={st.synergy} key={`synergy-${index}`}>
 						<SelectField options={synergiesOptions} initialValue={character.magical_synergies[index]} onChange={characterValueUpdater(`magical_synergies.${index}`)!} key={`syn-${index}`} />
 						<button onClick={() => showAbilityModalSynergy(character.magical_synergies[index])}>Info</button>
 					</div>

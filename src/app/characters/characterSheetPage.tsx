@@ -51,6 +51,7 @@ import icoArmour from '/images/icons/ico.armour.svg';
 import icoPotionBlack from '/images/icons/ico.potion.black.svg';
 import icoCoin from '/images/icons/ico.medal.silver.svg';
 import icoMapPin from '/images/icons/ico.map_pin.svg';
+import Statuses from './components/statusesComponent.tsx';
 
 function CharacterSheetPage() {
 	const params = useParams();
@@ -138,11 +139,6 @@ function CharacterSheetPage() {
 	// Moves Data
 	const movesByCategory = useAppSelector((state) => state.movesData.moves);
 
-	// Statuses Data
-	const statusesData = useAppSelector((state) => state.statusesData.statuses);
-	const statusesOptions = useMemo(() => [{ value: '', label: 'Prefill from Statuses...' }, ...statusesData.map((st: Record<string, string>) => { return { value: `${st.negative && '🌩️' || '⭐'} ${st.name} - ${st.effect}`, label: `${st.negative && '🌩️' || '⭐'} ${st.name}` } })], [statusesData]);
-	const activeStatuses = useMemo(() => [...character.statuses.map(status => status || ''), ''], [character]);
-
 	// Sources Data
 	const sources = useAppSelector((state) => state.sources.sources);
 	const sourceOptions = useMemo(() => sources.map((s) => { return { value: s.id, label: s.name } }), [sources]);
@@ -172,8 +168,8 @@ function CharacterSheetPage() {
 
 	// Companion Data
 	const beastSkillID = 'f73a1fd2';
-	const companions = useAppSelector(state => state.menagerieData.menagerie.filter(menagerieSpecimen => menagerieSpecimen.companionable));
-	const companionsOptions = useMemo(() => companions.map(companion => { return { value: companion.id, label: companion.name } }), [companions]);
+	const companions = useAppSelector(state => state.menagerieData.menagerie);
+	const companionsOptions = useMemo(() => [ { value: '', label: 'Please Choose...' } , ...companions.filter(menagerieSpecimen => menagerieSpecimen.companionable).map(companion => { return { value: companion.id, label: companion.name } }) ], [companions]);
 	const companionMoves = useAppSelector(state => state.companionMovesData.companionMoves);
 	const companionMoveBasicOptions = useMemo(() => companionMoves.filter(move => move.type == "basic").map((move) => { return { value: move.id as string, label: `${move.name}: ${move.desc}` } }), [companionMoves]);
 	const companionMoveOptions = useMemo(() => companionMoves.filter(move => character.purchases.skills_and_expertises[beastSkillID] >= 5 && ['advanced', 'standard'].includes(move.type as string) || move.type == "standard").map((move) => { return { value: move.id as string, label: `${move.name}: ${move.desc}` } }), [companionMoves]);
@@ -301,16 +297,7 @@ function CharacterSheetPage() {
 							<ItemBelt />
 						</SheetBlock>
 						<SheetBlock layout="flex-row" className={st.statusesField}>
-							<BlockHeading
-								icon={icoCircles}
-								label='Statuses & Buffs' />
-							{activeStatuses.map((value, index) => (
-								<div className={st.status} key={`buff-${index}`}>
-									<TextField type="textarea" initialValue={value} onChange={characterValueUpdater(`statuses.${index}`)} autosize={true} />
-									<button onClick={() => updateCharacterValue(`statuses.${index}`, '')}>X</button>
-								</div>
-							))}
-							<SelectField initialValue='Prefill' options={statusesOptions} onChange={characterValueUpdater(`statuses.${activeStatuses.length}`)} />
+							<Statuses />
 						</SheetBlock>
 						<div className={`${st.skillsField} ${st.gridLayout}`}>
 							<SheetBlock><SkillBlock skillCategory={movesByCategory.preparedness} mode={MoveDisplayMode.default} /></SheetBlock>
@@ -391,34 +378,36 @@ function CharacterSheetPage() {
 								</SheetBlock>
 							)}
 						</div>
-						<SheetBlock layout="flex-column" className={st.companionField}>
-							<h2>
-								<img src={icoBeast} alt="Statuses" />
-								Companion
-								<ConfirmButton label="Remove" onClick={() => updateCharacterValue('companion.id', '')} />
-							</h2>
-							{companion && (
-								<div className={st.companionLayout}>
-									<div className={st.companionBlock}>
-										<MenagerieSpecimenBlock menagerieSpecimen={companion} mode="view_companion" />
+						{character.purchases.skills_and_expertises[movesByCategory.beast_mastery?.skill?.id || ''] > 0 && (
+							<SheetBlock layout="flex-column" className={st.companionField}>
+								<h2>
+									<img src={icoBeast} alt="Statuses" />
+									Companion
+									{companion && <ConfirmButton label="Remove" onClick={() => updateCharacterValue('companion.id', '')} />}
+								</h2>
+								{companion && (
+									<div className={st.companionLayout}>
+										<div className={st.companionBlock}>
+											<MenagerieSpecimenBlock menagerieSpecimen={companion} mode="view_companion" />
+										</div>
+										<div className={st.companionMeta}>
+											<BlockHeading label="Current Verve" />
+											<TextField initialValue={character.companion.current_verve} onChange={characterValueUpdater('companion.current_verve')} type="number" />
+										</div>
+										<div className={st.companionMeta}>
+											<BlockHeading label="Notes" />
+											<TextField type="textarea" className={st.companionNotes} initialValue={character.companion.notes} onChange={characterValueUpdater('companion.notes')} />
+										</div>
 									</div>
-									<div className={st.companionMeta}>
-										<BlockHeading label="Current Verve" />
-										<TextField initialValue={character.companion.current_verve} onChange={characterValueUpdater('companion.current_verve')} type="number" />
-									</div>
-									<div className={st.companionMeta}>
-										<BlockHeading label="Notes" />
-										<TextField type="textarea" className={st.companionNotes} initialValue={character.companion.notes} onChange={characterValueUpdater('companion.notes')} />
-									</div>
-								</div>
-							)}
-							{!companion && (
-								<>
-									<h2>Choose Companion</h2>
-									<SelectField options={companionsOptions} initialValue={companionsOptions[0]?.value} onChange={characterValueUpdater('companion.id')} />
-								</>
-							)}
-						</SheetBlock>
+								)}
+								{!companion && (
+									<>
+										<h2>Choose Companion</h2>
+										<SelectField options={companionsOptions} initialValue={companionsOptions[0]?.value} onChange={characterValueUpdater('companion.id')} />
+									</>
+								)}
+							</SheetBlock>
+						)}
 					</SectionBlock>
 					<SectionBlock name="Inner Power" icon={icoFist} innerClassName={`${st.sectionInnerPower} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.wildform} mode={MoveDisplayMode.default} /></SheetBlock>

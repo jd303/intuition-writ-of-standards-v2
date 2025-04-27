@@ -18,4 +18,8 @@
 		gap: var(--padding-1-4);
 		align-content: flex-start;
 	}
+
+	&:empty {
+		display: none;
+	}
 }

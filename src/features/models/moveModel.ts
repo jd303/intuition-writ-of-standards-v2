@@ -3,6 +3,7 @@ export interface MoveModel {
 	category: string,
 	name: string,
 	stat: string,
+	trained?: boolean,
 	type: string,
 	description: string,
 	expertises?: MoveModel[],

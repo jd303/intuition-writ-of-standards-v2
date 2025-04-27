@@ -41,9 +41,9 @@ function AlchemyReagentsPage() {
 				Reagents come in 4 rarities: <img src={bronzeMedal} alt="Common" /> Common, <img src={silverMedal} alt="Uncommon" /> Uncommon, <img src={goldMedal} alt="Rare" /> Rare, <img src={abstrateGoldMedal} alt="Legendary" /> Legendary.
 			</section>
 			<ControlBar colour={UIColours.cyan}>
+				<SearchControl name="Search" initialValue={reagentsSearch} onChange={(value: string) => dispatch(setAlchemyReagentsSearch(value))} />
 				<SelectorDropdown label="Type" initialValue={alchemyReagentsTypeSelector} options={reagentTypeOptions} onChange={(value) => dispatch(setAlchemyReagentsTypeSelector(value))} />
 				<SelectorDropdown label="Contains" initialValue={alchemyReagentsComponentSelector} options={reagentComponentsOptions} onChange={(value) => dispatch(setAlchemyReagentsComponentSelector(value))} />
-				<SearchControl name="Search" initialValue={reagentsSearch} onChange={(value: string) => dispatch(setAlchemyReagentsSearch(value))} />
 			</ControlBar>
 			<ContentList colour={UIColours.cyan} style="grid">
 				{filteredreagents.map((recipe: AlchemicalModel) => (

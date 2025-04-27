@@ -20,6 +20,8 @@ function ResourceComponent({ type, mode }: { type: "mana" | "verve" | "psi", mod
 				return {
 					label: 'Verve',
 					icon: icoHeart,
+					baseResource: character.baseVerve,
+					resourcePerPoint: character.vervePerPoint,
 					currentResource: character.verve.current,
 					bonusResource: character.verve.bonus,
 					totalResource: character.baseVerve + character.verve.bonus + character.purchases.verve * character.vervePerPoint,
@@ -30,6 +32,8 @@ function ResourceComponent({ type, mode }: { type: "mana" | "verve" | "psi", mod
 				return {
 					label: 'Mana',
 					icon: icoMagicPurple,
+					baseResource: character.baseMana,
+					resourcePerPoint: character.manaPerPoint,
 					currentResource: character.mana.current,
 					bonusResource: character.mana.bonus,
 					totalResource: character.baseMana + character.mana.bonus + character.purchases.mana * character.manaPerPoint,
@@ -40,6 +44,8 @@ function ResourceComponent({ type, mode }: { type: "mana" | "verve" | "psi", mod
 				return {
 					label: 'Psi',
 					icon: icoBrainPurple,
+					baseResource: character.basePsi,
+					resourcePerPoint: character.psiPerPoint,
 					currentResource: character.psi.current,
 					bonusResource: character.psi.bonus,
 					totalResource: character.basePsi + character.psi.bonus + character.purchases.psi * character.psiPerPoint,
@@ -64,7 +70,7 @@ function ResourceComponent({ type, mode }: { type: "mana" | "verve" | "psi", mod
 				<BlockHeading
 					icon={resourceDetails.icon}
 					label={resourceDetails.label}
-					addendum={<div className={stresources.maxLabel}>{character.baseVerve} + {character.vervePerPoint} / point.</div>} />
+					addendum={mode != MoveDisplayMode.display && <div className={stresources.maxLabel}>{resourceDetails.baseResource} + {resourceDetails.resourcePerPoint} / point.</div>} />
 				{mode != MoveDisplayMode.display && (<div><PurchasePointGroup count={30} columns={15} purchased={resourceDetails.purchased} purchaseCallback={characterPurchaseUpdater(resourceDetails.purchaseString)!} maxPurchases={5 + maxSkillPoints * 2} /></div>)}
 			</div>
 			<div className={stresources.resourceFields}>

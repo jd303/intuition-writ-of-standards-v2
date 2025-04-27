@@ -53,7 +53,7 @@ export const routes: RouteDefinition[] = [
 	{
 		path: "/characters/:id",
 		authLevel: 1,
-		label: "Character Sheet",
+		label: "Character",
 		sectionColour: 'cobalt',
 		element: <CharacterSheetPage />,
 		parentRoute: false,
