@@ -40,7 +40,7 @@ function CharacterCombatPage() {
 	const charactersData = useAppSelector((state) => state.charactersData.characters);
 	const characterSheetSearch = useAppSelector((state) => state.search.characterSheetSearch);
 	const characterFromData = charactersData.find((character: CharacterModel) => character.id == params.id);
-	const character = new CharacterModel(characterFromData!);
+	const character = useMemo(() => new CharacterModel(characterFromData!), [characterFromData]);
 
 	// Default irrelevant context
 	const purchaseMode = 'none';

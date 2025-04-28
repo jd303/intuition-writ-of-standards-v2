@@ -1,0 +1,30 @@
+# This is an example Starter pipeline configuration
+# Use a skeleton to build, test and deploy using manual and parallel steps
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+  - parallel:
+    - step:
+        name: 'Test'
+        script:
+        - echo "Testing Build"
+        - npm run test
+    - step:
+        name: 'Lint'
+        script:
+        - echo "Linting build"
+        - npm run lint
+  branches:
+    staging:
+    - step:
+        name: Build and Deploy
+        caches:
+        - node
+        script:
+        - echo "Building and deploying from staging branch"
+        - npm run build
+        - npm run deploy_staging
