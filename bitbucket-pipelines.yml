@@ -20,11 +20,6 @@ definitions:
       - npm run lint
 
 pipelines:
-  default:
-  - step: *install-deps
-  - step: *run-tests
-  - step: *run-lint
-
   branches:
     staging:
     - step: *install-deps
@@ -36,3 +31,12 @@ pipelines:
       - echo "Building and deploying to staging"
       - npm run build
       - npm run deploy_staging
+
+    main:
+    - step: *install-deps
+    - step: *run-tests
+    - step: *run-lint
+    - step:
+      name: Build and Deploy
+      script:
+      - echo "Building and deploying to production (coming soon)"
