@@ -14,15 +14,22 @@ definitions:
       script:
       - npm run test
 
+  - step: &run-lint
+      name: Run Lint
+      script:
+      - npm run lint
+
 pipelines:
   default:
   - step: *install-deps
   - step: *run-tests
+  - step: *run-lint
 
   branches:
     staging:
     - step: *install-deps
     - step: *run-tests
+    - step: *run-lint
     - step:
       name: Build and Deploy
       script:
