@@ -19,24 +19,28 @@ definitions:
       script:
       - npm run lint
 
-pipelines:
-  branches:
-    staging:
-    - step: *install-deps
-    - step: *run-tests
-    - step: *run-lint
-    - step:
+  - step: &deploy-staging
       name: Build and Deploy
       script:
       - echo "Building and deploying to staging"
       - npm run build
       - npm run deploy_staging
 
+  - step: &deploy-production
+      name: Build and Deploy
+      script:
+      - echo "Building and deploying to production (coming soon)"
+
+pipelines:
+  branches:
+    staging:
+    - step: *install-deps
+    - step: *run-tests
+    - step: *run-lint
+    - step: *deploy-staging
+
     main:
     - step: *install-deps
     - step: *run-tests
     - step: *run-lint
-    - step:
-      name: Build and Deploy
-      script:
-      - echo "Building and deploying to production (coming soon)"
+    - step: *deploy-production
