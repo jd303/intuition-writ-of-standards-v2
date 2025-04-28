@@ -38,11 +38,12 @@ function SkillBlock({ skillCategory, mode, className }: { skillCategory: MovesCa
 	}, [character, skillCategory]);
 
 	if (!skillEmpty) return (
-		<div className={`${st.skillBlock} ${className}`} data-open={isOpen} data-type="Skill" data-purchases={character?.purchases?.skills_and_expertises[skillCategory?.skill?.id || ''] > 0}>
+		<div className={`${st.skillBlock} ${className}`} data-open={isOpen} data-mode={mode} data-type="Skill" data-purchases={character?.purchases?.skills_and_expertises[skillCategory?.skill?.id || ''] > 0}>
 			<div className={st.heading} onClick={toggleisOpen}>
-				<div className={`${st.title} trattatello textHoverEffect`}>
+				<div className={`${st.title} trattatello`}>
 					<div className={st.name}>{skillCategory?.skill?.name}</div>
-					{mode != MoveDisplayMode.display && <PurchasePointGroup count={12} columns={12} purchased={purchasedSkillPoints} purchaseCallback={characterPurchaseUpdater(skillCategory?.skill!.id, true)!} maxPurchases={maxSkillPurchases} />}
+					{mode == MoveDisplayMode.default && <PurchasePointGroup count={12} columns={12} purchased={purchasedSkillPoints} purchaseCallback={characterPurchaseUpdater(skillCategory?.skill!.id, true)!} maxPurchases={maxSkillPurchases} />}
+					{mode == MoveDisplayMode.combat && <span className={st.purchasedPointsLabel}>{purchasedSkillPoints}</span>}
 				</div>
 				<div className={st.description}><span className="trattatello">({skillCategory?.skill?.stat})</span> {skillCategory?.skill?.description}</div>
 			</div>

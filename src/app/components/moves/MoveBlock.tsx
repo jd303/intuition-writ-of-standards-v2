@@ -17,7 +17,7 @@ import { MoveDisplayMode } from '../../../features/models/moveDisplayModes.ts';
 
 function MoveBlock({ move, mode, parentSkillPoints = 0 }: { move: MoveModel, mode: MoveDisplayMode, parentSkillPoints?: number }) {
 	let { characterPurchaseUpdater } = useCharacterContext(mode != MoveDisplayMode.default);
-	if (!characterPurchaseUpdater) characterPurchaseUpdater = () => {};
+	if (!characterPurchaseUpdater) characterPurchaseUpdater = () => { };
 	const { character } = useCharacterContext(mode != MoveDisplayMode.default);
 	const [isOpen, toggleIsOpen] = useToggleableBooleanState();
 
@@ -40,13 +40,13 @@ function MoveBlock({ move, mode, parentSkillPoints = 0 }: { move: MoveModel, mod
 	const toggleRollPopup = (name: string, bonus: number) => { console.log("ROLL POPUP", name, bonus); };
 
 	return (
-		<div className={[st.move, st[`mode-${mode}`], (isOpen) && st.open || st.closed].join(' ')} data-type={move.type} data-purchases={character?.purchases?.skills_and_expertises[move.id] > 0}>
+		<div className={[st.move, st[`mode-${mode}`], (isOpen) && st.open || st.closed].join(' ')} data-mode={mode} data-type={move.type} data-purchases={character?.purchases?.skills_and_expertises[move.id] > 0}>
 			<div className={`${st.titleBlock} trattatello`}>
 				<div className={st.title} onClick={toggleIsOpen}>
-					<img className={st.icon} src={moveIcon} alt="Icon" /> {move.name}
+					<img className={st.icon} src={moveIcon} alt="Icon" /> {move.name} {mode == MoveDisplayMode.combat && move.type != "Primary" && <span className={st.purchasedPointsLabel}>{character?.purchases?.skills_and_expertises[move.id] || 0}</span>}
 				</div>
-				{move.type == "Expertise" && mode != MoveDisplayMode.display && <PurchasePointGroup count={6} columns={6} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={parentSkillPoints} />}
-				{move.type == "Passive" && mode != MoveDisplayMode.display && <PurchasePointGroup count={1} columns={1} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={1} />}
+				{move.type == "Expertise" && mode == MoveDisplayMode.default && <PurchasePointGroup count={6} columns={6} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={parentSkillPoints} />}
+				{move.type == "Passive" && mode == MoveDisplayMode.default && <PurchasePointGroup count={1} columns={1} purchased={character?.purchases?.skills_and_expertises[move.id] || 0} purchaseCallback={characterPurchaseUpdater(move.id, true)!} maxPurchases={1} />}
 			</div>
 			<div className={st.description} dangerouslySetInnerHTML={{ __html: moveDescription }}></div>
 			{move.type == "Primary" ? <div className={st.diceRoll}><button className={st.diceRoll} onClick={toggleRollPopup.bind(null, move.name, character?.purchases?.skills_and_expertises[move.id])}>Roll <img src={icoDice} alt="Roll this Move" /></button></div> : <></>}

@@ -9,6 +9,12 @@
 		& div.passivesContainer { display: none !important; } 
 	}
 
+	&[data-mode="combat"] {
+		.heading .title {
+			--flex-direction: row;
+		}
+	}
+
 	.heading {
 		cursor: pointer;
 
@@ -32,6 +38,10 @@
 				display: flex;
 				white-space: nowrap;
 			}
+
+			.purchasedPointsLabel {
+				color: #888;
+			}
 		}
 
 		.description {
@@ -45,11 +55,15 @@
 	}
 
 	& .passivesContainer {
-		padding-top: var(--padding-half);
-		border-top: var(--moves-border-style);
-
 		.passivesList {
 			width: 100%;
+			display: flex;
+			flex-direction: column;
+			
+			> div {
+				padding: var(--padding-half) 0;
+				margin-bottom: 0;
+			}
 		}
 	}
 }

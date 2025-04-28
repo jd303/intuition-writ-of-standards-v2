@@ -53,7 +53,7 @@ export class CharacterModel {
 		current: number,
 		bonus: number,
 	} = {
-			current: 0,
+			current: this.baseVerve,
 			bonus: 0,
 		}
 
@@ -62,7 +62,7 @@ export class CharacterModel {
 		bonus: number,
 		enchant_bind: number
 	} = {
-			current: 0,
+			current: this.baseMana,
 			bonus: 0,
 			enchant_bind: 0
 		}
@@ -71,17 +71,12 @@ export class CharacterModel {
 		current: number,
 		bonus: number,
 	} = {
-			current: 0,
+			current: this.basePsi,
 			bonus: 0,
 		}
 
 	// Defences Values
 	armour: ArmourDefinition[] = [
-		{
-			name: '',
-			pres: 0,
-			effect: '',
-		},
 		{
 			name: '',
 			pres: 0,
@@ -207,6 +202,7 @@ export class CharacterModel {
 		// Set defaults to avoid Firebase clearing fields
 		if (!data.statuses) data.statuses = [''];
 		if (!data.weapons) data.weapons = [''];
+		if (!data.armour) data.armour = [''];
 		if (!data.inventory.equipment) data.inventory.equipment = [''];
 		if (!data.inventory.adventuring) data.inventory.adventuring = [''];
 		if (!data.inventory.consumables) data.inventory.consumables = [''];
@@ -234,6 +230,7 @@ export class CharacterModel {
 		// Cleanup Statuses & Inventory
 		data.statuses = data.statuses.filter((st: string) => st.length > 0);
 		data.weapons = data.weapons.filter((weapon: string) => weapon !== '');
+		data.armour = data.armour.filter((armour: string) => armour !== '');
 		data.inventory.equipment = data.inventory.equipment?.filter((inv: string) => inv.length > 0);
 		data.inventory.adventuring = data.inventory.adventuring?.filter((inv: string) => inv.length > 0);
 		data.inventory.consumables = data.inventory.consumables?.filter((inv: string) => inv.length > 0);
@@ -287,7 +284,7 @@ interface VitaeRecord {
 	}
 }
 
-interface ArmourDefinition {
+export interface ArmourDefinition {
 	name: string;
 	pres: number;
 	effect: string;

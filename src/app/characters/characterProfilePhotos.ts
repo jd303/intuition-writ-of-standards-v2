@@ -70,7 +70,9 @@ const profilePhotos = [
 	'Orc.Male.4.webp',
 	'Pixie.Female.1.webp',
 	'Pixie.Female.2.webp',
-	'Pixie.Female.3.webp'
+	'Pixie.Female.3.webp',
+
+	'Illaydria.jpeg'
 ]
 
 export default profilePhotos;

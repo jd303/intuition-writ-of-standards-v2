@@ -1,11 +1,15 @@
 .move {
 	display: flex;
 	flex-direction: column;
-	gap: var(--padding-half);
-	padding: var(--padding-3-4) 0;
+	margin-bottom: var(--padding-standard);
 
 	&:not(:last-child) {
 		border-bottom: var(--border-dashed-subtle);
+	}
+
+	&[data-mode="combat"][data-type="Expertise"][data-purchases="false"],
+	&[data-mode="combat"][data-type="Passive"][data-purchases="false"] {
+		display: none;
 	}
 
 	&.open {}
@@ -47,6 +51,10 @@
 			.icon {
 				height: 20px;
 			}
+
+			.purchasedPointsLabel {
+				color: #888;
+			}
 		}
 	}
 
@@ -79,16 +87,10 @@
 
 		margin-top: calc(0.5 * var(--padding-standard));
 		padding-left: var(--padding-standard);
-	
-		.expertises {
-			display: flex;
-			flex-direction: column;
-			gap: calc(0.5 * var(--padding-standard));
-			padding: 0 var(--padding-standard);
-			background-color: rgba(0, 0, 0, 0.075);
-			border-bottom: var(--border-dashed-strong);
 
-			&:empty { display: none; }
+		> div {
+			padding: var(--padding-half) 0;
+			margin-bottom: 0;
 		}
 	}
 }

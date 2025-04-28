@@ -4,10 +4,6 @@
 	--control-padding-horz: 5px;
 }
 
-:global(:root) {
-	color: red;
-  }
-
 .controlBarContainer {
 	grid-column: 1/4;
 

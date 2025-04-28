@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import st from './account.module.css';
@@ -42,12 +42,21 @@ function Account() {
 		const auth = getAuth();
 
 		signInWithEmailAndPassword(auth, loginEmailInput, loginPasswordInput)
-			/*.then((userCredential) => {
-				const user = userCredential.user;
-			})*/
 			.catch((error) => {
 				const errorMessage = error.message;
 				setLoginError(errorMessage);
+			});
+	}
+
+	const forgotPassword = () => {
+		const auth = getAuth();
+		if (!loginEmailInput.length) return setLoginError("Please enter your account email.");
+		sendPasswordResetEmail(auth, loginEmailInput)
+			.then(() => {
+				setLoginError("You have been sent an email to continue resetting your password.");
+			})
+			.catch((error) => {
+				setLoginError(error.message);
 			});
 	}
 
@@ -61,15 +70,15 @@ function Account() {
 		setRegisterResult('');
 
 		const auth = getAuth();
-        createUserWithEmailAndPassword(auth, registerEmailInput, registerPasswordInput)
-        .then((userCredential) => {
-			const user = userCredential.user;
-			setRegisterResult(`User with email ${user.email} registered.`);
-		})
-		.catch((error) => {
-			const errorMessage = error.message;
-			setRegisterError(errorMessage);
-		});
+		createUserWithEmailAndPassword(auth, registerEmailInput, registerPasswordInput)
+			.then((userCredential) => {
+				const user = userCredential.user;
+				setRegisterResult(`User with email ${user.email} registered.`);
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+				setRegisterError(errorMessage);
+			});
 	}
 
 	const goToCharacters = () => navigate('/characters');
@@ -102,6 +111,7 @@ function Account() {
 						<input type="text" name="email" placeholder="Email" value={loginEmailInput} onChange={onChangeLoginEmail} />
 						<input type="password" name="password" placeholder="Password" value={loginPasswordInput} onChange={onChangeLoginPassword} />
 						<button type="button" onClick={login}>Login</button>
+						<button type="button" onClick={forgotPassword}>Forgot Password?</button>
 						<div className={st.error}>{loginError}</div>
 					</div>
 					<div className={st.form}>

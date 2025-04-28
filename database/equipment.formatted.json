@@ -1,854 +1,854 @@
 [
     {
-        "cost": 10,
-        "description": "Damage: d6.  Max Block: +1.  Tags: Bladed, 1-Handed, Throwable, Concealable, Backstab.  Examples: Short swords, daggers, kukri, rapiers.",
         "name": "Short Blades",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d6.  Max Block: +1.  Tags: Bladed, 1-Handed, Throwable, Concealable, Backstab.  Examples: Short swords, daggers, kukri, rapiers.",
+        "cost": 10
     },
     {
-        "cost": 50,
-        "description": "Damage: d8.  Max Block: +1.  Tags: Bladed, 1-Handed, Throwable, Concealable, Backstab.    Examples: Swords, scimitars.",
         "name": "Short Blades (Fine)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8.  Max Block: +1.  Tags: Bladed, 1-Handed, Throwable, Concealable, Backstab.    Examples: Swords, scimitars.",
+        "cost": 50
     },
     {
-        "cost": 100,
-        "description": "Damage: d8+2.  Max Block: +1.  Tags: Bladed, 1-Handed, Throwable, Concealable, Backstab.    Examples: Swords, scimitars.",
         "name": "Short Blades (Masterwork)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8+2.  Max Block: +1.  Tags: Bladed, 1-Handed, Throwable, Concealable, Backstab.    Examples: Swords, scimitars.",
+        "cost": 100
     },
     {
-        "cost": 20,
-        "description": "Damage: d8.  Max Block: +2.  Tags: Bladed, 1-Handed, 2-Handed.",
         "name": "Long Blades",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8.  Max Block: +2.  Tags: Bladed, 1-Handed, 2-Handed.",
+        "cost": 20
     },
     {
-        "cost": 80,
-        "description": "Damage: d10.  Max Block: +2.  Tags: Bladed, 1-Handed, 2-Handed.",
         "name": "Long Blades (Fine)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d10.  Max Block: +2.  Tags: Bladed, 1-Handed, 2-Handed.",
+        "cost": 80
     },
     {
-        "cost": 160,
-        "description": "Damage: d10+2.  Max Block: +2.  Tags: Bladed, 1-Handed, 2-Handed.",
         "name": "Long Blades (Masterwork)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d10+2.  Max Block: +2.  Tags: Bladed, 1-Handed, 2-Handed.",
+        "cost": 160
     },
     {
-        "cost": 10,
-        "description": "Damage: d6.  Tags: Cleaving, 1-Handed, Throwable, Backstab.",
         "name": "Small Axes",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d6.  Tags: Cleaving, 1-Handed, Throwable, Backstab.",
+        "cost": 10
     },
     {
-        "cost": 50,
+        "name": "Small Axes (Fine)",
+        "type": "melee",
         "description": "Damage: d8.  Tags: Cleaving, 1-Handed, Throwable, Backstab.",
-        "name": "Small Axes (Fine)",
-        "type": "melee"
+        "cost": 50
     },
     {
-        "cost": 100,
+        "name": "Small Axes (Fine)",
+        "type": "melee",
         "description": "Damage: d8+2.  Tags: Cleaving, 1-Handed, Throwable, Backstab.",
-        "name": "Small Axes (Fine)",
-        "type": "melee"
+        "cost": 100
     },
     {
-        "cost": 20,
-        "description": "Damage: d8.  Max Block: +1.  Tags: Cleaving, 1-Handed, 2-Handed",
         "name": "Large Axes",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8.  Max Block: +1.  Tags: Cleaving, 1-Handed, 2-Handed",
+        "cost": 20
     },
     {
-        "cost": 80,
-        "description": "Damage: d10.  Max Block: +1.  Tags: Cleaving, 1-Handed, 2-Handed",
         "name": "Large Axes (Fine)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d10.  Max Block: +1.  Tags: Cleaving, 1-Handed, 2-Handed",
+        "cost": 80
     },
     {
-        "cost": 160,
-        "description": "Damage: d10+2.  Max Block: +1.  Tags: Cleaving, 1-Handed, 2-Handed",
         "name": "Large Axes (Masterwork)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d10+2.  Max Block: +1.  Tags: Cleaving, 1-Handed, 2-Handed",
+        "cost": 160
     },
     {
-        "cost": 20,
-        "description": "Damage: d6.  Max Dodge: +1.  Tags: Polearm, 1-Handed, Throwable, Backstab.",
         "name": "Short Polarms",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d6.  Max Dodge: +1.  Tags: Polearm, 1-Handed, Throwable, Backstab.",
+        "cost": 20
     },
     {
-        "cost": 60,
-        "description": "Damage: d8.  Max Dodge: +1.  Tags: Polearm, 1-Handed, Throwable, Backstab.",
         "name": "Short Polarms (Fine)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8.  Max Dodge: +1.  Tags: Polearm, 1-Handed, Throwable, Backstab.",
+        "cost": 60
     },
     {
-        "cost": 120,
-        "description": "Damage: d8+2.  Max Dodge: +1.  Tags: Polearm, 1-Handed, Throwable, Backstab.",
         "name": "Short Polarms (Masterwork)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8+2.  Max Dodge: +1.  Tags: Polearm, 1-Handed, Throwable, Backstab.",
+        "cost": 120
     },
     {
-        "cost": 30,
-        "description": "Damage: d6.  Tags: Polearm, Distance.",
         "name": "Long Polearms",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d6.  Tags: Polearm, Distance.",
+        "cost": 30
     },
     {
-        "cost": 90,
-        "description": "Damage: d8.  Tags: Polearm, Distance.",
         "name": "Long Polearms (Fine)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8.  Tags: Polearm, Distance.",
+        "cost": 90
     },
     {
-        "cost": 180,
-        "description": "Damage: d8+2.  Tags: Polearm, Distance.",
         "name": "Long Polearms (Masterwork)",
-        "type": "melee"
+        "type": "melee",
+        "description": "Damage: d8+2.  Tags: Polearm, Distance.",
+        "cost": 180
     },
     {
-        "cost": 20,
-        "description": "Damage: d6.  Range: 20sq.  Tags: Ranged, Ranged-only.",
         "name": "Short Bows",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d6.  Range: 20sq.  Tags: Ranged, Ranged-only.",
+        "cost": 20
     },
     {
-        "cost": 60,
-        "description": "Damage: d8.  Range: 20sq.  Tags: Ranged, Ranged-only.",
         "name": "Short Bows (Fine)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d8.  Range: 20sq.  Tags: Ranged, Ranged-only.",
+        "cost": 60
     },
     {
-        "cost": 120,
-        "description": "Damage: d8+2.  Range: 20sq.  Tags: Ranged, Ranged-only.",
         "name": "Short Bows (Masterwork)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d8+2.  Range: 20sq.  Tags: Ranged, Ranged-only.",
+        "cost": 120
     },
     {
-        "cost": 40,
-        "description": "Damage: d8.  Range: 40sq.  Tags: Ranged, Ranged-only.",
         "name": "Long Bows",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d8.  Range: 40sq.  Tags: Ranged, Ranged-only.",
+        "cost": 40
     },
     {
-        "cost": 80,
-        "description": "Damage: d10.  Range: 40sq.  Tags: Ranged, Ranged-only.",
         "name": "Long Bows (Fine)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d10.  Range: 40sq.  Tags: Ranged, Ranged-only.",
+        "cost": 80
     },
     {
-        "cost": 160,
-        "description": "Damage: d10+2.  Range: 40sq.  Tags: Ranged, Ranged-only.",
         "name": "Long Bows (Masterwork)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d10+2.  Range: 40sq.  Tags: Ranged, Ranged-only.",
+        "cost": 160
     },
     {
-        "cost": 30,
-        "description": "Damage: d8.  Range: 10sq.  Tags: Ranged, Ranged-only, Concealable, Backstab.",
         "name": "Hand Crossbows",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d8.  Range: 10sq.  Tags: Ranged, Ranged-only, Concealable, Backstab.",
+        "cost": 30
     },
     {
-        "cost": 80,
-        "description": "Damage: d10.  Range: 10sq.  Tags: Ranged, Ranged-only, Concealable, Backstab.",
         "name": "Hand Crossbows (Fine)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d10.  Range: 10sq.  Tags: Ranged, Ranged-only, Concealable, Backstab.",
+        "cost": 80
     },
     {
-        "cost": 160,
-        "description": "Damage: d10+2.  Range: 10sq.  Tags: Ranged, Ranged-only, Concealable, Backstab.",
         "name": "Hand Crossbows (Masterwork)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d10+2.  Range: 10sq.  Tags: Ranged, Ranged-only, Concealable, Backstab.",
+        "cost": 160
     },
     {
-        "cost": 40,
-        "description": "Damage: d10.  Range: 20sq.  Tags: Ranged, Ranged-only.",
         "name": "Crossbows",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d10.  Range: 20sq.  Tags: Ranged, Ranged-only.",
+        "cost": 40
     },
     {
-        "cost": 80,
-        "description": "Damage: d12.  Range: 20sq.  Tags: Ranged, Ranged-only.",
         "name": "Crossbows (Fine)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d12.  Range: 20sq.  Tags: Ranged, Ranged-only.",
+        "cost": 80
     },
     {
-        "cost": 160,
-        "description": "Damage: d12+2.  Range: 20sq.  Tags: Ranged, Ranged-only.",
         "name": "Crossbows (Masterwork)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d12+2.  Range: 20sq.  Tags: Ranged, Ranged-only.",
+        "cost": 160
     },
     {
-        "cost": 100,
-        "description": "Damage: d10.  Range: 30sq.  Tags: Ranged, Ranged-only, Noisy.",
         "name": "Blackpowder Weapons",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d10.  Range: 30sq.  Tags: Ranged, Ranged-only, Noisy.",
+        "cost": 100
     },
     {
-        "cost": 130,
-        "description": "Damage: d12.  Range: 30sq.  Tags: Ranged, Ranged-only, Noisy.",
         "name": "Blackpowder Weapons (Fine)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d12.  Range: 30sq.  Tags: Ranged, Ranged-only, Noisy.",
+        "cost": 130
     },
     {
-        "cost": 260,
-        "description": "Damage: d12+2.  Range: 30sq.  Tags: Ranged, Ranged-only, Noisy.",
         "name": "Blackpowder Weapons (Masterwork)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d12+2.  Range: 30sq.  Tags: Ranged, Ranged-only, Noisy.",
+        "cost": 260
     },
     {
-        "cost": 10,
-        "description": "Damage: d6.  Range: 20sq.  Tags: Ranged, Ranged-only, Concealable, Backstab, Single-Target.",
         "name": "Thrown and slingers",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d6.  Range: 20sq.  Tags: Ranged, Ranged-only, Concealable, Backstab, Single-Target.",
+        "cost": 10
     },
     {
-        "cost": 40,
-        "description": "Damage: d8.  Range: 20sq.  Tags: Ranged, Ranged-only, Concealable, Backstab, Single-Target.",
         "name": "Thrown and slingers (Fine)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d8.  Range: 20sq.  Tags: Ranged, Ranged-only, Concealable, Backstab, Single-Target.",
+        "cost": 40
     },
     {
-        "cost": 80,
-        "description": "Damage: d8+2.  Range: 20sq.  Tags: Ranged, Ranged-only, Concealable, Backstab, Single-Target.",
         "name": "Thrown and slingers (Masterwork)",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Damage: d8+2.  Range: 20sq.  Tags: Ranged, Ranged-only, Concealable, Backstab, Single-Target.",
+        "cost": 80
     },
     {
-        "cost": 10,
-        "description": "Tags: Ranged, Ranged-only, Trip, Single-Target.",
         "name": "Bolas",
-        "type": "ranged"
+        "type": "ranged",
+        "description": "Tags: Ranged, Ranged-only, Trip, Single-Target.",
+        "cost": 10
     },
     {
-        "cost": 4,
-        "description": "A bundle of 10 arrows.",
         "name": "Basic",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "A bundle of 10 arrows.",
+        "cost": 4
     },
     {
-        "cost": 2,
-        "description": "Your ammunication makes a loud noise.",
         "name": "Whistling Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Your ammunication makes a loud noise.",
+        "cost": 2
     },
     {
-        "cost": 2,
-        "description": "Your Ranged Basic Attacks deal non-lethal damage.",
         "name": "Blunt Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Your Ranged Basic Attacks deal non-lethal damage.",
+        "cost": 2
     },
     {
-        "cost": 4,
-        "description": "Used with the Curving Ammo Ranged Attack Mod.",
         "name": "Curving Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Used with the Curving Ammo Ranged Attack Mod.",
+        "cost": 4
     },
     {
-        "cost": 3,
-        "description": "Applies 1 additional Verve Loss.",
         "name": "Barbed Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Applies 1 additional Verve Loss.",
+        "cost": 3
     },
     {
-        "cost": 4,
-        "description": "Used with the Piercing Ammo Ranged Attack Mod.",
         "name": "Piercing Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Used with the Piercing Ammo Ranged Attack Mod.",
+        "cost": 4
     },
     {
-        "cost": 4,
-        "description": "Used with the Splintering Ammo Ranged Attack Mod.",
         "name": "Splintering Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Used with the Splintering Ammo Ranged Attack Mod.",
+        "cost": 4
     },
     {
-        "cost": 4,
-        "description": "Used with the Ricocheting Ammo Ranged Attack Mod.",
         "name": "Ricocheting Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Used with the Ricocheting Ammo Ranged Attack Mod.",
+        "cost": 4
     },
     {
-        "cost": 10,
-        "description": "Applies d8 additional Verve Loss.  On critical hits, apply the Elemental Synergy Critical Effect.",
         "name": "Elemental Ammo",
-        "type": "ammunition"
+        "type": "ammunition",
+        "description": "Applies d8 additional Verve Loss.  On critical hits, apply the Elemental Synergy Critical Effect.",
+        "cost": 10
     },
     {
-        "cost": 10,
-        "description": "Max Dodge: +6.",
         "name": "Clothing",
-        "type": "armour"
+        "type": "armour",
+        "description": "Athletics +1",
+        "cost": 10
     },
     {
-        "cost": 50,
-        "description": "Max Dodge: +7.",
         "name": "Clothing (Fine)",
-        "type": "armour"
+        "type": "armour",
+        "description": "Athletics +2",
+        "cost": 50
     },
     {
-        "cost": 100,
-        "description": "Max Dodge: +5.",
         "name": "Clothing (Lavish)",
-        "type": "armour"
+        "type": "armour",
+        "description": "Athletics -2",
+        "cost": 100
     },
     {
-        "cost": 30,
-        "description": "Max Block: +1.  Max Dodge: +3.  AR: 1.",
         "name": "Light Armour",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 1",
+        "cost": 30
     },
     {
-        "cost": 70,
-        "description": "Max Block: +1.  Max Dodge: +4.  AR: 1.",
         "name": "Light Armour (Fine)",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 2",
+        "cost": 70
     },
     {
-        "cost": 140,
-        "description": "Max Block: +1.  Max Dodge: +4.  AR: 2.",
         "name": "Light Armour (Masterwork)",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 3",
+        "cost": 140
     },
     {
-        "cost": 60,
-        "description": "Max Block: +2.  Max Dodge: +2.  AR: 2.",
         "name": "Medium Armour",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 2, Defend -1",
+        "cost": 60
     },
     {
-        "cost": 100,
-        "description": "Max Block: +2.  Max Dodge: +2.  AR: 3.",
         "name": "Medium Armour (Fine)",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 3, Defend -1",
+        "cost": 100
     },
     {
-        "cost": 200,
-        "description": "Max Block: +2.  Max Dodge: +2.  AR: 3.  Free Mod: Hunker Down",
         "name": "Medium Armour (Masterwork)",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 4, Defend -1",
+        "cost": 200
     },
     {
-        "cost": 140,
-        "description": "Max Block: +3.  Max Dodge: +1.  AR: 3.  Status: Encumbered.",
         "name": "Heavy Armour",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 4, Defend -2",
+        "cost": 140
     },
     {
-        "cost": 180,
-        "description": "Max Block: +4.  Max Dodge: +2.  AR: 3.  Status: Encumbered.",
         "name": "Heavy Armour (Fine)",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 5, Defend -2",
+        "cost": 180
     },
     {
-        "cost": 360,
-        "description": "Max Block: +4.  Max Dodge: +2.  AR: 3.  Status: Encumbered.",
         "name": "Heavy Armour (Masterwork)",
-        "type": "armour"
+        "type": "armour",
+        "description": "PRes: 6, Defend -2",
+        "cost": 360
     },
     {
-        "cost": 15,
-        "description": "Max Block: +1.  1-Handed.",
         "name": "Shield",
-        "type": "armour"
+        "type": "armour",
+        "description": "Defend +1",
+        "cost": 15
     },
     {
-        "cost": 50,
-        "description": "Max Block: +1.  Max Dodge +1.  1-Handed.",
         "name": "Shield (Fine)",
-        "type": "armour"
+        "type": "armour",
+        "description": "Defend +2",
+        "cost": 50
     },
     {
-        "cost": 100,
-        "description": "Max Block: +1.  Max Dodge +1.  1-Handed.  AR: 1.",
         "name": "Shield (Masterwork)",
-        "type": "armour"
+        "type": "armour",
+        "description": "Defend +3",
+        "cost": 100
     },
     {
-        "cost": 10,
-        "description": "Performing a day of manual labour, such as farming, exploring and mercenary work.",
         "name": "Manual Labour",
-        "type": "wages"
+        "type": "wages",
+        "description": "Performing a day of manual labour, such as farming, exploring and mercenary work.",
+        "cost": 10
     },
     {
-        "cost": 18,
-        "description": "Performing a day of skilled labour, such as carpentry.",
         "name": "Skilled Labour",
-        "type": "wages"
+        "type": "wages",
+        "description": "Performing a day of skilled labour, such as carpentry.",
+        "cost": 18
     },
     {
-        "cost": 30,
-        "description": "Performing a day of expert labour, such as smithing and alchemy.",
         "name": "Expert Labour",
-        "type": "wages"
+        "type": "wages",
+        "description": "Performing a day of expert labour, such as smithing and alchemy.",
+        "cost": 30
     },
     {
-        "cost": 75,
-        "description": "Performing a day of master labour, such as enchanting and potion making.",
         "name": "Mastery Labour",
-        "type": "wages"
+        "type": "wages",
+        "description": "Performing a day of master labour, such as enchanting and potion making.",
+        "cost": 75
     },
     {
-        "cost": 20,
-        "description": "Additional pay for dangerous situations.",
         "name": "Danger Pay (group)",
-        "type": "wages"
+        "type": "wages",
+        "description": "Additional pay for dangerous situations.",
+        "cost": 20
     },
     {
-        "cost": 1,
-        "description": "Simple accomodation, such as in a warm barn or threadbare room.",
         "name": "Accommodation (simple)",
-        "type": "accommodation"
+        "type": "accommodation",
+        "description": "Simple accomodation, such as in a warm barn or threadbare room.",
+        "cost": 1
     },
     {
-        "cost": 3,
-        "description": "Standard accommodation, such as in an Inn.",
         "name": "Accommodation (comfortable)",
-        "type": "accommodation"
+        "type": "accommodation",
+        "description": "Standard accommodation, such as in an Inn.",
+        "cost": 3
     },
     {
-        "cost": 10,
-        "description": "Comfortable accommodation, such as a lavish room in an Inn.",
         "name": "Accommodation (lavish)",
-        "type": "accommodation"
+        "type": "accommodation",
+        "description": "Comfortable accommodation, such as a lavish room in an Inn.",
+        "cost": 10
     },
     {
-        "cost": 2,
-        "description": "Long-life travel rations that substitute all meals for a day.",
         "name": "Rations",
-        "type": "food"
+        "type": "food",
+        "description": "Long-life travel rations that substitute all meals for a day.",
+        "cost": 2
     },
     {
-        "cost": 1,
-        "description": "A basic meal.",
         "name": "Meal (basic)",
-        "type": "food"
+        "type": "food",
+        "description": "A basic meal.",
+        "cost": 1
     },
     {
-        "cost": 4,
-        "description": "A fantastic multiple-course meal, or a delicate, expensive wine.",
         "name": "Meal (lavish)",
-        "type": "food"
+        "type": "food",
+        "description": "A fantastic multiple-course meal, or a delicate, expensive wine.",
+        "cost": 4
     },
     {
-        "cost": 1,
-        "description": "A mug of ale, cheap wine or equivalent.",
         "name": "Alcohol (cheap)",
-        "type": "food"
+        "type": "food",
+        "description": "A mug of ale, cheap wine or equivalent.",
+        "cost": 1
     },
     {
-        "cost": 6,
-        "description": "A mug of good ale, renowned wine or equivalent.",
         "name": "Alcohol (expensive)",
-        "type": "food"
+        "type": "food",
+        "description": "A mug of good ale, renowned wine or equivalent.",
+        "cost": 6
     },
     {
-        "cost": 4,
-        "description": "Travelling by foot or horse.  Expedited travel.  Approximate cost.",
         "name": "1xMapSq (Standard)",
-        "type": "travel"
+        "type": "travel",
+        "description": "Travelling by foot or horse.  Expedited travel.  Approximate cost.",
+        "cost": 4
     },
     {
-        "cost": 10,
-        "description": "Travelling by carriage or transport service.",
         "name": "1xMapSq (Carriage / Service)",
-        "type": "travel"
+        "type": "travel",
+        "description": "Travelling by carriage or transport service.",
+        "cost": 10
     },
     {
-        "cost": 90,
-        "description": "A fine, if not notable, riding horse.  Neigh.",
         "name": "Horse",
-        "type": "travel"
+        "type": "travel",
+        "description": "A fine, if not notable, riding horse.  Neigh.",
+        "cost": 90
     },
     {
-        "cost": 1,
-        "description": "5 pages of paper or vellum.",
         "name": "Paper, Vellum",
-        "type": "general"
+        "type": "general",
+        "description": "5 pages of paper or vellum.",
+        "cost": 1
     },
     {
-        "cost": 2,
-        "description": "A basic, and common book.",
         "name": "Book",
-        "type": "general"
+        "type": "general",
+        "description": "A basic, and common book.",
+        "cost": 2
     },
     {
-        "cost": 4,
-        "description": "A 15m rope that may fray after prolonged use.",
         "name": "Rope (hemp)",
-        "type": "general"
+        "type": "general",
+        "description": "A 15m rope that may fray after prolonged use.",
+        "cost": 4
     },
     {
-        "cost": 20,
-        "description": "Good rope that should last you a while.",
         "name": "Rope (silk)",
-        "type": "general"
+        "type": "general",
+        "description": "Good rope that should last you a while.",
+        "cost": 20
     },
     {
-        "cost": 20,
-        "description": "A backpack good for adventurers.",
         "name": "Backpack",
-        "type": "general"
+        "type": "general",
+        "description": "A backpack good for adventurers.",
+        "cost": 20
     },
     {
-        "cost": 6,
-        "description": "A belt for your quick-use items.  Holds 3.",
         "name": "Item Belt",
-        "type": "general"
+        "type": "general",
+        "description": "A belt for your quick-use items.  Holds 3.",
+        "cost": 6
     },
     {
-        "cost": 20,
-        "description": "A belt for your quick-use items.  Holds 4.",
         "name": "Item Belt (versatile)",
-        "type": "general"
+        "type": "general",
+        "description": "A belt for your quick-use items.  Holds 4.",
+        "cost": 20
     },
     {
-        "cost": 1,
-        "description": "A common alchemical reagent, like Pure Water.",
         "name": "Reagent (Common)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "A common alchemical reagent, like Pure Water.",
+        "cost": 1
     },
     {
-        "cost": 4,
-        "description": "An uncommon alchemical reagent, like Sapho.",
         "name": "Reagent (Uncommon)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "An uncommon alchemical reagent, like Sapho.",
+        "cost": 4
     },
     {
-        "cost": 10,
+        "name": "Reagent (Rare)",
+        "type": "alchemical",
         "description": "A rare alchemical reagent, like Seekhale.",
-        "name": "Reagent (Rare)",
-        "type": "alchemical"
+        "cost": 10
     },
     {
-        "cost": 18,
+        "name": "Reagent (Rare)",
+        "type": "alchemical",
         "description": "A legendary alchemical reagent, like White Flohthinne.",
-        "name": "Reagent (Rare)",
-        "type": "alchemical"
+        "cost": 18
     },
     {
-        "cost": 5,
-        "description": "A simple Alchemical, like Vigor Tonic.",
         "name": "Alchemical (DC1)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "A simple Alchemical, like Vigor Tonic.",
+        "cost": 5
     },
     {
-        "cost": 8,
-        "description": "A fine Alchemical, like Peptinne.",
         "name": "Alchemical (DC2)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "A fine Alchemical, like Peptinne.",
+        "cost": 8
     },
     {
-        "cost": 12,
-        "description": "A lovely Alchemical, like Mediciner\u2019s Solution.",
         "name": "Alchemical (DC3)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "A lovely Alchemical, like Mediciner’s Solution.",
+        "cost": 12
     },
     {
-        "cost": 18,
-        "description": "A wonderful Alchemical, like Alchemist's Fire.",
         "name": "Alchemical (DC4)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "A wonderful Alchemical, like Alchemist's Fire.",
+        "cost": 18
     },
     {
-        "cost": 26,
-        "description": "A wondrous Alchemical, like Gunpowder.",
         "name": "Alchemical (DC5)",
-        "type": "alchemical"
+        "type": "alchemical",
+        "description": "A wondrous Alchemical, like Gunpowder.",
+        "cost": 26
     },
     {
-        "cost": 30,
-        "description": "A concealable kit of lock picks, trap finding tools, and other invaluable tools for those of a rogueish persuasion.",
         "name": "Thieves Tools",
-        "type": "tools"
+        "type": "tools",
+        "description": "A concealable kit of lock picks, trap finding tools, and other invaluable tools for those of a rogueish persuasion.",
+        "cost": 30
     },
     {
-        "cost": 60,
-        "description": "A sextant, charcoal, water-level, plum-bob and other invaluable tools for performing field engineering, and engineer crafting of items up to DC 1.",
         "name": "Field Engineering Kit",
-        "type": "tools"
+        "type": "tools",
+        "description": "A sextant, charcoal, water-level, plum-bob and other invaluable tools for performing field engineering, and engineer crafting of items up to DC 1.",
+        "cost": 60
     },
     {
-        "cost": 40,
-        "description": "A small pot, reagent tray, cutting and grinding tools, and other implements for crafting Alchemicals up to DC 2.",
         "name": "Travel Alchemy Set",
-        "type": "tools"
+        "type": "tools",
+        "description": "A small pot, reagent tray, cutting and grinding tools, and other implements for crafting Alchemicals up to DC 2.",
+        "cost": 40
     },
     {
-        "cost": 150,
-        "description": "A burner and stabiliser, medium pot, flexible reagent sorting apparatus, cutting and grinding tools, and other implements for crafting Alchemicals up to DC 3.",
         "name": "Fine Alchemy Set",
-        "type": "tools"
+        "type": "tools",
+        "description": "A burner and stabiliser, medium pot, flexible reagent sorting apparatus, cutting and grinding tools, and other implements for crafting Alchemicals up to DC 3.",
+        "cost": 150
     },
     {
-        "cost": 20,
-        "description": "A simple instrument, such as a lute or flute.",
         "name": "Instrument (Simple)",
-        "type": "tools"
+        "type": "tools",
+        "description": "A simple instrument, such as a lute or flute.",
+        "cost": 20
     },
     {
-        "cost": 80,
-        "description": "A more advanced instrument such as a harpsichord, or a lavish instrument such as a Fine flute.",
         "name": "Instrument (Lavish)",
-        "type": "tools"
+        "type": "tools",
+        "description": "A more advanced instrument such as a harpsichord, or a lavish instrument such as a Fine flute.",
+        "cost": 80
     },
     {
-        "cost": 30,
-        "description": "Common but lovely gems.",
         "name": "Amethyst, Agate, Citrine, Garnet, Onyx, Peridot, Rose Quartz",
-        "type": "gems"
+        "type": "gems",
+        "description": "Common but lovely gems.",
+        "cost": 30
     },
     {
-        "cost": 80,
-        "description": "Beautiful, semi-precious gems.",
         "name": "Sapphire, Topaz",
-        "type": "gems"
+        "type": "gems",
+        "description": "Beautiful, semi-precious gems.",
+        "cost": 80
     },
     {
-        "cost": 130,
-        "description": "Precious and outstanding gems.",
         "name": "Emerald, Ruby, Diamond",
-        "type": "gems"
+        "type": "gems",
+        "description": "Precious and outstanding gems.",
+        "cost": 130
     },
     {
-        "cost": 25,
-        "description": "A Magic Potion that replicates the Standard effects of a Spell with a range of Self.  The prive given here is per the level of the Spell.",
         "name": "Magic Potions",
-        "type": "magic"
+        "type": "magic",
+        "description": "A Magic Potion that replicates the Standard effects of a Spell with a range of Self.  The prive given here is per the level of the Spell.",
+        "cost": 25
     },
     {
-        "cost": 2,
-        "description": "A runic symbol or Seal that can have magic infused within it.",
         "name": "Infusable Seal",
-        "type": "magic"
+        "type": "magic",
+        "description": "A runic symbol or Seal that can have magic infused within it.",
+        "cost": 5
     },
     {
-        "cost": 30,
-        "description": "An item that can be activated for a spell effect a number of times before becoming expended.  To calculate the final price, multiple the given price by the DC of the Spell Effect's level and the number of times the Spell Effect is usable per day.",
         "name": "Enchantment, Spell Effect, Activated Charges",
-        "type": "magic"
+        "type": "magic",
+        "description": "An item that can be activated for a spell effect a number of times before becoming expended.  To calculate the final price, multiple the given price by the DC of the Spell Effect's level and the number of times the Spell Effect is usable per day.",
+        "cost": 30
     },
     {
-        "cost": 50,
-        "description": "An item that can be activated for a spell effect a number of times per day.  To calculate the final price, multiple the given price by the DC of the Spell Effect's level and the number of times the Spell Effect is usable per day.",
         "name": "Enchantment, Spell Effect, Activated Daily",
-        "type": "magic"
+        "type": "magic",
+        "description": "An item that can be activated for a spell effect a number of times per day.  To calculate the final price, multiple the given price by the DC of the Spell Effect's level and the number of times the Spell Effect is usable per day.",
+        "cost": 50
     },
     {
-        "cost": 100,
-        "description": "An item that passively and permanently applies a Spell Effect on you.  The price given here is per DC of the Spell Effect.",
         "name": "Enchantment, Spell Effect, Passive",
-        "type": "magic"
+        "type": "magic",
+        "description": "An item that passively and permanently applies a Spell Effect on you.  The price given here is per DC of the Spell Effect.",
+        "cost": 100
     },
     {
-        "cost": 250,
-        "description": "Enchanted stones aligned with an energy type or with the Physical property.  When embedded in a slotted, fine, non-magical weapon, results in the weapon dealing an additional 2 Damage, and attacks are considered being of the Stone's Augment type.  When embedded in fine, slotted, armour, grants Res 2.",
         "name": "Augere Stones",
-        "type": "magic"
+        "type": "magic",
+        "description": "Enchanted stones aligned with an energy type or with the Physical property.  When embedded in a slotted, fine, non-magical weapon, results in the weapon dealing an additional 2 Damage, and attacks are considered being of the Stone's Augment type.  When embedded in fine, slotted, armour, grants Res 2.",
+        "cost": 250
     },
     {
-        "cost": 500,
-        "description": "Enchanted stones aligned with an energy type or with the Physical property.  When embedded in a slotted, fine, non-magical weapon, results in the weapon dealing an additional 5 Damage, and attacks are considered being the Stone's Augment type.  When embedded in fine, slotted, armour, grants Res 5.",
         "name": "Greater Augere Stones",
-        "type": "magic"
+        "type": "magic",
+        "description": "Enchanted stones aligned with an energy type or with the Physical property.  When embedded in a slotted, fine, non-magical weapon, results in the weapon dealing an additional 5 Damage, and attacks are considered being the Stone's Augment type.  When embedded in fine, slotted, armour, grants Res 5.",
+        "cost": 500
     },
     {
-        "cost": 10,
-        "description": "Common metals.",
         "name": "Iron, Copper, etc.",
-        "type": "materials"
+        "type": "materials",
+        "description": "Common metals.",
+        "cost": 10
     },
     {
-        "cost": 16,
-        "description": "Common alloys.",
         "name": "Steel, Brass, etc.",
-        "type": "materials"
+        "type": "materials",
+        "description": "Common alloys.",
+        "cost": 16
     },
     {
-        "cost": 50,
-        "description": "Extremely hardy and strong stone for construction.  It is only produced in Harriden's great Mountain.\nMineral -- Rare.",
         "name": "Harriden Hardstone",
-        "type": "materials"
+        "type": "materials",
+        "description": "Extremely hardy and strong stone for construction.  It is only produced in Harriden's great Mountain.\nMineral -- Rare.",
+        "cost": 50
     },
     {
-        "cost": 10,
-        "description": "A particularly sturdy greystone mined in Emeka.  Isleklip is famed for it\u2019s temperature resistance, keeping warm in winter and cool in summer.\nMineral -- Common.",
         "name": "Isleklip",
-        "type": "materials"
+        "type": "materials",
+        "description": "A particularly sturdy greystone mined in Emeka.  Isleklip is famed for it’s temperature resistance, keeping warm in winter and cool in summer.\nMineral -- Common.",
+        "cost": 10
     },
     {
-        "cost": 10,
-        "description": "Useful stone, usually shipped as small rocks but fashioned into grainy stones, artificial whetstones and other handy honing rocks.\nMineral -- Common.",
         "name": "Grindstone",
-        "type": "materials"
+        "type": "materials",
+        "description": "Useful stone, usually shipped as small rocks but fashioned into grainy stones, artificial whetstones and other handy honing rocks.\nMineral -- Common.",
+        "cost": 10
     },
     {
-        "cost": 40,
-        "description": "A soft metal used in jewelry and art, and commonly mined around Sim\u2019s Edge.\nMetal -- Common.",
         "name": "Kethlite",
-        "type": "materials"
+        "type": "materials",
+        "description": "A soft metal used in jewelry and art, and commonly mined around Sim’s Edge.\nMetal -- Common.",
+        "cost": 40
     },
     {
-        "cost": 20,
-        "description": "A powdery substance which, when mixed correctly with other reagents (including heat) produces a substance with a mild sheen half as shiny as metal, with a resin-like durability.  The final result is mostly Bronsilica, the other reagents are necessary to unlock it\u2019s malleable and shapeable form, otherwise it remains too crystalline.  Due to the rarity of the substance, it is quite expensive and prized.  It is found most commonly in desert climates, and is often found near Callashar.  \nMineral -- Rare.",
         "name": "Bronsilica",
-        "type": "materials"
+        "type": "materials",
+        "description": "A powdery substance which, when mixed correctly with other reagents (including heat) produces a substance with a mild sheen half as shiny as metal, with a resin-like durability.  The final result is mostly Bronsilica, the other reagents are necessary to unlock it’s malleable and shapeable form, otherwise it remains too crystalline.  Due to the rarity of the substance, it is quite expensive and prized.  It is found most commonly in desert climates, and is often found near Callashar.  \nMineral -- Rare.",
+        "cost": 20
     },
     {
-        "cost": 10,
-        "description": "Like Bronsilica, Basilica is a rock which can be broken down into a powdery substance with the right procedures.  It is used in metal alloys and as an alchemical reagent to disrupt other materials - such as reducing the melting point of metals and stones.  \nMineral -- Common.",
         "name": "Basilica",
-        "type": "materials"
+        "type": "materials",
+        "description": "Like Bronsilica, Basilica is a rock which can be broken down into a powdery substance with the right procedures.  It is used in metal alloys and as an alchemical reagent to disrupt other materials - such as reducing the melting point of metals and stones.  \nMineral -- Common.",
+        "cost": 10
     },
     {
-        "cost": 10,
-        "description": "A blue and green flecked granular salt that when used in alchemical recipes can enhance or reduce effects.  Not very palatable, but in its base form is not poisonous.  When mixed with an alcohol can make an excellent light solvent, for cleaning and repairing machinery, armour and weaponry, or lamps and lanterns.  It can also be used as a primer before applying oils.  \nMineral -- Common.",
         "name": "Saltine",
-        "type": "materials"
+        "type": "materials",
+        "description": "A blue and green flecked granular salt that when used in alchemical recipes can enhance or reduce effects.  Not very palatable, but in its base form is not poisonous.  When mixed with an alcohol can make an excellent light solvent, for cleaning and repairing machinery, armour and weaponry, or lamps and lanterns.  It can also be used as a primer before applying oils.  \nMineral -- Common.",
+        "cost": 10
     },
     {
-        "cost": 24,
-        "description": "A strange light rock that, when powered or sandy burns easily.  The act of creating a powder from the rock is very difficult, as the friction can cause it to combust.  \nMineral -- Uncommon.",
         "name": "Firestone",
-        "type": "materials"
+        "type": "materials",
+        "description": "A strange light rock that, when powered or sandy burns easily.  The act of creating a powder from the rock is very difficult, as the friction can cause it to combust.  \nMineral -- Uncommon.",
+        "cost": 24
     },
     {
-        "cost": 10,
-        "description": "These are cheap metals that initially resemble gold and silver, but which tarnish to a duller colour within a few years.  \nMetal -- Common.",
         "name": "Bronzegold, Polienium",
-        "type": "materials"
+        "type": "materials",
+        "description": "These are cheap metals that initially resemble gold and silver, but which tarnish to a duller colour within a few years.  \nMetal -- Common.",
+        "cost": 10
     },
     {
-        "cost": 80,
-        "description": "Saphirium is light durable and maintains its form for very long periods.  It excels as a material for making weapons, and most Fine Equipments are made from Saphirium.  When worked, it gains a reflective sheen then when viewed close looks like glitter that reflects white, blue, pink, yellow, and green.  \nMetal -- Rare.",
         "name": "Saphirium",
-        "type": "materials"
+        "type": "materials",
+        "description": "Saphirium is light durable and maintains its form for very long periods.  It excels as a material for making weapons, and most Fine Equipments are made from Saphirium.  When worked, it gains a reflective sheen then when viewed close looks like glitter that reflects white, blue, pink, yellow, and green.  \nMetal -- Rare.",
+        "cost": 80
     },
     {
-        "cost": 24,
-        "description": "An powdery chalky mineral with a blue tinge.  When exposed to different energies, changes its colour, and so is prized for art craft and unique works.  The colour it takes tends to the opposite of the energy applied.  \nMineral -- Uncommon.",
         "name": "Peribeltica",
-        "type": "materials"
+        "type": "materials",
+        "description": "An powdery chalky mineral with a blue tinge.  When exposed to different energies, changes its colour, and so is prized for art craft and unique works.  The colour it takes tends to the opposite of the energy applied.  \nMineral -- Uncommon.",
+        "cost": 24
     },
     {
-        "cost": 50,
-        "description": "A deep purple, rocky material that can be burned for energy, and even tiny portions of it can be used to create alloys.  \nMineral -- Very Rare.",
         "name": "Tremaxite",
-        "type": "materials"
+        "type": "materials",
+        "description": "A deep purple, rocky material that can be burned for energy, and even tiny portions of it can be used to create alloys.  \nMineral -- Very Rare.",
+        "cost": 50
     },
     {
-        "cost": 36,
-        "description": "A dark volcanic rock made from lava cooling with sand and rock.\nMineral -- Uncommon.",
         "name": "Scoria",
-        "type": "materials"
+        "type": "materials",
+        "description": "A dark volcanic rock made from lava cooling with sand and rock.\nMineral -- Uncommon.",
+        "cost": 36
     },
     {
-        "cost": 30,
-        "description": "A dark, volcanic rock that has cooled over vegetation, creating a uniquely carvable scoria.  While not as hard as metal, it is considered one of the hardest timbers - though whether it is truly a timber or a rock is up for debate.  Luminal enegies tend to be absorbed and reduced by the material.  \nMineral -- Rare -- Resist Luminal.",
         "name": "Ebon Scoria",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A dark, volcanic rock that has cooled over vegetation, creating a uniquely carvable scoria.  While not as hard as metal, it is considered one of the hardest timbers - though whether it is truly a timber or a rock is up for debate.  Luminal enegies tend to be absorbed and reduced by the material.  \nMineral -- Rare -- Resist Luminal.",
+        "cost": 30
     },
     {
-        "cost": 30,
-        "description": "A marbled, clear-pink stone.  Prized by Alchemists and Gadgeteers for its absorbance and sensitivity to Sonic energy.  Due to this it can be used both to react to Sonic energies, or if attuned correctly to dampen them.  \nMineral -- Uncommon -- Resist Sonic.",
         "name": "Orraquartz",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A marbled, clear-pink stone.  Prized by Alchemists and Gadgeteers for its absorbance and sensitivity to Sonic energy.  Due to this it can be used both to react to Sonic energies, or if attuned correctly to dampen them.  \nMineral -- Uncommon -- Resist Sonic.",
+        "cost": 30
     },
     {
-        "cost": 30,
-        "description": "A black semi-metallic rock that reflects a dark orange colour.  Famed for being resistant to Pyral energy.  \nMineral -- Uncommon -- Resist Pyral.",
         "name": "Orrathium",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A black semi-metallic rock that reflects a dark orange colour.  Famed for being resistant to Pyral energy.  \nMineral -- Uncommon -- Resist Pyral.",
+        "cost": 30
     },
     {
-        "cost": 30,
-        "description": "A form of tempered volcanic glass much like Obsidian, thought less prone to shattering and which melts at lower temperatures.  It is a man-made construct, being the product of Basilica powder and igneous rock.  Has a curious resistance to Cryonic Energy.  \nMineral -- Uncommon -- Resist Cryonic.",
         "name": "Altsidian",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A form of tempered volcanic glass much like Obsidian, thought less prone to shattering and which melts at lower temperatures.  It is a man-made construct, being the product of Basilica powder and igneous rock.  Has a curious resistance to Cryonic Energy.  \nMineral -- Uncommon -- Resist Cryonic.",
+        "cost": 30
     },
     {
-        "cost": 35,
-        "description": "An amber-like glass, fairly waxen and softer than regular glass, created by the unusual combination of sand and minerals and then struck by lightning. Researchers believe this is what makes it resistant to Electric Energy. Some specimens are blue and green, when combined with other mineralis, such as cobaltite (blue) and copper veins (green).  \nMineral -- Rare -- Resist Electric.",
         "name": "Thunderglass",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An amber-like glass, fairly waxen and softer than regular glass, created by the unusual combination of sand and minerals and then struck by lightning. Researchers believe this is what makes it resistant to Electric Energy. Some specimens are blue and green, when combined with other mineralis, such as cobaltite (blue) and copper veins (green).  \nMineral -- Rare -- Resist Electric.",
+        "cost": 35
     },
     {
-        "cost": 45,
-        "description": "An opalescent gemstone which refracts and reflects light in a beautiful way.  Originally created by Simmin, it is a material created by superheating and melting pearl and Ludmelic Copper, then super cooling and hammering into miniscule but serrated and jagged form, with many surface edges.  When created in such a way, absorbs and reduced the effectiveness of Umbral energies.  \nMineral -- Rare -- Resist Umbral.",
         "name": "Speckled Simlite",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An opalescent gemstone which refracts and reflects light in a beautiful way.  Originally created by Simmin, it is a material created by superheating and melting pearl and Ludmelic Copper, then super cooling and hammering into miniscule but serrated and jagged form, with many surface edges.  When created in such a way, absorbs and reduced the effectiveness of Umbral energies.  \nMineral -- Rare -- Resist Umbral.",
+        "cost": 45
     },
     {
-        "cost": 30,
-        "description": "An alchemical, pink soft crystal that is highly absorbent of liquids like water and non-oily runoff.  It is commonly used in alchemical laboratories to absorb water and other oil-free liquids, for cleaning and safety.  When fashioned into a lattice formation, has the curious ability to provide Zephyral resistance.  \nMineral -- Uncommon -- Resist Zephyral.",
         "name": "Abstrate",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An alchemical, pink soft crystal that is highly absorbent of liquids like water and non-oily runoff.  It is commonly used in alchemical laboratories to absorb water and other oil-free liquids, for cleaning and safety.  When fashioned into a lattice formation, has the curious ability to provide Zephyral resistance.  \nMineral -- Uncommon -- Resist Zephyral.",
+        "cost": 30
     },
     {
-        "cost": 85,
-        "description": "A highly sought after alloy, due to its intense strength, resilience, and resistance to shock.  The secret to creating the alloy is with the Dwarves.  Armours made from the metal are unyielding and harder to wear and even block with, but offer a high Physical Resistance.  Has an unusually orange colour.\nAlloy -- Rare -- Resist Physical.",
         "name": "Bismuth Bronze",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A highly sought after alloy, due to its intense strength, resilience, and resistance to shock.  The secret to creating the alloy is with the Dwarves.  Armours made from the metal are unyielding and harder to wear and even block with, but offer a high Physical Resistance.  Has an unusually orange colour.\nAlloy -- Rare -- Resist Physical.",
+        "cost": 85
     },
     {
-        "cost": 100,
-        "description": "A highly reflective copper gold metal that has a mild anti-magic property.  While also disrupting magics generally, it cannot be enchanted, and makes shaping magics more difficult when held to the skin of a magic user.\nMetal -- Very Rare -- Resist Magic.",
         "name": "Ludmelic Copper",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A highly reflective copper gold metal that has a mild anti-magic property.  While also disrupting magics generally, it cannot be enchanted, and makes shaping magics more difficult when held to the skin of a magic user.\nMetal -- Very Rare -- Resist Magic.",
+        "cost": 100
     },
     {
-        "cost": 90,
-        "description": "An alloy of Orraquartz and Heliolite, Lanuanite is known to disrupt teleportation magics that occur within 50m.  \nAlloy -- Very Rare -- Resist Teleportation.",
         "name": "Lanuanite",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An alloy of Orraquartz and Heliolite, Lanuanite is known to disrupt teleportation magics that occur within 50m.  \nAlloy -- Very Rare -- Resist Teleportation.",
+        "cost": 90
     },
     {
-        "cost": 70,
-        "description": "An extremely hard semi-transparent stone that shards and breaks into razor-sharp edges.  It is believed that waving this around illusory magics can make the magic waver.  \nMineral -- Very Rare -- Resist Illusion.",
         "name": "Kendas Crystal",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An extremely hard semi-transparent stone that shards and breaks into razor-sharp edges.  It is believed that waving this around illusory magics can make the magic waver.  \nMineral -- Very Rare -- Resist Illusion.",
+        "cost": 70
     },
     {
-        "cost": 100,
-        "description": "Made by smelting a small amount of Ludmellic Copper with multiple metals.  Prized for its ability to subvert mind controlling magics.  \nMetal -- Very Rare -- Resist Mental.",
         "name": "Leadthought",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "Made by smelting a small amount of Ludmellic Copper with multiple metals.  Prized for its ability to subvert mind controlling magics.  \nMetal -- Very Rare -- Resist Mental.",
+        "cost": 100
     },
     {
-        "cost": 30,
-        "description": "An iron smelting technique unique to the Erudite Foundation (using a process of heating and super cooling), Cold Iron is cheap to make, extremely durable, but very hard to work with and so the process take a long while - and complex shapes and forms even longer.  For that reason it is used in simple items like boxes and safes, or in simple construction forms like beams and girders.  When worked into a lattice, it can reduce the effectiveness of Scrying magics.  \nAlloy -- Uncommon -- Resist Divination.",
         "name": "Cold Iron",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An iron smelting technique unique to the Erudite Foundation (using a process of heating and super cooling), Cold Iron is cheap to make, extremely durable, but very hard to work with and so the process take a long while - and complex shapes and forms even longer.  For that reason it is used in simple items like boxes and safes, or in simple construction forms like beams and girders.  When worked into a lattice, it can reduce the effectiveness of Scrying magics.  \nAlloy -- Uncommon -- Resist Divination.",
+        "cost": 30
     },
     {
-        "cost": 24,
-        "description": "A gritty, brown, sandy material used to enhance energies, which allows for energy levels beyond normal levels.  It is flecked with pinkish-white grains, which act as an easy combustible.  It is difficult, but possible, to work into metals and items.  \nMineral -- Uncommon -- Enhance Energy.",
         "name": "Endelsand",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A gritty, brown, sandy material used to enhance energies, which allows for energy levels beyond normal levels.  It is flecked with pinkish-white grains, which act as an easy combustible.  It is difficult, but possible, to work into metals and items.  \nMineral -- Uncommon -- Enhance Energy.",
+        "cost": 24
     },
     {
-        "cost": 100,
-        "description": "A golden metal that is very rare and very valuable.  Thought to be metals that are infused with magics during the height of a Flow.  Can be used to create items of wondrous magic, as the metal propagates enchantments better than any other.  \nMetal -- Very Rare -- Enhance Magic.",
         "name": "Xirium",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A golden metal that is very rare and very valuable.  Thought to be metals that are infused with magics during the height of a Flow.  Can be used to create items of wondrous magic, as the metal propagates enchantments better than any other.  \nMetal -- Very Rare -- Enhance Magic.",
+        "cost": 100
     },
     {
-        "cost": 40,
-        "description": "An alloy of iron and Tremaxite, Pendlesteel is quite durable and enchanters have noted that enhancement magics tend to bond well with it.  Is often used to fashion armours, though due to it being fairly heavy, it is often ringmail, chainmail or fashioned with leathers to reduce the load.  \nAlley -- Rare -- Enhance Magic.",
         "name": "Pendlesteel",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An alloy of iron and Tremaxite, Pendlesteel is quite durable and enchanters have noted that enhancement magics tend to bond well with it.  Is often used to fashion armours, though due to it being fairly heavy, it is often ringmail, chainmail or fashioned with leathers to reduce the load.  \nAlley -- Rare -- Enhance Magic.",
+        "cost": 40
     },
     {
-        "cost": 120,
-        "description": "An extremely rare soft, purple, transparent stone.  It is found at extreme depths, forming where Flow-infused waters seep deep into the bedrock and coalesce into tiny pockets.  No miner has ever found a vein or source of it larger than a few pea-sized pockets, and they theorise that it cannot form in larger quantities.  Even a pea-sized amount has the powerful property of being able to detect the fine movements of The Flow and magic.  Due to its soft nature, it can be worked into metals and even timbers, though the craftsmanship to do so and not grind it into a sand is so delicate that much has been lost.\nMineral -- Extremely Rare -- Enhance Magic.",
         "name": "Heliolite",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "An extremely rare soft, purple, transparent stone.  It is found at extreme depths, forming where Flow-infused waters seep deep into the bedrock and coalesce into tiny pockets.  No miner has ever found a vein or source of it larger than a few pea-sized pockets, and they theorise that it cannot form in larger quantities.  Even a pea-sized amount has the powerful property of being able to detect the fine movements of The Flow and magic.  Due to its soft nature, it can be worked into metals and even timbers, though the craftsmanship to do so and not grind it into a sand is so delicate that much has been lost.\nMineral -- Extremely Rare -- Enhance Magic.",
+        "cost": 120
     },
     {
-        "cost": 150,
-        "description": "A formation of steel that is lighter by almost half.  Many have tried to replicate the steel, but the secret is guarded by the Theocratic Confederacy of Sanctuary.  Rumours say that such excellent metalwork can only be under the hands of the dwarves or the elves, but they would need to be particularly pious to align with the confed.\nAlloy -- Exremely Rare -- Enhance All.",
         "name": "Ethersteel",
-        "type": "arcanamaterial"
+        "type": "arcanamaterial",
+        "description": "A formation of steel that is lighter by almost half.  Many have tried to replicate the steel, but the secret is guarded by the Theocratic Confederacy of Sanctuary.  Rumours say that such excellent metalwork can only be under the hands of the dwarves or the elves, but they would need to be particularly pious to align with the confed.\nAlloy -- Exremely Rare -- Enhance All.",
+        "cost": 150
     }
 ]

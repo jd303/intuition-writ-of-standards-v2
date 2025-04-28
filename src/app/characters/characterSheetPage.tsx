@@ -43,7 +43,6 @@ import icoDagger from '/images/icons/ico.poisoned.dagger.svg';
 import icoTool from '/images/icons/ico.magic.svg';
 import icoBeast from '/images/icons/ico.bear.svg';
 import icoFist from '/images/icons/ico.fist.svg';
-import icoMagic from '/images/icons/ico.magic.svg';
 import icoSpiral from '/images/icons/ico.spiral.svg';
 import icoMagicMulti from '/images/icons/ico.magic.multi.svg';
 import icoCombat from '/images/icons/ico.combat.svg';
@@ -52,6 +51,8 @@ import icoPotionBlack from '/images/icons/ico.potion.black.svg';
 import icoCoin from '/images/icons/ico.medal.silver.svg';
 import icoMapPin from '/images/icons/ico.map_pin.svg';
 import Statuses from './components/statusesComponent.tsx';
+import SpellList from './components/spellList.tsx';
+import PsionicPowersViewer from './components/psionicPowersViewer.tsx';
 
 function CharacterSheetPage() {
 	const params = useParams();
@@ -145,16 +146,6 @@ function CharacterSheetPage() {
 
 	// Magic Data
 	const spellcraftID = '797d1feb';
-	const spellsData = useAppSelector((state) => state.magicSpells.spells);
-	const spellsOptions = useMemo(() => spellsData.filter(spell => spell.level < character.purchases.skills_and_expertises[spellcraftID] && spell.sources.includes(character.vitae.source)).map(spell => { return { value: spell.id, label: `${spell.easyname} - ${spell.name}` } }), [spellsData, character.purchases.skills_and_expertises, character.vitae.source]);
-	const characterSpells = useMemo(() => spellsData.filter(spell => character.spells.includes(spell.id)), [spellsData, character.spells]);
-	const showAbilityModalSpell = (spellId: string) => { setAbilityModalVisible(true); setAbilityModalSource(characterSpells.find(spell => spell.id == spellId)); };
-
-	// Psionics Data
-	const psionicPowers = useAppSelector((state) => state.psionicPowers.powers);
-	const psionicPowersOptions = useMemo(() => psionicPowers.map((p) => { return { value: p.id, label: `${p.aptitude} - ${p.name}` } }), [psionicPowers]);
-	const showAbilityModalPower = (powerId: string) => { setAbilityModalVisible(true); setAbilityModalSource(psionicPowers.find(p => p.id == powerId)); };
-	const [selectedPsionicPower, setSelectedPsionicPower] = useState<string>();
 
 	// Racial Modifiers data
 	const racialBonuses = useAppSelector((state) => state.racialBonuses.bonuses);
@@ -338,23 +329,8 @@ function CharacterSheetPage() {
 							<Synergies />
 						</SheetBlock>
 						{character.purchases.skills_and_expertises[spellcraftID] > 0 && (
-							<SheetBlock layout="flex-row" className={st.spellsField}>
-								<BlockHeading
-									icon={icoMagic}
-									label='Spells' />
-								{Array.from(Array(character.purchases.skills_and_expertises[spellcraftID] * 2)).map((_, index) => (
-									<div className={st.spellBlock} key={`spell-${index}`}>
-										{character.spells[index] ? (
-											<>
-												<TextField initialValue={characterSpells.find(charSpell => charSpell.id == character.spells[index])?.name || ''} disabled={true} />
-												<button onClick={() => showAbilityModalSpell(character.spells[index])}>Info</button>
-												<button onClick={() => updateCharacterValue(`spells.${index}`, '')}>X</button>
-											</>
-										) : (
-											<SelectField options={spellsOptions} initialValue={character.spells[index]} onChange={characterValueUpdater(`spells.${index}`)} />
-										)}
-									</div>
-								))}
+							<SheetBlock className={st.spellsField}>
+								<SpellList mode={MoveDisplayMode.default} />
 							</SheetBlock>
 						)}
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.magic_spellcraft} mode={MoveDisplayMode.default} /></SheetBlock>
@@ -421,9 +397,7 @@ function CharacterSheetPage() {
 							<ResourceComponent type="psi" mode={MoveDisplayMode.default} />
 						</SheetBlock>
 						<SheetBlock layout="flex-column">
-							<BlockHeading label="Powers" />
-							<SelectField options={psionicPowersOptions} initialValue={'Select'} defaultValue="Select" onChange={(value: string | number) => setSelectedPsionicPower(value as string)} />
-							<button onClick={() => showAbilityModalPower(selectedPsionicPower!)}>View Power</button>
+							<PsionicPowersViewer />
 						</SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.psi_kinetics} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.psi_clairsentience} mode={MoveDisplayMode.default} /></SheetBlock>

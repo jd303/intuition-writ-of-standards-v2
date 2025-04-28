@@ -21,10 +21,11 @@ import { SynergyModel } from '../../features/models/synergyModel';
 import SheetBlock from './characterSheetBlockComponent';
 import Armours from './components/armoursComponent';
 import Weapons from './components/weaponsComponent';
-
 import ItemBelt from './components/itemBeltComponent';
 import ResistancesList from './components/resistancesListComponent';
 import Statuses from './components/statusesComponent';
+import SpellList from './components/spellList';
+import PsionicPowersViewer from './components/psionicPowersViewer';
 
 import icoWellness from '/images/icons/ico.wellness.svg';
 import icoCombat from '/images/icons/ico.combat.svg';
@@ -58,11 +59,9 @@ function CharacterCombatPage() {
 	const skillBlocks = useMemo(() => {
 		const elements: JSX.Element[] = [];
 		Object.keys(movesByCategory).map((skillKey: string, index: number) => {
-			const expertiseIds: string[] = [];
-			movesByCategory[skillKey].moves!.forEach((move) => move.expertises?.forEach((expertise) => expertiseIds.push(expertise.id)));
-
-			if (!movesByCategory[skillKey].skill?.trained || (Object.keys(character.purchases.skills_and_expertises).some(item => movesByCategory[skillKey].purchaseIds.includes(item)))) {
-				elements.push(<SkillBlock skillCategory={movesByCategory[skillKey]} mode={MoveDisplayMode.display} key={`skill-${index}`} />);
+			const hasPurchases = (Object.keys(character.purchases.skills_and_expertises).some(item => movesByCategory[skillKey].purchaseIds.includes(item)));
+			if (!movesByCategory[skillKey].skill?.trained || hasPurchases) {
+				elements.push(<SkillBlock skillCategory={movesByCategory[skillKey]} mode={MoveDisplayMode.combat} key={`skill-${index}`} />);
 			}
 		});
 
@@ -106,16 +105,16 @@ function CharacterCombatPage() {
 						<SheetBlock><ResistancesList /></SheetBlock>
 						<SheetBlock><Statuses /></SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Combat" icon={icoCombat} innerClassName={`${st.sectionVitae} ${st.grid}`} sectionRefs={sectionRefs}>
+					<SectionBlock name="Combat" icon={icoCombat} innerClassName={`${st.sectionCombat} ${st.grid}`} sectionRefs={sectionRefs}>
 						<SheetBlock><Weapons mode={MoveDisplayMode.display} /></SheetBlock>
 						<SheetBlock><Armours mode={MoveDisplayMode.display} /></SheetBlock>
 					</SectionBlock>
-					{hasSpellsOrPowers && <SectionBlock name="Spells & Powers" icon={icoMagic} innerClassName={st.sectionVitae} sectionRefs={sectionRefs}>
-						{hasSpellsOrPowers.hasSpells && <SheetBlock>Spells</SheetBlock> || <></>}
-						{hasSpellsOrPowers.hasPowers && <SheetBlock>Powers</SheetBlock> || <></>}
+					{hasSpellsOrPowers && <SectionBlock name="Spells & Powers" icon={icoMagic} innerClassName={`${st.sectionSpellsAndPowers} ${st.flex} ${st.flexColumn}`} sectionRefs={sectionRefs}>
+						{hasSpellsOrPowers.hasSpells && <SheetBlock><SpellList mode={MoveDisplayMode.combat} /></SheetBlock> || <></>}
+						{hasSpellsOrPowers.hasPowers && <SheetBlock layout="flex-column"><PsionicPowersViewer /></SheetBlock> || <></>}
 					</SectionBlock>}
-					<SectionBlock name="Skills" icon={icoWellness} innerClassName={st.sectionVitae} sectionRefs={sectionRefs}>
-						{skillBlocks}
+					<SectionBlock name="Skills" icon={icoWellness} innerClassName={st.sectionSkills} sectionRefs={sectionRefs}>
+						<SheetBlock className={`${st.skillsList} ${st.grid}`}>{skillBlocks}</SheetBlock>
 					</SectionBlock>
 				</div>
 			</div>

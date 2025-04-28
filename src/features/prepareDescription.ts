@@ -13,7 +13,8 @@ export const prepareDescription = (description: string, modifiers: DescriptionMo
 		matches?.forEach((match) => {
 			const matchString = match.replace(/\[|\]/g, '');
 			const matchParts = matchString.split('|');
-			const remainingMatchParts = matchParts.splice(modifiers.purchasedPoints || 0);
+			const purchaseIndex = modifiers.purchasedPoints && modifiers.purchasedPoints - 1 || 0;
+			const remainingMatchParts = matchParts.splice(purchaseIndex);
 			workingDescription = workingDescription.replace(match, `${remainingMatchParts[0]} <span class="${expertiseDisplayClass}">(${remainingMatchParts.splice(1).join(", ")})</span>`);
 		});
 	}

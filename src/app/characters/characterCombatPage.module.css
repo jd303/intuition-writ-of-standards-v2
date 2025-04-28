@@ -1,10 +1,26 @@
 .characterCombatPageContainer {
 	width: 100%;
 	max-width: var(--max-width-character-sheet-page);
-	margin: auto;
+	margin: auto;		
 
 	.sectionVitae {
-		
+		background-color: rgba(var(--colour-scarlet), 0.15);
+	}
+
+	.sectionCombat {
+		background-color: rgba(var(--colour-cobalt), 0.15);
+	}
+	
+	.sectionSpellsAndPowers {
+		background-color: rgba(var(--colour-scarlet), 0.15);
+	}
+
+	.sectionSkills {
+		background-color: rgba(var(--colour-dark), 0.15);
+
+		.skillsList {
+			gap: var(--padding-standard);
+		}
 	}
 
 	.grid {
@@ -17,5 +33,14 @@
 		display: grid;
 		grid-template-columns: var(--grid-template-columns);
 		gap: var(--padding-1-4);
+	}
+
+	.flex {
+		display: flex;
+		gap: var(--padding-1-4);
+
+		&.flexColumn {
+			flex-direction: column;
+		}
 	}
 }

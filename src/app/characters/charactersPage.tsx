@@ -44,7 +44,8 @@ function CharactersPage() {
 						<Link className={st.characterLink + " trattatello"} to={`/characters/${character.id}`}>{character.vitae.name}</Link>
 						<ConfirmButton className={st.confirmButton} onClick={() => deleteCharacter(character.id.toString())} label="Delete" />
 					</div>
-				)) || <p>You do not currently have any characters.</p>}
+				)) || <p>You do not currently have any characters. Why don't you make someone special?</p>}
+				
 			</div>
 			<div className={st.characterBlock}>
 				<h1>Create a new character</h1>

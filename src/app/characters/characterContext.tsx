@@ -1,5 +1,5 @@
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
-import { CharacterModel, WeaponDefinition } from "../../features/models/character/characterModel";
+import { ArmourDefinition, CharacterModel, WeaponDefinition } from "../../features/models/character/characterModel";
 import { SynergyModel } from "../../features/models/synergyModel";
 import { PsionicPowerModel } from "../../features/models/psionicPowerModel";
 import { SpellModel } from "../../features/models/spellModel";
@@ -10,7 +10,7 @@ type CharacterSheetContextType = {
 	setPurchaseMode: (value: string) => void;
 	characterPurchaseUpdater: (updatePath: string, isSkill?: boolean) => void;
 	characterValueUpdater: (updatePath: string) => void;
-	updateCharacterValue: (updatePath: string, value: string | number | WeaponDefinition) => void;
+	updateCharacterValue: (updatePath: string, value: string | number | WeaponDefinition | ArmourDefinition ) => void;
 	characterSheetSearch: string;
 	maxSkillPoints: number;
 	setAbilityModalVisible: Dispatch<SetStateAction<boolean>>;

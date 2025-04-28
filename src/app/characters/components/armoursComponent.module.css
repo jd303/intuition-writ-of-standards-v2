@@ -1,23 +1,39 @@
 .armourContainer {
 	container-type: inline-size;
 
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding-1-4);
+
+	.addArmourButton {
+		position: absolute;
+		top: -2px;
+		right: 0;
+		height: 30px;
+		line-height: 30px;
+	}
+
 	.armourList {
 		display: grid;
 		gap: var(--padding-1-4);
 		grid-template-columns: 150px 50px auto;
 
-		div:nth-child(4) label,
-		div:nth-child(5) label,
-		div:nth-child(6) label {
+		&:nth-child(3) label,
+		&:nth-child(4) label,
+		&:nth-child(5) label,
+		&:nth-child(6) label,
+		&:nth-child(7) label {
 			display: none;
 		}
 
 		@container (max-width: 500px) {
 			grid-template-columns: 45px auto auto;
 
-			div:nth-child(4) label,
-			div:nth-child(5) label,
-			div:nth-child(6) label {
+			&:nth-child(3) label,
+			&:nth-child(4) label,
+			&:nth-child(5) label,
+			&:nth-child(6) label {
 				display: block;
 			}
 			
@@ -31,6 +47,27 @@
 			.effects {
 				grid-column: 2 / 4;
 			}
+		}
+
+		.effects {
+			display: flex;
+			gap: var(--padding-1-4);
+			align-items: flex-end;
+		}
+	}
+
+	.removeArmourButton {
+		width: 30px;
+	}
+
+	&[data-displaymode="display"] {
+		.addArmourButton,
+		.removeArmourButton {
+			display: none;
+		}
+
+		input {
+			pointer-events: none;
 		}
 	}
 }

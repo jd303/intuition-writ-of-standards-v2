@@ -74,7 +74,7 @@ function ResourceComponent({ type, mode }: { type: "mana" | "verve" | "psi", mod
 				{mode != MoveDisplayMode.display && (<div><PurchasePointGroup count={30} columns={15} purchased={resourceDetails.purchased} purchaseCallback={characterPurchaseUpdater(resourceDetails.purchaseString)!} maxPurchases={5 + maxSkillPoints * 2} /></div>)}
 			</div>
 			<div className={stresources.resourceFields}>
-				<TextField label="Current" type="number" initialValue={resourceDetails.currentResource} onChange={characterValueUpdater(`${resourceDetails.purchaseString}.current`)!} className={(resourceDetails.currentResource > resourceDetails.totalResource) ? st.overResourced : ''} />
+				<TextField label="Current" type="number" initialValue={resourceDetails.currentResource} onChange={characterValueUpdater(`${resourceDetails.purchaseString}.current`)!} className={(resourceDetails.currentResource > resourceDetails.totalResource) ? stresources.overResourced : ''} />
 				<TextField label="Bonus" type="number" initialValue={resourceDetails.bonusResource} onChange={characterValueUpdater(`${resourceDetails.purchaseString}.bonus`)!} />
 				<TextField label="Total" type="number" initialValue={resourceDetails.totalResource} disabled={true} />
 			</div>

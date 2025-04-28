@@ -7,6 +7,10 @@
 	&.open {}
 
 	&.closed {
+		&:after {
+			margin: var(--padding-half);
+		}
+
 		h1 {
 			opacity: 0.6;
 		}

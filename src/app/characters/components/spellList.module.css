@@ -1,0 +1,40 @@
+.container {
+	&[data-mode="combat"] {
+		select,
+		input {
+			pointer-events: none;
+		}
+
+		.removeSpellButton {
+			display: none;
+		}
+	}
+}
+
+.spells {
+	--grid-template-columns: 1fr;
+
+	@media (min-width: 768px) {
+		--grid-template-columns: 1fr 1fr;
+	}
+
+	display: grid;
+	grid-template-columns: var(--grid-template-columns);
+	gap: var(--padding-1-4);
+}
+
+.spellBlock {
+	--margin-right: 0;
+
+	@media (min-width: 600px) {
+		--margin-right: 10px;
+	}
+
+	display: flex;
+	gap: var(--padding-1-4);
+	margin-right: var(--margin-right);
+
+	button {
+		min-width: 38px;
+	}
+}
