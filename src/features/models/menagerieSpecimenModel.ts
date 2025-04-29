@@ -49,7 +49,7 @@ export interface MenagerieSpecimenModel {
 	combatmoves: MenagerieSpecimenMove[],
 	resistances: string,
 	weaknesses: string,
-	properties: string,
+	properties: string | string[],
 	description: string,
 	companionable: boolean,
 

@@ -177,7 +177,7 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 			<div className={st.moves}>
 				{menagerieSpecimen.properties?.length && (
 					<div className={[st.propertyList, st.paddedInnerSection, st.fonted].join(' ')}>
-						{menagerieSpecimen.properties.split('--')?.map((prop, index: number) => (
+						{(menagerieSpecimen.properties as string).split('--')?.map((prop, index: number) => (
 							<div key={`move-${index}`} className={st.property}>{prop}</div>
 						))}
 					</div>
