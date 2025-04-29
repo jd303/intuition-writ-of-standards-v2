@@ -7,7 +7,7 @@ import { setMenu } from "../../features/ui/uiSlice";
 import { RouteDefinition, routes } from "../../routes";
 import IntuitionLogo from "../components/intuition-logo/intuition-logo";
 
-import st from './PageBanner.module.css';
+import st from './pageBanner.module.css';
 
 
 function PageBanner() {
