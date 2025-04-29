@@ -29,7 +29,7 @@ function CharacterCompanionMoves() {
 						<TextField initialValue={move.label} disabled={true} key={`cm-${index}`} />
 					))}
 					{Array.from(Array(character.purchases.skills_and_expertises.f73a1fd2)).map((_, index) => (
-						<SelectField options={companionMoveOptions} initialValue={character.companion.moves[index]} onChange={characterValueUpdater(`companion.moves.${index}`)} key={`cmnew-${index}`} />
+						<SelectField options={companionMoveOptions} initialValue={character.companion.moves[index]} onChange={characterValueUpdater(`companion.moves.${index}`)!} key={`cmnew-${index}`} />
 					))}
 				</SheetBlock>
 			)}
