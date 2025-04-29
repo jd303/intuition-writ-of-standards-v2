@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import st from './moveBlock.module.css';
+import st from './MoveBlock.module.css';
 import { MoveModel } from '../../../features/models/moveModel';
 import { prepareDescription } from '../../../features/prepareDescription';
 import { useCharacterContext } from '../../characters/characterContext.tsx';
