@@ -29,7 +29,8 @@ definitions:
       - pipe: atlassian/firebase-deploy:0.2.1
         variables:
           FIREBASE_TOKEN: $FIREBASE_TOKEN
-          PROJECT_ID: $FIREBASE_PROJECT_STAGING
+          PROJECT_ID: $FIREBASE_PROJECT
+          EXTRA_ARGS: "--only hosting:intuition-writ-of-persona-staging"
 
   - step: &deploy-production
       name: Build and Deploy
@@ -38,7 +39,8 @@ definitions:
       - pipe: atlassian/firebase-deploy:0.2.1
         variables:
           FIREBASE_TOKEN: $FIREBASE_TOKEN
-          PROJECT_ID: $FIREBASE_PROJECT_PRODUCTION
+          PROJECT_ID: $FIREBASE_PROJECT
+          EXTRA_ARGS: "--only hosting:intuition-writ-of-persona"
 
 pipelines:
   branches:
