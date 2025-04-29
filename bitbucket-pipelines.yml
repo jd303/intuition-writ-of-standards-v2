@@ -26,12 +26,19 @@ definitions:
       script:
       - echo "Building and deploying to staging"
       - npm run build
-      - npm run deploy_staging
+      - pipe: atlassian/firebase-deploy:0.2.1
+        variables:
+          FIREBASE_TOKEN: $FIREBASE_TOKEN
+          PROJECT_ID: $FIREBASE_PROJECT_STAGING
 
   - step: &deploy-production
       name: Build and Deploy
       script:
       - echo "Building and deploying to production (coming soon)"
+      - pipe: atlassian/firebase-deploy:0.2.1
+        variables:
+          FIREBASE_TOKEN: $FIREBASE_TOKEN
+          PROJECT_ID: $FIREBASE_PROJECT_PRODUCTION
 
 pipelines:
   branches:
