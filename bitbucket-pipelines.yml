@@ -8,6 +8,8 @@ definitions:
       - node
       script:
       - npm install
+      artifacts:
+      - node_modules/**
 
   - step: &run-tests
       name: Run Tests
