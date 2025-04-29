@@ -20,7 +20,6 @@ import PurchasePointGroup from '../components/purchasePointGroup/purchasePointGr
 import SkillBlock from '../components/moves/SkillBlock';
 import { CharacterSheetContext } from './characterContext';
 import SelectorDropdown from '../components/controlBar/selectorDropdown';
-import MenagerieSpecimenBlock from '../components/beast/menagerieSpecimenBlock.tsx';
 import profilePhotos from './characterProfilePhotos.ts';
 import BlockHeading from './blockHeading.tsx';
 import AbilityModal from '../components/abilityModal/abilityModal.tsx';
@@ -53,6 +52,8 @@ import icoMapPin from '/images/icons/ico.map_pin.svg';
 import Statuses from './components/statusesComponent.tsx';
 import SpellList from './components/spellList.tsx';
 import PsionicPowersViewer from './components/psionicPowersViewer.tsx';
+import CharacterCompanion from './components/characterCompanion.tsx';
+import CharacterCompanionMoves from './components/characterCompanionMoves.tsx';
 
 function CharacterSheetPage() {
 	const params = useParams();
@@ -157,16 +158,9 @@ function CharacterSheetPage() {
 	const languages = useAppSelector((state) => state.languages.languages);
 	const languageOptions = [{ value: '', label: 'Choose' }, ...useMemo(() => languages.map((l) => { return { value: l.id, label: l.name } }), [languages])];
 
-	// Companion Data
-	const beastSkillID = 'f73a1fd2';
-	const companions = useAppSelector(state => state.menagerieData.menagerie);
-	const companionsOptions = useMemo(() => [ { value: '', label: 'Please Choose...' } , ...companions.filter(menagerieSpecimen => menagerieSpecimen.companionable).map(companion => { return { value: companion.id, label: companion.name } }) ], [companions]);
-	const companionMoves = useAppSelector(state => state.companionMovesData.companionMoves);
-	const companionMoveBasicOptions = useMemo(() => companionMoves.filter(move => move.type == "basic").map((move) => { return { value: move.id as string, label: `${move.name}: ${move.desc}` } }), [companionMoves]);
-	const companionMoveOptions = useMemo(() => companionMoves.filter(move => character.purchases.skills_and_expertises[beastSkillID] >= 5 && ['advanced', 'standard'].includes(move.type as string) || move.type == "standard").map((move) => { return { value: move.id as string, label: `${move.name}: ${move.desc}` } }), [companionMoves]);
-	const companion = useMemo(() => {
-		return companions.find(companion => companion.id == character.companion.id || '');
-	}, [character.companion, companions]);
+	// Companion Moves
+	const companionBondId = 'cb7b1539';
+	const hasCompanionPassive = character.purchases.skills_and_expertises[companionBondId] > 0;
 
 	// Inventory data
 	const inventoryEquipment = useMemo(() => [...(character.inventory.equipment || []).map(inv => inv || ''), ''], [character]);
@@ -338,51 +332,18 @@ function CharacterSheetPage() {
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.magic_enchanting} mode={MoveDisplayMode.default} /></SheetBlock>
 					</SectionBlock>
 					<SectionBlock name="Beast Mastery" icon={icoBeast} innerClassName={`${st.sectionBeastMastery} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
-						<div className={st.beast_skill_and_moves}>
-							<SheetBlock><SkillBlock skillCategory={movesByCategory.beast_mastery} mode={MoveDisplayMode.default} /></SheetBlock>
-							{character.companion.id && (
-								<SheetBlock layout="flex-column">
-									<BlockHeading
-										icon={icoCombat}
-										label='Companion Moves' />
-									{companionMoveBasicOptions.map((move, index) => (
-										<TextField initialValue={move.label} disabled={true} key={`cm-${index}`} />
-									))}
-									{Array.from(Array(character.purchases.skills_and_expertises.f73a1fd2)).map((_, index) => (
-										<SelectField options={companionMoveOptions} initialValue={character.companion.moves[index]} onChange={characterValueUpdater(`companion.moves.${index}`)} key={`cmnew-${index}`} />
-									))}
-								</SheetBlock>
-							)}
-						</div>
-						{character.purchases.skills_and_expertises[movesByCategory.beast_mastery?.skill?.id || ''] > 0 && (
-							<SheetBlock layout="flex-column" className={st.companionField}>
-								<h2>
-									<img src={icoBeast} alt="Statuses" />
-									Companion
-									{companion && <ConfirmButton label="Remove" onClick={() => updateCharacterValue('companion.id', '')} />}
-								</h2>
-								{companion && (
-									<div className={st.companionLayout}>
-										<div className={st.companionBlock}>
-											<MenagerieSpecimenBlock menagerieSpecimen={companion} mode="view_companion" />
-										</div>
-										<div className={st.companionMeta}>
-											<BlockHeading label="Current Verve" />
-											<TextField initialValue={character.companion.current_verve} onChange={characterValueUpdater('companion.current_verve')} type="number" />
-										</div>
-										<div className={st.companionMeta}>
-											<BlockHeading label="Notes" />
-											<TextField type="textarea" className={st.companionNotes} initialValue={character.companion.notes} onChange={characterValueUpdater('companion.notes')} />
-										</div>
-									</div>
-								)}
-								{!companion && (
-									<>
-										<h2>Choose Companion</h2>
-										<SelectField options={companionsOptions} initialValue={companionsOptions[0]?.value} onChange={characterValueUpdater('companion.id')} />
-									</>
-								)}
+						<div className={st.skillAndMovesLayout}>
+							<SheetBlock>
+								<SkillBlock skillCategory={movesByCategory.beast_mastery} mode={MoveDisplayMode.default} />
 							</SheetBlock>
+							{hasCompanionPassive && <CharacterCompanionMoves />}
+						</div>
+						{hasCompanionPassive && (
+							<>
+								<SheetBlock layout="flex-column" className={st.companionField}>
+									<CharacterCompanion mode={MoveDisplayMode.default} />
+								</SheetBlock>
+							</>
 						)}
 					</SectionBlock>
 					<SectionBlock name="Inner Power" icon={icoFist} innerClassName={`${st.sectionInnerPower} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>

@@ -15,6 +15,12 @@
 		background-color: rgba(var(--colour-scarlet), 0.15);
 	}
 
+	.sectionCompanion {
+		display: flex;
+		flex-direction: column;
+		gap: var(--padding-half);
+	}
+
 	.sectionSkills {
 		background-color: rgba(var(--colour-dark), 0.15);
 

@@ -50,7 +50,7 @@
         "name": "Aggressive Athlete",
         "id": "24bb0406",
         "type": "Expertise",
-        "description": "When using this Expertise, choose one effect:\n-- After jumping or falling in a straight line towards a target, you apply additional Verve Loss to the Total Damage when resolving the Melee Attack Move on the same turn, equal to the lower of the number of Squares your moved, and your Expertise.\n-- When jumping or falling, you may attempt to Slam the ground.  Resolve Athletics, gaining a +1 Bonus per point in this Expertise, and note the DC you beat. starting at DC 1.  You apply 1 Verve Loss to all adjacent creatures per DC you beat."
+        "description": "When using this Expertise, choose one effect:\n-- After jumping or falling in a straight line towards a target, you apply additional Verve Loss to the Total Damage when resolving the Melee Attack Move on the same turn, equal to the lower of the number of Squares your moved or your Expertise.\n-- When jumping or falling, you may attempt to Slam the ground.  Resolve Athletics, gaining a +1 Bonus per point in this Expertise, and note the DC you beat. starting at DC 1.  You apply 1 Verve Loss to all adjacent creatures per DC you beat."
     },
     {
         "category": "athletics",
@@ -297,7 +297,7 @@
         "name": "Defend",
         "id": "71f786fd",
         "type": "Reaction",
-        "description": "You resist basic attacks by either: a) blocking them with your armour and weaponry, or b) you move your body to completely avoid them.  If you succeed, you reduce the incoming Verve Damage by 50%.  Additionally, on a Raw Roll of 20 you reduce the incoming Verve loss to 0.  The incoming Verve Loss before you resolve DEfend is the Unresolved Verve Loss, and after is the Resolved Verve Loss, for the purposes of some Expertises.\n\nYou may only use a Blocker Expertise if you are wearing armour or wielding a melee weapon.  You may only use a Dodger Expertise if you do not have either the Encumbered or Bound status."
+        "description": "You resist basic attacks by either: a) blocking them with your armour and weaponry, or b) you move your body to completely avoid them.  If you succeed, you reduce the incoming Verve Damage by 50%.  Additionally, on a Raw Roll of 20 you reduce the incoming Verve loss to 0.  The incoming Verve Loss before you resolve DEfend is the Unresolved Verve Loss, and after is the Resolved Verve Loss, for the purposes of some Expertises.\n\nYou may only use a Blocker Expertise if you are wearing armour or wielding a shield, and using a Blocker Expertise does not incur the Defend Penalty imposed by Armours.  You may only use a Dodger Expertise if you do not have either the Encumbered or Bound status."
     },
     {
         "category": "defences",
@@ -318,7 +318,7 @@
         "name": "Resigned Defence",
         "id": "ff2690cc",
         "type": "Expertise",
-        "description": "When failing Defend and using this Expertise, choose one effect:\n-- You reduce the Resolved Verve Damage by your Expertise and apply Verve Loss equal to your Expertise to your attacker.\n-- You apply the Broken tag to either your armour or shield that does not have the Broken tag already.  You ignore a number of Basic Attacks targeting you this turn equal to your Expertise."
+        "description": "When failing Defend and using this Expertise, choose one effect:\n-- You reduce the Resolved Verve Damage by your Expertise and apply Verve Loss equal to your Expertise to your attacker.\n-- You apply the Damaged tag to either your armour or shield that does not have the Damaged tag already.  You ignore a number of Basic Attacks targeting you this turn equal to your Expertise.  Damaged items incur a -3 Penalty to the Defend Move."
     },
     {
         "category": "defences",
@@ -802,7 +802,7 @@
         "name": "Stealth",
         "id": "9e3e7223",
         "type": "Primary",
-        "description": "You attempt to sneak and hide from targets.  If you succeed, at a DC set by the DM based on the difficulty of the situation, you gain the Stealth Status.  If your condition changes, you may lose the Stealth Status or be asked to resolve Stealth again.\n\nSome Mods may also give you Cloak.  Whenever you gain any amount of Cloak, it replaces whatever Cloak you already had.  Whenever you may lose the Stealth Status and you are in an environment where you can maintain your Stealth, you may expend a Cloak to resolve the Stealth Move again, though you attempt any Move that applies a negative Status or Verve Loss, you lose the renewed Stealth before resolving the Move.  You may store a maximum number of Cloak equal to one quarter of the number of Points in Stealth you have."
+        "description": "You attempt to sneak and hide from targets.  If you succeed, at a DC set by the DM based on the difficulty of the situation, you gain the Stealth Status.  If your condition changes, you may lose the Stealth Status or be asked to resolve Stealth again.\n\nSome Mods may also give you Cloak.  Whenever you gain any amount of Cloak, it replaces whatever Cloak you already had.  Whenever you may lose the Stealth Status and you are in an environment where you can maintain your Stealth, you may expend a Cloak to resolve the Stealth Move again, though if you attempt any Move that applies a negative Status or Verve Loss, you lose the renewed Stealth before resolving the Move.  You may store a maximum number of Cloak equal to one quarter of the number of Points in Stealth you have."
     },
     {
         "category": "stealthery",
@@ -1141,7 +1141,7 @@
         "name": "Smithing",
         "id": "ecf46846",
         "type": "Primary",
-        "description": "You can create and repair armours, weaponry, and items of metals and leather.  The DC to create an item is the item's value divided by 10, and the time it takes is 1 day per DC.  To repair, the DC and duration is halved, or sometimes quartered.  Additionally, you can Oil and Prepare a weapon or piece of armour, improving it to the Fine version of that piece, if it was less effective before.  To oil and prepare, you must beat a DC of 1, and if you succeed it takes 30 minutes and materials costing 3 Standards."
+        "description": "You can create and repair armours, weaponry, and items of metals and leather.  The DC to create an item is the item's value divided by 10, and the time it takes is 1 day per DC.  To repair, the DC and duration is halved, or sometimes quartered (such as when repairing an item with the Damaged tag).  Additionally, you can Oil and Prepare a weapon or piece of armour, improving it to the Fine version of that piece, if it was less effective before.  To oil and prepare, you must beat a DC of 1, and if you succeed it takes 30 minutes and materials costing 3 Standards."
     },
     {
         "category": "engineering",
@@ -1269,7 +1269,7 @@
     {
         "category": "gadgetry",
         "name": "Smugness",
-        "id": "c1a5f710",
+        "id": "7bbfc083",
         "type": "Passive",
         "description": "You gain the Inspired Status when you are within 3sq of one of your active Gadgets."
     },
@@ -1726,7 +1726,7 @@
         "name": "Bond Companion",
         "id": "00ada40a",
         "type": "Primary",
-        "description": "You attempt to befriend a beast, to become a lifelong and trusted ally.  You may only have one companion, though you may swap a companion by successfully befriending another.  The time it takes to befriend will be determined by the DM.  You may befriend a creature of type 'Beast', and the maximum DC is based on your Animal Empathy.  Starting at beasts of DC 1, you can then befriend DC 2 at 5 Animal Empathy, and 3 at 10."
+        "description": "You attempt to befriend a beast, to become a lifelong and trusted ally, if you have the Companion Bond Passive.  You may only have one companion, though you may swap a companion by successfully befriending another.  The time it takes to befriend will be determined by the DM.  You may befriend a creature of type 'Beast', and the maximum DC is based on your Animal Empathy.  Starting at beasts of DC 1, you can then befriend DC 2 at 5 Animal Empathy, and 3 at 10."
     },
     {
         "category": "beast_mastery",
@@ -1755,6 +1755,13 @@
         "id": "eeecc60c",
         "type": "Passive",
         "description": "Once per turn as a Free Action you may swap places with an adjacent Companion."
+    },
+    {
+        "category": "beast_mastery",
+        "name": "Companion Bond",
+        "id": "cb7b1539",
+        "type": "Passive",
+        "description": "You may bond with a companion, if you successfully resolve Bond Companion."
     },
     {
         "category": "beast_mastery",
@@ -1886,14 +1893,14 @@
         "name": "Ki Attunement",
         "id": "85f6c688",
         "type": "Free",
-        "description": "You enable a Ki Attunement.  This turn you may apply a Ki Mark to a target you hit with a Basic Attack, to one you Grapple or Trip, or to yourself."
+        "description": "You enable a Ki Attunement.  This turn you may apply a Ki Mark to a target you hit with a Basic Attack, to one you Grapple or Trip, or to yourself.  You may only use this Move once per turn."
     },
     {
         "category": "ki",
         "name": "Ki Flurry Expertise",
         "id": "a473b0b1",
         "type": "Expertise",
-        "description": "When resolving Ki Attunement and using this Expertise, you expend up to your Expertise score in Ki Marks on yourself or adjacent targets.  If you do, you apply 1 attack that automatically hits for each Ki Mark expended.  You may apply each attack to different targets.  If you have at least 5 points in Ki Flurry, you may instead expend Ki Marks on targets you can perceive, and move within Threatened Area of any creature you expended Marks on, to resolve these attacks."
+        "description": "When resolving Ki Attunement and using this Expertise, you expend up to your Expertise score in Ki Marks from targets in your Threatened Area.  If you do, you apply 1 attack that automatically hits for each Ki Mark expended.  You may apply each attack to different targets.  If you have at least 5 points in Ki Flurry, you may instead expend Ki Marks on targets you can perceive, and move within the Threatened Area of any creature you expended Marks on, to resolve these attacks."
     },
     {
         "category": "ki",
@@ -1921,14 +1928,14 @@
         "name": "Ki Self Expertise",
         "id": "304e1507",
         "type": "Expertise",
-        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from targets within your Threatened Area and choose one of the following effects:\n-- If in combat, you reduce the duration of a Status at a rate of 1 round per Ki Mark expended.\n-- If in combat, you restore 5 Verve per Mark.\n-- You gain the Energy Shielded Status (DC 1, Pyral, Luminal, Umbral, Arcanic or Zephyral) for 1 round per Ki Mark.\n-- You gain 2sq of Movement this turn per Ki Mark expended, and you may treat difficult terrain, water surfaces, gaseous, vertical surfaces, falling, and occupied spaces as normal spaces."
+        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from yourself and choose one of the following effects:\n-- If in combat, you reduce the duration of a Status at a rate of 1 round per Ki Mark expended.\n-- If in combat, you restore 5 Verve per Mark.\n-- You gain the Energy Shielded Status (DC 1, Pyral, Luminal, Umbral, Arcanic or Zephyral) for 1 round per Ki Mark.\n-- You gain 2sq of Movement this turn per Ki Mark expended, and you may treat difficult terrain, water surfaces, gaseous, vertical surfaces, falling, and occupied spaces as normal spaces."
     },
     {
         "category": "ki",
         "name": "Ki Eye",
         "id": "c07fc7c8",
         "type": "Expertise",
-        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from targets within your Threatened Area.  You automatically resolve Defend a number of times equal to the Ki Marks you expended, which can be applied to most Special Attacks as well.  Additionally, you may resolve this as a Reaction to an opponent's Move.  For each attack you avoided, apply a Ki Mark to the attacker at the end of the turn."
+        "description": "When resolving Ki Flow and using this Expertise, choose one of the following effects:\n-- Expend up to your Expertise score in Ki Marks from targets within your Threatened Area.  You automatically resolve Defend a number of times equal to the Ki Marks you expended, or most Special Attacks a number of times equal to half the Ki Marks you expended.\n-- You may resolve this as a Reaction to an opponent's Move.  For each attack you avoided, apply a Ki Mark to the attacker at the end of the turn."
     },
     {
         "category": "ki",

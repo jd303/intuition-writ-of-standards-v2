@@ -26,10 +26,13 @@ import ResistancesList from './components/resistancesListComponent';
 import Statuses from './components/statusesComponent';
 import SpellList from './components/spellList';
 import PsionicPowersViewer from './components/psionicPowersViewer';
+import CharacterCompanion from './components/characterCompanion';
 
 import icoWellness from '/images/icons/ico.wellness.svg';
 import icoCombat from '/images/icons/ico.combat.svg';
 import icoMagic from '/images/icons/ico.magic.svg';
+import icoBeast from '/images/icons/ico.bear.svg';
+import CharacterCompanionMoves from './components/characterCompanionMoves';
 
 function CharacterCombatPage() {
 	const dispatch = useAppDispatch();
@@ -82,6 +85,10 @@ function CharacterCombatPage() {
 		} else return false;
 	}, [character]);
 
+	// Determine if the user has a companion
+	const companionBondId = 'cb7b1539';
+	const hasCompanionPassive = character.purchases.skills_and_expertises[companionBondId] > 0;
+
 	// Switches to character view
 	const characterView = () => {
 		navigate(`/characters/${params.id}`);
@@ -113,12 +120,18 @@ function CharacterCombatPage() {
 						{hasSpellsOrPowers.hasSpells && <SheetBlock><SpellList mode={MoveDisplayMode.combat} /></SheetBlock> || <></>}
 						{hasSpellsOrPowers.hasPowers && <SheetBlock layout="flex-column"><PsionicPowersViewer /></SheetBlock> || <></>}
 					</SectionBlock>}
+					{hasCompanionPassive && (
+						<SectionBlock name="Companion Details" icon={icoBeast} sectionRefs={sectionRefs} innerClassName={st.sectionCompanion}>
+							<CharacterCompanion mode={MoveDisplayMode.combat} />
+							<CharacterCompanionMoves />
+						</SectionBlock>
+					)}
 					<SectionBlock name="Skills" icon={icoWellness} innerClassName={st.sectionSkills} sectionRefs={sectionRefs}>
 						<SheetBlock className={`${st.skillsList} ${st.grid}`}>{skillBlocks}</SheetBlock>
 					</SectionBlock>
 				</div>
 			</div>
-		</CharacterSheetContext.Provider>
+		</CharacterSheetContext.Provider >
 	)
 }
 
