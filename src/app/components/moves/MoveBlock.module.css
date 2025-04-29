@@ -78,6 +78,7 @@
 		grid-column: 1;
 		grid-row: 2;
 
+		margin-top: var(--padding-half);
 		padding-bottom: calc(0.5 * var(--padding-standard));
 	}
 

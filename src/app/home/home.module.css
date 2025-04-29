@@ -18,7 +18,11 @@
 }
 
 .outerContainer {
-	padding: var(--padding-standard);
+	.aligner {
+		margin: auto;
+		max-width: var(--max-width-content-page);
+		padding: var(--padding-standard);
+	}
 }
 
 .menuCard {

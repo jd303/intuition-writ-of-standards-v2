@@ -35,7 +35,7 @@ function CharactersPage() {
 	}
 
 	return (
-		<>
+		<div className={st.characterListContainer}>
 			<hr />
 			<div className={st.characterBlock}>
 				<h1>Your Characters</h1>
@@ -56,13 +56,13 @@ function CharactersPage() {
 				</div>
 			</div>
 			<hr />
-			<div>
+			<div className={st.characterBlock}>
 				<h1>Limits</h1>
 				<p>There are no limits to how many characters you can create.  Create new characters to explore character concepts and abilities.</p>
 				<p>Deleting a character requires that you confirm the deletion.  However do note that deleted characters cannot be recovered.</p>
 			</div>
 			<hr />
-		</>
+		</div>
 	)
 }
 

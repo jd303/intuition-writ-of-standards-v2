@@ -1,13 +1,25 @@
 .signingForm {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: calc(2 * var(--padding-standard));
+
+	hr {
+		width: 100%;
+		height: 30px;
+		margin: var(--padding-standard) 0;
+		opacity: 0.075;
+		background-image: url('/images/gr.charactersheet.border.svg');
+		outline: none;
+		border: none;
+	}
 
 	& .form {
 		display: flex;
 		flex-direction: column;
 		gap: calc(0.5 * var(--padding-standard));
-		max-width: min(100%, 375px);
+		width: 100%;
+		max-width: min(100%, 450px);
 	}
 
 	& .heading {

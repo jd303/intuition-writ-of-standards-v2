@@ -6,13 +6,15 @@ export default function Menu() {
 	const auth = useAuthState();
 
 	return (
-		<main className={`${st.outerContainer} ${st.menuContainer}`}>
-			<div className={st.menuCard}>
-				<img className="logo shrink" src="/images/lg.intuition.svg" alt="" />
+		<main className={st.outerContainer}>
+			<div className={`${st.aligner} ${st.menuContainer}`}>
+				<div className={st.menuCard}>
+					<img className="logo shrink" src="/images/lg.intuition.svg" alt="" />
+				</div>
+				{cards.map(({ image, label, colour, route, authLevel }, index) => (
+					authLevel <= auth.authLevel && <NavCard key={index} image={image} label={label} colour={colour} route={route} index={index}></NavCard>
+				))}
 			</div>
-			{cards.map(({ image, label, colour, route, authLevel }, index) => (
-				authLevel <= auth.authLevel && <NavCard key={index} image={image} label={label} colour={colour} route={route} index={index}></NavCard>
-			))}
 		</main>
 	);
 }
