@@ -1,4 +1,4 @@
-import st from './PurchasePointGroup.module.css';
+import st from './purchasePointGroup.module.css';
 import PurchasePoint from '../purchasePoint/PurchasePoint';
 import { useCharacterContext } from '../../characters/characterContext';
 
