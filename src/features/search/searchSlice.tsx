@@ -24,7 +24,9 @@ interface SearchState {
 	companionMovesSearch: string;
 	equipmentSearch: string;
 	characterSheetSearch: string;
-	menagerieSearch: string;
+	dmMenagerieSearch: string;
+	dmMenagerieTypeSelection: string;
+	dmMenagerieDCSelection: string;
 	combatSearch: string;
 }
 
@@ -51,7 +53,9 @@ const initialState: SearchState = {
 	companionMovesSearch: localStorage.getItem('companionMovesSearch') || '',
 	equipmentSearch: localStorage.getItem('equipmentSearch') || '',
 	characterSheetSearch: localStorage.getItem('characterSheetSearch') || '',
-	menagerieSearch: localStorage.getItem('menagerieSearch') || '',
+	dmMenagerieSearch: localStorage.getItem('dmMenagerieSearch') || '',
+	dmMenagerieTypeSelection: localStorage.getItem('dmMenagerieTypeSelection') || '',
+	dmMenagerieDCSelection: localStorage.getItem('dmMenagerieDCSelection') || '',
 	combatSearch: localStorage.getItem('combatSearch') || ''
 }
 
@@ -156,9 +160,17 @@ const searchSlice = createSlice({
 			state.characterSheetSearch = action.payload;
 			writeLocalStorageValue('characterSheetSearch', action.payload);
 		},
-		setMenagerieSearch: (state, action) => {
-			state.menagerieSearch = action.payload;
-			writeLocalStorageValue('menagerieSearch', action.payload);
+		setDMMenagerieSearch: (state, action) => {
+			state.dmMenagerieSearch = action.payload;
+			writeLocalStorageValue('dmMenagerieSearch', action.payload);
+		},
+		setDMMenagerieTypeSelection: (state, action) => {
+			state.dmMenagerieTypeSelection = action.payload;
+			writeLocalStorageValue('dmMenagerieTypeSelection', action.payload);
+		},
+		setDMMenagerieDCSelection: (state, action) => {
+			state.dmMenagerieDCSelection = action.payload;
+			writeLocalStorageValue('dmMenagerieDCSelection', action.payload);
 		},
 		setCombatSearch: (state, action) => {
 			state.combatSearch = action.payload;
@@ -190,7 +202,9 @@ export const {
 	setCompanionMovesSearch,
 	setEquipmentSearch,
 	setCharacterSheetSearch,
-	setMenagerieSearch,
+	setDMMenagerieSearch,
+	setDMMenagerieTypeSelection,
+	setDMMenagerieDCSelection,
 	setCombatSearch } = searchSlice.actions;
 
 export default searchSlice.reducer;

@@ -1,0 +1,18 @@
+.buttonControl {
+	height: 100%;
+	border: none;
+	outline: none;
+
+	&.on {
+		color: #fff;
+		background-color: rgb(var(--colour-cobalt));
+	}
+
+	&:hover {
+		box-shadow: none;
+	}
+
+	&:active {
+		transform: translateY(2px) scale(0.98);
+	}
+}

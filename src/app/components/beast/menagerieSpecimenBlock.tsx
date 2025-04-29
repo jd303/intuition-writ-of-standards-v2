@@ -3,7 +3,7 @@ import { MenagerieSpecimenModel, MenagerieSpecimenMove } from '../../../features
 import st from './menagerieSpecimenBlock.module.css';
 import { ChangeEvent, useState } from 'react';
 
-function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen: MenagerieSpecimenModel, mode: "view_combat" | "active_combat" | "view_companion" | "active_companion" }) {
+function MenagerieSpecimenBlock({ menagerieSpecimen, viewMode = "max", viewContext }: { menagerieSpecimen: MenagerieSpecimenModel, viewMode: "min" | "med" | "max", viewContext: "menagerie" | "combat" | "companion" }) {
 
 	const getCooldownClass = (move: MenagerieSpecimenMove, menagerieSpecimen: MenagerieSpecimenModel) => {
 		console.log(move, menagerieSpecimen);
@@ -111,14 +111,8 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 	const [descShowing, setDescShowing] = useState(false);
 	const toggleDesc = () => setDescShowing(!descShowing);
 
-	const [thisMinimalMode, setThisMinimalMode] = useState(false);
-	console.log(thisMinimalMode, setThisMinimalMode);
-	/*const expandMonster = () => {
-		setThisMinimalMode(!thisMinimalMode);
-	}*/
-
 	return (
-		<div className={[st.specimenLayout, st[`mode-${mode}`]].join(' ')}>
+		<div className={st.specimenLayout} data-viewmode={viewMode} data-viewcontext={viewContext}>
 			<div className={[st.monsterDesc, descShowing ? st.on : ''].join(' ')} dangerouslySetInnerHTML={{ __html: menagerieSpecimen.description?.replace(/\n/g, "<br>") }} onClick={toggleDesc}></div>
 			{/*statusVisible && <StatusPopup closePopup={() => setStatusVisible(false)} monster={monster} applyStatusOrDuration={applyStatusOrDuration} modifyStatusDuration={modifyStatusDuration} /> || <></>*/}
 			{/*addClick && (
@@ -134,23 +128,23 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 				<div className={`${st.title} trattatello`}>{menagerieSpecimen.name} {menagerieSpecimen.description?.length && <span onClick={toggleDesc}>ⓘ</span>}</div>
 				<div className={st.subtitle}>
 					{menagerieSpecimen.type}, DC {menagerieSpecimen.dc}, {menagerieSpecimen.size}
-					<span className={[st.identifier, st.hideViewMode].join(' ')}><input className={st.subtleInput} value={menagerieSpecimen.base} onChange={modifyBase} /></span>
-					<button className={[st.smallButton, st.hideViewMode, st.subtleInput].join(' ')} onClick={toggleTurnTaken}>Turn Done</button>
+					<span className={st.identifier} data-combatmodeonly><input className={st.subtleInput} value={menagerieSpecimen.base} onChange={modifyBase} /></span>
+					<button className={[st.smallButton, st.subtleInput].join(' ')} onClick={toggleTurnTaken} data-combatmodeonly>Turn Done</button>
 				</div>
 				<div className={st.trackingBar}>
 					<div className={[st.verve, (menagerieSpecimen.current_verve !== undefined && menagerieSpecimen.current_verve <= 0) ? st.depleted : ''].join(' ')}>
 						<div className={st.verveValues}>
 							<div className={`${st.verveTitle} trattatello`}>Verve:</div>
-							<span className={st.hideViewMode}>{menagerieSpecimen.current_verve || menagerieSpecimen.verve} /</span>{menagerieSpecimen.verve}
-							<button className={st.hideViewMode} onClick={() => verveUp()}>+</button>
-							<button className={st.hideViewMode} onClick={() => verveDown()}>-</button>
+							<span data-combatmodeonly>{menagerieSpecimen.current_verve || menagerieSpecimen.verve} /</span>{menagerieSpecimen.verve}
+							<button data-combatmodeonly onClick={() => verveUp()}>+</button>
+							<button data-combatmodeonly onClick={() => verveDown()}>-</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div className={[st.imageContainer, imageLarge && st.imageLarge || ''].join(' ')} onClick={toggleImageLarge}><img src={`/menagerie/${menagerieSpecimen.image}`} alt="Monster" /></div>
-			<div className={[st.statuses, st.paddedInnerSection, st.hideViewMode].join(' ')}>
+			<div className={[st.statuses, st.paddedInnerSection].join(' ')} data-combatmodeonly>
 				<div className={st.column}>
 					<h2>Statuses <button onClick={() => setStatusVisible(true)}>Edit</button></h2>
 					<div className={st.statusList}>
@@ -174,7 +168,7 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 					<div className={st.attribute}><div className={st.attributeName + ' ' + st.fonted}>CHA</div><div className={st.attributeValue}>{menagerieSpecimen.cha}</div></div>
 				</div>
 			</div>
-			<div className={st.moves}>
+			<div className={st.moves} data-maxmodeonly>
 				{menagerieSpecimen.properties?.length && (
 					<div className={[st.propertyList, st.paddedInnerSection, st.fonted].join(' ')}>
 						{(menagerieSpecimen.properties as string).split('--')?.map((prop, index: number) => (
@@ -186,9 +180,9 @@ function MenagerieSpecimenBlock({ menagerieSpecimen, mode }: { menagerieSpecimen
 					{menagerieSpecimen.resistances && (<div><span className={st.fonted}>Resistances:</span> {menagerieSpecimen.resistances}</div>) || <></>}
 					{menagerieSpecimen.weaknesses && (<div><span className={st.fonted}>Weaknesses:</span> {menagerieSpecimen.weaknesses}</div>) || <></>}
 				</div>)}
-				<div className={st.paddedInnerSection}>
+				<div className={st.paddedInnerSection} data-maxmodeonly>
 					{menagerieSpecimen.combatmoves.map((move, index: number) => (
-						<div key={`combat-move-${index}`} className={[st.move, getCooldownClass(move, menagerieSpecimen), !move.companionable && st.hideCompanionMode || ''].join(' ')}>
+						<div key={`combat-move-${index}`} className={[st.move, getCooldownClass(move, menagerieSpecimen)].join(' ')}>
 							<div className={st.moveTitle + ' ' + st.fonted}>
 								{move.movename} ({move.movetype})
 								<div className={st.energy}>{move.moveenergy}</div>

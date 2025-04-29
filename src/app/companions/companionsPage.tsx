@@ -44,7 +44,6 @@ export default function CompanionsPage() {
 	}, [companionsSearch, categorisedMenagerie]);
 
 	return (
-
 		<ContentList colour={UIColours.green} style="grid">
 			<ControlBar colour={UIColours.green}>
 				<SearchControl name="Search" initialValue={companionsSearch} onChange={(value: string) => dispatch(setCompanionsSearch(value))} />
@@ -54,7 +53,7 @@ export default function CompanionsPage() {
 					<div className={st.header}>{companionCategory}</div>
 					<div className={[st.menagerieList, stcl.removeParentWhenEmpty].join(' ')}>
 						{filteredMenagerie(companionCategory).map((companion) => (
-							<MenagerieSpecimenBlock menagerieSpecimen={companion} mode="view_companion" />
+							<MenagerieSpecimenBlock menagerieSpecimen={companion} viewMode="max" viewContext="companion" />
 						))}
 					</div>
 				</ContentCard>

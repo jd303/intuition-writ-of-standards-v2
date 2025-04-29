@@ -58,6 +58,10 @@
 		&.scarlet {
 			background-color: rgba(var(--colour-scarlet), 0.3);
 		}
+
+		&.grey {
+			background-color: rgba(var(--colour-dark), 0.3);
+		}
 	}
 
 	button,

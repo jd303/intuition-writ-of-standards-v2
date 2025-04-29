@@ -15,12 +15,16 @@
 	border-radius: var(--radius-standard);
 	border: var(--border-dashed-subtle);
 
-	&.mode-view_companion {
-		.hideViewMode {
+	&[data-viewcontext="companion"],
+	&[data-viewcontext="menagerie"] {
+		[data-combatmodeonly] {
 			display: none !important;
 		}
-		.hideCompanionMode {
-			display: none !important;
+	}
+
+	&[data-viewmode="min"][data-viewcontext="menagerie"] {
+		[data-maxmodeonly] {
+			display: none;
 		}
 	}
 

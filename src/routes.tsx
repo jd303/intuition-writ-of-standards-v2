@@ -8,6 +8,8 @@ import GlossaryPage from "./app/rules/glossaryPage";
 import MovesPage from "./app/rules/movesPage";
 import StatusesPage from "./app/rules/statusesPage";
 import DMToolsPage from "./app/dmtools/dmtools";
+import DMMenageriePage from "./app/dmtools/dmMenageriePage";
+import DMCombatPage from "./app/dmtools/dmCombatPage";
 import MagicGuidePage from "./app/magic/magicGuidePage";
 import MagicSpellsPage from "./app/magic/magicSpellsPage";
 import EquipmentPage from "./app/equipment/equipmentPage";
@@ -304,7 +306,7 @@ export const routes: RouteDefinition[] = [
 		label: "Menagerie",
 		sectionColour: 'silver',
 		sectionName: 'dm-tools',
-		element: <DMToolsPage />,
+		element: <DMMenageriePage />,
 		parentRoute: false,
 	},
 	{
@@ -313,7 +315,7 @@ export const routes: RouteDefinition[] = [
 		label: "Combat",
 		sectionColour: 'silver',
 		sectionName: 'dm-tools',
-		element: <DMToolsPage />,
+		element: <DMCombatPage />,
 		parentRoute: false,
 	}
 ];
