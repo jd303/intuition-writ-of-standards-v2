@@ -1,4 +1,4 @@
-import st from './skillBlock.module.css';
+import st from './SkillBlock.module.css';
 import stcl from '../../components/contentList/contentList.module.css';
 import { useMemo } from 'react';
 import { MoveModel } from '../../../features/models/moveModel';
