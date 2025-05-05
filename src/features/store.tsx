@@ -6,6 +6,7 @@ import movesDataReducer from './firebase/data/movesDataSlice';
 import statusesDataReducer from './firebase/data/statusesDataSlice';
 import equipmentDataReducer from './firebase/data/equipmentDataSlice';
 import menagerieDataReducer from './firebase/data/menagerieDataSlice';
+import combatDataReducer from './firebase/data/combatDataSlice';
 import companionMovesDataReducer from './firebase/data/companionMovesDataSlice';
 import magicSpellsDataReducer from './firebase/data/spellsDataSlice';
 import psionicPowersDataReducer from './firebase/data/psionicPowersDataSlice';
@@ -26,6 +27,7 @@ export const store = configureStore({
 	statusesData: statusesDataReducer,
 	equipmentData: equipmentDataReducer,
 	menagerieData: menagerieDataReducer,
+	combatData: combatDataReducer,
 	companionMovesData: companionMovesDataReducer,
 	magicSpells: magicSpellsDataReducer,
 	psionicPowers: psionicPowersDataReducer,

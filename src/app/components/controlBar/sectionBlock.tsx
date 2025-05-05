@@ -4,12 +4,12 @@ import { addSectionRef } from "./useSectionNav";
 import { useToggleableBooleanState } from '../../../features/uiHooks';
 import TriangleNotch from '../triangleNotch/triangleNotch';
 
-export const SectionBlock = ( { children, name, className, innerClassName, sectionRefs, icon, style = "default" }: { children: ReactNode, name: string, className?: string, innerClassName?: string, sectionRefs: React.RefObject<HTMLElement[]>, icon?: string, style?: "default" | "plain" }) => {
+export const SectionBlock = ( { children, name, className, innerClassName, sectionRefs, icon, style = "default", defaultOpenState = true }: { children: ReactNode, name: string, className?: string, innerClassName?: string, sectionRefs: React.RefObject<HTMLElement[]>, icon?: string, style?: "default" | "plain", defaultOpenState?: boolean }) => {
 	const storageKey = `sectionblock-${name}`;
-	const initialValue = localStorage.getItem(storageKey);
+	const initialValue = localStorage.getItem(storageKey) || defaultOpenState;
 	
 	let initialState;
-	if (initialValue && initialValue == "false") initialState = false;
+	if (initialValue === false || initialValue == "false") initialState = false;
 	else initialState = true;
 
 	const [isOpen, toggleIsOpen] = useToggleableBooleanState(initialState);

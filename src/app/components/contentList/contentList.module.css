@@ -8,12 +8,28 @@
 	@media (min-width: 1000px) {
 		--grid-template-columns: 1fr 1fr 1fr;
 	}
+
+	--menagerie-grid-template-columns: 1fr;
+
+	@media (min-width: 768px) {
+		--menagerie-grid-template-columns: 1fr 1fr;
+	}
+
+	@media (min-width: 1500px) {
+		--menagerie-grid-template-columns: 1fr 1fr 1fr;
+	}
 }
 
 .contentList {
 	&.grid {
 		display: grid;
 		grid-template-columns: var(--grid-template-columns);
+		gap: var(--padding-standard);
+	}
+
+	&.menagerie_grid {
+		display: grid;
+		grid-template-columns: var(--menagerie-grid-template-columns);
 		gap: var(--padding-standard);
 	}
 

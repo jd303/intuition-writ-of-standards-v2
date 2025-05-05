@@ -5,4 +5,5 @@ export interface StatusModel {
 	name: string,
 	effect: string,
 	domain: string,
+	turnsRemaining?: number,
 }

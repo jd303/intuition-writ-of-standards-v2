@@ -1,0 +1,91 @@
+.move {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: calc(0.5 * var(--padding-standard));
+
+	&:not(:last-child) {
+		padding-bottom: 6px;
+		border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+	}
+
+	&:not(:last-child) {
+		margin-bottom: calc(0.5 * var(--padding-standard));
+	}
+
+	&.coolingDown {
+		opacity: 0.5;
+		color: #6B0000;
+	}
+
+	&[data-controlsvisible="true"] {
+		.moveControls {
+			height: auto;
+			opacity: 1;
+			pointer-events: all;
+			transition: all 0.5s;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	.fonted {
+		font-family: 'trattatello';
+		text-transform: uppercase;
+		line-height: 22px;
+		margin: 0;
+	}
+
+	.moveTitle {
+		grid-row: 1;
+		grid-column: 1;
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: calc(0.5 * var(--padding-standard));
+		align-items: center;
+		font-size: 1.25rem;
+
+		.energy {
+			color: #888;
+			font-style: italic;
+			font-size: 0.75rem;
+			text-transform: none;
+			line-height: normal;
+			font-family: sans-serif;
+		}
+	}
+
+	.moveDefences {
+		grid-row: 1;
+		grid-column: 2;
+
+		display: flex;
+		gap: var(--padding-half);
+		justify-self: flex-end;
+	}
+
+	.moveEffects {
+		grid-row: 2;
+		grid-column: 1 / -1;
+
+		& .desc {
+			font-style: italic;
+		}
+	}
+
+	.moveControls {
+		position: relative;
+		display: flex;
+		gap: var(--padding-half);
+
+		height: 0;
+		pointer-events: none;
+		opacity: 0;
+
+		button {
+			height: 30px;
+			line-height: 30px;
+		}
+	}
+}

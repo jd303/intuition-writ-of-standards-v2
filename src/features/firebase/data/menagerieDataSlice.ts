@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { MenagerieSpecimenDataModel, MenagerieSpecimenModel } from "../../models/menagerieSpecimenModel";
+import { MenagerieSpecimen, MenagerieSpecimenDatabaseModel, MenagerieSpecimenLocalModel } from "../../models/menagerieSpecimenModel";
 
-interface MenagerieData {
-	menagerie: MenagerieSpecimenModel[]
+interface MenagerieSliceData {
+	menagerie: MenagerieSpecimenLocalModel[]
 }
 
-const initialState: MenagerieData = {
+const initialState: MenagerieSliceData = {
 	menagerie: []
 }
 
@@ -23,13 +23,13 @@ export const { updateMenagerieData } = menagerieDataSlice.actions;
 
 export default menagerieDataSlice.reducer;
 
-function createMenagerie(menagerie: MenagerieSpecimenDataModel[]): MenagerieSpecimenModel[] {
-	const menagerieResponse: MenagerieSpecimenModel[] = [];
+function createMenagerie(menagerie: MenagerieSpecimenDatabaseModel[]) {
+	const menagerieResponse: MenagerieSpecimen[] = [];
 
-	let lastSpecimen: MenagerieSpecimenModel;
+	let lastSpecimen: MenagerieSpecimen;
 	menagerie.forEach((specimen) => {
 		if (specimen.id !== undefined) {
-			const newSpecimen: MenagerieSpecimenModel = {
+			const newSpecimen = new MenagerieSpecimen({
 				id: specimen.id,
 				name: specimen.name,
 				type: specimen.type,
@@ -44,37 +44,36 @@ function createMenagerie(menagerie: MenagerieSpecimenDataModel[]): MenagerieSpec
 				wis: specimen.wis,
 				cha: specimen.cha,
 				verve: specimen.verve,
-				combatmoves: [{
-					movename: specimen.movename,
-					movetype: specimen.movetype,
-					movecooldown: specimen.movecooldown,
-					moveenergy: specimen.moveenergy,
-					movedesc: specimen.movedesc,
-					moveeffects: specimen.moveeffects,
-					movesave: specimen.movesave,
-					companionable: specimen.companionable,
-				}],
 				resistances: specimen.resistances,
 				weaknesses: specimen.weaknesses,
 				properties: specimen.properties,
 				description: specimen.description,
 				companionable: specimen.companionable,
-			}
+				combatMoves: [{
+					movename: specimen.movename!,
+					moveshape: specimen.moveshape!,
+					movecooldown: specimen.movecooldown!,
+					moveenergy: specimen.moveenergy!,
+					movedesc: specimen.movedesc!,
+					moveeffects: specimen.moveeffects!,
+					movesave: specimen.movesave!,
+				}]
+			});
+
 			lastSpecimen = newSpecimen;
 			menagerieResponse.push(newSpecimen);
 		} else {
-			lastSpecimen.combatmoves.push({
-				movename: specimen.movename,
-				movetype: specimen.movetype,
-				movecooldown: specimen.movecooldown,
-				moveenergy: specimen.moveenergy,
-				movedesc: specimen.movedesc,
-				moveeffects: specimen.moveeffects,
-				movesave: specimen.movesave,
-				companionable: specimen.companionable,
+			lastSpecimen.combatMoves.push({
+				movename: specimen.movename!,
+				moveshape: specimen.moveshape!,
+				movecooldown: specimen.movecooldown!,
+				moveenergy: specimen.moveenergy!,
+				movedesc: specimen.movedesc!,
+				moveeffects: specimen.moveeffects!,
+				movesave: specimen.movesave!
 			});
 		}
 	});
 
-	return menagerieResponse;
+	return JSON.parse(JSON.stringify(menagerieResponse));
 }

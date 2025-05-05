@@ -10,7 +10,7 @@ import { updateMovesData } from '../features/firebase/data/movesDataSlice';
 import { updateCharactersData } from '../features/firebase/data/charactersDataSlice';
 import { updateMenagerieData } from '../features/firebase/data/menagerieDataSlice.ts';
 import { updateCompanionMovesData } from '../features/firebase/data/companionMovesDataSlice.ts';
-import { updateCombatData } from '../features/firebase/data/combatsDataSlice.ts';
+import { updateCombatData } from '../features/firebase/data/combatDataSlice.ts';
 import { updateDcsData } from '../features/firebase/data/dcsDataSlice.ts';
 import { updateEquipmentData } from '../features/firebase/data/equipmentDataSlice.ts';
 import { updateSpellsData } from '../features/firebase/data/spellsDataSlice.ts';

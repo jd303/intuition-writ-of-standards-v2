@@ -1,7 +1,20 @@
+import st from './TextField.module.css';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import FieldContainer from '../fieldContainer/FieldContainer';
 
-function TextField({ initialValue, type = "text", label, disabled = false, className, onChange, autosize = false }: { initialValue: string | number, type?: "text" | "textarea" | "number", label?: string, disabled?: boolean, className?: string, onChange?: (value: string | number) => void, autosize?: boolean }) {
+function TextField({ initialValue, type = "text", label, disabled = false, placeholder, className, innerClassName, onChange, autosize = false, clearOnChange = false }:
+	{
+		initialValue: string | number,
+		type?: "text" | "textarea" | "number",
+		label?: string,
+		disabled?: boolean,
+		placeholder?: string,
+		className?: string,
+		innerClassName?: string,
+		onChange?: (value: string | number) => void,
+		autosize?: boolean,
+		clearOnChange?: boolean
+	}) {
 	const changeTimeout = useRef<NodeJS.Timeout>(null);
 	const [value, setValue] = useState<string | number>(initialValue);
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -10,7 +23,10 @@ function TextField({ initialValue, type = "text", label, disabled = false, class
 
 		if (changeTimeout.current) clearTimeout(changeTimeout.current);
 		changeTimeout.current = setTimeout(() => {
-			if (onChange) onChange(updatedValue);
+			if (onChange) {
+				onChange(updatedValue);
+				if (clearOnChange) setValue('');
+			}
 		}, 1000);
 	}
 
@@ -32,11 +48,11 @@ function TextField({ initialValue, type = "text", label, disabled = false, class
 	}, [initialValue]);
 
 	return (
-		<FieldContainer label={label} className={className || ''} data-size={statusFieldClassName}>
+		<FieldContainer label={label} className={`${st.field} ${className || ''}`} data-size={statusFieldClassName}>
 			{type == "textarea" ? (
-				<textarea value={value} onChange={handleOnChange} disabled={disabled} ref={textareaRef} />
+				<textarea value={value} onChange={handleOnChange} disabled={disabled} ref={textareaRef} className={innerClassName} placeholder={placeholder || ''} />
 			) : (
-				<input type={type} value={value} onChange={handleOnChange} disabled={disabled} />
+				<input type={type} value={value} onChange={handleOnChange} disabled={disabled} className={innerClassName} placeholder={placeholder || ''} />
 			)}
 		</FieldContainer>
 	)

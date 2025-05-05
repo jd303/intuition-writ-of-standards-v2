@@ -1,20 +1,17 @@
-import { useAppDispatch, useAppSelector } from '../../features/firebaseHooks';
+import { useAppSelector } from '../../features/firebaseHooks';
 import { JSX, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import st from './characterCombatPage.module.css';
 import AbilityModal from '../components/abilityModal/abilityModal';
 import ControlBar from '../components/controlBar/controlBar';
-import SearchControl from '../components/controlBar/searchControl';
 import { SectionBlock } from '../components/controlBar/sectionBlock';
 import SectionNav from '../components/controlBar/sectionNav';
 import { CharacterSheetContext } from './characterContext';
-import { CharacterModel } from '../../features/models/character/characterModel';
 import { SpellModel } from '../../features/models/spellModel';
 import { PsionicPowerModel } from '../../features/models/psionicPowerModel';
 import { UIColours } from '../../features/constants/UIColours';
 import { useSectionNav } from '../components/controlBar/useSectionNav';
 import ResourceComponent from './components/resourceComponent';
-import { setCharacterSheetSearch } from '../../features/search/searchSlice';
 import SkillBlock from '../components/moves/SkillBlock';
 import { MoveDisplayMode } from '../../features/models/moveDisplayModes';
 import { SynergyModel } from '../../features/models/synergyModel';
@@ -33,24 +30,18 @@ import icoCombat from '/images/icons/ico.combat.svg';
 import icoMagic from '/images/icons/ico.magic.svg';
 import icoBeast from '/images/icons/ico.bear.svg';
 import CharacterCompanionMoves from './components/characterCompanionMoves';
+import { useCharacterUpdater } from './useCharacterUpdater';
 
 function CharacterCombatPage() {
-	const dispatch = useAppDispatch();
 	const params = useParams();
 	const navigate = useNavigate();
 	const [sectionRefs, sectionDefinitions] = useSectionNav();
 
-	const charactersData = useAppSelector((state) => state.charactersData.characters);
-	const characterSheetSearch = useAppSelector((state) => state.search.characterSheetSearch);
-	const characterFromData = charactersData.find((character: CharacterModel) => character.id == params.id);
-	const character = useMemo(() => new CharacterModel(characterFromData!), [characterFromData]);
-
 	// Default irrelevant context
+	const { updateCharacterValue, characterValueUpdater, characterPurchaseUpdater, character } = useCharacterUpdater(params.id!);
+	const characterSheetSearch = '';
 	const purchaseMode = 'none';
 	const setPurchaseMode = () => { };
-	const characterPurchaseUpdater = () => { };
-	const characterValueUpdater = () => { };
-	const updateCharacterValue = () => { };
 	const maxSkillPoints = 100;
 
 	// Modal Controls
@@ -100,7 +91,6 @@ function CharacterCombatPage() {
 			<div className={st.characterCombatPageContainer} data-searching={characterSheetSearch != ''}>
 				<ControlBar colour={UIColours.cobalt}>
 					<SectionNav sections={sectionDefinitions} label={"Go"} />
-					<SearchControl name={"Search"} initialValue={characterSheetSearch} onChange={(value: string) => dispatch(setCharacterSheetSearch(value))} />
 					<button onClick={characterView}>Character</button>
 				</ControlBar>
 				<div className={st.sections}>

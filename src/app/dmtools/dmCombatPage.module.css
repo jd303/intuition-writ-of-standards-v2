@@ -1,3 +1,17 @@
-.combatPageLayout {
+.quirks {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--padding-1-4);
+	margin-top: var(--padding-standard);
+
+	.title {
+		grid-column: 1 / -1;
+		margin-bottom: 8px;
+	}
 	
+	.quirk {
+		padding: var(--padding-standard);
+		border-radius: var(--radius-standard);
+		background-color: rgb(var(--colour-cream));
+	}
 }

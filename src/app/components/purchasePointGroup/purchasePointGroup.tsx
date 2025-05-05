@@ -2,7 +2,7 @@ import st from './purchasePointGroup.module.css';
 import PurchasePoint from '../purchasePoint/PurchasePoint';
 import { useCharacterContext } from '../../characters/characterContext';
 
-function PurchasePointGroup({ count, columns, purchased, purchaseCallback, maxPurchases }: { count: number, columns: 1 | 3 | 6 | 10 | 12 | 15, purchased: number, purchaseCallback: VoidFunction, maxPurchases: number }) {
+function PurchasePointGroup({ count, columns, purchased, purchaseCallback, maxPurchases }: { count: number, columns: 1 | 3 | 6 | 10 | 12 | 15, purchased: number, purchaseCallback: () => void, maxPurchases: number }) {
 	const { purchaseMode } = useCharacterContext();
 
 	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {

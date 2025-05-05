@@ -31,7 +31,7 @@ function CharacterCompanion({ mode }: { mode: MoveDisplayMode }) {
 			<div className={st.companionDetails}>
 				{companion && (
 					<>
-						<MenagerieSpecimenBlock menagerieSpecimen={companion} viewMode="med" viewContext="companion" />
+						<MenagerieSpecimenBlock specimen={companion} viewMode="med" viewContext="companion" />
 						<SheetBlock>
 							<BlockHeading label="Current Verve" />
 							<TextField initialValue={character.companion.current_verve} onChange={characterValueUpdater('companion.current_verve')!} type="number" />

@@ -22,7 +22,6 @@ function PsionicPowersPage() {
 	const aptitudeOptions = PsionicAptitudes.map((apt) => { return { label: apt, value: apt } });
 	
 	const filteredSpells = useMemo(() => {
-		console.log(powerAptitudeSelection, powers)
 		const powersRefs = [...powers];
 		const powersSorted = powersRefs.sort((a, b) => a.level < b.level && -1 || 1);
 		const powersSearchFiltered = powersSorted.filter((power: PsionicPowerModel) => JSON.stringify(power).toLowerCase().includes(powersSearch.toLowerCase()));

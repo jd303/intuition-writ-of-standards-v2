@@ -1,17 +1,15 @@
 import st from './characterSheetPage.module.css';
 import stcl from '../components/contentList/contentList.module.css';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { UIColours } from "../../features/constants/UIColours";
 import { useAppDispatch, useAppSelector } from "../../features/firebaseHooks";
 import { setCharacterSheetSearch } from "../../features/search/searchSlice";
-import { saveCharacter } from '../../features/firebase/data/writeCharactersData';
 import ControlBar from "../components/controlBar/controlBar";
 import SearchControl from "../components/controlBar/searchControl";
 import SectionNav from "../components/controlBar/sectionNav";
 import { useSectionNav } from "../components/controlBar/useSectionNav";
 import { SectionBlock } from "../components/controlBar/sectionBlock";
-import { CharacterModel } from '../../features/models/character/characterModel';
 import TextField from '../components/inputs/textField/TextField';
 import SelectField from '../components/inputs/selectField/SelectField';
 import { getAttributeIcon } from '../../features/models/character/attributeIcons';
@@ -54,6 +52,7 @@ import SpellList from './components/spellList.tsx';
 import PsionicPowersViewer from './components/psionicPowersViewer.tsx';
 import CharacterCompanion from './components/characterCompanion.tsx';
 import CharacterCompanionMoves from './components/characterCompanionMoves.tsx';
+import { useCharacterUpdater } from './useCharacterUpdater.tsx';
 
 function CharacterSheetPage() {
 	const params = useParams();
@@ -61,60 +60,11 @@ function CharacterSheetPage() {
 	const navigate = useNavigate();
 	const [sectionRefs, sectionDefinitions] = useSectionNav();
 
-	// Constants
-	const dbWriteDelay = 2500;
-	const updateDelay = 50;
-
 	// Character Data
-	const characterSaveTimeout = useRef<NodeJS.Timeout>(null);
-	const characterValueUpdateTimeout = useRef<NodeJS.Timeout>(null);
-	const charactersData = useAppSelector((state) => state.charactersData.characters);
+	const { updateCharacterValue, characterValueUpdater, characterPurchaseUpdater, totalPoints, character, purchaseMode, setPurchaseMode } = useCharacterUpdater(params.id!);
 	const characterSheetSearch = useAppSelector((state) => state.search.characterSheetSearch);
-	const characterFromData = charactersData.find((character: CharacterModel) => character.id == params.id);
-	const [character, setCharacter] = useState<CharacterModel>(new CharacterModel(characterFromData!));
-	const [characterUpdated, setCharacterUpdated] = useState<boolean>(false);
-	const totalPoints = useMemo(() => character.baseCharacterPoints + character.vitae.sessions + character.points.bonus, [character]);
 	const [chooseProfileMode, setChooseProfileMode] = useState<boolean>(false);
-
-	// Update the character
-	const [purchaseMode, setPurchaseMode] = useState('default');
 	const purchaseModeOptions = [{ value: "buy", label: "Buy" }, { value: "sell", label: "Sell" }];
-
-	useEffect(() => {
-		if (characterUpdated) {
-			if (characterSaveTimeout.current) clearTimeout(characterSaveTimeout.current);
-			characterSaveTimeout.current = setTimeout(() => {
-				saveCharacter(charactersData, character);
-				setCharacterUpdated(false);
-			}, dbWriteDelay);
-		}
-	}, [characterUpdated]);
-
-	const updateCharacterValue = (updatePath: string | string[], value: unknown | unknown[]) => {
-		const updatedCharacter = character.updateValue(updatePath, value!);
-		updateCharacter(updatedCharacter);
-	}
-	const updateCharacterPurchases = (updatePath: string, isSkill: boolean) => {
-		if (purchaseMode == "none") return;
-		if (purchaseMode == "buy" && character.points.spent >= totalPoints) return;
-		const updatedCharacter = character.updatePurchase(updatePath, isSkill, purchaseMode == "buy");
-		updateCharacter(updatedCharacter, true);
-	}
-
-	const characterValueUpdater = (updatePath: string) => {
-		return (value: string | number | boolean | void) => updateCharacterValue(updatePath, value);
-	}
-	const characterPurchaseUpdater = (updatePath: string, isSkill?: boolean): VoidFunction => {
-		return () => updateCharacterPurchases(updatePath, isSkill || false);
-	}
-
-	const updateCharacter = (updatedCharacter: CharacterModel, suppressDelay?: boolean) => {
-		if (characterValueUpdateTimeout.current) clearTimeout(characterValueUpdateTimeout.current);
-		characterValueUpdateTimeout.current = setTimeout(() => {
-			setCharacter(updatedCharacter);
-			setCharacterUpdated(true);
-		}, suppressDelay ? 0 : updateDelay);
-	}
 
 	// Attribute Data
 	const attributeOptions = [0, 1, 2, 3].map(i => { return { value: i, label: i } });
@@ -305,17 +255,17 @@ function CharacterSheetPage() {
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.knowledge} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.influence} mode={MoveDisplayMode.default} /></SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Subterfuge" icon={icoDagger} innerClassName={`${st.sectionSubterfuge} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
+					<SectionBlock name="Subterfuge" icon={icoDagger} innerClassName={`${st.sectionSubterfuge} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent} defaultOpenState={false}>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.stealthery} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.subterfuge} mode={MoveDisplayMode.default} /></SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Crafting" icon={icoTool} innerClassName={`${st.sectionCrafting} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
+					<SectionBlock name="Crafting" icon={icoTool} innerClassName={`${st.sectionCrafting} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent} defaultOpenState={false}>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.creativity} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.alchemy} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.engineering} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.gadgetry} mode={MoveDisplayMode.default} /></SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Magic" icon={icoMagicMulti} innerClassName={`${st.sectionMagic} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
+					<SectionBlock name="Magic" icon={icoMagicMulti} innerClassName={`${st.sectionMagic} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent} defaultOpenState={false}>
 						<SheetBlock>
 							<ResourceComponent type="mana" mode={MoveDisplayMode.default} />
 						</SheetBlock>
@@ -331,7 +281,7 @@ function CharacterSheetPage() {
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.magic_cast} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.magic_enchanting} mode={MoveDisplayMode.default} /></SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Beast Mastery" icon={icoBeast} innerClassName={`${st.sectionBeastMastery} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
+					<SectionBlock name="Beast Mastery" icon={icoBeast} innerClassName={`${st.sectionBeastMastery} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent} defaultOpenState={false}>
 						<div className={st.skillAndMovesLayout}>
 							<SheetBlock>
 								<SkillBlock skillCategory={movesByCategory.beast_mastery} mode={MoveDisplayMode.default} />
@@ -346,14 +296,14 @@ function CharacterSheetPage() {
 							</>
 						)}
 					</SectionBlock>
-					<SectionBlock name="Inner Power" icon={icoFist} innerClassName={`${st.sectionInnerPower} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
+					<SectionBlock name="Inner Power" icon={icoFist} innerClassName={`${st.sectionInnerPower} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent} defaultOpenState={false}>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.wildform} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.channel_divinity} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.ki} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.rage} mode={MoveDisplayMode.default} /></SheetBlock>
 						<SheetBlock><SkillBlock skillCategory={movesByCategory.rhapsody} mode={MoveDisplayMode.default} /></SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Psionics" icon={icoSpiral} innerClassName={`${st.sectionPsionics} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent}>
+					<SectionBlock name="Psionics" icon={icoSpiral} innerClassName={`${st.sectionPsionics} ${st.gridLayout}`} sectionRefs={sectionRefs} className={stcl.contentListParent} defaultOpenState={false}>
 						<SheetBlock>
 							<ResourceComponent type="psi" mode={MoveDisplayMode.default} />
 						</SheetBlock>
@@ -398,7 +348,7 @@ function CharacterSheetPage() {
 							))}
 						</SheetBlock>
 					</SectionBlock>
-					<SectionBlock name="Notes" sectionRefs={sectionRefs} innerClassName={`${st.sectionNotes} ${st.gridLayout}`}>
+					<SectionBlock name="Notes" sectionRefs={sectionRefs} innerClassName={`${st.sectionNotes} ${st.gridLayout}`} defaultOpenState={false}>
 						<TextField type="textarea" initialValue={character.notes.notes1} onChange={characterValueUpdater('notes.notes1')} />
 						<TextField type="textarea" initialValue={character.notes.notes2} onChange={characterValueUpdater('notes.notes2')} />
 						<TextField type="textarea" initialValue={character.notes.notes3} onChange={characterValueUpdater('notes.notes3')} />

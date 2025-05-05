@@ -5,7 +5,7 @@
 }
 
 .controlBarContainer {
-	grid-column: 1/4;
+	grid-column: 1 / -1;
 
 	position: sticky;
 	z-index: 10;
@@ -15,6 +15,7 @@
 	margin-top: calc(-1 * var(--padding-standard));
 	margin-bottom: calc(2 * var(--padding-standard));
 	background-image: url('/images/bg.paper.texture.webp');
+	overflow-x: hidden;
 
 	.controlBar {
 		flex-basis: 100%;

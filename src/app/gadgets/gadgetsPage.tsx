@@ -26,8 +26,6 @@ function GadgetsPage() {
 		return gadgetsSearched;
 	}, [gadgets, gadgetsSearch]);
 
-	console.log(filteredGadgets);
-
 	return (
 		<>
 			<ControlBar colour={UIColours.cobalt}>

@@ -14,7 +14,6 @@ function SelectorDropdown({ label, defaultValue = SELECTOR_DEFAULT, initialValue
 		const value = event.target.value;
 		setCurrentValue(event.target.value);
 		onChange(value);
-		
 	}
 	
 	return (

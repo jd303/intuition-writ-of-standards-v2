@@ -34,7 +34,7 @@
 	background: var(--active-colour);
 	border-bottom: 2px solid #ddd;
 	cursor: pointer;
-	transition: background-color 0.5s linear 0.3s, color 0.5s linear 0.3s;
+	transition: background-color 0.5s, color 0.5s;
 
 	&:hover {
 		background: color-mix(in srgb, var(--active-colour) 85%, #fff 15%);
@@ -150,7 +150,7 @@ nav.secondary {
 	margin-left: var(--banner-shift-visual);
 	/*padding-left: 53px;*/
 	background-color: var(--active-colour);
-	transition: background-color 0.4s linear 0.2s;
+	transition: background-color 0.5s;
 
 	&:empty {
 		height: 0;

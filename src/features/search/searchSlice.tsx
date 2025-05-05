@@ -27,7 +27,6 @@ interface SearchState {
 	dmMenagerieSearch: string;
 	dmMenagerieTypeSelection: string;
 	dmMenagerieDCSelection: string;
-	combatSearch: string;
 }
 
 const initialState: SearchState = {
@@ -54,9 +53,8 @@ const initialState: SearchState = {
 	equipmentSearch: localStorage.getItem('equipmentSearch') || '',
 	characterSheetSearch: localStorage.getItem('characterSheetSearch') || '',
 	dmMenagerieSearch: localStorage.getItem('dmMenagerieSearch') || '',
-	dmMenagerieTypeSelection: localStorage.getItem('dmMenagerieTypeSelection') || '',
-	dmMenagerieDCSelection: localStorage.getItem('dmMenagerieDCSelection') || '',
-	combatSearch: localStorage.getItem('combatSearch') || ''
+	dmMenagerieTypeSelection: localStorage.getItem('dmMenagerieTypeSelection') || SELECTOR_DEFAULT,
+	dmMenagerieDCSelection: localStorage.getItem('dmMenagerieDCSelection') || SELECTOR_DEFAULT,
 }
 
 // Writes state to localStorage
@@ -172,10 +170,6 @@ const searchSlice = createSlice({
 			state.dmMenagerieDCSelection = action.payload;
 			writeLocalStorageValue('dmMenagerieDCSelection', action.payload);
 		},
-		setCombatSearch: (state, action) => {
-			state.combatSearch = action.payload;
-			writeLocalStorageValue('combatSearch', action.payload);
-		},
 	}
 });
 
@@ -204,7 +198,6 @@ export const {
 	setCharacterSheetSearch,
 	setDMMenagerieSearch,
 	setDMMenagerieTypeSelection,
-	setDMMenagerieDCSelection,
-	setCombatSearch } = searchSlice.actions;
+	setDMMenagerieDCSelection } = searchSlice.actions;
 
 export default searchSlice.reducer;

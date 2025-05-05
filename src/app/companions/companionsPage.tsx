@@ -9,12 +9,12 @@ import SearchControl from '../components/controlBar/searchControl';
 import ContentList from '../components/contentList/contentList';
 import ContentCard from '../components/contentList/contentCard';
 import MenagerieSpecimenBlock from '../components/beast/menagerieSpecimenBlock';
-import { MenagerieSpecimenModel } from '../../features/models/menagerieSpecimenModel';
+import { MenagerieSpecimen } from '../../features/models/menagerieSpecimenModel';
 
 export default function CompanionsPage() {
 	const dispatch = useAppDispatch();
 	const companionsSearch = useAppSelector((state) => state.search.companionsSearch);
-	const menagerie = useAppSelector<MenagerieSpecimenModel[]>((state) => state.menagerieData.menagerie);
+	const menagerie = useAppSelector<MenagerieSpecimen[]>((state) => state.menagerieData.menagerie);
 
 	// Choose and remember only companionable creatures
 	const companionableCreatures = useMemo(() => {
@@ -22,10 +22,10 @@ export default function CompanionsPage() {
 	}, [menagerie]);
 
 	// Categories the creatures
-	const categorisedMenagerie: Record<string, MenagerieSpecimenModel[]> = useMemo(() => {
+	const categorisedMenagerie: Record<string, MenagerieSpecimen[]> = useMemo(() => {
 		if (!companionableCreatures.length) return {};
 
-		const categorisedMenagerie: Record<string, MenagerieSpecimenModel[]> = {};
+		const categorisedMenagerie: Record<string, MenagerieSpecimen[]> = {};
 		companionableCreatures.map((item) => {
 			const key = item.type.toString();
 			if (!categorisedMenagerie[key]) categorisedMenagerie[key] = [];
@@ -37,7 +37,7 @@ export default function CompanionsPage() {
 
 	// Filter based on user input
 	const filteredMenagerie = useCallback((companionCategory: string) => {
-		const contentCopy: MenagerieSpecimenModel[] = [...categorisedMenagerie[companionCategory]];
+		const contentCopy: MenagerieSpecimen[] = [...categorisedMenagerie[companionCategory]];
 		return contentCopy.sort((a, b) => a.dc < b.dc ? -1 : 1)
 			.filter((item) => item.type.toString() == companionCategory)
 			.filter((item) => `${(item.name.toString()).toLowerCase()} ${(item.type.toString()).toLowerCase()}`.includes(companionsSearch.toLowerCase()));
@@ -53,7 +53,7 @@ export default function CompanionsPage() {
 					<div className={st.header}>{companionCategory}</div>
 					<div className={[st.menagerieList, stcl.removeParentWhenEmpty].join(' ')}>
 						{filteredMenagerie(companionCategory).map((companion) => (
-							<MenagerieSpecimenBlock menagerieSpecimen={companion} viewMode="max" viewContext="companion" />
+							<MenagerieSpecimenBlock specimen={companion} viewMode="max" viewContext="companion" />
 						))}
 					</div>
 				</ContentCard>
