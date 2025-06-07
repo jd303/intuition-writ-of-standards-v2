@@ -10,17 +10,15 @@ import icoCircles from '/images/icons/ico.circles.svg';
 
 function Statuses() {
 	const { character, characterValueUpdater, updateCharacterValue } = useCharacterContext(true);
-	
+
 	// Statuses Data
 	const statusesData = useAppSelector((state) => state.statusesData.statuses);
-	const statusesOptions = useMemo(() => [{ value: '', label: 'Prefill from Statuses...' }, ...statusesData.map((st: Record<string, string>) => { return { value: `${st.negative && '🌩️' || '⭐'} ${st.name} - ${st.effect}`, label: `${st.negative && '🌩️' || '⭐'} ${st.name}` } })], [statusesData]);
+	const statusesOptions = useMemo(() => [{ value: '', label: 'Prefill from Statuses...' }, ...statusesData.map((st: Record<string, string>) => { return { value: `${st.negative && '🌩️' || '⭐'} ${st.name} - ${st.effect} (${st.domain}, Duration ${st.duration})`, label: `${st.negative && '🌩️' || '⭐'} ${st.name} (${st.domain})` } })], [statusesData]);
 	const activeStatuses = useMemo(() => [...character.statuses.map(status => status || ''), ''], [character]);
 
 	return (
 		<>
-			<BlockHeading
-				icon={icoCircles}
-				label='Statuses & Buffs' />
+			<BlockHeading icon={icoCircles} label='Statuses & Buffs' />
 			{activeStatuses.map((value, index) => (
 				<div className={st.status} key={`buff-${index}`}>
 					<TextField type="textarea" initialValue={value} onChange={characterValueUpdater(`statuses.${index}`)!} autosize={true} />

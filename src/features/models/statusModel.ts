@@ -1,5 +1,5 @@
 export interface StatusModel {
-	type: string,
+	duration: string,
 	id: string,
 	negative: boolean,
 	name: string,

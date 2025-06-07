@@ -22,14 +22,14 @@
         "name": "Alacrity",
         "id": "8cd7a25c",
         "type": "Expertise",
-        "description": "At the start of each combat, gain 1 Alacrity for each point of Expertise.  When you choose this Expertise, your may expend Alacrity to increase your Speed by 1 per Alacrity, until the end of your turn.  On any turn, you may only expend up to half your Expertise of Alacrity."
+        "description": "At the start of each combat, gain [2|3|4|5|6|7] Alacrity.  On any turn, you may expend up to [1|1|2|2|3|3] Alacrity to increase your Speed by 1, until the end of your turn."
     },
     {
         "category": "athletics",
         "name": "Relocate Tactician",
         "id": "0d4375b6",
         "type": "Expertise",
-        "description": "When resolving the Relocate Move and using this Expertise, for each Expertise:\n-- Once per turn after an enemy has declared their movement, you may move up to half a square towards that enemy.\n-- You may move through half an enemy's square, or one Threatened Square, without penalty.\n-- If you moved at least [5|5|4|4|3|3] squares in a straight line towards a target, you may take the maximum value of 1 Weapon Damage Dice when resolving Melee Attack this turn."
+        "description": "When resolving the Relocate Move and using this Expertise, for each Expertise:\n-- Once per turn after an enemy has declared their movement, you may move [1|1|2|2|2|3] squares towards that enemy.\n-- You may move through [1|2|2|3|3|4] threatened squares without penalty.\n-- If you moved at least [5|5|4|4|3|3] squares in a straight line towards a target, you may take the maximum value of 1 Weapon Damage Dice when resolving Melee Attack this turn."
     },
     {
         "category": "athletics",
@@ -50,7 +50,7 @@
         "name": "Aggressive Athlete",
         "id": "24bb0406",
         "type": "Expertise",
-        "description": "When using this Expertise, choose one effect:\n-- After jumping or falling in a straight line towards a target, you apply additional Verve Loss to the Total Damage when resolving the Melee Attack Move on the same turn, equal to the lower of the number of Squares your moved or your Expertise.\n-- When jumping or falling, you may attempt to Slam the ground.  Resolve Athletics, gaining a +1 Bonus per point in this Expertise, and note the DC you beat. starting at DC 1.  You apply 1 Verve Loss to all adjacent creatures per DC you beat."
+        "description": "When using this Expertise, choose one effect:\n-- After jumping or falling in a straight line towards a target, you apply additional Verve Loss to the Total Damage when resolving the Melee Attack Move on the same turn, equal to the lower of the number of Squares your moved or your Expertise.\n-- When jumping or falling, you slam the ground.  Resolve Athletics, gaining a +1 Bonus per point in this Expertise, and note the DC you beat, starting at DC 1.  You apply 1 Verve Loss to all adjacent creatures per DC you beat.  Additionally, if you land directly on a 2-legged creature of your own size category or smaller, you displace them to the nearest unoccupied space."
     },
     {
         "category": "athletics",
@@ -71,7 +71,7 @@
         "name": "Athletics Master",
         "id": "90ab3147",
         "type": "Passive",
-        "description": "If you have at least 4 points in 2 Athletics Expertises, you may choose 2 Expertises when resolving Athletics Moves, however may only choose 1 Effect that increases Verve Loss."
+        "description": "If you have spent at least 8 points in Athletics Expertises, you may choose 2 Expertises when resolving Athletics Moves, however may only choose 1 Effect that increases Verve Loss."
     },
     {
         "category": "preparedness",
@@ -96,28 +96,28 @@
         "name": "Long Rest",
         "id": "70479f7f",
         "type": "Primary",
-        "description": "When in a comfortable space, you Rest or Sleep for 8 hours, restoring all your Mana, Psi, Verve and Stamina, and remove 1 non-Wound Status.  Additionally, if you beat a DC 4 Rest Move, you reduce the severity of a Wound Status.  This may be reduced twice, once for a comfortable room and once if you are tended to by a healer for the night and they succeed at a DC 2 Knowing with Medicine."
+        "description": "When in a comfortable space, you Rest or Sleep for 8 hours, restoring all your Mana, Psi and Verve.  Additionally, you have two chances to reduce the severity of a Wound Status.  If you are in a comfortable room, you may attempt a DC 4 Preparedness Move.  If you are tended to by a healer for the night, they may attempt a DC 2 Knowing, if they have 2 points in the Medicine Knowledge Exepertise."
     },
     {
         "category": "preparedness",
         "name": "Recouperative Rester",
         "id": "c829531f",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Long Rest, depending on your Expertise score you gain one of the following effects:\n-- 1 Point: You may rest for an hour less and gain all the benefits.\n-- 2 Points: You Gain 5 Verve, 2 Mana and 1 Psi.\n-- 3 Points: You Gain a Hardy.  You may exchange a Hardy to ignore gaining the Incapacitated Status.\n-- 4 Points: You Gain 1 Lucky.  You may exchange a Lucky to reroll any d20 Roll.\n-- 5 Points: You may remove one Status that has the Ciar type.\n-- 6 Points: You may reduce the severity of a Wounded Status by 1 rank."
+        "description": "When using this Expertise and resolving Long Rest, choose one effect that is less than or equal to your your Expertise score:\n-- 1 Point: You may rest for an hour less and gain all the benefits.\n-- 2 Points: You Gain 5 Verve, 2 Mana and 1 Psi.\n-- 3 Points: You Gain a Hardy.  You may exchange a Hardy to ignore gaining the Incapacitated Status.\n-- 4 Points: You Gain 1 Lucky.  You may exchange a Lucky to reroll any d20 Roll.\n-- 5 Points: You may remove one Status that has the Ciar type.\n-- 6 Points: You may reduce the severity of a Wounded Status by 1 rank."
     },
     {
         "category": "preparedness",
-        "name": "Combat Preparedness",
+        "name": "Adrenal Rest",
         "id": "0e747388",
         "type": "Primary",
-        "description": "You take a moment, Gaining 6 Verve."
+        "description": "While in combat, you take a moment and Gain 8 Verve.  You may use this up to 3 times per combat."
     },
     {
         "category": "preparedness",
-        "name": "Preparation",
+        "name": "Heightened Adrenaline",
         "id": "eda86c1e",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Combat Preparedness, choose one effect per point in Combat Preparedness.  You may choose the same effect more than once.\n-- Gain an additional 2 Verve.\n-- Gain a +1 to Basic Defence against one attack, until the start of your next turn.\n-- Gain a +1 to Resist Physical against one effect, until the start of your next turn.\n-- Gain a +1 to Resist Mental against one effect, until the start of your next turn."
+        "description": "When using this Expertise and resolving Adrenal Rest, you may choose effects below [1|2|3|4|5|6] times.  You may choose the same effect more than once.\n-- Gain an additional Verve.\n-- Gain a +1 to Basic Defence against one attack, until the start of your next turn.\n-- Gain a +1 to Resist Physical against one effect, until the start of your next turn.\n-- Gain a +1 to Resist Mental against one effect, until the start of your next turn."
     },
     {
         "category": "preparedness",
@@ -152,7 +152,7 @@
         "name": "Evil Items",
         "id": "07e4558b",
         "type": "Expertise",
-        "description": "When using this Expertise, choose one effect:\n-- When resolving Use Item, any Verve Loss applied is increased by 1 per Expertise.\n-- When resolving to apply Weapon Oil, resolve a Raw Roll.  On [15|14|13|12|11|10], this is a Free Action.\n-- Bombs and explosives used gain 1sq additional volume, chosen by you adjacent to an existing sq of volume.\n-- When resolving Use Item, resolve a Raw Roll.  On [20|19|18|17|16|15] the item does not expend a charge, if it had multiple charges."
+        "description": "When using this Expertise, choose one effect:\n-- When resolving Use Item, any Verve Loss applied is increased by 1 per Expertise.\n-- When resolving to apply Weapon Oil, resolve a Raw Roll.  On [15|14|13|12|11|10], this is a Free Action.\n-- Items that have a volume effect apply their effects to an additional sq. (not radius) per 2 Expertise\n-- When resolving Use Item, on a Raw Roll of [20|19|18|17|16|15] the item does not expend a charge, if it had multiple charges."
     },
     {
         "category": "preparedness",
@@ -283,12 +283,12 @@
     },
     {
         "category": "defences",
-        "name": "Defend",
+        "name": "Defence",
         "stat": "str,dex",
         "id": "b1197e9a",
         "trained": false,
         "type": "Skill",
-        "description": "You resist certain Moves using your armour and ability to block.",
+        "description": "You resist certain Moves using your armour and ability to block.  If you're using an Expertise, you must use the same one to defend against all attacks from a single attacker, but you can choose a different Expertise for each separate attacker.",
         "secondPass": "✅",
         "undefined": "✅"
     },
@@ -318,28 +318,28 @@
         "name": "Resigned Defence",
         "id": "ff2690cc",
         "type": "Expertise",
-        "description": "When failing Defend and using this Expertise, choose one effect:\n-- You reduce the Resolved Verve Damage by your Expertise and apply Verve Loss equal to your Expertise to your attacker.\n-- You apply the Damaged tag to either your armour or shield that does not have the Damaged tag already.  You ignore a number of Basic Attacks targeting you this turn equal to your Expertise.  Damaged items incur a -3 Penalty to the Defend Move."
+        "description": "When failing Defend and using this Expertise, choose one effect:\n-- You reduce the Resolved Verve Damage by your Expertise and apply Verve Loss equal to your Expertise to your attacker.\n-- You apply the Damaged tag to either your weapon, armour or shield that does not have the Damaged tag already.  You ignore a number of Basic Attacks targeting you this turn equal to your Expertise.  The Defend Move incurs a -3 Penalty when you have an armour or shield with the Damaged Tag, and weapons apply -5 less Verve when they have the Damaged tag."
     },
     {
         "category": "defences",
         "name": "Fast Dodger",
         "id": "79e79a3b",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Dodge and Block, after resolving all attacks you may Relocate up to your Expertise sq, even if you have no movement left.  You may gain the benefit of this Expertise once per turn."
+        "description": "When using this Expertise and resolving Defend, after resolving all attacks you may Relocate up to your Expertise sq, even if you have no movement left.  You may gain the benefit of this Expertise once per turn."
     },
     {
         "category": "defences",
         "name": "Poised Dodger",
         "id": "72ad9865",
         "type": "Expertise",
-        "description": "When using this Expertise and successfully resolving Dodge and Block, you attempt to throw an item on your Item Belt at them.  On a Raw Roll of 14|13|12|11|10|9+ you succeed.  On a failure you do not expend your item."
+        "description": "When using this Expertise and successfully resolving Defend, you attempt to throw an item on your Item Belt at them.  On a Raw Roll of 14|13|12|11|10|9+ you succeed.  On a failure you do not expend your item."
     },
     {
         "category": "defences",
         "name": "Environmental Dodger",
         "id": "ebccf62c",
         "type": "Expertise",
-        "description": "When using this Expertise, if you are adjacent to an environmental object that could provide cover against an incoming attack (such as a pillar or barrel), you reduce the Unresolved Verve Loss by your Expertise score.  If you succeed at your Defend Move, you move 1sq closer to that object.  Subsequent uses of this Expertise with the same creature halve the Verve Loss reduction."
+        "description": "When using this Expertise, if you are adjacent to an environmental object that could provide cover against an incoming attack (such as a pillar or barrel), you reduce the Unresolved Verve Loss by your Expertise score.  Subsequent uses of this Expertise with the same creature and cover this combat halve the Verve Loss reduction."
     },
     {
         "category": "defences",
@@ -353,7 +353,7 @@
         "name": "Defenses Master",
         "id": "da6fd058",
         "type": "Passive",
-        "description": "If you have at least 3 points in both a Blocker and a Dodger Expertise, you may reroll a failed Basic Defence Move with a +1 Bonus once per combat, of the opposite type you failed with."
+        "description": "If you have at least 3 points in a Defend Expertise, you may reroll a failed Basic Defence Move with a +1 Bonus once per combat."
     },
     {
         "category": "combat",
@@ -378,7 +378,7 @@
         "name": "Multiple Melee Attack",
         "id": "b3b458ef",
         "type": "Expertise",
-        "description": "When resolving a Melee Attack and using this Expertise, for each point you have purchased you may split your damage to a number of creatures within your Threatened Area equal to your Expertise, and apply additional Verve Loss equal to half your Expertise to each target."
+        "description": "When resolving a Melee Attack and using this Expertise, you may split your damage between up to [2|3|4|5|6|7] creatures within your Threatened Area, and apply an additional [1|2|2|3|3|4] Verve Loss to each target."
     },
     {
         "category": "combat",
@@ -392,7 +392,7 @@
         "name": "Whirlwind",
         "id": "a2df1d2a",
         "type": "Expertise",
-        "description": "When resolving a Melee Attack and using this Expertise, then on a Raw Roll of 11+ you apply an additional 3 Verve Loss.  You may roll this again, increasing the Raw Roll requirement by 1, adding an additional 3 Verve each time you succeed.  You may continue this whirlwind of strikes as many times as your Expertise, or until you fail."
+        "description": "When resolving a Melee Attack and using this Expertise, then on a Raw Roll of 11+ you apply an additional [3|4|5|6|7|8] Verve Loss.  You may continue this whirlwind of strikes until you fail, though each subsequent roll increases the Raw Roll by 1."
     },
     {
         "category": "combat",
@@ -420,7 +420,7 @@
         "name": "Multiple Shot",
         "id": "a58ac930",
         "type": "Expertise",
-        "description": "When resolving a Ranged Attack and using this Expertise, you target a number of creatures up to your Expertise that are within a number of squares equal to your Expertise.   When resolving applied Verve Loss, you only apply your Weapon Damage to each target."
+        "description": "When resolving a Ranged Attack and using this Expertise, you target up tp [2|3|4|5|6|7] creatures that are each within an area of diameter [2|3|4|5|6|7]sq.   When resolving applied Verve Loss, you only apply your Weapon Damage to each target."
     },
     {
         "category": "combat",
@@ -448,7 +448,7 @@
         "name": "Ammunitions Master",
         "id": "5323f845",
         "type": "Expertise",
-        "description": "When resolving a Ranged Attack and using this Expertise, you may use the special effects of Specialty Ammunition:\n- If using Blunt ammunition, you deal one half of the normal Verve Loss and knock back your target 1 sq to a safe space.  You additionally apply the Prone Status on a Raw Roll of [20|20|19|19|18|18]+.\n- If using Piercing ammunition, you pierce your target's PRes and some URes, to a value up to your Expertise.\n- If using Splintering ammunition, you resolve your attack as normal, and apply your Expertise as Verve Loss to all adjacent creatures (friend and foe).\n- If using Curved ammunition, you may target creature who is around a corner.  To determine if you can hit them, draw a straight line that you can perceive, then plot a perpendicular line up to a number of squares equal to your Expertise.  Targets that touch either line may be targeted.\n- If using Ricocheting ammunition, you may bounce your shot off [1|1|2|2|3|3] surfaces, each no more than [5|8|11|14|17|20] squares from each other, increasing your Critical Chance by 1 per ricochet."
+        "description": "When resolving a Ranged Attack and using this Expertise, you may use the special effects of Specialty Ammunition:\n-- If using Blunt ammunition, you deal one half of the normal Verve Loss and knock back your target 1 sq to a safe space.  You additionally apply the Prone Status on a Raw Roll of [20|20|19|19|18|18]+.\n-- If using Piercing ammunition, you pierce your target's PRes and some URes, to a value up to your Expertise.\n-- If using Splintering ammunition, you resolve your attack as normal, and apply your Expertise as Verve Loss to all adjacent creatures (friend and foe).\n-- If using Curved ammunition, you may target creature who is around a corner.  To determine if you can hit them, draw a straight line that you can perceive, then plot a perpendicular line up to a number of squares equal to your Expertise.  Targets that touch either line may be targeted.\n-- If using Ricocheting ammunition, you may bounce your shot off [1|1|2|2|3|3] surfaces, each no more than [5|8|11|14|17|20] squares from each other, increasing your Critical Chance by 1 per ricochet."
     },
     {
         "category": "combat",
@@ -525,7 +525,7 @@
         "name": "Short Throw",
         "id": "d46b442d",
         "type": "Passive",
-        "description": "When resolving Ranged Attack with a weapon with the Throwable Tag and you target is within 2sq of you, take the maximum of your Damage Dice instead of rolling."
+        "description": "Once per combat, when resolving Ranged Attack with a weapon with the Throwable Tag and you target is within 3sq of you, take the maximum of your Damage Dice instead of rolling."
     },
     {
         "category": "combat",
@@ -546,7 +546,7 @@
         "name": "Killer",
         "id": "c4af4396",
         "type": "Passive",
-        "description": "Whenever you kill an opponent, you deal +2 Verve Loss when resolving Melee Attack, for the remainder of the combat.  This stacks for each kill."
+        "description": "The first time you deliver a killing blow to an opponent, you deal +2 Verve Loss when resolving Melee Attack for the remainder of the combat.  Each killing blow after that adds +1."
     },
     {
         "category": "combat",
@@ -567,7 +567,7 @@
         "name": "Team Up",
         "id": "59e4f1cb",
         "type": "Passive",
-        "description": "As a Free Action, apply 1 Verve Loss to enemies within your Threatened Area, any time that an ally uses a Combat Move on them."
+        "description": "Apply 1 Verve Loss to enemies within your Threatened Area, any time that an ally uses a Combat Move on them."
     },
     {
         "category": "combat",
@@ -771,7 +771,7 @@
         "name": "Pick the right time",
         "id": "e1f18da0",
         "type": "Passive",
-        "description": "Once per combat, you attempt to recall the flow of combat.  On a Raw Roll of 20+, you gain a Bonus Primary Action next turn.  If you use this after succesfully resolving Knowing prevously in combat, the Raw Roll requirement becomes 18+."
+        "description": "Once per combat, you attempt to recall the flow of combat as a Free Action.  On a Raw Roll of 20+, you gain a Bonus Primary Action next turn.  If you use this after succesfully resolving Knowing prevously in combat, the Raw Roll requirement becomes 18+."
     },
     {
         "category": "knowledge",
@@ -973,7 +973,7 @@
     },
     {
         "category": "influence",
-        "name": "Provoking Presence",
+        "name": "Menacing Presence",
         "id": "fdaeed05",
         "type": "Expertise",
         "description": "When using this Expertise and resolving Unnerve, choose one of the following effects:\n-- If your target is within [1|2|3|4|5|6] squares of you, you gain a +3 Bonus.\n-- If you succeed, you gain a Bonus to Basic Defence equal to [1|1|2|2|3|3]."
@@ -981,7 +981,7 @@
     {
         "category": "influence",
         "name": "Threatening Presence",
-        "id": "fdaeed05",
+        "id": "96ee2a0a",
         "type": "Expertise",
         "description": "When using this Expertise and resolving Unnerve, choose one of the following effects:\n-- You halve the movement of affected enemies within and through squares up to [1|2|3|4|5|6] squares away from you.  Additionally, enemies automatically gain the Unnerved: Intimidated Status if they pass you in a direction you choose.\n-- You move an enemy who has used an offensive Move against the party up to [1|2|3|4|5|6] squares into a safe space."
     },
@@ -997,7 +997,7 @@
         "name": "Mass Influence",
         "id": "07452ea4",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Unnerve, you may target [2|3|4|4|5|5] targets within an area of radius [1|2|2|3|3|4] squares."
+        "description": "When using this Expertise and resolving Unnerve, you may target [2|2|3|3|4|4] targets within [2|3|3|4|4|5] squares of you."
     },
     {
         "category": "influence",
@@ -1018,7 +1018,7 @@
         "name": "Snap out of it!",
         "id": "ecd1a4cf",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Convince or Encourage on an Ally, choose one of the following effects:\n-- You reduce the duration of a mental effect on a target by [0|0|1|1|1|2] rounds.\n-- Your target gains +[1|1|1|2|2|2] to the Raw Roll of their next Move.  If they failed the same move last turn, this Bonus increases to +[1|2|2|3|3|4].\n-- If your Ally switches their current target from another creature to one that you are currently fighting, you both gain +[1|2|3|4|5|6] to Basic Defence against that creature until the start of your next turn."
+        "description": "When using this Expertise and resolving Convince or Encourage on an Ally, choose one of the following effects:\n-- You reduce the duration of a Mentus Status on a target by [0|0|1|1|1|2] rounds.\n-- Your target gains +[1|1|1|2|2|2] to the Raw Roll of their next Move.  If they failed the same move last turn, this Bonus increases to +[1|2|2|3|3|3].\n-- If your Ally switches their current target from another creature to one that you are currently fighting, you both gain +[1|2|3|4|5|6] to Basic Defence against that creature until the start of your next turn."
     },
     {
         "category": "influence",
@@ -1060,7 +1060,7 @@
         "name": "Challenge",
         "id": "8ccba8af",
         "type": "Passive",
-        "description": "When you use Influence to resolve Provoke with yourself as the target, you gain a +5 Bonus."
+        "description": "When you use Influence to resolve Unnerve: Provoke with yourself as the target, you gain a +5 Bonus.  You may not use Expertises when using this Passive."
     },
     {
         "category": "influence",
@@ -1074,7 +1074,7 @@
         "name": "Let that be a warning",
         "id": "88aabf3c",
         "type": "Passive",
-        "description": "If you killed an opponent this round, you may resolve the Unnerve Move without Expertises against a target within 5 sq of you as a Free Action."
+        "description": "If you killed an opponent this round, you may resolve the Unnerve Move without Expertises against a target within 5 sq of you as a Free Action.  The Free Action limitation does not apply to this Passive."
     },
     {
         "category": "influence",
@@ -1353,17 +1353,17 @@
     },
     {
         "category": "alchemy",
-        "name": "Perfect Alchemical Expertise",
+        "name": "Perfect Alchemical",
         "id": "84399587",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Craft Alchemical, on a Raw Roll of [16|14|12|10|8|6] you create an Enhanced Alchemical.  In addition to any benefits from Perfect Alchemicals, one numeric effect has +5 added to it, or if it has a duration this is increases by 2 rounds.\n\nNote Enhanced and Perfect Enahnced Alchemicals with the enhanced effect in your inventory."
+        "description": "When using this Expertise and resolving Craft Alchemical, on a Raw Roll of [16|14|12|10|8|6] you create an Enhanced Alchemical.  In addition to any benefits from Perfect Alchemicals, one numeric effect has +5 added to it, or if it has a duration this is increased by 2 rounds.\n\nNote Enhanced and Perfect Enahnced Alchemicals with the enhanced effect in your inventory."
     },
     {
         "category": "alchemy",
-        "name": "Concentrated Alchemy Expertise",
+        "name": "Concentrated Alchemy",
         "id": "4c004480",
         "type": "Expertise",
-        "description": "When using this Expertise and resolving Craft Alchemical, choose one of the following effects:\n-- For each 2 Reagents that you add to your Alchemical recipe (of any type that the Recipe requires), the DC of the Recipe is reduced by 1.\n-- For each doubling of the creation time, you may reduce the number of Reagent symbols by 1.\n-- For each DC you increase to your creation, reduce the creation time by 1 hour.  DC added this way does not itself change the creation time.\n\nYou may apply one of these effects to a creation, up to a number of times equal to your Expertise."
+        "description": "When using this Expertise and resolving Craft Alchemical, choose one of the following effects:\n-- You may add up to [2|4|6|8|10|12] reagents (of any type that the Recipe requires).  For each 2 that you do, the DC of the Recipe is reduced by 1.\n-- You may increase the time to create the recipe up to [4x|4x|3x|3x|2x|2x].  Doing so reduces the Reagents required to a minimum of 1 of each Reagent type.\n-- You may increase the DC of your creations by up to [1|2|3|4|5|6].  For each DC you increase, reduce the creation time by 1 hour.  DC added this way does not itself change the creation time."
     },
     {
         "category": "alchemy",
@@ -1405,7 +1405,7 @@
         "name": "Restock",
         "id": "5a77674d",
         "type": "Passive",
-        "description": "You may restock one item in your Item Belt as a Free Action, once per turn."
+        "description": "You may restock one item in your Item Belt as a Free Action."
     },
     {
         "category": "alchemy",
@@ -1443,7 +1443,7 @@
         "name": "Reactive Offenses Expertise",
         "id": "5b23fa6b",
         "type": "Expertise",
-        "description": "When resolving Cast a Spell and using this Expertise, you may resolve the Cantrip effect of any Spell as a Free Action, but may not resolve the Cast a Spell Move again on your turn.  The cost for casting the spell is increased by [3|3|2|2|1|1].  You may use this Expertise [1|2|2|3|3|4] times per combat."
+        "description": "When resolving Cast a Spell and using this Expertise, you may resolve the Cantrip effect of any Spell as a Free Action, but may not resolve the Cast a Spell Move again this turn.  The cost for casting the spell is increased by [3|3|2|2|1|1].  You may use this Expertise [1|2|2|3|3|4] times per combat."
     },
     {
         "category": "magic_cast",
@@ -1548,7 +1548,7 @@
         "name": "Flow Master",
         "id": "acc5a2e9",
         "type": "Passive",
-        "description": "Each time you cast a spell, you gain one Flow.  As a Free Action, you may exchange 3 Flow for 1 Mana."
+        "description": "Each time you cast a spell, you gain one Flow.  As a Free Action, you may exchange 2 Flow for 1 Mana, or 3 Flow for 5 Mana."
     },
     {
         "category": "magic_cast",
@@ -1747,7 +1747,7 @@
         "name": "Out for blood",
         "id": "cb5e8841",
         "type": "Expertise",
-        "description": "For each point in this Expertise, your Companion applies an additional Verve Loss in combat.  Additionally, you gain special commands at Expertise scores:\n-- 3 Expertise: you may use Command Beast with a special command: Harry.  Your beast gains +2 Move sq and will move towards a target you nominate.  If it reaches, it applies 5 Verve Loss and attempts to get back to you.  Your companions cannot be the target of attacks this round.\n-- 5 Expertise: you may use Command Beast with a special command: Pounce.  Your Companion gains the Enraged: Aggravated Status for a particular target and gains immunint to mental effects and +3sq movement.  They will ignore their own wellbeing and any further commands until its target is killed."
+        "description": "For each point in this Expertise, your Companion applies an additional Verve Loss in combat.  Additionally, you gain special commands at Expertise scores:\n-- 3 Expertise: you may use Command Beast with a special command: Harry.  Your beast gains +2 Move sq and will move towards a target you nominate.  If it reaches, it applies 5 Verve Loss and attempts to get back to you.  Your companions cannot be the target of attacks this round.\n-- 5 Expertise: you may use Command Beast with a special command: Pounce.  Your Companion gains the Unnerved: Aggravated Status for a particular target and gains immunint to mental effects and +3sq movement.  They will ignore their own wellbeing and any further commands until its target is killed."
     },
     {
         "category": "beast_mastery",
@@ -1885,64 +1885,64 @@
         "id": "160be273",
         "trained": true,
         "type": "Skill",
-        "description": "You are trained in the truth of Ki.  Ki attuned may have 2 active Ki Marks per point in Ki you have purchased, or 1/2 a Ki Mark when out of combat.  Ki Marks may be applied to yourself and your enemies.",
+        "description": "You know the truth of Ki; able to generate Ki Marks on yourself and your foes.  You may have 2 Ki Marks active at any time.\n\nYou may also enter a Ki Attuned State as a Free Action three times per day, lasting 6 rounds.  While Ki Attuned: your maximum active Ki Marks increases to your Ki Skill, and once per turn as a Free Action you may apply a Ki Mark to yourself or to a creature in your Threatened Area.",
         "secondPass": "✅"
     },
     {
         "category": "ki",
-        "name": "Ki Attunement",
+        "name": "Ki Gather",
         "id": "85f6c688",
-        "type": "Free",
-        "description": "You enable a Ki Attunement.  This turn you may apply a Ki Mark to a target you hit with a Basic Attack, to one you Grapple or Trip, or to yourself.  You may only use this Move once per turn."
+        "type": "Primary",
+        "description": "You focus inwards, gathering Ki.  Apply a Ki Mark to yourself, or to a creature that is either in your Threatened Area or who has a Ki Mark already."
     },
     {
         "category": "ki",
-        "name": "Ki Flurry Expertise",
-        "id": "a473b0b1",
-        "type": "Expertise",
-        "description": "When resolving Ki Attunement and using this Expertise, you expend up to your Expertise score in Ki Marks from targets in your Threatened Area.  If you do, you apply 1 attack that automatically hits for each Ki Mark expended.  You may apply each attack to different targets.  If you have at least 5 points in Ki Flurry, you may instead expend Ki Marks on targets you can perceive, and move within the Threatened Area of any creature you expended Marks on, to resolve these attacks."
-    },
-    {
-        "category": "ki",
-        "name": "Ki Torrent Expertise",
+        "name": "Ki Torrent",
         "id": "ed0f20c2",
         "type": "Expertise",
-        "description": "When resolving Ki Attunement and using this Expertise, you may apply up to your Expertise score Ki Marks to targets in your Threatened Area, but a maximum of 1 per target."
+        "description": "When resolving Ki Gather and using this Expertise, choose one effect:\n-- You may apply up to your Expertise score in Ki Marks to adjacent targets, but a maximum of 1 per target.\n-- Until the start of your next turn, for each attack you attempt to Defend against, apply a Ki Mark to the attacker."
     },
     {
         "category": "ki",
-        "name": "Ki Flow",
+        "name": "Ki Release",
         "id": "b35258f7",
         "type": "Primary",
-        "description": "You apply a Ki Mark to a target that you can perceive that already has one, or 2 to yourself."
+        "description": "You focus outwards, expending any number of your Ki Marks on yourself or creatures that you can perceive.  Restore 1 Verve when expending a Ki Mark on yourself, and apply 1 Verve Loss to creatures that have Ki Marks expended on them."
     },
     {
         "category": "ki",
-        "name": "Ki Conduit Expertise",
+        "name": "Ki Flurry",
+        "id": "a473b0b1",
+        "type": "Expertise",
+        "description": "When resolving Ki Release and using this Expertise, choose one effect, applying them to up to a number of targets equal to your Expertise:\n-- You apply 1 attack that automatically hits on each target you expended a Ki Mark on.  If you have at least 3 points in Ki Flurry, you may instead expend Ki Marks on targets you can perceive, rapidly relocating to each to perform your attack, and ending within the Threatened Area of the last attack you resolve.\n-- You apply 1 attack that automatically hits on targets in your Threatened Area for each 2 Ki you expend on yourself.  If you have at least 3 points in Ki Flurry, you gain an additional attack, if you expend at least 2 Ki Marks."
+    },
+    {
+        "category": "ki",
+        "name": "Ki Conduit",
         "id": "fe59c680",
         "type": "Expertise",
-        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from targets within your Threatened Area and choose one of the following effects:\n-- You deal 5 Magical Damage to each creature you expended Ki Marks on, for each Ki Mark they have.  This damage ignores armour and magical resistances.  When expending Ki Marks for this effect, you may expend them from creatures you can perceive, rather than just those within your Threatened Area.\n-- Instead of dealing damage, you apply the Scrambled: Stunned Status to targets up to DC 2 that you expended Ki Marks on.  If there are no valid targets, this Move is cancelled and your Primary Action is not expended.\n-- You slam a creature up to 1 size category larger than you up to 3sq per Ki Mark you used.  Creatures who hit a surface are slammed for 4 Verve Loss per square you moved them.  Resolve a Trip with no bonus against creatures that do not hit a surface."
+        "description": "When resolving Ki Release and using this Expertise, choose one of the below effects.  You may expend a maximum number of Ki Marks this way equal to your Expertise.\n-- You deal 5 Magical Damage to each creature you expended Ki Marks on, for each Ki Mark they have.  This damage ignores armour and magical resistances.  When expending Ki Marks for this effect, you may expend them from creatures you can perceive, rather than just those within your Threatened Area.\n-- Instead of dealing damage, you apply the Scrambled: Stunned Status to targets up to DC 2 that you expended Ki Marks on.  If there are no valid targets, this Move is cancelled and your Action and Ki Marks are not expended.\n-- You slam an adjacent creature up to 1 size category larger than you up to 3sq, plus 1sq per Ki Mark you used.  Creatures who hit a surface are slammed for 4 Verve Loss per square you moved them.  Resolve a Trip with no bonus against creatures that do not hit a surface."
     },
     {
         "category": "ki",
-        "name": "Ki Self Expertise",
+        "name": "Ki Self",
         "id": "304e1507",
         "type": "Expertise",
-        "description": "When resolving Ki Flow and using this Expertise, expend up to your Expertise score in Ki Marks from yourself and choose one of the following effects:\n-- If in combat, you reduce the duration of a Status at a rate of 1 round per Ki Mark expended.\n-- If in combat, you restore 5 Verve per Mark.\n-- You gain the Energy Shielded Status (DC 1, Pyral, Luminal, Umbral, Arcanic or Zephyral) for 1 round per Ki Mark.\n-- You gain 2sq of Movement this turn per Ki Mark expended, and you may treat difficult terrain, water surfaces, gaseous, vertical surfaces, falling, and occupied spaces as normal spaces."
+        "description": "When resolving Ki Release and using this Expertise, choose one of the below effects.  You may expend a maximum number of Ki Marks this way equal to your Expertise.\n-- If in combat, you reduce the duration of a Status at a rate of 1 round per Ki Mark expended.\n-- If in combat, you restore 4 Verve per Mark.\n-- You gain the Energy Shielded Status (DC 1, Pyral, Luminal, Umbral, Arcanic or Zephyral) for 2 rounds per Ki Mark.\n-- You gain 2sq of Movement this turn per Ki Mark expended, and you may treat difficult terrain, water surfaces, gaseous, vertical surfaces, falling, and occupied spaces as normal spaces."
     },
     {
         "category": "ki",
         "name": "Ki Eye",
         "id": "c07fc7c8",
         "type": "Expertise",
-        "description": "When resolving Ki Flow and using this Expertise, choose one of the following effects:\n-- Expend up to your Expertise score in Ki Marks from targets within your Threatened Area.  You automatically resolve Defend a number of times equal to the Ki Marks you expended, or most Special Attacks a number of times equal to half the Ki Marks you expended.\n-- You may resolve this as a Reaction to an opponent's Move.  For each attack you avoided, apply a Ki Mark to the attacker at the end of the turn."
+        "description": "When resolving Ki Release and using this Expertise, choose one of the below effects.  You may expend a maximum number of Ki Marks this way equal to your Expertise.\n-- Against basic attacks, a number of times equal to the Ki Marks you expended, or\n-- Against Special Attacks, once per 4 Ki Marks expended from yourself or the attacker."
     },
     {
         "category": "ki",
         "name": "Ki Catalyst",
         "id": "34e11fca",
         "type": "Passive",
-        "description": "Apply a Ki Mark to yourself for each enemy you kill or completely disable."
+        "description": "Apply a Ki Mark to yourself for each enemy you kill."
     },
     {
         "category": "ki",
@@ -1956,7 +1956,7 @@
         "name": "Ki Presence",
         "id": "46b4a925",
         "type": "Passive",
-        "description": "When Ki Attuned, you can apply Ki Marks by thrown weapons to targets within 5sq, instead of just by touch."
+        "description": "You may apply Free Action Ki Marks from being Ki Attuned to creatures within 3sq, instead of just in your Threatened Area."
     },
     {
         "category": "ki",
@@ -1972,12 +1972,12 @@
         "id": "971c8657",
         "trained": true,
         "type": "Skill",
-        "description": "You have the ability to enter a Combat Rage.  If you ever reach 0 Raging you gain the Prone (Alert) Status, and you can no longer gain Raging for the remainder of the Combat.  On any turn that you do not use the Melee Attack, Rage or Unnerve (Influence) Moves, lose 3 Raging.  Whenever you deal Damage to a target, or receive Damage from any source, you gain a Raging.\n\nIf you ever reach 10 Raging, then at the end of your turn you gain the Enraged: Unstoppable Rage Status.  ",
+        "description": "You have the ability to enter a Combat Rage.  If you ever reach 0 Raging you gain the Prone (Alert) Status, and you can no longer gain Raging for the remainder of the Combat.  On any turn that you do not use the Melee Attack, Rage or Unnerve (Influence) Moves, lose 3 Raging.  Whenever you deal Damage to a target, or receive Damage from any source, you gain 1 Raging.\n\nIf you ever reach 10 Raging, then at the end of your turn you gain the Unnerved: Unstoppable Rage Status.  ",
         "secondPass": "✅"
     },
     {
         "category": "rage",
-        "name": "Rage",
+        "name": "Enrage",
         "id": "67f35321",
         "type": "Free",
         "description": "If you are not already, you enter a Combat Rage, gaining a number of Raging equal to half of your points in Rage.  If you are already in a Combat Rage, gain 1 Raging."
@@ -1987,21 +1987,21 @@
         "name": "Unnerving Rage Expertise",
         "id": "8c0384aa",
         "type": "Expertise",
-        "description": "When resolving Rage and using this Expertise, choose one of the following effects:\n-- You may apply the Unnerve Move to additional targets equal to half your Expertise.  Lose 1 Raging per target you choose.\n-- You may move a number of opponents equal to your Expertise 1sq away from you, if there is a safe square to do so.  Lose 1 Raging per target you choose.\n-- You unnerve a number of opponents equal to half your Expertise.  Until your next turn, Critical Hit Raw Rolls apply with a +1 Bonus.  Lose 1 Raging per target you choose."
+        "description": "When resolving Enrage and using this Expertise, choose one of the following effects and spend 1 Raging per target you choose:\n-- You may apply the Unnerve Move to up to [1|1|2|2|3|3] additional targets within twice your Threatened Area.\n-- You may move up to [1|2|3|4|5|6] opponents 1sq away from you, if there is a safe square to do so.\n-- Choose up to [1|1|2|2|3|3] targets.  Until your next turn, attacks against that target perform a Critical Hit with a +2 Raw Roll Bonus."
     },
     {
         "category": "rage",
         "name": "Metabolic Rage Expertise",
         "id": "cbc676f8",
         "type": "Expertise",
-        "description": "When resolving Rage and using this Expertise, choose one of the following effects:\n-- Expend up to your Expertise in Raging to add 1sq to your leap distance and height this turn.\n-- Ignore the effects of any Mental Status, or the Damage Over Time Status this turn.  Lose 2 Raging per DC of the Status.\n-- Expend up to your Expertise in Raging to add +3 Verve Loss per Raging to all Melee Attacks this turn, or +1/2 to the Grapple or Trip Moves."
+        "description": "When resolving Enrage and using this Expertise, choose one of the following effects:\n-- Expend up to your Expertise in Raging to add 1sq to your leap distance and height this turn.\n-- Ignore the effects of any Mental Status, or the Damage Over Time Status this turn.  Lose 2 Raging per DC of the Status.\n-- Expend up to your Expertise in Raging to add +3 Verve Loss per Raging to all Melee Attacks this turn, or +1/2 to the Grapple or Trip Moves."
     },
     {
         "category": "rage",
         "name": "Powerful Rage Expertise",
         "id": "122e4d28",
         "type": "Expertise",
-        "description": "When resolving Rage and using this Expertise, choose one of the following effects:\n-- You slam a creature within your Threatened Area into a surface or another creature up to 1 sq per Raging spent.  For each sq your target moves, both your target and the surface or creature it hits incurs 4 Verve Loss per sq moved.\n-- Spend 5 Raging to stab and slice a creature, applying the Damage Over Time (DC 2) Status to them.\n-- Spend 8 Raging to resolve one Melee Combat Move (with no Expertises) against up to 3 targets in a Line Shape beginning from you.  You end your turn in a free square adjacent to your last target."
+        "description": "When resolving Enrage and using this Expertise, Rage becomes a Primary Action.  Choose one of the following effects:\n-- You slam a creature within your Threatened Area into a surface or another creature up to [3|4|5|6|7|8] sq, if you pay 1 Raging per square.  For each sq your target moves, both your target and the surface or creature it hits incurs 4 Verve Loss per sq moved.\n-- You apply the Damage Over Time Status (DC [1|2|2|3|3|4]) to a creature, costing [6|6|5|5|4|4] Raging.\n-- Expend 8 Raging to relocate along a straight line exactly [2|3|3|4|4|5] sq.  Resolve the Melee Attack Move (with no Expertises) to all creatures whose square your line overlaps by at least 50%."
     },
     {
         "category": "rage",
@@ -2029,7 +2029,7 @@
         "name": "Roaring Relocate",
         "id": "e9c17777",
         "type": "Passive",
-        "description": "You may once expend 1 Rage to ignore occupied spaces of opponents up to 1 size category larger, when using Relocate.  You may move any target that you push through to an adjacent safe square.  You may use only 1 Roaring Passive per turn."
+        "description": "You may once expend 1 Raging to ignore occupied spaces of opponents up to 1 size category larger, when using Relocate.  You may move any target that you push through to an adjacent safe square.  You may use only 1 Roaring Passive per turn."
     },
     {
         "category": "rage",
@@ -2203,21 +2203,21 @@
         "name": "Facilitating Presence",
         "id": "69c1bf5e",
         "type": "Expertise",
-        "description": "As a Free Action you may spend a Presence to replace one die that calculates Damage or Healing with the value of [4|5|6|7|8|9].  You may use this a maximum of once per turn."
+        "description": "As a Free Action you may spend a Presence to replace one die that calculates Damage or Healing with the value of [4|5|6|7|8|9]."
     },
     {
         "category": "rhapsody",
         "name": "Discordant Presence",
         "id": "ab030a1b",
         "type": "Expertise",
-        "description": "As a Free Action you may spend 2 Presence to perform a Raw Roll when an enemy resolves a Basic Attack or Move, choosing one of the below effects.  You may only use this on each creature once per turn.\n-- On [20|20|19|19|19|18]+ the Move does not occur and the originator of the Move cannot replace it.\n-- On a [20|19|18|17|16|15]+ the originator of the Move must choose a new target, if there is another valid target.  This does not apply to Area of Effect or Aura abilities."
+        "description": "As a Free Action you may spend 2 Presence to perform a Raw Roll when an enemy resolves a Basic Attack or Move, choosing one of the below effects.  The Free Action limitation does not apply to this Expertise, though you may only use this on each creature once per turn.\n-- On [20|20|19|19|19|18]+ the Move does not occur and the originator of the Move cannot replace it.\n-- On a [20|19|18|17|16|15]+ the originator of the Move must choose a new target, if there is another valid target.  This does not apply to Area of Effect or Aura abilities."
     },
     {
         "category": "rhapsody",
         "name": "Requiem Presence",
         "id": "30a62705",
         "type": "Expertise",
-        "description": "As a Free Action you may spend 1 Presence to apply [4|6|8|10|12|14] Verve Loss to a creature.  You may use this a maximum of once per turn.  This Verve Loss is only reduced by MRes and URes."
+        "description": "As a Free Action you may spend 1 Presence to apply [4|6|8|10|12|14] Verve Loss to a creature.  This Verve Loss is only reduced by MRes and URes."
     },
     {
         "category": "rhapsody",

@@ -102,7 +102,7 @@ function CharacterSheetPage() {
 	const racialBonuses = useAppSelector((state) => state.racialBonuses.bonuses);
 	const racialBonusesPrimaryOptions = useMemo(() => [{ value: '', label: '' }, ...racialBonuses.filter(s => s.type == "primary").map((s) => { return { value: s.id, label: `${s.name} - ${s.description}` } })], [racialBonuses]);
 	const racialBonusesSecondaryOptions = useMemo(() => [{ value: '', label: '' }, ...racialBonuses.filter(s => s.type == "secondary").map((s) => { return { value: s.id, label: `${s.name} - ${s.description}` } })], [racialBonuses]);
-	const racialBonusesStatureOptions = useMemo(() => [{ value: '', label: '' }, ...racialBonuses.filter(s => s.type == "stature").map((s) => { return { value: s.id, label: `${s.name} - ${s.description}` } })], [racialBonuses]);
+	const racialBonusesStatureOptions = useMemo(() => [{ value: '', label: '' }, ...racialBonuses.filter(s => s.type == "stature").map((s) => { return { value: s.id, label: s.name } })], [racialBonuses]);
 
 	// Languages data
 	const languages = useAppSelector((state) => state.languages.languages);
@@ -207,7 +207,7 @@ function CharacterSheetPage() {
 								label='Known Languages'
 								addendum={<PurchasePointGroup count={2} columns={3} maxPurchases={2} purchased={character.purchases.known_languages} purchaseCallback={characterPurchaseUpdater('known_languages')} />}
 								size="small" />
-							{Array.from(Array(character.purchases.known_languages + 1)).map((_, index) => (
+							{Array.from(Array(character.purchases.known_languages + 2)).map((_, index) => (
 								<SelectField initialValue={character.vitae.languages[index]} options={languageOptions} onChange={characterValueUpdater(`vitae.languages.${index}`)} key={`language-${index}`} />
 							))}
 						</SheetBlock>

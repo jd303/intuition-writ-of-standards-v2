@@ -1,47 +1,47 @@
 [
     {
+        "effect": "Criticals on 19+. Apply the Damage Over Time: Bleeding Status to your target at a DC equal to your Spell Severity.",
         "id": "30c0e851",
-        "name": "Pyral",
-        "effect": "Criticals on 19+. Apply the Damage Over Time: Bleeding Status to your target at a DC equal to your Spell Severity."
+        "name": "Pyral"
     },
     {
+        "effect": "Criticals on 19+. Apply the Stunned / Slowed: Chilled Status to your target at a DC equal to your Spell Severity.",
         "id": "478e7171",
-        "name": "Cryonic",
-        "effect": "Criticals on 19+. Apply the Stunned / Slowed: Chilled Status to your target at a DC equal to your Spell Severity."
+        "name": "Cryonic"
     },
     {
+        "effect": "Criticals on 20. Apply half the Unresolved Spell Damage to all targets (friend or foe) within DC squares of the target or center of the Spell Effect, that did not already receive the effects of the spell.",
         "id": "b5332003",
-        "name": "Electric",
-        "effect": "Criticals on 20. Apply half the Unresolved Spell Damage to all targets (friend or foe) within DC squares of the target or center of the Spell Effect, that did not already receive the effects of the spell."
+        "name": "Electric"
     },
     {
+        "effect": "Criticals on 18+. Apply the Debilitated: Gusted Status to all targets.",
         "id": "e86f9780",
-        "name": "Zephyral",
-        "effect": "Criticals on 18+. Apply the Debilitated: Gusted Status to all targets."
+        "name": "Zephyral"
     },
     {
+        "effect": "Criticals on 20. Apply the Damage Over Time: Melting Status to your target at a DC equal to your Spell Severity.",
         "id": "57e7fa5a",
-        "name": "Acidic",
-        "effect": "Criticals on 20. Apply the Damage Over Time: Melting Status to your target at a DC equal to your Spell Severity."
+        "name": "Acidic"
     },
     {
+        "effect": "Criticals on 19+. Resolve a Raw Roll. On an 11+, apply the Deaf Status to your target. They do not get a save for this effect.",
         "id": "a0d58b85",
-        "name": "Sonic",
-        "effect": "Criticals on 19+. Resolve a Raw Roll. On an 11+, apply the Deaf Status to your target. They do not get a save for this effect."
+        "name": "Sonic"
     },
     {
+        "effect": "Criticals on 20. Resolve a Raw Roll. On an 11+, apply the Blind Status to your target. They do not get a save for this effect.",
         "id": "920a6e71",
-        "name": "Luminal",
-        "effect": "Criticals on 20. Resolve a Raw Roll. On an 11+, apply the Blind Status to your target. They do not get a save for this effect."
+        "name": "Luminal"
     },
     {
+        "effect": "Criticals on 20. Apply the Discordant: Jinxed Status to your target. They do not get a save for this effect.",
         "id": "1af4e003",
-        "name": "Umbral",
-        "effect": "Criticals on 20. Apply the Discordant: Jinxed Status to your target. They do not get a save for this effect."
+        "name": "Umbral"
     },
     {
+        "effect": "Criticals on 20. Restore 1 Mana per Spell Severity.",
         "id": "4312d591",
-        "name": "Arcanic",
-        "effect": "Criticals on 20. Restore 1 Mana per Spell Severity."
+        "name": "Arcanic"
     }
 ]

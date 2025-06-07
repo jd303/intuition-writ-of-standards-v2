@@ -129,7 +129,7 @@
         "name": "Jack of All Trades",
         "id": "9dee48d6",
         "type": "secondary",
-        "description": "Your maximum Skill Purchase gains a +1 Bonus."
+        "description": "Your maximum Skill Purchases gain a +1 Bonus."
     },
     {
         "name": "Faeform",
@@ -140,31 +140,26 @@
     {
         "name": "Tiny Stature",
         "id": "fa560e14",
-        "type": "stature",
-        "description": "Unavailable for players.  Defend Skill +3, MoveSq. -2, Strength-based Moves -2."
+        "type": "stature"
     },
     {
         "name": "Small Stature",
         "id": "219b73b9",
-        "type": "stature",
-        "description": "Defend Skill +1, MoveSq. -1"
+        "type": "stature"
     },
     {
         "name": "Medium Stature",
         "id": "6b51a528",
-        "type": "stature",
-        "description": "No change"
+        "type": "stature"
     },
     {
         "name": "Larger Stature",
         "id": "76377c99",
-        "type": "stature",
-        "description": "Defend Skill -1, Strength-based Moves +1"
+        "type": "stature"
     },
     {
         "name": "Huge Stature",
         "id": "68d8fce7",
-        "type": "stature",
-        "description": "Unavailable for players.  Defend Skill -3, Starting Verve +20, Strength-based Moves +2."
+        "type": "stature"
     }
 ]

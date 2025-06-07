@@ -1,37 +1,37 @@
 [
     {
+        "description": "Your Critical Raw Roll is 19+",
         "id": "bc5a5c74",
-        "name": "Bladed",
-        "description": "Your Critical Raw Roll is 19+"
+        "name": "Bladed"
     },
     {
+        "description": "You deal your Weapon Damage twice on Critical Hits.",
         "id": "005efa3e",
-        "name": "Axes",
-        "description": "You deal your Weapon Damage twice on Critical Hits."
+        "name": "Axes"
     },
     {
+        "description": "You apply Scrambled: Dazed on Critical Hits, with no save.",
         "id": "7817dd36",
-        "name": "Blunt",
-        "description": "You apply Scrambled: Dazed on Critical Hits, with no save."
+        "name": "Blunt"
     },
     {
+        "description": "Your Threatening Range increases by 1.",
         "id": "016177e7",
-        "name": "Lashing",
-        "description": "Your Threatening Range increases by 1."
+        "name": "Lashing"
     },
     {
+        "description": "Your Critical Raw Roll is 19+",
         "id": "e2c26e88",
-        "name": "Bows",
-        "description": "Your Critical Raw Roll is 19+"
+        "name": "Bows"
     },
     {
+        "description": "You deal your Weapon Damage twice on Critical Hits.",
         "id": "da256890",
-        "name": "Crossbows",
-        "description": "You deal your Weapon Damage twice on Critical Hits."
+        "name": "Crossbows"
     },
     {
+        "description": "You gain an extra basic Ranged Attack on Critical Hits.",
         "id": "de8720dc",
-        "name": "Thrown",
-        "description": "You gain an extra basic Ranged Attack on Critical Hits."
+        "name": "Thrown"
     }
 ]

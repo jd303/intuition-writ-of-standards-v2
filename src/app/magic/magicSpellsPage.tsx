@@ -20,11 +20,11 @@ function MagicSpellsPage() {
 	const spellSchoolSelection = useAppSelector((state: RootState) => state.search.spellSchoolSelection);
 	const magicSourceSelection = useAppSelector((state: RootState) => state.search.magicSourceSelection);
 	const enchantingSelection = useAppSelector((state: RootState) => state.search.enchantingSelection);
-	const levelOptions = [1,2,3,4,5,6,7].map((i: number) => { return { label: i.toString(), value: i.toString() } });
+	const levelOptions = [1, 2, 3, 4, 5, 6, 7].map((i: number) => { return { label: i.toString(), value: i.toString() } });
 	const sourceOptions = MagicSources.map((source) => { return { label: source.name.toString(), value: source.id.toString() } });
 	const schoolOptions = SpellSchools.map((school) => { return { label: school, value: school } });
 	const enchantingOptions = ['potable', 'infusable'].map((enchantmentType) => { return { label: enchantmentType, value: enchantmentType } });
-	
+
 	const filteredSpells = useMemo(() => {
 		const spellsRefs = [...spells];
 		const spellsSorted = spellsRefs.sort((a, b) => a.name < b.name && -1 || 1);

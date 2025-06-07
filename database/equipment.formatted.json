@@ -290,7 +290,7 @@
     {
         "name": "Clothing (Lavish)",
         "type": "armour",
-        "description": "Athletics -2",
+        "description": "No effect",
         "cost": 100
     },
     {
@@ -314,56 +314,50 @@
     {
         "name": "Medium Armour",
         "type": "armour",
-        "description": "PRes: 2, Defend -1",
+        "description": "PRes: 2",
         "cost": 60
     },
     {
         "name": "Medium Armour (Fine)",
         "type": "armour",
-        "description": "PRes: 3, Defend -1",
+        "description": "PRes: 3",
         "cost": 100
     },
     {
         "name": "Medium Armour (Masterwork)",
         "type": "armour",
-        "description": "PRes: 4, Defend -1",
+        "description": "PRes: 4",
         "cost": 200
     },
     {
         "name": "Heavy Armour",
         "type": "armour",
-        "description": "PRes: 4, Defend -2",
+        "description": "PRes: 3",
         "cost": 140
     },
     {
         "name": "Heavy Armour (Fine)",
         "type": "armour",
-        "description": "PRes: 5, Defend -2",
+        "description": "PRes: 4",
         "cost": 180
     },
     {
         "name": "Heavy Armour (Masterwork)",
         "type": "armour",
-        "description": "PRes: 6, Defend -2",
+        "description": "PRes: 5",
         "cost": 360
     },
     {
         "name": "Shield",
         "type": "armour",
-        "description": "Defend +1",
+        "description": "PRes: 1",
         "cost": 15
     },
     {
-        "name": "Shield (Fine)",
+        "name": "Shield (Fine, Masterwork)",
         "type": "armour",
-        "description": "Defend +2",
+        "description": "PRes: 2",
         "cost": 50
-    },
-    {
-        "name": "Shield (Masterwork)",
-        "type": "armour",
-        "description": "Defend +3",
-        "cost": 100
     },
     {
         "name": "Manual Labour",
