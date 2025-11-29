@@ -21,7 +21,7 @@
         "name": "Bound",
         "duration": 1,
         "domain": "corpus",
-        "effect": "At Status DC 1, you cannot use your Relocate Action and receive a -3 to Move Rolls used with your Primary Action.  At Status DC 2, you are additionally unable to perform many Primary Actions, depending on the DM ruling."
+        "effect": "You cannot use your Relocate Action and receive a -3(DC) to Move Rolls used with your Primary Action.  At Status DC 3, you are additionally unable to perform many Primary Actions, depending on the DM ruling."
     },
     {
         "id": "f54d66ec",
@@ -158,14 +158,6 @@
         "duration": 3,
         "domain": "corpus",
         "effect": "The target has lost too much Verve and may die.  You may be able to resolve the Stabilise Move in the Rest Skill to save yourself.  If you have the Dying Status for three rounds, you perish from wounds and exhaustion."
-    },
-    {
-        "id": "ce2d0408",
-        "negative": false,
-        "name": "Ki Attuned",
-        "duration": 6,
-        "domain": "ciar",
-        "effect": "Your maximum active Ki Marks increases to your Ki Skill.  Once per turn, you may apply a Ki Mark to yourself, or to a creature in your Threatened Area."
     },
     {
         "id": "12ee8d87",

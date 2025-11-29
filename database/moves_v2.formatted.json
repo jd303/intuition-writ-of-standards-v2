@@ -346,7 +346,7 @@
         "name": "Uncanny Survivor",
         "id": "2d1d07a4",
         "type": "Passive",
-        "description": "Once per combat, you may reroll a failed Basic Defence Move with a -1 penalty."
+        "description": "Once per combat, you may reroll a failed Defend Move."
     },
     {
         "category": "defences",
@@ -448,7 +448,7 @@
         "name": "Ammunitions Master",
         "id": "5323f845",
         "type": "Expertise",
-        "description": "When resolving a Ranged Attack and using this Expertise, you may use the special effects of Specialty Ammunition:\n-- If using Blunt ammunition, you deal one half of the normal Verve Loss and knock back your target 1 sq to a safe space.  You additionally apply the Prone Status on a Raw Roll of [20|20|19|19|18|18]+.\n-- If using Piercing ammunition, you pierce your target's PRes and some URes, to a value up to your Expertise.\n-- If using Splintering ammunition, you resolve your attack as normal, and apply your Expertise as Verve Loss to all adjacent creatures (friend and foe).\n-- If using Curved ammunition, you may target creature who is around a corner.  To determine if you can hit them, draw a straight line that you can perceive, then plot a perpendicular line up to a number of squares equal to your Expertise.  Targets that touch either line may be targeted.\n-- If using Ricocheting ammunition, you may bounce your shot off [1|1|2|2|3|3] surfaces, each no more than [5|8|11|14|17|20] squares from each other, increasing your Critical Chance by 1 per ricochet."
+        "description": "When resolving a Ranged Attack and using this Expertise, you may use the special effects of Specialty Ammunition:\n-- If using Blunt ammunition, you deal one half of the normal Verve Loss and knock back your target 1 sq to a safe space.  You additionally apply the Prone Status on a Raw Roll of [20|20|19|19|18|18]+.\n-- If using Piercing ammunition, you pierce your target's PRes and some URes, to a value up to your Expertise.\n-- If using Splintering ammunition, you resolve your attack as normal, and apply your Expertise as Verve Loss to all adjacent creatures (friend and foe).\n-- If using Curved ammunition, you may target a creature who is around a corner.  To determine if you can hit them, draw a straight line that you can perceive, then plot a perpendicular line up to a number of squares equal to your Expertise.  Targets that touch either line may be targeted.\n-- If using Ricocheting ammunition, you may bounce your shot off [1|1|2|2|3|3] surfaces, each no more than [5|8|11|14|17|20] squares from each other, increasing your Critical Chance by 1 per ricochet."
     },
     {
         "category": "combat",
@@ -476,14 +476,14 @@
         "name": "Combat Manoeuvre",
         "id": "8a47d78e",
         "type": "Primary",
-        "description": "You apply your Combat Skill as Verve Loss to a creature, and attempt to grapple, trip, disarm or push an opponent.\n-- Grapple: Resolve a Grapple Move Roll against the target's STR (+/- 4 per size difference).  If you succeed, your opponent gains the Bound (DC 2) Status.\n-- Trip: Resolve a Combat Move against a target with fewer than 4 legs' DEX (+/- 4 per size difference).  If you succeed, your opponent gains the Prone Status.\n-- Disarm:  Resolve a Combat Move against the target's STR or DEX (whichever is higher, +/- 4 per size difference).  If you succeed, your opponent drops a held weapon or shield.\n-- Push: Resolve a Combat Move against the target's weight or DC (whichever is higher).  If you succeed, you push it 2sq (+/- 1 per size difference) in a direction of your choice."
+        "description": "You apply your Combat Skill as Verve Loss to a creature, and attempt to grapple, trip, disarm or push an opponent.\n-- Grapple: Resolve a Grapple Move Roll against the target's STR (+/- 4 per size difference).  If you succeed, your opponent gains the Bound (DC 2) Status, and you gain the Bound (DC 1) Status.\n-- Trip: Resolve a Combat Move against a target with fewer than 4 legs' DEX (+/- 4 per size difference).  If you succeed, your opponent gains the Prone Status.\n-- Disarm:  Resolve a Combat Move against the target's STR or DEX (whichever is higher, +/- 4 per size difference).  If you succeed, your opponent drops a held weapon or shield.\n-- Push: Resolve a Combat Move against the target's weight or DC (whichever is higher).  If you succeed, you push it 2sq (+/- 1 per size difference) in a direction of your choice."
     },
     {
         "category": "combat",
         "name": "Manoeuvre Master",
         "id": "2cc5acef",
         "type": "Expertise",
-        "description": "When resolving Combat Manoeuvre and choosing this Expertise, choose one of the following effects:\n-- When resolving any Combat Manoeuvre, you reduce the Unresolved Verse Loss of counter attacks, by 2 points per Expertise.\n-- When resolving the Grapple, Trip or Disarm Move, on a Raw Roll of [14|13|12|11|10|9]+ you may also attempt the Subterfuge Move against your target as a Free Action.\n-- When resolving the Trip Move, you may attempt to trip a creature of any number of legs, and the penalty for each size category larger than you is reduced by your Expertise.\n-- When resolving the Disarm Move, on a Raw Roll of [17|16|15|14|13|12]+ you may attempt an Influence Move on the target as a Free Action, or you kick the disarmed item a number of sq away equal to your Expertise.\n-- When resolving the Push Move, you may move your target [1|1|2|2|3|3] additional squares, and apply [4|5|6|7|8|9] Verve Loss if they hit a hard surface as part of the Push."
+        "description": "When resolving Combat Manoeuvre and choosing this Expertise, choose one of the following effects:\n-- When resolving any Combat Manoeuvre, you reduce the Unresolved Verse Loss of counter attacks, by 2 points per Expertise.\n-- When resolving the Grapple, Trip or Disarm Move, on a Raw Roll of [14|13|12|11|10|9]+ you may also attempt the Subterfuge Move against your target as a Free Action.\n-- When resolving the Trip Move, you may attempt to trip a creature of any number of legs, and the penalty for each size category larger than you is reduced by your Expertise.\n-- When resolving the Disarm Move, on a Raw Roll of [17|17|16|15|14|13]+ you may attempt an Influence Move on the target as a Free Action\n-- When successfully resolving the Disarm Move, you kick the disarmed weapon up to [1|2|2|3|3|4] squares away.\n-- When resolving the Push Move, you may move your target [1|1|2|2|3|3] additional squares, and apply [4|5|6|7|8|9] Verve Loss if they hit a hard surface as part of the Push."
     },
     {
         "category": "combat",
@@ -518,14 +518,14 @@
         "name": "Biting Melee Attack",
         "id": "7d0350d3",
         "type": "Passive",
-        "description": "Your Weapon Damage Dice improves by 1 rank, or if your rank is at maximum, add d4 whenever you resolve Weapon Damage."
+        "description": "If you have at least 3 points in Combat, your Weapon Damage Dice improves by 1 rank.  If your rank is already at maximum, instead add d4 whenever you resolve Weapon Damage."
     },
     {
         "category": "combat",
         "name": "Short Throw",
         "id": "d46b442d",
         "type": "Passive",
-        "description": "Once per combat, when resolving Ranged Attack with a weapon with the Throwable Tag and you target is within 3sq of you, take the maximum of your Damage Dice instead of rolling."
+        "description": "Once per combat, when resolving Ranged Attack with a weapon with the Throwable Tag and you target is within 2sq of you, raise the Weapon Damage Dice of your thrown weapon by 1 rank."
     },
     {
         "category": "combat",
@@ -969,7 +969,7 @@
         "name": "Unnerve",
         "id": "3f00f576",
         "type": "Primary",
-        "description": "You use your force of will to unnerve someone, applying one of the Unnerved Statuses to them (choose an effect when resolving the Move), if you beat a DC against their Defence (CHA)."
+        "description": "You use your force of will to unnerve someone, applying Dissuaded, Provoked, or Intimidated from the Unnerved Status to them (choose an effect when resolving the Move), if you beat a DC against their Defence (CHA)."
     },
     {
         "category": "influence",
@@ -1747,7 +1747,7 @@
         "name": "Out for blood",
         "id": "cb5e8841",
         "type": "Expertise",
-        "description": "For each point in this Expertise, your Companion applies an additional Verve Loss in combat.  Additionally, you gain special commands at Expertise scores:\n-- 3 Expertise: you may use Command Beast with a special command: Harry.  Your beast gains +2 Move sq and will move towards a target you nominate.  If it reaches, it applies 5 Verve Loss and attempts to get back to you.  Your companions cannot be the target of attacks this round.\n-- 5 Expertise: you may use Command Beast with a special command: Pounce.  Your Companion gains the Unnerved: Aggravated Status for a particular target and gains immunint to mental effects and +3sq movement.  They will ignore their own wellbeing and any further commands until its target is killed."
+        "description": "For each point in this Expertise, your Companion applies an additional Verve Loss in combat.  Additionally, you gain special commands at Expertise scores:\n-- 3 Expertise: you may use Command Beast with a special command: Harry.  Your beast gains +2 Move sq and will move towards a target you nominate.  If it reaches, it applies 5 Verve Loss and attempts to get back to you.  Your companions cannot be the target of attacks this round.\n-- 5 Expertise: you may use Command Beast with a special command: Pounce.  Your Companion gains the Unnerved: Aggravated Status for a particular target and gains immunity to mental effects and +3sq movement.  They will ignore their own wellbeing and any further commands until its target is killed."
     },
     {
         "category": "beast_mastery",
